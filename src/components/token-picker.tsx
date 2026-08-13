@@ -41,12 +41,15 @@ export function TokenPicker({
   candidates,
   onChoose,
   onClear,
+  variant = 'field',
 }: {
   current: string;
   chosen: string | null;
   candidates: Candidate[];
   onChoose: (token: string) => void;
   onClear: () => void;
+  /** `inline` s'insère dans une ligne de CSS ; `field` occupe une cellule de tableau. */
+  variant?: 'field' | 'inline';
 }) {
   const [open, setOpen] = useState(false);
   const chosenCandidate = candidates.find((candidate) => candidate.name === chosen);
@@ -66,22 +69,45 @@ export function TokenPicker({
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          role="combobox"
-          aria-expanded={open}
-          size="sm"
-          className={cn(
-            'h-7 w-full justify-between gap-1.5 px-2 font-mono text-xs font-normal',
-            chosen ? 'border-positive/50 bg-positive/5' : 'text-muted-foreground border-dashed',
-          )}
-        >
-          <span className="flex min-w-0 items-center gap-1.5">
-            <Swatch value={chosenCandidate?.value ?? null} />
-            <span className="truncate">{chosen ?? 'choisir un token…'}</span>
-          </span>
-          <ChevronsUpDown className="size-3 shrink-0 opacity-50" />
-        </Button>
+        {variant === 'inline' ? (
+          /*
+            Dans la vue CSS, le sélecteur EST le `var()` : on édite la déclaration là
+            où on la lit, sans quitter le code des yeux.
+          */
+          <button
+            type="button"
+            role="combobox"
+            aria-expanded={open}
+            className={cn(
+              '-mx-0.5 inline-flex items-center gap-1 rounded-[4px] px-1 align-baseline transition-colors',
+              'hover:bg-secondary focus-visible:ring-ring focus-visible:ring-2 focus-visible:outline-none',
+              chosen && 'bg-positive/10 text-positive',
+            )}
+            title={chosen ? `${current} → ${chosen}` : `Remplacer ${current}`}
+          >
+            <Swatch
+              value={(chosenCandidate ?? candidates.find((c) => c.name === current))?.value ?? null}
+            />
+            <span>var({chosen ?? current})</span>
+          </button>
+        ) : (
+          <Button
+            variant="outline"
+            role="combobox"
+            aria-expanded={open}
+            size="sm"
+            className={cn(
+              'h-7 w-full justify-between gap-1.5 px-2 font-mono text-xs font-normal',
+              chosen ? 'border-positive/50 bg-positive/5' : 'text-muted-foreground border-dashed',
+            )}
+          >
+            <span className="flex min-w-0 items-center gap-1.5">
+              <Swatch value={chosenCandidate?.value ?? null} />
+              <span className="truncate">{chosen ?? 'choisir un token…'}</span>
+            </span>
+            <ChevronsUpDown className="size-3 shrink-0 opacity-50" />
+          </Button>
+        )}
       </PopoverTrigger>
 
       <PopoverContent className="w-[560px] p-0" align="start">

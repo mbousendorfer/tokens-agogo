@@ -229,3 +229,17 @@ describe('scanScss — définitions de custom properties', () => {
     expect(found[0].token).toBe('--ref-color-orange-40');
   });
 });
+
+describe('scanScss — commentaires de ligne SCSS', () => {
+  it('ne colle pas un commentaire de ligne au sélecteur suivant', () => {
+    const [found] = scanScss(
+      '// Mini size\n.ap-tag.mini {\n  height: var(--comp-tag-mini-height);\n}',
+    );
+    expect(found.selector).toBe('.ap-tag.mini');
+  });
+
+  it('ne prend pas une URL pour un commentaire', () => {
+    const [found] = scanScss(".a { background: url('https://x/y.png') var(--sys-x); }");
+    expect(found.token).toBe('--sys-x');
+  });
+});

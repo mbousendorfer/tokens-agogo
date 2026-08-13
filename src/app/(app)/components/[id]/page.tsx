@@ -31,6 +31,7 @@ export default async function ComponentDetailPage({ params }: PageProps<'/compon
         file: declaration.file,
         line: declaration.line,
         value,
+        declaration: declaration.value,
         fallback: declaration.fallback,
         fallbackIsToken: declaration.fallbackIsToken ?? false,
         candidates:

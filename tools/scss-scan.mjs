@@ -164,7 +164,34 @@ export function variantsOf(selector) {
 }
 
 function stripComments(source) {
-  return source.replace(/\/\*[\s\S]*?\*\//g, (block) => block.replace(/[^\n]/g, ' '));
+  const withoutBlocks = source.replace(/\/\*[\s\S]*?\*\//g, (block) =>
+    block.replace(/[^\n]/g, ' '),
+  );
+
+  // SCSS a aussi des commentaires de ligne. Sans les retirer, leur texte se colle au
+  // sélecteur qui suit — `// Mini size .ap-tag.mini {` devient un sélecteur.
+  return withoutBlocks
+    .split('\n')
+    .map((line) => {
+      let quote = null;
+      for (let i = 0; i < line.length - 1; i++) {
+        const char = line[i];
+        if (quote) {
+          if (char === quote && line[i - 1] !== '\\') quote = null;
+          continue;
+        }
+        if (char === '"' || char === "'") {
+          quote = char;
+          continue;
+        }
+        // `https://` n'est pas un commentaire : le `:` qui précède le trahit.
+        if (char === '/' && line[i + 1] === '/' && line[i - 1] !== ':') {
+          return line.slice(0, i);
+        }
+      }
+      return line;
+    })
+    .join('\n');
 }
 
 // L'interpolation SCSS `#{…}` contient des accolades que le suivi d'imbrication
@@ -249,6 +276,7 @@ export function scanScss(source, file = '') {
 
   function recordDeclaration(text, lineNumber) {
     const candidate = unmask(buffer + text).trim();
+    const startLine = bufferLine || lineNumber;
     buffer = '';
     bufferLine = 0;
     if (!candidate) return;
@@ -293,7 +321,7 @@ export function scanScss(source, file = '') {
         atRule: context?.atRule ?? null,
         isDefinition: Boolean(property?.startsWith('--')),
         file,
-        line: lineNumber,
+        line: startLine,
       });
     }
   }

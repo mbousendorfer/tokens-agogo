@@ -29,7 +29,10 @@ export type WorkbenchRow = {
   states: string[];
   file: string;
   line: number;
+  /** La valeur résolue du token actuel, pour la pastille. */
   value: string | null;
+  /** La valeur complète de la déclaration, telle qu'écrite dans le fichier. */
+  declaration: string;
   fallback: string | null;
   fallbackIsToken: boolean;
   candidates: Candidate[];
@@ -271,17 +274,29 @@ export function ComponentWorkbench({
             </TabsContent>
 
             <TabsContent value="css">
+              {/* On édite là où on lit : chaque `var()` du code est un sélecteur. */}
               <CssPreview
-                lines={rows
+                rows={rows
                   .filter((row) => row.tier !== 'local')
                   .map((row) => ({
                     file: row.file,
                     line: row.line,
                     selector: row.selector,
                     property: row.property,
+                    value: row.declaration,
                     token: row.token,
                     to: decisions.get(decisionKey(row.file, row.line, row.token))?.to ?? null,
+                    candidates: row.candidates,
                   }))}
+                onDecide={(cssRow, to) => {
+                  const row = rows.find(
+                    (candidate) =>
+                      candidate.file === cssRow.file &&
+                      candidate.line === cssRow.line &&
+                      candidate.token === cssRow.token,
+                  );
+                  if (row) decide(row, to);
+                }}
               />
             </TabsContent>
           </Tabs>
