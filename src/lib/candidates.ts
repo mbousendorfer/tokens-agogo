@@ -100,11 +100,20 @@ export function candidatesFor({
       };
     });
 
+  /*
+    Le rendu identique passe devant la pertinence.
+
+    Un token qui rend **exactement** ce que la déclaration rend aujourd'hui rend le
+    remplacement invisible à l'écran : c'est ce qui rend la migration relisible en
+    bloc, et c'est un fait mesuré, pas une ressemblance estimée. Ce n'est ni un ΔE ni
+    un plus proche voisin — c'est de l'identité — donc l'ADR 003 tient : on ne classe
+    toujours pas par proximité de couleurs, et le choix reste celui de l'intention.
+  */
   return scored.sort(
     (a, b) =>
       tierOrder.indexOf(a.tier) - tierOrder.indexOf(b.tier) ||
-      b.relevance - a.relevance ||
       Number(b.sameValue) - Number(a.sameValue) ||
+      b.relevance - a.relevance ||
       a.name.localeCompare(b.name),
   );
 }
