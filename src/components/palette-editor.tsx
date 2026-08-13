@@ -325,17 +325,31 @@ function AddColour({
    * barreau 200 comme les autres, donc une teinte claire peut déplacer l'échelle de
    * **toutes** les familles. Un aperçu approché tairait précisément le seul effet
    * qu'on a besoin de connaître avant de valider.
+   *
+   * Il ne dépend **pas du nom**. Le nom est une étiquette : il décide de
+   * l'identifiant du token, pas d'une seule des huit nuances. L'exiger avant de
+   * montrer quoi que ce soit laissait le formulaire mort à l'ouverture — alors que
+   * ce qu'on vient y faire, c'est justement choisir une couleur en la voyant
+   * résolue. Le nom ne conditionne que la validation.
    */
+  /*
+    Le nom sous lequel la famille candidate entre dans la spec. Tant qu'on n'a rien
+    tapé, un nom de travail — passé par `normalizeId` comme n'importe quel autre,
+    sinon la clé cherchée dans la solution ne serait pas celle qui y a été écrite.
+  */
+  const previewName = id && !taken ? name : freeName(spec);
+  const previewId = normalizeId(previewName);
+
   const preview = useMemo(() => {
-    if (!id || taken || !validHex || !current) return null;
+    if (!validHex || !current) return null;
     try {
-      const solution = solve(addFamily(spec, { name, hex, anchorRung: anchor }));
+      const solution = solve(addFamily(spec, { name: previewName, hex, anchorRung: anchor }));
       const shades = solution.chromaticRungs
-        .map((rung) => solution.rungs.get(`${id}.${rung}`))
+        .map((rung) => solution.rungs.get(`${previewId}.${rung}`))
         .filter((shade): shade is NonNullable<typeof shade> => Boolean(shade));
 
-      const dark = solution.rungs.get(`${id}.700`);
-      const light = solution.rungs.get(`${id}.200`);
+      const dark = solution.rungs.get(`${previewId}.700`);
+      const light = solution.rungs.get(`${previewId}.200`);
       const contrast =
         dark && light ? contrastRatio(parseHex(dark.hex)!, parseHex(light.hex)!) : null;
 
@@ -367,7 +381,7 @@ function AddColour({
     } catch (cause) {
       return { error: (cause as Error).message };
     }
-  }, [spec, current, id, name, hex, anchor, taken, validHex]);
+  }, [spec, current, previewName, previewId, hex, anchor, validHex]);
 
   if (!open) {
     return (
@@ -382,6 +396,9 @@ function AddColour({
 
   const solved = preview && !('error' in preview) ? preview : null;
   const failed = preview && 'error' in preview ? preview.error : null;
+
+  // Voir, c'est une chose ; ajouter en est une autre. Seule la seconde exige un nom.
+  const canCommit = Boolean(solved && id && !taken);
 
   return (
     <div className="bg-muted/20 mt-3 rounded-lg border p-4">
@@ -471,7 +488,7 @@ function AddColour({
                 key={shade.rung}
                 className="ring-hairline flex h-14 flex-1 flex-col justify-between rounded-[4px] p-1.5 font-mono text-[10px] ring-1"
                 style={{ backgroundColor: shade.hex, color: inkOn(shade.hex) }}
-                title={`${id}-${shade.rung} · ${shade.hex}`}
+                title={`${id || 'cette couleur'}-${shade.rung} · ${shade.hex}`}
               >
                 <span>{shade.rung}</span>
                 <span>{shade.hex.replace('#', '').toLowerCase()}</span>
@@ -547,18 +564,28 @@ function AddColour({
       )}
 
       <div className="mt-4 flex items-center gap-2">
-        <Button size="sm" disabled={!solved} onClick={commit}>
+        <Button size="sm" disabled={!canCommit} onClick={commit}>
           Ajouter cette couleur
         </Button>
         <Button variant="ghost" size="sm" onClick={close}>
           Annuler
         </Button>
+        {/* Un bouton grisé sans raison est une impasse : on dit ce qui manque. */}
+        {!canCommit && (
+          <span className="text-muted-foreground text-xs">
+            {!validHex
+              ? 'la couleur n’est pas un hex à six chiffres'
+              : taken
+                ? 'ce nom est déjà pris'
+                : 'donnez-lui un nom pour l’ajouter'}
+          </span>
+        )}
       </div>
     </div>
   );
 
   function commit() {
-    if (!solved) return;
+    if (!canCommit) return;
     onAdd({ name, hex, anchorRung: anchor });
     close();
   }
@@ -567,6 +594,15 @@ function AddColour({
     setName('');
     setOpen(false);
   }
+}
+
+/** Un nom de travail qu'aucune famille n'occupe : l'aperçu ne doit en écraser aucune. */
+function freeName(spec: PaletteSpec): string {
+  let candidate = 'apercu';
+  while (spec.chromatic.families.some((family) => family.id === normalizeId(candidate))) {
+    candidate += 'x';
+  }
+  return candidate;
 }
 
 /** Un champ, avec son étiquette au-dessus. Un placeholder n'est pas une étiquette. */
