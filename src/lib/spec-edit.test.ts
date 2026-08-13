@@ -3,6 +3,7 @@ import { contrastRatio, parseHex } from './color';
 import { BASELINE_SPEC, generatedRamps, solve } from './generator';
 import {
   addFamily,
+  hueOfHex,
   normalizeId,
   removeFamily,
   renameFamily,
@@ -18,7 +19,11 @@ describe('normalizeId', () => {
 });
 
 describe('addFamily — la couleur ajoutée est résolue, pas posée à côté', () => {
-  const spec = addFamily(BASELINE_SPEC, { name: 'Teal', hex: '#11ABA6', anchorRung: 500 });
+  const spec = addFamily(BASELINE_SPEC, {
+    name: 'Teal',
+    hue: hueOfHex('#11ABA6'),
+    anchor: { rung: 500, hex: '#11ABA6' },
+  });
   const ramps = generatedRamps(solve(spec));
   const teal = ramps.find((ramp) => ramp.family === 'teal');
 
@@ -51,7 +56,32 @@ describe('addFamily — la couleur ajoutée est résolue, pas posée à côté',
   });
 
   it('refuse un doublon', () => {
-    expect(addFamily(spec, { name: 'Teal', hex: '#000000', anchorRung: 500 })).toBe(spec);
+    expect(addFamily(spec, { name: 'Teal', hue: 0 })).toBe(spec);
+  });
+});
+
+describe('addFamily sans ancre — une famille se réduit à une teinte', () => {
+  const hue = hueOfHex('#C2185B');
+  const spec = addFamily(BASELINE_SPEC, { name: 'Magenta', hue });
+  const magenta = generatedRamps(solve(spec)).find((ramp) => ramp.family === 'magenta')!;
+
+  it('résout les huit nuances sans qu’aucune couleur soit imposée', () => {
+    expect(spec.chromatic.families.at(-1)!.anchors).toEqual({});
+    expect(magenta.rungs).toHaveLength(8);
+  });
+
+  it('les pose toutes sur l’échelle commune', () => {
+    const reference = generatedRamps(solve(spec)).find((ramp) => ramp.family === 'orange')!;
+    for (const rung of magenta.rungs) {
+      const twin = reference.rungs.find((r) => r.rung === rung.rung)!;
+      // Sans ancre, plus rien ne tire une nuance hors de son barreau : l'écart
+      // restant tient à la chroma, pas à la clarté.
+      expect(Math.abs(rung.L - twin.L)).toBeLessThan(0.035);
+    }
+  });
+
+  it('garde la teinte demandée', () => {
+    expect(spec.chromatic.families.at(-1)!.hue).toBeCloseTo(hue, 6);
   });
 });
 

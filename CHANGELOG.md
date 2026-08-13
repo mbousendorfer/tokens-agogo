@@ -6,9 +6,19 @@ Une entrée par étape livrée. Format inspiré de [Keep a Changelog](https://ke
 
 ### Ajouter une couleur : résoudre avant de valider
 
+- **Deux façons d'entrer**, parce qu'on arrive avec deux choses différentes en tête.
+  _Depuis une couleur que j'ai_ : elle est épinglée telle quelle sur le barreau
+  choisi, quitte à se poser hors de l'échelle. _Depuis une teinte_ : rien n'est
+  imposé, les huit nuances sont résolues et tombent toutes sur l'échelle. Le
+  formulaire ne proposait que la première, et forçait donc une réponse exacte à une
+  question qui était souvent « je veux du magenta ».
+- Une famille se réduit à **une teinte** : `addFamily` prend désormais une teinte et
+  une ancre **facultative**, au lieu d'exiger un hex et un barreau.
 - Le formulaire **résout la spec candidate avec le vrai moteur** et montre les huit
   nuances, le contraste 700/200 et son verdict, **avant** de valider. Il commettait
   à l'aveugle : on découvrait le résultat après coup.
+- L'aperçu ne dépend **pas du nom** : le nom décide de l'identifiant du token, pas
+  d'une seule des huit nuances. L'exiger laissait le formulaire mort à l'ouverture.
 - Il annonce la conséquence qu'on ne peut pas deviner : une famille ajoutée entre
   dans la recherche du barreau 200, donc elle peut **déplacer l'échelle de toutes les
   autres**. Le ton suit la mesure — une teinte proche du vert reprend la contrainte

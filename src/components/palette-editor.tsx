@@ -7,11 +7,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Separator } from '@/components/ui/separator';
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { contrastRatio, parseHex, toOklch, wcagLevel } from '@/lib/color';
 import type { PaletteSolution, PaletteSpec } from '@/lib/color-lab/engine/types';
 import { derivation, generatedRamps, solve } from '@/lib/generator';
 import {
   addFamily,
+  hueOfHex,
   normalizeId,
   removeFamily,
   renameFamily,
@@ -300,6 +302,8 @@ function Shade({
   );
 }
 
+type ColourInput = { name: string; hue: number; anchor?: { rung: number; hex: string } | null };
+
 function AddColour({
   spec,
   current,
@@ -307,16 +311,54 @@ function AddColour({
 }: {
   spec: PaletteSpec;
   current: PaletteSolution | null;
-  onAdd: (input: { name: string; hex: string; anchorRung: number }) => void;
+  onAdd: (input: ColourInput) => void;
 }) {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');
+  /**
+   * Deux façons d'entrer, parce qu'on arrive avec deux choses différentes en tête.
+   *
+   * `hex` — « j'ai cette couleur » : elle est épinglée telle quelle sur le barreau
+   * choisi, quitte à se poser hors de l'échelle commune si sa clarté n'est pas celle
+   * du barreau. `hue` — « je veux cette teinte » : rien n'est imposé, les huit
+   * nuances sont résolues et tombent toutes sur l'échelle.
+   *
+   * Le formulaire ne proposait que le premier. Il forçait donc une réponse exacte à
+   * une question qui était souvent « je veux du magenta », et livrait une famille
+   * dont un barreau ment sur l'échelle.
+   */
+  const [mode, setMode] = useState<'hex' | 'hue'>('hex');
   const [hex, setHex] = useState('#C2185B');
+  const [hue, setHue] = useState(0);
   const [anchor, setAnchor] = useState(500);
 
   const id = normalizeId(name);
   const taken = spec.chromatic.families.some((family) => family.id === id);
   const validHex = /^#[0-9a-f]{6}$/i.test(hex);
+
+  /** La teinte réellement utilisée : donnée telle quelle, ou déduite du hex. */
+  const effectiveHue = mode === 'hue' ? hue : validHex ? hueOfHex(hex) : null;
+
+  /*
+    Le nom sous lequel la famille candidate entre dans la spec. Tant qu'on n'a rien
+    tapé, un nom de travail — passé par `normalizeId` comme n'importe quel autre,
+    sinon la clé cherchée dans la solution ne serait pas celle qui y a été écrite.
+  */
+  const previewName = id && !taken ? name : freeName(spec);
+  const previewId = normalizeId(previewName);
+
+  // Mémoïsé : c'est la dépendance de l'aperçu, et le solveur tourne à chaque geste.
+  const input = useMemo<ColourInput | null>(
+    () =>
+      effectiveHue === null
+        ? null
+        : {
+            name: previewName,
+            hue: effectiveHue,
+            anchor: mode === 'hex' ? { rung: anchor, hex } : null,
+          },
+    [effectiveHue, previewName, mode, anchor, hex],
+  );
 
   /**
    * L'aperçu passe par le **vrai** solveur, spec candidate comprise.
@@ -332,18 +374,10 @@ function AddColour({
    * ce qu'on vient y faire, c'est justement choisir une couleur en la voyant
    * résolue. Le nom ne conditionne que la validation.
    */
-  /*
-    Le nom sous lequel la famille candidate entre dans la spec. Tant qu'on n'a rien
-    tapé, un nom de travail — passé par `normalizeId` comme n'importe quel autre,
-    sinon la clé cherchée dans la solution ne serait pas celle qui y a été écrite.
-  */
-  const previewName = id && !taken ? name : freeName(spec);
-  const previewId = normalizeId(previewName);
-
   const preview = useMemo(() => {
-    if (!validHex || !current) return null;
+    if (!input || !current) return null;
     try {
-      const solution = solve(addFamily(spec, { name: previewName, hex, anchorRung: anchor }));
+      const solution = solve(addFamily(spec, input));
       const shades = solution.chromaticRungs
         .map((rung) => solution.rungs.get(`${previewId}.${rung}`))
         .filter((shade): shade is NonNullable<typeof shade> => Boolean(shade));
@@ -353,16 +387,21 @@ function AddColour({
       const contrast =
         dark && light ? contrastRatio(parseHex(dark.hex)!, parseHex(light.hex)!) : null;
 
-      // La clarté de la couleur donnée, contre celle du barreau où on l'épingle.
-      const anchorIndex = solution.chromaticRungs.indexOf(anchor);
-      const ladderL = anchorIndex >= 0 ? solution.chromaticLadder[anchorIndex] : null;
-      const ownL = toOklch(parseHex(hex)!).l;
-      const nearest = solution.chromaticRungs.reduce((best, rung, index) =>
-        Math.abs(solution.chromaticLadder[index] - ownL) <
-        Math.abs(solution.chromaticLadder[solution.chromaticRungs.indexOf(best)] - ownL)
-          ? rung
-          : best,
-      );
+      // Où la couleur épinglée se pose, contre le barreau qui l'accueille. Sans
+      // ancre la question ne se pose pas : rien n'est imposé.
+      let offLadder: number | null = null;
+      let nearest: number | null = null;
+      if (input.anchor && validHex) {
+        const ownL = toOklch(parseHex(hex)!).l;
+        const index = solution.chromaticRungs.indexOf(input.anchor.rung);
+        offLadder = index >= 0 ? ownL - solution.chromaticLadder[index] : null;
+        nearest = solution.chromaticRungs.reduce((best, rung, i) =>
+          Math.abs(solution.chromaticLadder[i] - ownL) <
+          Math.abs(solution.chromaticLadder[solution.chromaticRungs.indexOf(best)] - ownL)
+            ? rung
+            : best,
+        );
+      }
 
       return {
         shades,
@@ -375,13 +414,13 @@ function AddColour({
         oldL200: current.derived.L200,
         newL200: solution.derived.L200,
         shift: Math.abs(solution.derived.L200 - current.derived.L200),
-        offLadder: ladderL === null ? null : ownL - ladderL,
+        offLadder,
         nearest,
       };
     } catch (cause) {
       return { error: (cause as Error).message };
     }
-  }, [spec, current, previewName, previewId, hex, anchor, validHex]);
+  }, [spec, current, input, previewId, hex, validHex]);
 
   if (!open) {
     return (
@@ -401,87 +440,133 @@ function AddColour({
   const canCommit = Boolean(solved && id && !taken);
 
   return (
-    <div className="bg-muted/20 mt-3 rounded-lg border p-4">
-      <h3 className="font-display text-sm font-semibold">Ajouter une couleur</h3>
-      <p className="text-muted-foreground mt-0.5 mb-4 text-xs">
-        Donnez-lui une couleur et le barreau qu’elle occupe : les autres nuances se déduisent, sur
-        la même échelle que les familles existantes.
-      </p>
-
-      <div className="flex flex-wrap items-start gap-x-6 gap-y-3">
-        <Field label="Nom">
-          <div className="flex items-center gap-2">
-            <Input
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              placeholder="ex. Magenta"
-              className="h-8 w-44 text-xs"
-            />
-            {id && !taken && (
-              <span className="text-muted-foreground font-mono text-[11px]">
-                --ref-color-{id.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()}-500
-              </span>
-            )}
-            {taken && (
-              <Badge variant="destructive" className="text-[10px]">
-                cette famille existe déjà
-              </Badge>
-            )}
-          </div>
-        </Field>
-
-        <Field label="Couleur">
-          <div className="flex items-center gap-2">
-            <label
-              className="ring-hairline relative size-8 shrink-0 rounded-md ring-1"
-              style={{ backgroundColor: validHex ? hex : 'transparent' }}
-            >
-              <input
-                type="color"
-                value={validHex ? hex : '#000000'}
-                onChange={(event) => setHex(event.target.value.toUpperCase())}
-                className="absolute inset-0 cursor-pointer opacity-0"
-                aria-label="Choisir la couleur"
-              />
-            </label>
-            <Input
-              value={hex}
-              onChange={(event) => setHex(event.target.value.toUpperCase())}
-              className="h-8 w-28 font-mono text-xs"
-              aria-invalid={!validHex}
-            />
-          </div>
-        </Field>
-
-        <Field label="Barreau épinglé">
-          <div className="flex flex-wrap gap-1">
-            {(current?.chromaticRungs ?? []).map((rung) => (
-              <button
-                key={rung}
-                type="button"
-                onClick={() => setAnchor(rung)}
-                className={cn(
-                  'rounded px-1.5 py-1 font-mono text-[11px] tabular-nums',
-                  rung === anchor
-                    ? 'bg-secondary text-secondary-foreground font-medium'
-                    : 'text-muted-foreground hover:bg-secondary/50',
-                )}
-              >
-                {rung}
-              </button>
-            ))}
-          </div>
-        </Field>
+    <div className="bg-muted/20 mt-3 space-y-4 rounded-lg border p-4">
+      <div>
+        <h3 className="font-display text-sm font-semibold">Ajouter une couleur</h3>
+        <p className="text-muted-foreground mt-0.5 text-xs">
+          Une famille se réduit à une teinte : les huit nuances se déduisent, sur la même échelle
+          que les familles existantes.
+        </p>
       </div>
 
-      {failed && (
-        <p className="text-destructive mt-4 text-xs">
-          Spec insoluble avec cette couleur : {failed}
-        </p>
+      <Field label="Nom">
+        <div className="flex flex-wrap items-center gap-2">
+          <Input
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            placeholder="ex. Magenta"
+            className="h-8 w-44 text-xs"
+          />
+          {id && !taken && (
+            <span className="text-muted-foreground font-mono text-[11px]">
+              --ref-color-{id.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()}-500
+            </span>
+          )}
+          {taken && (
+            <Badge variant="destructive" className="text-[10px]">
+              cette famille existe déjà
+            </Badge>
+          )}
+        </div>
+      </Field>
+
+      <ToggleGroup
+        type="single"
+        size="sm"
+        value={mode}
+        onValueChange={(value) => value && setMode(value as 'hex' | 'hue')}
+        aria-label="D’où vient la couleur"
+      >
+        <ToggleGroupItem value="hex" className="px-2.5 text-xs">
+          Depuis une couleur que j’ai
+        </ToggleGroupItem>
+        <ToggleGroupItem value="hue" className="px-2.5 text-xs">
+          Depuis une teinte
+        </ToggleGroupItem>
+      </ToggleGroup>
+
+      {mode === 'hex' ? (
+        <div className="flex flex-wrap items-start gap-x-8 gap-y-4">
+          <Field
+            label="Couleur"
+            aside={
+              effectiveHue !== null
+                ? `teinte ${effectiveHue.toFixed(1)}° — déduite de ce hex`
+                : 'hex invalide'
+            }
+          >
+            <div className="flex items-center gap-2">
+              <label
+                className="ring-hairline relative size-8 shrink-0 rounded-md ring-1"
+                style={{ backgroundColor: validHex ? hex : 'transparent' }}
+              >
+                <input
+                  type="color"
+                  value={validHex ? hex : '#000000'}
+                  onChange={(event) => setHex(event.target.value.toUpperCase())}
+                  className="absolute inset-0 cursor-pointer opacity-0"
+                  aria-label="Choisir la couleur"
+                />
+              </label>
+              <Input
+                value={hex}
+                onChange={(event) => setHex(event.target.value.toUpperCase())}
+                className="h-8 w-28 font-mono text-xs"
+                aria-invalid={!validHex}
+              />
+            </div>
+          </Field>
+
+          <Field label="Barreau épinglé" aside="cette couleur, à l’octet près">
+            <div className="flex flex-wrap gap-1">
+              {(current?.chromaticRungs ?? []).map((rung) => (
+                <button
+                  key={rung}
+                  type="button"
+                  onClick={() => setAnchor(rung)}
+                  className={cn(
+                    'rounded px-1.5 py-1 font-mono text-[11px] tabular-nums',
+                    rung === anchor
+                      ? 'bg-secondary text-secondary-foreground font-medium'
+                      : 'text-muted-foreground hover:bg-secondary/50',
+                  )}
+                >
+                  {rung}
+                </button>
+              ))}
+            </div>
+          </Field>
+        </div>
+      ) : (
+        <Field label="Teinte" aside={`${hue.toFixed(1)}° — aucune nuance n’est imposée`}>
+          <div className="flex max-w-md items-center gap-3">
+            <input
+              type="range"
+              min={0}
+              max={360}
+              step={0.1}
+              value={hue}
+              onChange={(event) => setHue(Number(event.target.value))}
+              className="h-1.5 flex-1 cursor-pointer appearance-none rounded-full"
+              style={{
+                background:
+                  'linear-gradient(to right, ' +
+                  Array.from({ length: 13 }, (_, i) => hueSwatch(i * 30)).join(', ') +
+                  ')',
+              }}
+              aria-label="Teinte, en degrés OKLCh"
+            />
+            <span className="w-14 shrink-0 text-right font-mono text-xs tabular-nums">
+              {hue.toFixed(1)}°
+            </span>
+          </div>
+        </Field>
       )}
 
+      {failed && <p className="text-destructive text-xs">Spec insoluble : {failed}</p>}
+
       {solved && (
-        <div className="mt-4 space-y-3">
+        <div className="space-y-3">
           <div className="flex gap-1">
             {solved.shades.map((shade) => (
               <div
@@ -557,13 +642,14 @@ function AddColour({
                 {Math.abs(solved.offLadder).toFixed(3)} L
               </span>{' '}
               hors du barreau — comme les ancres de marque. Le barreau le plus proche de sa clarté
-              est <span className="font-mono">{solved.nearest}</span>.
+              est <span className="font-mono">{solved.nearest}</span>, et « depuis une teinte »
+              évite la question.
             </p>
           )}
         </div>
       )}
 
-      <div className="mt-4 flex items-center gap-2">
+      <div className="flex items-center gap-2">
         <Button size="sm" disabled={!canCommit} onClick={commit}>
           Ajouter cette couleur
         </Button>
@@ -573,7 +659,7 @@ function AddColour({
         {/* Un bouton grisé sans raison est une impasse : on dit ce qui manque. */}
         {!canCommit && (
           <span className="text-muted-foreground text-xs">
-            {!validHex
+            {mode === 'hex' && !validHex
               ? 'la couleur n’est pas un hex à six chiffres'
               : taken
                 ? 'ce nom est déjà pris'
@@ -585,8 +671,8 @@ function AddColour({
   );
 
   function commit() {
-    if (!canCommit) return;
-    onAdd({ name, hex, anchorRung: anchor });
+    if (!canCommit || !input) return;
+    onAdd({ ...input, name });
     close();
   }
 
@@ -594,6 +680,11 @@ function AddColour({
     setName('');
     setOpen(false);
   }
+}
+
+/** Un repère de teinte pour le curseur, à clarté et chroma constantes. */
+function hueSwatch(degrees: number): string {
+  return `oklch(0.7 0.16 ${degrees})`;
 }
 
 /** Un nom de travail qu'aucune famille n'occupe : l'aperçu ne doit en écraser aucune. */
@@ -605,11 +696,28 @@ function freeName(spec: PaletteSpec): string {
   return candidate;
 }
 
-/** Un champ, avec son étiquette au-dessus. Un placeholder n'est pas une étiquette. */
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+/**
+ * Un champ, avec son étiquette au-dessus. Un placeholder n'est pas une étiquette.
+ *
+ * `aside` porte ce que le champ produit — la teinte déduite d'un hex, ce que
+ * l'épinglage garantit. Sur la ligne de l'étiquette, parce que c'est une lecture du
+ * champ, pas une consigne : elle se met à jour pendant qu'on manipule.
+ */
+function Field({
+  label,
+  aside,
+  children,
+}: {
+  label: string;
+  aside?: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="space-y-1.5">
-      <span className="text-muted-foreground block text-[11px]">{label}</span>
+      <span className="flex flex-wrap items-baseline gap-x-2">
+        <span className="text-muted-foreground text-[11px]">{label}</span>
+        {aside && <span className="text-muted-foreground/70 text-[11px]">{aside}</span>}
+      </span>
       {children}
     </div>
   );

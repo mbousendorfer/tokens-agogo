@@ -23,15 +23,37 @@ export function normalizeId(name: string): string {
   return [first?.toLowerCase() ?? '', ...rest.map((w) => w[0].toUpperCase() + w.slice(1))].join('');
 }
 
+/** La teinte d'un hex, en degrés OKLCh — le seul paramètre libre d'une famille. */
+export function hueOfHex(hex: string): number {
+  return hexToOklch(hex).H;
+}
+
 /**
- * Ajoute une famille à partir d'une couleur et du barreau qu'elle occupe.
+ * Ajoute une famille.
  *
- * La teinte vient du hex : c'est le seul paramètre libre d'une famille. L'ancre
- * épingle la couleur donnée sur son barreau, et le solveur en déduit les autres.
+ * Une famille se réduit à **une teinte**. Le reste se dérive : l'échelle de
+ * luminosité est commune, la chroma suit le facteur global, et chaque nuance tombe
+ * là où la contrainte de contraste la met.
+ *
+ * L'ancre est donc facultative, et les deux cas répondent à deux questions
+ * différentes :
+ *
+ * - **avec ancre** — « j'ai cette couleur, je la veux telle quelle sur ce barreau ».
+ *   Elle est épinglée à l'octet près, et se retrouve hors de l'échelle commune si sa
+ *   clarté ne correspond pas à celle du barreau. C'est un choix, pas un accident.
+ * - **sans ancre** — « je veux cette teinte ». Les huit nuances sont résolues, donc
+ *   toutes sur l'échelle, et aucune ne vaut exactement la couleur de départ.
+ *
+ * Exiger une ancre forçait la première réponse à une question qui était souvent la
+ * seconde, et livrait une famille dont un barreau ment sur l'échelle.
  */
 export function addFamily(
   spec: PaletteSpec,
-  { name, hex, anchorRung }: { name: string; hex: string; anchorRung: number },
+  {
+    name,
+    hue,
+    anchor,
+  }: { name: string; hue: number; anchor?: { rung: number; hex: string } | null },
 ): PaletteSpec {
   const id = normalizeId(name);
   if (!id || spec.chromatic.families.some((family) => family.id === id)) return spec;
@@ -39,11 +61,11 @@ export function addFamily(
   const family: FamilySpec = {
     id,
     label: name.trim(),
-    hue: hexToOklch(hex).H,
+    hue,
     // `null` = suivre le facteur global. Seule une famille dont l'ancre l'impose
     // devrait le surcharger, et ce facteur se dérive alors, il ne se choisit pas.
     chromaFactor: null,
-    anchors: { [anchorRung]: hex.toUpperCase() },
+    anchors: anchor ? { [anchor.rung]: anchor.hex.toUpperCase() } : {},
   };
 
   return {

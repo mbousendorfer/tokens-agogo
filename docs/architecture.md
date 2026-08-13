@@ -201,6 +201,21 @@ Mesuré sur le corpus réel : **57 nuances sur 66 retrouvées à l'octet près, 
 
 L'éditeur n'affiche sa dérivation recalculée **que si la spec a bougé** : à l'état initial elle redonnerait, chiffre pour chiffre, celle qu'énonce la section précédente.
 
+### Ajouter une couleur
+
+Une famille se réduit à **une teinte** — le reste se dérive. `addFamily` prend donc une teinte et une ancre **facultative**, et les deux cas répondent à deux questions différentes :
+
+| Entrée                 | Ce qu'on demande                | Ce qu'on obtient                                              |
+| ---------------------- | ------------------------------- | ------------------------------------------------------------- |
+| **depuis une couleur** | « je veux exactement celle-ci » | épinglée à l'octet près, hors de l'échelle si sa clarté l'est |
+| **depuis une teinte**  | « je veux cette teinte »        | huit nuances résolues, toutes sur l'échelle                   |
+
+Le formulaire n'offrait que la première, et forçait une réponse exacte à une question qui était souvent la seconde — d'où des familles dont un barreau ment sur l'échelle.
+
+Il **résout la spec candidate avec le vrai solveur** avant de valider, et montre les huit nuances, le contraste 700/200 et son verdict. Ce n'est pas un raffinement : une famille ajoutée participe à la recherche du barreau 200 comme les autres, donc **sa teinte peut déplacer l'échelle de toutes les familles**. L'avertissement gradue son ton sur la mesure — une teinte proche du vert reprend la contrainte en ne déplaçant L200 que de 8·10⁻⁵, et l'annoncer comme un vrai décalage apprendrait à ignorer l'avertissement.
+
+L'aperçu ne dépend pas du nom : le nom décide de l'identifiant du token, pas d'une seule des huit nuances. Il passe malgré tout par `normalizeId`, sous un nom de travail tant qu'on n'a rien tapé — sinon la clé cherchée dans la solution n'est pas celle qui y a été écrite.
+
 ### Trouver un token dans le sélecteur
 
 `src/lib/token-search.ts`. Le sélecteur propose 348 tokens : ce qui décide de son utilité, c'est ce qui se passe quand on tape trois lettres dedans. La recherche porte sur **quatre axes** — le nom, le token pointé, le groupe Figma, la couleur résolue — et chaque terme doit se retrouver dans l'un d'eux, dans n'importe quel ordre, ponctuation ignorée.
