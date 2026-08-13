@@ -8,6 +8,14 @@ import { changesetMarkdown, groupByFile, missingTargets, replacementTally } from
 import { declarationData } from '@/lib/declarations';
 import { EMPTY_STATE, type MigrationState } from '@/lib/decisions';
 import { allTokens } from '@/lib/tokens';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 
 async function readState(): Promise<MigrationState> {
   try {
@@ -78,24 +86,26 @@ export default async function ChangesetPage() {
           <section className="mb-8">
             <h2 className="mb-2 text-sm font-medium">Remplacements décidés</h2>
             <div className="overflow-x-auto rounded-lg border">
-              <table className="w-full text-xs">
-                <thead className="bg-muted/40 text-muted-foreground">
-                  <tr>
-                    <th className="px-3 py-2 text-left font-medium">Remplacer</th>
-                    <th className="px-3 py-2 text-left font-medium">Par</th>
-                    <th className="px-3 py-2 text-right font-medium">Occurrences</th>
-                  </tr>
-                </thead>
-                <tbody>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Remplacer</TableHead>
+                    <TableHead>Par</TableHead>
+                    <TableHead className="text-right">Occurrences</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
                   {tally.map((entry) => (
-                    <tr key={`${entry.from}-${entry.to}`} className="border-t">
-                      <td className="px-3 py-1.5 font-mono">{entry.from}</td>
-                      <td className="px-3 py-1.5 font-mono">{entry.to}</td>
-                      <td className="px-3 py-1.5 text-right tabular-nums">{entry.count}</td>
-                    </tr>
+                    <TableRow key={`${entry.from}-${entry.to}`}>
+                      <TableCell className="px-3 py-1.5 font-mono">{entry.from}</TableCell>
+                      <TableCell className="px-3 py-1.5 font-mono">{entry.to}</TableCell>
+                      <TableCell className="px-3 py-1.5 text-right tabular-nums">
+                        {entry.count}
+                      </TableCell>
+                    </TableRow>
                   ))}
-                </tbody>
-              </table>
+                </TableBody>
+              </Table>
             </div>
           </section>
 

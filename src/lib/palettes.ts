@@ -1,41 +1,67 @@
-import { apcaContrast, contrastRatio, parseHex, rampSteps, toOklch, wcagLevel } from './color';
+import { apcaContrast, contrastRatio, parseHex, toOklch, wcagLevel } from './color';
 import { usageCount } from './declarations';
-import { allTokens } from './tokens';
+import { targetTokens } from './figma-tokens';
 
-export type Rung = {
+export type Shade = {
   token: string;
-  rung: string;
+  rung: number;
   hex: string;
   lightness: number;
   chroma: number;
+  hue: number;
   usages: number;
-  /** Écart relatif du pas qui mène à ce rung, par rapport au pas moyen de la ramp. */
-  stepDeviation: number | null;
+  /** Écart de luminosité au barreau partagé, en L OKLCH. `null` si la ramp est indépendante. */
+  ladderDelta: number | null;
   onWhite: { ratio: number; level: string; lc: number };
+  onBlack: { ratio: number; level: string; lc: number };
+  /** La couleur de texte qui se lit le mieux sur cette pastille. */
+  ink: '#000000' | '#FFFFFF';
 };
 
 export type Ramp = {
   name: string;
-  rungs: Rung[];
-  /** Une ramp est irrégulière dès qu'un pas s'écarte de plus de 60 % de la moyenne. */
-  irregular: boolean;
+  label: string;
+  shades: Shade[];
+  /** Une ramp suit-elle l'échelle commune, ou a-t-elle la sienne ? */
+  scale: 'partagée' | 'indépendante';
+  /** Le plus grand écart de la ramp à l'échelle commune. */
+  maxDelta: number;
+};
+
+export type PaletteGridData = {
+  rungs: number[];
+  ramps: Ramp[];
+  /** La luminosité de référence de chaque barreau, médiane des ramps qui la suivent. */
+  ladder: Record<number, number>;
+  singles: { token: string; label: string; hex: string; usages: number; ink: string }[];
 };
 
 const HEX = /^#[0-9a-f]{6}$/i;
 const WHITE = { r: 255, g: 255, b: 255 };
+const BLACK = { r: 0, g: 0, b: 0 };
+
+/** Au-delà de ce seuil, l'œil voit la marche : on l'affiche. */
+const DELTA_THRESHOLD = 0.008;
+
+function median(values: number[]): number {
+  const sorted = [...values].sort((a, b) => a - b);
+  const middle = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
+}
 
 /**
- * Regroupe les primitives de couleur en ramps.
+ * La palette de référence, en grille : une ramp par ligne, un barreau par colonne.
  *
- * Le nom d'une ramp est tout ce qui précède le dernier segment numérique :
- * `--ref-color-electric-blue-100` -> `electric-blue`, rung `100`. Les couleurs sans
- * rung (les réseaux sociaux, `white`) sont rassemblées à part.
+ * L'intérêt d'aligner les barreaux, c'est qu'une palette bien construite pose toutes
+ * ses ramps sur la **même échelle de luminosité**. On calcule donc cette échelle
+ * commune — la médiane des L par barreau — et on affiche l'écart de chaque nuance.
+ * Une ramp qui dévie se voit alors immédiatement, colonne par colonne.
  */
-export function palettes(): { ramps: Ramp[]; singles: Rung[] } {
-  const buckets = new Map<string, { rung: string; token: string; hex: string }[]>();
-  const singles: Rung[] = [];
+export function paletteGrid(): PaletteGridData {
+  const buckets = new Map<string, { rung: number; token: string; hex: string }[]>();
+  const singles: PaletteGridData['singles'] = [];
 
-  for (const token of allTokens()) {
+  for (const token of targetTokens()) {
     if (token.tier !== 'ref' || !token.value || !HEX.test(token.value)) continue;
 
     const match = token.name.match(/^--ref-color-(.+)-(\d+)$/);
@@ -43,45 +69,113 @@ export function palettes(): { ramps: Ramp[]; singles: Rung[] } {
       const [, name, rung] = match;
       buckets.set(name, [
         ...(buckets.get(name) ?? []),
-        { rung, token: token.name, hex: token.value },
+        { rung: Number(rung), token: token.name, hex: token.value },
       ]);
     } else if (token.name.startsWith('--ref-color-')) {
-      singles.push(makeRung(token.name, '', token.value, null));
+      singles.push({
+        token: token.name,
+        label: token.figmaName.split('/').at(-1) ?? token.name,
+        hex: token.value,
+        usages: usageCount(token.name),
+        ink: inkFor(token.value),
+      });
     }
   }
 
-  const ramps: Ramp[] = [];
-  for (const [name, entries] of buckets) {
-    // Les deux palettes du design system numérotent à l'envers l'une de l'autre :
-    // on trie par luminosité décroissante pour que la lecture reste la même.
-    const sorted = entries.sort((a, b) => {
-      const la = toOklch(parseHex(a.hex)!).l;
-      const lb = toOklch(parseHex(b.hex)!).l;
-      return lb - la;
-    });
-
-    const steps = rampSteps(sorted.map((entry) => entry.hex));
-    const rungs = sorted.map((entry, index) =>
-      makeRung(entry.token, entry.rung, entry.hex, index === 0 ? null : steps[index - 1].deviation),
-    );
-
-    ramps.push({
-      name,
-      rungs,
-      irregular: steps.some((step) => Math.abs(step.deviation) > 0.6),
-    });
+  // Les couleurs à un seul barreau (data, réseaux sociaux) ne forment pas une ramp.
+  for (const [name, entries] of [...buckets]) {
+    if (entries.length < 3) {
+      buckets.delete(name);
+      for (const entry of entries) {
+        singles.push({
+          token: entry.token,
+          label: `${name}-${entry.rung}`,
+          hex: entry.hex,
+          usages: usageCount(entry.token),
+          ink: inkFor(entry.hex),
+        });
+      }
+    }
   }
 
-  return {
-    ramps: ramps.sort((a, b) => b.rungs.length - a.rungs.length || a.name.localeCompare(b.name)),
-    singles: singles.sort((a, b) => a.token.localeCompare(b.token)),
-  };
+  const rungs = [...new Set([...buckets.values()].flat().map((entry) => entry.rung))].sort(
+    (a, b) => a - b,
+  );
+
+  // L'échelle commune est celle du jeu de barreaux le plus fréquent : les ramps qui
+  // ont plus de barreaux (le gris, ici) ont la leur, et ne doivent pas la tirer.
+  const signatures = [...buckets.values()].map((entries) =>
+    entries
+      .map((e) => e.rung)
+      .sort((a, b) => a - b)
+      .join(','),
+  );
+  const modal = signatures
+    .map((signature) => ({ signature, count: signatures.filter((s) => s === signature).length }))
+    .sort((a, b) => b.count - a.count)[0]?.signature;
+
+  const ladder: Record<number, number> = {};
+  for (const rung of rungs) {
+    const values = [...buckets.entries()]
+      .filter(
+        ([, entries]) =>
+          entries
+            .map((e) => e.rung)
+            .sort((a, b) => a - b)
+            .join(',') === modal,
+      )
+      .flatMap(([, entries]) => entries.filter((e) => e.rung === rung))
+      .map((entry) => toOklch(parseHex(entry.hex)!).l);
+    if (values.length) ladder[rung] = median(values);
+  }
+
+  const ramps: Ramp[] = [...buckets.entries()].map(([name, entries]) => {
+    const signature = entries
+      .map((e) => e.rung)
+      .sort((a, b) => a - b)
+      .join(',');
+    const shared = signature === modal;
+
+    const shades = entries
+      .sort((a, b) => a.rung - b.rung)
+      .map((entry) => makeShade(entry.token, entry.rung, entry.hex, shared ? ladder : null));
+
+    return {
+      name,
+      label: name.replace(/-/g, ' '),
+      shades,
+      scale: shared ? 'partagée' : 'indépendante',
+      maxDelta: Math.max(0, ...shades.map((s) => Math.abs(s.ladderDelta ?? 0))),
+    };
+  });
+
+  // Les ramps les plus fournies d'abord ; le gris ouvre, c'est la colonne vertébrale.
+  ramps.sort(
+    (a, b) =>
+      Number(b.name === 'grey') - Number(a.name === 'grey') ||
+      b.shades.length - a.shades.length ||
+      a.name.localeCompare(b.name),
+  );
+
+  return { rungs, ramps, ladder, singles: singles.sort((a, b) => b.usages - a.usages) };
 }
 
-function makeRung(token: string, rung: string, hex: string, stepDeviation: number | null): Rung {
+function inkFor(hex: string): '#000000' | '#FFFFFF' {
+  const rgb = parseHex(hex)!;
+  return contrastRatio(rgb, WHITE) > contrastRatio(rgb, BLACK) ? '#FFFFFF' : '#000000';
+}
+
+function makeShade(
+  token: string,
+  rung: number,
+  hex: string,
+  ladder: Record<number, number> | null,
+): Shade {
   const rgb = parseHex(hex)!;
   const oklch = toOklch(rgb);
-  const ratio = contrastRatio(rgb, WHITE);
+  const white = contrastRatio(rgb, WHITE);
+  const black = contrastRatio(rgb, BLACK);
+  const reference = ladder?.[rung];
 
   return {
     token,
@@ -89,54 +183,14 @@ function makeRung(token: string, rung: string, hex: string, stepDeviation: numbe
     hex,
     lightness: oklch.l,
     chroma: oklch.c,
+    hue: oklch.h,
     usages: usageCount(token),
-    stepDeviation,
-    onWhite: {
-      ratio,
-      level: wcagLevel(ratio),
-      lc: apcaContrast(rgb, WHITE),
-    },
+    ladderDelta:
+      reference !== undefined && Math.abs(oklch.l - reference) > DELTA_THRESHOLD
+        ? oklch.l - reference
+        : null,
+    onWhite: { ratio: white, level: wcagLevel(white), lc: apcaContrast(rgb, WHITE) },
+    onBlack: { ratio: black, level: wcagLevel(black), lc: apcaContrast(rgb, BLACK) },
+    ink: inkFor(hex),
   };
-}
-
-export type ContrastPair = {
-  text: string;
-  background: string;
-  textHex: string;
-  backgroundHex: string;
-  ratio: number;
-  level: string;
-  lc: number;
-};
-
-/**
- * Les paires texte/surface du système qui échouent en WCAG AA.
- *
- * On ne teste que ce que le design system associe réellement — les tokens de texte
- * contre les tokens de surface — plutôt que le produit cartésien de la palette, qui
- * remonterait des centaines de paires que personne n'affiche jamais.
- */
-export function failingPairs(): ContrastPair[] {
-  const tokens = allTokens().filter((t) => t.value && HEX.test(t.value));
-  const texts = tokens.filter((t) => /--(sys|comp)-.*(text|color|content)/.test(t.name));
-  const surfaces = tokens.filter((t) => /--(sys|comp)-.*(surface|background|bg)/.test(t.name));
-
-  const pairs: ContrastPair[] = [];
-  for (const text of texts) {
-    for (const background of surfaces) {
-      const ratio = contrastRatio(parseHex(text.value!)!, parseHex(background.value!)!);
-      if (ratio >= 4.5) continue;
-      pairs.push({
-        text: text.name,
-        background: background.name,
-        textHex: text.value!,
-        backgroundHex: background.value!,
-        ratio,
-        level: wcagLevel(ratio),
-        lc: apcaContrast(parseHex(text.value!)!, parseHex(background.value!)!),
-      });
-    }
-  }
-
-  return pairs.sort((a, b) => a.ratio - b.ratio);
 }

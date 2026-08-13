@@ -1,26 +1,29 @@
-import { PageHeader } from '@/components/page-header';
+import { PageHeader, Stat } from '@/components/page-header';
 import { BASELINE, BASELINE_MEASURED_AT } from '@/lib/baseline';
 
 export default function OverviewPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Migration"
         title="Vue d’ensemble"
         blurb="Où en est la migration du Design System, et ce qui reste à faire."
       />
 
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {BASELINE.map((stat) => (
-          <div key={stat.label} className="rounded-lg border p-5">
-            <p className="text-muted-foreground text-sm">{stat.label}</p>
-            <p className="mt-2 text-3xl font-semibold tabular-nums">{stat.value}</p>
-            <p className="text-muted-foreground mt-1 text-xs">{stat.detail}</p>
-          </div>
+      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {BASELINE.map((stat, index) => (
+          <Stat
+            key={stat.label}
+            label={stat.label}
+            value={stat.value}
+            detail={stat.detail}
+            tone={index === 0 ? 'caution' : 'neutral'}
+          />
         ))}
       </section>
 
-      <section className="mt-10 max-w-3xl space-y-4 text-sm leading-relaxed">
-        <h2 className="text-base font-semibold">Ce que dit ce point de départ</h2>
+      <section className="mt-10 max-w-3xl space-y-4 text-[13px] leading-relaxed">
+        <h2 className="font-display text-[15px] font-semibold">Ce que dit ce point de départ</h2>
         <p>
           <strong>Le layer sémantique actuel est presque mort, et de toute façon inadapté.</strong>{' '}
           97 de ses 129 tokens ne sont jamais utilisés, et il est organisé par famille et état là où

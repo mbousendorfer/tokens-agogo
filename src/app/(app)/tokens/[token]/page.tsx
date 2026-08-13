@@ -4,6 +4,14 @@ import { Badge } from '@/components/ui/badge';
 import { PageHeader } from '@/components/page-header';
 import { declarationsFor } from '@/lib/declarations';
 import { allTokens } from '@/lib/tokens';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 
 /** Remonte la chaîne d'alias jusqu'au littéral. */
 function resolutionChain(name: string): string[] {
@@ -90,28 +98,25 @@ export default async function TokenDetailPage({ params }: PageProps<'/tokens/[to
                 </Badge>
               </h2>
               <div className="overflow-x-auto rounded-lg border">
-                <table className="w-full text-xs">
-                  <thead className="bg-muted/40 text-muted-foreground">
-                    <tr>
-                      <th className="px-3 py-2 text-left font-medium">Sélecteur</th>
-                      <th className="px-3 py-2 text-left font-medium">Propriété</th>
-                      <th className="px-3 py-2 text-left font-medium">États</th>
-                      <th className="px-3 py-2 text-left font-medium">Fichier</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Sélecteur</TableHead>
+                      <TableHead>Propriété</TableHead>
+                      <TableHead>États</TableHead>
+                      <TableHead>Fichier</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
                     {items?.map((declaration, index) => (
-                      <tr
-                        key={`${declaration.file}:${declaration.line}:${index}`}
-                        className="border-t"
-                      >
-                        <td className="max-w-md px-3 py-1.5 font-mono break-all">
+                      <TableRow key={`${declaration.file}:${declaration.line}:${index}`}>
+                        <TableCell className="max-w-md px-3 py-1.5 font-mono break-all">
                           {declaration.selector || <span className="opacity-40">—</span>}
-                        </td>
-                        <td className="px-3 py-1.5 font-mono">
+                        </TableCell>
+                        <TableCell className="px-3 py-1.5 font-mono">
                           {declaration.property ?? <span className="opacity-40">—</span>}
-                        </td>
-                        <td className="px-3 py-1.5">
+                        </TableCell>
+                        <TableCell className="px-3 py-1.5">
                           {declaration.states.length ? (
                             <span className="flex flex-wrap gap-1">
                               {declaration.states.map((state) => (
@@ -123,14 +128,14 @@ export default async function TokenDetailPage({ params }: PageProps<'/tokens/[to
                           ) : (
                             <span className="opacity-40">défaut</span>
                           )}
-                        </td>
-                        <td className="text-muted-foreground px-3 py-1.5 font-mono whitespace-nowrap">
+                        </TableCell>
+                        <TableCell className="text-muted-foreground px-3 py-1.5 font-mono whitespace-nowrap">
                           {declaration.file.split('/').slice(-2).join('/')}:{declaration.line}
-                        </td>
-                      </tr>
+                        </TableCell>
+                      </TableRow>
                     ))}
-                  </tbody>
-                </table>
+                  </TableBody>
+                </Table>
               </div>
             </div>
           ))}

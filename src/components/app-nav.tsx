@@ -9,7 +9,7 @@ export function AppNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center gap-1" aria-label="Vues">
+    <nav className="flex min-w-0 items-center gap-0.5" aria-label="Vues">
       {NAV.map((item) => {
         const active = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
         return (
@@ -19,13 +19,17 @@ export function AppNav() {
             aria-current={active ? 'page' : undefined}
             title={item.blurb}
             className={cn(
-              'rounded-md px-3 py-1.5 text-sm transition-colors',
+              'relative rounded-md px-2.5 py-1 text-[13px] whitespace-nowrap transition-colors',
               active
-                ? 'bg-secondary text-secondary-foreground font-medium'
-                : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50',
+                ? 'text-foreground font-medium'
+                : 'text-muted-foreground hover:text-foreground',
             )}
           >
             {item.label}
+            {/* Le repère de position : un trait, comme sur une graduation. */}
+            {active && (
+              <span className="bg-signal absolute inset-x-2.5 -bottom-[7px] h-[2px] rounded-full" />
+            )}
           </Link>
         );
       })}

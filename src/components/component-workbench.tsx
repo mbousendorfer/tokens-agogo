@@ -4,6 +4,15 @@ import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { PreviewFrame } from '@/components/preview-frame';
 import { TokenPicker } from '@/components/token-picker';
 import type { Candidate } from '@/lib/candidates';
@@ -162,23 +171,19 @@ export function ComponentWorkbench({
         <Badge variant={todo.length ? 'secondary' : 'default'}>
           {decidedCount} décidé{decidedCount > 1 ? 'es' : 'e'} · {todo.length} à traiter
         </Badge>
-        <div className="flex gap-1">
+        <ToggleGroup
+          type="single"
+          size="sm"
+          value={stateFilter}
+          onValueChange={(value) => value && setStateFilter(value)}
+          aria-label="Filtrer les déclarations"
+        >
           {filters.map((filter) => (
-            <button
-              key={filter}
-              type="button"
-              onClick={() => setStateFilter(filter)}
-              className={cn(
-                'rounded-md px-2.5 py-1 text-xs',
-                filter === stateFilter
-                  ? 'bg-secondary text-secondary-foreground font-medium'
-                  : 'text-muted-foreground hover:bg-secondary/50',
-              )}
-            >
+            <ToggleGroupItem key={filter} value={filter} className="px-2.5 text-xs">
               {filter}
-            </button>
+            </ToggleGroupItem>
           ))}
-        </div>
+        </ToggleGroup>
         <div className="ml-auto flex items-center gap-3">
           {saving === 'saved' && (
             <span className="text-xs text-emerald-600 dark:text-emerald-400">
@@ -198,23 +203,20 @@ export function ComponentWorkbench({
 
       {specimens.length > 0 && (
         <section>
-          <div className="mb-2 flex flex-wrap gap-1">
+          <ToggleGroup
+            type="single"
+            size="sm"
+            value={specimen}
+            onValueChange={(value) => value && setSpecimen(value)}
+            className="mb-2"
+            aria-label="Spécimen"
+          >
             {specimens.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => setSpecimen(item.id)}
-                className={cn(
-                  'rounded-md px-2.5 py-1 text-xs',
-                  item.id === specimen
-                    ? 'bg-secondary text-secondary-foreground font-medium'
-                    : 'text-muted-foreground hover:bg-secondary/50',
-                )}
-              >
+              <ToggleGroupItem key={item.id} value={item.id} className="px-2.5 text-xs">
                 {item.story}
-              </button>
+              </ToggleGroupItem>
             ))}
-          </div>
+          </ToggleGroup>
           <PreviewFrame
             key={specimen}
             specimenId={specimen}
@@ -245,26 +247,26 @@ export function ComponentWorkbench({
               </Badge>
             </h3>
             <div className="overflow-x-auto rounded-lg border">
-              <table className="w-full text-xs">
-                <thead className="bg-muted/40 text-muted-foreground">
-                  <tr>
-                    <th className="px-3 py-2 text-left font-medium">Propriété</th>
-                    <th className="px-3 py-2 text-left font-medium">Token actuel</th>
-                    <th className="w-[280px] px-3 py-2 text-left font-medium">Nouveau token</th>
-                    <th className="px-3 py-2 text-left font-medium">Sélecteur</th>
-                    <th className="px-3 py-2 text-left font-medium">Source</th>
-                  </tr>
-                </thead>
-                <tbody>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Propriété</TableHead>
+                    <TableHead>Token actuel</TableHead>
+                    <TableHead className="w-[320px]">Nouveau token</TableHead>
+                    <TableHead>Sélecteur</TableHead>
+                    <TableHead>Source</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
                   {stateRows.map((row) => {
                     const key = decisionKey(row.file, row.line, row.token);
                     const decision = decisions.get(key);
                     return (
-                      <tr key={key} className="border-t align-middle">
-                        <td className="px-3 py-1.5 font-mono">
+                      <TableRow key={key}>
+                        <TableCell className="px-3 py-1.5 font-mono">
                           {row.property ?? <span className="opacity-40">—</span>}
-                        </td>
-                        <td className="px-3 py-1.5">
+                        </TableCell>
+                        <TableCell className="px-3 py-1.5">
                           <span className="flex items-center gap-1.5">
                             <span
                               className={cn(
@@ -281,8 +283,8 @@ export function ComponentWorkbench({
                               {row.token}
                             </Link>
                           </span>
-                        </td>
-                        <td className="px-3 py-1.5">
+                        </TableCell>
+                        <TableCell className="px-3 py-1.5">
                           {row.tier === 'local' ? (
                             <span className="text-muted-foreground text-[11px]">
                               custom property locale — hors système
@@ -296,18 +298,18 @@ export function ComponentWorkbench({
                               onClear={() => decide(row, null)}
                             />
                           )}
-                        </td>
-                        <td className="max-w-[220px] px-3 py-1.5 font-mono break-all opacity-70">
+                        </TableCell>
+                        <TableCell className="max-w-[220px] px-3 py-1.5 font-mono break-all opacity-70">
                           {row.selector || '—'}
-                        </td>
-                        <td className="text-muted-foreground px-3 py-1.5 font-mono whitespace-nowrap">
+                        </TableCell>
+                        <TableCell className="text-muted-foreground px-3 py-1.5 font-mono whitespace-nowrap">
                           {row.file.split('/').at(-1)}:{row.line}
-                        </td>
-                      </tr>
+                        </TableCell>
+                      </TableRow>
                     );
                   })}
-                </tbody>
-              </table>
+                </TableBody>
+              </Table>
             </div>
           </section>
         ))}

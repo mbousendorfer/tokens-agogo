@@ -120,6 +120,9 @@ export function buildFigmaTokens({ outFile = OUT_FILE } = {}) {
       via: 'MCP use_figma',
     },
     counts: { total: resolved.length, byTier },
+    // `raw` et `accessible` sont les formes non résolues : elles ont servi au calcul,
+    // elles n'ont rien à faire dans le payload consommé par l'app.
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     tokens: resolved.map(({ raw, accessible, ...token }) => token),
   };
 

@@ -2,6 +2,14 @@ import Link from 'next/link';
 import { PageHeader } from '@/components/page-header';
 import { alignableComponents } from '@/lib/alignment';
 import { cn } from '@/lib/utils';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 
 const KIND_LABELS: Record<string, string> = {
   angular: 'Angular',
@@ -32,46 +40,46 @@ export default function ComponentsPage() {
       </section>
 
       <div className="overflow-x-auto rounded-lg border">
-        <table className="w-full text-sm">
-          <thead className="bg-muted/40 text-muted-foreground text-xs">
-            <tr>
-              <th className="px-3 py-2 text-left font-medium">Composant</th>
-              <th className="px-3 py-2 text-left font-medium">Source</th>
-              <th className="px-3 py-2 text-right font-medium">À décider</th>
-              <th className="px-3 py-2 text-right font-medium">Primitives</th>
-              <th className="px-3 py-2 text-right font-medium">Sémantiques</th>
-              <th className="w-40 px-3 py-2 text-left font-medium">Déjà sémantique</th>
-            </tr>
-          </thead>
-          <tbody>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Composant</TableHead>
+              <TableHead>Source</TableHead>
+              <TableHead className="text-right">À décider</TableHead>
+              <TableHead className="text-right">Primitives</TableHead>
+              <TableHead className="text-right">Sémantiques</TableHead>
+              <TableHead className="w-40">Déjà sémantique</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
             {components.map((component) => (
-              <tr key={component.id} className="hover:bg-muted/30 border-t">
-                <td className="px-3 py-1.5">
+              <TableRow key={component.id}>
+                <TableCell className="px-3 py-1.5">
                   <Link
                     href={`/components/${encodeURIComponent(component.id)}`}
                     className="font-medium hover:underline"
                   >
                     {component.name}
                   </Link>
-                </td>
-                <td className="text-muted-foreground px-3 py-1.5 text-xs">
+                </TableCell>
+                <TableCell className="text-muted-foreground px-3 py-1.5 text-xs">
                   {KIND_LABELS[component.kind] ?? component.kind}
-                </td>
-                <td className="px-3 py-1.5 text-right text-xs font-medium tabular-nums">
+                </TableCell>
+                <TableCell className="px-3 py-1.5 text-right text-xs font-medium tabular-nums">
                   {component.toDecide || '—'}
-                </td>
-                <td
+                </TableCell>
+                <TableCell
                   className={cn(
                     'px-3 py-1.5 text-right text-xs tabular-nums',
                     component.debt > 0 && 'text-destructive',
                   )}
                 >
                   {component.byTier.ref || '—'}
-                </td>
-                <td className="px-3 py-1.5 text-right text-xs tabular-nums">
+                </TableCell>
+                <TableCell className="px-3 py-1.5 text-right text-xs tabular-nums">
                   {component.byTier.sys || '—'}
-                </td>
-                <td className="px-3 py-1.5">
+                </TableCell>
+                <TableCell className="px-3 py-1.5">
                   <span className="flex items-center gap-2">
                     <span className="bg-muted h-1.5 flex-1 overflow-hidden rounded-full">
                       <span
@@ -83,11 +91,11 @@ export default function ComponentsPage() {
                       {Math.round(component.progress * 100)}%
                     </span>
                   </span>
-                </td>
-              </tr>
+                </TableCell>
+              </TableRow>
             ))}
-          </tbody>
-        </table>
+          </TableBody>
+        </Table>
       </div>
 
       <p className="text-muted-foreground mt-4 text-xs">
