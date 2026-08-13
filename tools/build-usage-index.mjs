@@ -60,10 +60,13 @@ export function buildUsageIndex({ dsRoot, dsRef, outFile = OUT_FILE }) {
 
   const declarations = [];
   const scannedFiles = [];
+  // Les custom properties déclarées dans les feuilles de style. Sans elles, un token
+  // défini localement passerait pour référencé nulle part.
+  const cssDefinitions = [];
 
   for (const file of files) {
     const source = readFileAtRef(dsRoot, dsRef, file);
-    if (!source.includes('var(--')) continue;
+    if (!source.includes('--')) continue;
 
     const found = file.endsWith('.scss')
       ? scanScss(source, file)
@@ -71,6 +74,7 @@ export function buildUsageIndex({ dsRoot, dsRef, outFile = OUT_FILE }) {
         ? scanTypescript(source, file)
         : [];
 
+    for (const definition of found.definitions ?? []) cssDefinitions.push(definition);
     if (!found.length) continue;
     scannedFiles.push(file);
 
@@ -80,10 +84,16 @@ export function buildUsageIndex({ dsRoot, dsRef, outFile = OUT_FILE }) {
     }
   }
 
-  return summarize(declarations, scannedFiles, { ref: dsRef, sha: refSha(dsRoot, dsRef) }, outFile);
+  return summarize(
+    declarations,
+    scannedFiles,
+    cssDefinitions,
+    { ref: dsRef, sha: refSha(dsRoot, dsRef) },
+    outFile,
+  );
 }
 
-function summarize(declarations, scannedFiles, source, outFile) {
+function summarize(declarations, scannedFiles, cssDefinitions, source, outFile) {
   const usages = declarations.filter((d) => !d.isDefinition);
 
   const counts = { total: declarations.length, byTier: {}, uniqueByTier: {} };
@@ -136,6 +146,7 @@ function summarize(declarations, scannedFiles, source, outFile) {
     counts,
     entryPoints,
     byToken,
+    cssDefinitions,
     declarations,
   };
 

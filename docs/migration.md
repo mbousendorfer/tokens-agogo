@@ -35,6 +35,14 @@ Trois choses à retenir de ces chiffres :
 
 ## Anomalies repérées en chemin
 
-- **4 tokens référencés mais jamais définis** : `--comp-snackbar-info-background-color`, `--comp-snackbar-warning-background-color`, `--comp-snackbar-info-icon-color`, `--comp-snackbar-warning-icon-color`. Utilisés dans `libs/ui-theme/assets/style/css-ui/_snackbar.scss`, absents de `components/snackbar.json` qui ne définit que `success` et `error`. Ces règles tombent silencieusement dans le vide. À corriger au passage.
+- **21 tokens référencés mais définis nulle part** — ni par Style Dictionary, ni par une feuille de style. Ces règles tombent silencieusement dans le vide. La liste complète, avec fichier et ligne, est dans la vue Tokens de l'app. Les plus parlants :
+  - `--ref-line-height-sm` (8 usages) et sept autres primitives inexistantes : `--ref-border-radius-lg`, `--ref-border-radius-xs`, `--ref-font-weight-standard`, `--ref-line-height-xs`, `--ref-color-electric-blue-85`, `--ref-color-electric-blue-30`, `--ref-color-grey-15`, `--ref-color-grey-90` ;
+  - les cinq `--comp-input-text-counter-*` d'`input.component.scss` ;
+  - les quatre `--comp-snackbar-{info,warning}-*`, dont `components/snackbar.json` ne définit que les variantes `success` et `error` ;
+  - `--sys-color-accent-default` et `--sys-color-border-color-default` dans `_helpers.scss` ;
+  - **`--ref-color-twitter-100--ref-color-tiktok-default-100`** (`social-button.component.scss:537`) — deux noms de tokens concaténés par erreur.
+
+  Attention en les traitant : le design system déclare aussi des custom properties locales avec un préfixe `--comp-` (`--comp-avatar-size: 16px` dans `status-card`). Elles sont légitimes et ne font pas partie de cette liste.
+
 - **`nav-selector`** est le composant le plus en retard : il n'est jamais entré dans le système à trois niveaux — aucun fichier de tokens `comp`, et une consommation massive de primitives brutes.
 - **`_colors.scss`** (331 lignes de maps Sass) est une quatrième palette, antérieure au pipeline de tokens, consommée par le thème Angular Material. Hors périmètre v1, mais à ne pas oublier.

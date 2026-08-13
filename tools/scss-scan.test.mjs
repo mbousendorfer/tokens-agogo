@@ -121,7 +121,7 @@ describe('scanScss — cas particuliers', () => {
   });
 
   it('ignore le contenu des commentaires', () => {
-    expect(scanScss('.a { /* color: var(--sys-x); */ padding: 0; }')).toEqual([]);
+    expect(scanScss('.a { /* color: var(--sys-x); */ padding: 0; }')).toHaveLength(0);
   });
 
   it('gère une déclaration écrite sur plusieurs lignes', () => {
@@ -205,5 +205,27 @@ describe('findVarCalls — fallback imbriqué', () => {
     const [call] = findVarCalls('var(--comp-x, #FFFFFF)');
     expect(call.fallbackIsToken).toBe(false);
     expect(call.fallback).toBe('#FFFFFF');
+  });
+});
+
+describe('scanScss — définitions de custom properties', () => {
+  it('relève une définition même sans var() dans sa valeur', () => {
+    const found = scanScss('.ap-status-card { --comp-avatar-size: 16px; }', 'status-card.scss');
+    expect(found).toHaveLength(0);
+    expect(found.definitions).toEqual([
+      {
+        token: '--comp-avatar-size',
+        value: '16px',
+        selector: '.ap-status-card',
+        file: 'status-card.scss',
+        line: 1,
+      },
+    ]);
+  });
+
+  it('relève aussi celles dont la valeur est un token', () => {
+    const found = scanScss('.a { --_track: var(--ref-color-orange-40); }');
+    expect(found.definitions.map((d) => d.token)).toEqual(['--_track']);
+    expect(found[0].token).toBe('--ref-color-orange-40');
   });
 });

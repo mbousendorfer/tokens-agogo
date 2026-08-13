@@ -4,6 +4,19 @@ Une entrée par étape livrée. Format inspiré de [Keep a Changelog](https://ke
 
 ## [Non publié]
 
+### Étape 3 — Index de déclarations
+
+- `pnpm ds:usage` relève chaque déclaration du design system avec son **sélecteur
+  résolu, son état, sa propriété CSS** et son token — pas seulement un compteur de
+  `var()`. 3 200 déclarations sur 119 fichiers.
+- Couverture vérifiée fichier par fichier contre un grep brut : **zéro écart**.
+- Vue Tokens : filtre par tier, orphelins, chaîne de résolution, et le détail des
+  call sites réels par entry point sur `/tokens/<nom>`.
+- Les deux dettes sont affichées séparément — 232 tokens de composant mal aliasés
+  (correction en JSON) contre 1 793 usages de primitives brutes (correction en SCSS).
+- **21 tokens référencés mais définis nulle part** remontés, avec fichier et ligne :
+  des règles qui tombent silencieusement dans le vide dans le design system livré.
+
 ### Étape 2 — Preview et spécimens
 
 - Route `/preview` dans son propre route group, avec son `<html>` : le CSS du design

@@ -191,6 +191,7 @@ export function scanScss(source, file = '') {
   const lines = maskInterpolation(stripComments(source)).split('\n');
   const stack = [];
   const found = [];
+  const definitions = [];
 
   let buffer = '';
   let bufferLine = 0;
@@ -250,7 +251,7 @@ export function scanScss(source, file = '') {
     const candidate = unmask(buffer + text).trim();
     buffer = '';
     bufferLine = 0;
-    if (!candidate || !candidate.includes('var(')) return;
+    if (!candidate) return;
 
     // Une valeur de token peut aussi apparaître hors d'une déclaration classique —
     // dans un `@include m.fixed-size(var(--x))`, par exemple. On l'enregistre sans
@@ -259,6 +260,21 @@ export function scanScss(source, file = '') {
     const property = match ? match[1] : null;
     const value = match ? match[2] : candidate;
     const context = stack.at(-1);
+
+    // Une custom property déclarée dans une feuille de style est une définition réelle,
+    // même sans `var()` dans sa valeur (`--comp-avatar-size: 16px`). Sans la relever,
+    // on la croirait référencée nulle part et on signalerait un bug qui n'existe pas.
+    if (property?.startsWith('--')) {
+      definitions.push({
+        token: property,
+        value,
+        selector: context?.selector ?? '',
+        file,
+        line: lineNumber,
+      });
+    }
+
+    if (!candidate.includes('var(')) return;
     const selector = context?.selector ?? '';
 
     for (const call of findVarCalls(value)) {
@@ -282,6 +298,9 @@ export function scanScss(source, file = '') {
     }
   }
 
+  // `found.definitions` plutôt qu'un tuple : les appelants qui n'en ont pas besoin
+  // continuent d'itérer sur le tableau sans rien changer.
+  found.definitions = definitions;
   return found;
 }
 
