@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated DS assets (rebuilt by `pnpm sync:ds`)
+/public/ds/
+
+# local env
+.env.local
