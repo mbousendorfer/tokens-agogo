@@ -149,7 +149,10 @@ function SwatchSelect({
             aria-expanded={open}
             className="hover:bg-secondary/50 flex w-full items-center gap-2 rounded-md border px-2 py-1.5 text-left"
           >
-            <span className="swatch size-5" style={{ backgroundColor: value.hex }} />
+            <span
+              className="swatch size-5"
+              style={{ '--swatch': value.hex } as React.CSSProperties}
+            />
             <span className="min-w-0 flex-1 truncate font-mono text-xs">{value.label}</span>
             <span className="text-muted-foreground font-mono text-[11px]">{value.hex}</span>
           </button>
@@ -171,7 +174,10 @@ function SwatchSelect({
                       }}
                       className={cn('gap-2 font-mono text-xs')}
                     >
-                      <span className="swatch size-3.5" style={{ backgroundColor: swatch.hex }} />
+                      <span
+                        className="swatch size-3.5"
+                        style={{ '--swatch': swatch.hex } as React.CSSProperties}
+                      />
                       <span className="flex-1 truncate">{swatch.label}</span>
                       <span className="text-muted-foreground">{swatch.hex}</span>
                     </CommandItem>

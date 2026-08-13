@@ -380,7 +380,7 @@
       ],
       "group": "button",
       "leaf": "radius",
-      "unit": "",
+      "unit": "px",
       "display": "--sys-radius-control",
       "aliasOf": "--sys-radius-control",
       "aliasOfFigma": "radius/control",
@@ -992,7 +992,7 @@
       ],
       "group": "card",
       "leaf": "padding",
-      "unit": "",
+      "unit": "px",
       "display": "--ref-spacings-spacing-sm",
       "aliasOf": "--ref-spacings-spacing-sm",
       "aliasOfFigma": "Spacings/spacing-sm",
@@ -1009,7 +1009,7 @@
       ],
       "group": "card",
       "leaf": "radius",
-      "unit": "",
+      "unit": "px",
       "display": "--sys-radius-container",
       "aliasOf": "--sys-radius-container",
       "aliasOfFigma": "radius/container",
@@ -1026,7 +1026,7 @@
       ],
       "group": "card",
       "leaf": "spacing",
-      "unit": "",
+      "unit": "px",
       "display": "--ref-spacings-spacing-sm",
       "aliasOf": "--ref-spacings-spacing-sm",
       "aliasOfFigma": "Spacings/spacing-sm",
@@ -1179,7 +1179,7 @@
       ],
       "group": "input-field",
       "leaf": "horizontal-padding",
-      "unit": "",
+      "unit": "px",
       "display": "--ref-spacings-spacing-xs",
       "aliasOf": "--ref-spacings-spacing-xs",
       "aliasOfFigma": "Spacings/spacing-xs",
@@ -1196,7 +1196,7 @@
       ],
       "group": "input-field",
       "leaf": "radius",
-      "unit": "",
+      "unit": "px",
       "display": "--sys-radius-control",
       "aliasOf": "--sys-radius-control",
       "aliasOfFigma": "radius/control",
@@ -1264,7 +1264,7 @@
       ],
       "group": "settings-content",
       "leaf": "internal-margin",
-      "unit": "",
+      "unit": "px",
       "display": "--ref-spacings-spacing-md",
       "aliasOf": "--ref-spacings-spacing-md",
       "aliasOfFigma": "Spacings/spacing-md",
@@ -1315,7 +1315,7 @@
       ],
       "group": "settings-content",
       "leaf": "vertical-spacing",
-      "unit": "",
+      "unit": "px",
       "display": "--ref-spacings-spacing-sm",
       "aliasOf": "--ref-spacings-spacing-sm",
       "aliasOfFigma": "Spacings/spacing-sm",
@@ -1383,7 +1383,7 @@
       ],
       "group": "topbar",
       "leaf": "horizontal-padding",
-      "unit": "",
+      "unit": "px",
       "display": "--ref-spacings-spacing-sm",
       "aliasOf": "--ref-spacings-spacing-sm",
       "aliasOfFigma": "Spacings/spacing-sm",
@@ -1396,16 +1396,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "CORNER_RADIUS"
       ],
       "group": "Border Radius",
       "leaf": "border-radius-lg",
-      "unit": "",
-      "display": "8",
+      "unit": "px",
+      "display": "8px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "8",
-      "accessibleValue": "CORNER_RADIUS"
+      "accessibleValue": null
     },
     {
       "figmaName": "Border Radius/border-radius-md",
@@ -1413,16 +1413,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "CORNER_RADIUS"
       ],
       "group": "Border Radius",
       "leaf": "border-radius-md",
-      "unit": "",
-      "display": "6",
+      "unit": "px",
+      "display": "6px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "6",
-      "accessibleValue": "CORNER_RADIUS"
+      "accessibleValue": null
     },
     {
       "figmaName": "Border Radius/border-radius-sm",
@@ -1430,16 +1430,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "CORNER_RADIUS"
       ],
       "group": "Border Radius",
       "leaf": "border-radius-sm",
-      "unit": "",
-      "display": "4",
+      "unit": "px",
+      "display": "4px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "4",
-      "accessibleValue": "CORNER_RADIUS"
+      "accessibleValue": null
     },
     {
       "figmaName": "Colors/Data/data-cherry-100",
@@ -3062,7 +3062,7 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "FONT_FAMILY"
       ],
       "group": "Fonts",
       "leaf": "font-family",
@@ -3071,7 +3071,7 @@
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "Averta Std",
-      "accessibleValue": "FONT_FAMILY"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Line-Height/font-line-height-lg",
@@ -3079,16 +3079,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "LINE_HEIGHT"
       ],
       "group": "Fonts / Line-Height",
       "leaf": "font-line-height-lg",
-      "unit": "",
-      "display": "24",
+      "unit": "px",
+      "display": "24px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "24",
-      "accessibleValue": "LINE_HEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Line-Height/font-line-height-md",
@@ -3096,16 +3096,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "LINE_HEIGHT"
       ],
       "group": "Fonts / Line-Height",
       "leaf": "font-line-height-md",
-      "unit": "",
-      "display": "20",
+      "unit": "px",
+      "display": "20px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "20",
-      "accessibleValue": "LINE_HEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Line-Height/font-line-height-sm",
@@ -3113,16 +3113,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "LINE_HEIGHT"
       ],
       "group": "Fonts / Line-Height",
       "leaf": "font-line-height-sm",
-      "unit": "",
-      "display": "18",
+      "unit": "px",
+      "display": "18px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "18",
-      "accessibleValue": "LINE_HEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Line-Height/font-line-height-xl",
@@ -3130,16 +3130,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "LINE_HEIGHT"
       ],
       "group": "Fonts / Line-Height",
       "leaf": "font-line-height-xl",
-      "unit": "",
-      "display": "32",
+      "unit": "px",
+      "display": "32px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "32",
-      "accessibleValue": "LINE_HEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Line-Height/font-line-height-xs",
@@ -3147,16 +3147,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "LINE_HEIGHT"
       ],
       "group": "Fonts / Line-Height",
       "leaf": "font-line-height-xs",
-      "unit": "",
-      "display": "16",
+      "unit": "px",
+      "display": "16px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "16",
-      "accessibleValue": "LINE_HEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Line-Height/font-line-height-xxl",
@@ -3164,16 +3164,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "LINE_HEIGHT"
       ],
       "group": "Fonts / Line-Height",
       "leaf": "font-line-height-xxl",
-      "unit": "",
-      "display": "36",
+      "unit": "px",
+      "display": "36px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "36",
-      "accessibleValue": "LINE_HEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Size/font-size-lg",
@@ -3181,16 +3181,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "FONT_SIZE"
       ],
       "group": "Fonts / Size",
       "leaf": "font-size-lg",
-      "unit": "",
-      "display": "18",
+      "unit": "px",
+      "display": "18px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "18",
-      "accessibleValue": "FONT_SIZE"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Size/font-size-md",
@@ -3198,16 +3198,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "FONT_SIZE"
       ],
       "group": "Fonts / Size",
       "leaf": "font-size-md",
-      "unit": "",
-      "display": "16",
+      "unit": "px",
+      "display": "16px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "16",
-      "accessibleValue": "FONT_SIZE"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Size/font-size-sm",
@@ -3215,16 +3215,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "FONT_SIZE"
       ],
       "group": "Fonts / Size",
       "leaf": "font-size-sm",
-      "unit": "",
-      "display": "14",
+      "unit": "px",
+      "display": "14px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "14",
-      "accessibleValue": "FONT_SIZE"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Size/font-size-xl",
@@ -3232,16 +3232,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "FONT_SIZE"
       ],
       "group": "Fonts / Size",
       "leaf": "font-size-xl",
-      "unit": "",
-      "display": "20",
+      "unit": "px",
+      "display": "20px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "20",
-      "accessibleValue": "FONT_SIZE"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Size/font-size-xs",
@@ -3249,16 +3249,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "FONT_SIZE"
       ],
       "group": "Fonts / Size",
       "leaf": "font-size-xs",
-      "unit": "",
-      "display": "12",
+      "unit": "px",
+      "display": "12px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "12",
-      "accessibleValue": "FONT_SIZE"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Size/font-size-xxl",
@@ -3266,16 +3266,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "FONT_SIZE"
       ],
       "group": "Fonts / Size",
       "leaf": "font-size-xxl",
-      "unit": "",
-      "display": "24",
+      "unit": "px",
+      "display": "24px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "24",
-      "accessibleValue": "FONT_SIZE"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Size/font-size-xxxl",
@@ -3283,16 +3283,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "FONT_SIZE"
       ],
       "group": "Fonts / Size",
       "leaf": "font-size-xxxl",
-      "unit": "",
-      "display": "28",
+      "unit": "px",
+      "display": "28px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "28",
-      "accessibleValue": "FONT_SIZE"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Weight/font-weight-black",
@@ -3300,7 +3300,7 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "FONT_WEIGHT"
       ],
       "group": "Fonts / Weight",
       "leaf": "font-weight-black",
@@ -3309,7 +3309,7 @@
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "900",
-      "accessibleValue": "FONT_WEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Weight/font-weight-bold",
@@ -3317,7 +3317,7 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "FONT_WEIGHT"
       ],
       "group": "Fonts / Weight",
       "leaf": "font-weight-bold",
@@ -3326,7 +3326,7 @@
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "700",
-      "accessibleValue": "FONT_WEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Weight/font-weight-extra-bold",
@@ -3334,7 +3334,7 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "FONT_WEIGHT"
       ],
       "group": "Fonts / Weight",
       "leaf": "font-weight-extra-bold",
@@ -3343,7 +3343,7 @@
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "800",
-      "accessibleValue": "FONT_WEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Fonts/Weight/font-weight-regular",
@@ -3351,7 +3351,7 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "FONT_WEIGHT"
       ],
       "group": "Fonts / Weight",
       "leaf": "font-weight-regular",
@@ -3360,7 +3360,7 @@
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "400",
-      "accessibleValue": "FONT_WEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Icons/icon-size-md",
@@ -3368,16 +3368,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "WIDTH_HEIGHT"
       ],
       "group": "Icons",
       "leaf": "icon-size-md",
-      "unit": "",
-      "display": "24",
+      "unit": "px",
+      "display": "24px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "24",
-      "accessibleValue": "WIDTH_HEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Icons/icon-size-sm",
@@ -3385,16 +3385,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "WIDTH_HEIGHT"
       ],
       "group": "Icons",
       "leaf": "icon-size-sm",
-      "unit": "",
-      "display": "16",
+      "unit": "px",
+      "display": "16px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "16",
-      "accessibleValue": "WIDTH_HEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Icons/icon-size-xl",
@@ -3402,16 +3402,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "WIDTH_HEIGHT"
       ],
       "group": "Icons",
       "leaf": "icon-size-xl",
-      "unit": "",
-      "display": "40",
+      "unit": "px",
+      "display": "40px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "40",
-      "accessibleValue": "WIDTH_HEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Icons/icon-size-xs",
@@ -3419,16 +3419,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "WIDTH_HEIGHT"
       ],
       "group": "Icons",
       "leaf": "icon-size-xs",
-      "unit": "",
-      "display": "12",
+      "unit": "px",
+      "display": "12px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "12",
-      "accessibleValue": "WIDTH_HEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Icons/icon-size-xxl",
@@ -3436,16 +3436,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "WIDTH_HEIGHT"
       ],
       "group": "Icons",
       "leaf": "icon-size-xxl",
-      "unit": "",
-      "display": "48",
+      "unit": "px",
+      "display": "48px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "48",
-      "accessibleValue": "WIDTH_HEIGHT"
+      "accessibleValue": null
     },
     {
       "figmaName": "Spacings/spacing-lg",
@@ -3453,16 +3453,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "GAP"
       ],
       "group": "Spacings",
       "leaf": "spacing-lg",
-      "unit": "",
-      "display": "32",
+      "unit": "px",
+      "display": "32px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "32",
-      "accessibleValue": "GAP"
+      "accessibleValue": null
     },
     {
       "figmaName": "Spacings/spacing-md",
@@ -3470,16 +3470,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "GAP"
       ],
       "group": "Spacings",
       "leaf": "spacing-md",
-      "unit": "",
-      "display": "24",
+      "unit": "px",
+      "display": "24px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "24",
-      "accessibleValue": "GAP"
+      "accessibleValue": null
     },
     {
       "figmaName": "Spacings/spacing-sm",
@@ -3487,16 +3487,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "GAP"
       ],
       "group": "Spacings",
       "leaf": "spacing-sm",
-      "unit": "",
-      "display": "16",
+      "unit": "px",
+      "display": "16px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "16",
-      "accessibleValue": "GAP"
+      "accessibleValue": null
     },
     {
       "figmaName": "Spacings/spacing-xl",
@@ -3504,16 +3504,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "GAP"
       ],
       "group": "Spacings",
       "leaf": "spacing-xl",
-      "unit": "",
-      "display": "40",
+      "unit": "px",
+      "display": "40px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "40",
-      "accessibleValue": "GAP"
+      "accessibleValue": null
     },
     {
       "figmaName": "Spacings/spacing-xs",
@@ -3521,16 +3521,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "GAP"
       ],
       "group": "Spacings",
       "leaf": "spacing-xs",
-      "unit": "",
-      "display": "12",
+      "unit": "px",
+      "display": "12px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "12",
-      "accessibleValue": "GAP"
+      "accessibleValue": null
     },
     {
       "figmaName": "Spacings/spacing-xxl",
@@ -3538,16 +3538,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "GAP"
       ],
       "group": "Spacings",
       "leaf": "spacing-xxl",
-      "unit": "",
-      "display": "48",
+      "unit": "px",
+      "display": "48px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "48",
-      "accessibleValue": "GAP"
+      "accessibleValue": null
     },
     {
       "figmaName": "Spacings/spacing-xxs",
@@ -3555,16 +3555,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "GAP"
       ],
       "group": "Spacings",
       "leaf": "spacing-xxs",
-      "unit": "",
-      "display": "8",
+      "unit": "px",
+      "display": "8px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "8",
-      "accessibleValue": "GAP"
+      "accessibleValue": null
     },
     {
       "figmaName": "Spacings/spacing-xxxl",
@@ -3572,16 +3572,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "GAP"
       ],
       "group": "Spacings",
       "leaf": "spacing-xxxl",
-      "unit": "",
-      "display": "60",
+      "unit": "px",
+      "display": "60px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "60",
-      "accessibleValue": "GAP"
+      "accessibleValue": null
     },
     {
       "figmaName": "Spacings/spacing-xxxs",
@@ -3589,16 +3589,16 @@
       "tier": "ref",
       "collection": "Reference tokens",
       "scopes": [
-        "ALL_SCOPES"
+        "GAP"
       ],
       "group": "Spacings",
       "leaf": "spacing-xxxs",
-      "unit": "",
-      "display": "4",
+      "unit": "px",
+      "display": "4px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "4",
-      "accessibleValue": "GAP"
+      "accessibleValue": null
     },
     {
       "figmaName": "color/border/default",
@@ -5837,7 +5837,7 @@
       ],
       "group": "radius",
       "leaf": "chip",
-      "unit": "",
+      "unit": "px",
       "display": "--ref-border-radius-sm",
       "aliasOf": "--ref-border-radius-sm",
       "aliasOfFigma": "Border Radius/border-radius-sm",
@@ -5854,7 +5854,7 @@
       ],
       "group": "radius",
       "leaf": "container",
-      "unit": "",
+      "unit": "px",
       "display": "--ref-border-radius-lg",
       "aliasOf": "--ref-border-radius-lg",
       "aliasOfFigma": "Border Radius/border-radius-lg",
@@ -5871,7 +5871,7 @@
       ],
       "group": "radius",
       "leaf": "control",
-      "unit": "",
+      "unit": "px",
       "display": "--ref-border-radius-md",
       "aliasOf": "--ref-border-radius-md",
       "aliasOfFigma": "Border Radius/border-radius-md",
@@ -5888,7 +5888,7 @@
       ],
       "group": "radius",
       "leaf": "inner",
-      "unit": "",
+      "unit": "px",
       "display": "--ref-border-radius-md",
       "aliasOf": "--ref-border-radius-md",
       "aliasOfFigma": "Border Radius/border-radius-md",
@@ -5905,7 +5905,7 @@
       ],
       "group": "spacing / inline",
       "leaf": "icon-default",
-      "unit": "",
+      "unit": "px",
       "display": "--ref-spacings-spacing-xxs",
       "aliasOf": "--ref-spacings-spacing-xxs",
       "aliasOfFigma": "Spacings/spacing-xxs",
@@ -5922,7 +5922,7 @@
       ],
       "group": "spacing / inline",
       "leaf": "icon-small",
-      "unit": "",
+      "unit": "px",
       "display": "--ref-spacings-spacing-xxxs",
       "aliasOf": "--ref-spacings-spacing-xxxs",
       "aliasOfFigma": "Spacings/spacing-xxxs",

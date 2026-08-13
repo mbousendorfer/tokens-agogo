@@ -19,9 +19,12 @@ const OUT_FILE = 'data/figma-tokens.json';
 
 /** Chaque collection Figma devient un tier de tokens CSS. */
 const COLLECTIONS = [
-  { file: 'reference-tokens.tsv', collection: 'Reference tokens', tier: 'ref' },
-  { file: 'system-tokens.tsv', collection: 'System tokens', tier: 'sys' },
-  { file: 'component-tokens.tsv', collection: 'Component tokens', tier: 'comp' },
+  // La collection Reference n'a qu'un mode : sa 3e colonne est le scope, pas une
+  // seconde valeur. La lire comme les autres ferait passer `CORNER_RADIUS` pour une
+  // variante « Accessible ».
+  { file: 'reference-tokens.tsv', collection: 'Reference tokens', tier: 'ref', modes: 1 },
+  { file: 'system-tokens.tsv', collection: 'System tokens', tier: 'sys', modes: 2 },
+  { file: 'component-tokens.tsv', collection: 'Component tokens', tier: 'comp', modes: 2 },
 ];
 
 /**
@@ -61,12 +64,15 @@ export function figmaNameToCss(name, tier) {
   return `--${tier}-${deduped.join('-')}`;
 }
 
-function parseTsv(path, tier, collection) {
+function parseTsv(path, tier, collection, modes) {
   return readFileSync(path, 'utf8')
     .split('\n')
     .filter((line) => line.trim())
     .map((line) => {
-      const [name, value = '', accessible = '', scopes = ''] = line.split('\t');
+      const columns = line.split('\t');
+      const [name, value = ''] = columns;
+      const accessible = modes === 2 ? (columns[2] ?? '') : '';
+      const scopes = modes === 2 ? (columns[3] ?? '') : (columns[2] ?? '');
       return {
         figmaName: name,
         name: figmaNameToCss(name, tier),
@@ -177,9 +183,9 @@ function resolve(tokens) {
 }
 
 export function buildFigmaTokens({ outFile = OUT_FILE } = {}) {
-  const tokens = COLLECTIONS.flatMap(({ file, tier, collection }) => {
+  const tokens = COLLECTIONS.flatMap(({ file, tier, collection, modes }) => {
     const path = join(EXPORT_DIR, file);
-    return existsSync(path) ? parseTsv(path, tier, collection) : [];
+    return existsSync(path) ? parseTsv(path, tier, collection, modes) : [];
   });
 
   const resolved = resolve(tokens).sort((a, b) => a.name.localeCompare(b.name));

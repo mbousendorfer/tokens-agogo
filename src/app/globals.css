@@ -232,7 +232,9 @@
   .swatch {
     @apply inline-block shrink-0 rounded-[3px];
     box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 18%, transparent);
+    /* La couleur passe devant le damier : `background-color` la mettrait derrière. */
     background-image:
+      linear-gradient(var(--swatch, transparent), var(--swatch, transparent)),
       linear-gradient(45deg, var(--hairline) 25%, transparent 25%),
       linear-gradient(-45deg, var(--hairline) 25%, transparent 25%),
       linear-gradient(45deg, transparent 75%, var(--hairline) 75%),

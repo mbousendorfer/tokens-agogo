@@ -78,7 +78,10 @@ export function PaletteRules({ data }: { data: PaletteGridData }) {
           <ul className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs">
             {offLadder.map(({ ramp, shade }) => (
               <li key={shade.token} className="flex items-center gap-1.5">
-                <span className="swatch size-3" style={{ backgroundColor: shade.hex }} />
+                <span
+                  className="swatch size-3"
+                  style={{ '--swatch': shade.hex } as React.CSSProperties}
+                />
                 {ramp.name}-{shade.rung}
                 <span className="text-caution">
                   {shade.ladderDelta! > 0 ? '+' : '−'}

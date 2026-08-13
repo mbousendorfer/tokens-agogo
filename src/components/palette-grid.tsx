@@ -179,7 +179,10 @@ function ShadeCell({ shade, scope }: { shade: Shade; scope: 'palette' | 'ladder'
 
       <PopoverContent className="w-72" align="center">
         <div className="flex items-center gap-2">
-          <span className="swatch size-8" style={{ backgroundColor: shade.hex }} />
+          <span
+            className="swatch size-8"
+            style={{ '--swatch': shade.hex } as React.CSSProperties}
+          />
           <div className="min-w-0">
             <p className="truncate font-mono text-xs">{shade.token}</p>
             <p className="text-muted-foreground font-mono text-[11px]">{shade.hex}</p>

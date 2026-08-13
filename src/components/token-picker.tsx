@@ -20,7 +20,7 @@ const HEX = /^#[0-9a-f]{3,8}$/i;
 
 function Swatch({ value }: { value: string | null }) {
   if (!value || !HEX.test(value)) return null;
-  return <span className="swatch size-3.5" style={{ backgroundColor: value }} />;
+  return <span className="swatch size-3.5" style={{ '--swatch': value } as React.CSSProperties} />;
 }
 
 /**

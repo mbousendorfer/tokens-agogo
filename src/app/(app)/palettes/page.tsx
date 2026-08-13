@@ -1,5 +1,6 @@
 import { ContrastChecker } from '@/components/contrast-checker';
 import { PageHeader } from '@/components/page-header';
+import { PaletteEditor } from '@/components/palette-editor';
 import { PaletteGrid } from '@/components/palette-grid';
 import { PaletteRules } from '@/components/palette-rules';
 import { Badge } from '@/components/ui/badge';
@@ -55,6 +56,17 @@ export default function PalettesPage() {
 
       <div className="space-y-8">
         <PaletteGrid data={data} />
+
+        <PaletteEditor
+          initial={data.ramps.map((ramp) => ({
+            name: ramp.name,
+            shades: ramp.shades.map((shade) => ({ rung: shade.rung, hex: shade.hex })),
+          }))}
+          ladder={data.ladder}
+          usages={Object.fromEntries(
+            data.ramps.flatMap((ramp) => ramp.shades.map((shade) => [shade.token, shade.usages])),
+          )}
+        />
         <ContrastChecker swatches={swatches} />
         <PaletteRules data={data} />
       </div>

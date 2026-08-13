@@ -114,7 +114,10 @@ export function TokenTable({ rows }: { rows: TokenRowView[] }) {
                 <TableCell className="py-1.5">
                   <span className="flex items-center gap-2 font-mono text-xs">
                     {row.value && HEX.test(row.value) && (
-                      <span className="swatch size-3.5" style={{ backgroundColor: row.value }} />
+                      <span
+                        className="swatch size-3.5"
+                        style={{ '--swatch': row.value } as React.CSSProperties}
+                      />
                     )}
                     {row.value}
                   </span>
