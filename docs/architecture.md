@@ -179,10 +179,27 @@ Sans snapshot, `pnpm ds:figma` écrit un fichier vide et explique comment en pro
 | ---------- | ---------------------------------------------------------------------------- |
 | Composants | déclarations groupées par état, verdict par déclaration, preview du spécimen |
 | Tokens     | chaîne de résolution, call sites réels, les deux dettes, les orphelins       |
-| Palettes   | ramps en OKLCH, marches irrégulières, WCAG bloquant + APCA indicatif         |
+| Palettes   | la palette livrée, la règle qui la produit, et l'écart mesuré entre les deux |
 | Changeset  | le plan d'opérations ordonné par risque, exportable en Markdown              |
 
 Le module couleur (`src/lib/color.ts`) est validé contre les valeurs de référence publiées : 21:1 pour noir sur blanc, APCA 106,04 et −107,88 aux deux polarités, et le 4,54 connu de `#767676` sur blanc.
+
+### La page Palette raconte une seule chose
+
+Elle empilait cinq sections qui parlaient du même sujet sans se rejoindre : la palette livrée, un générateur, un éditeur qui répétait le générateur mot pour mot, un comparateur de contraste, et des « règles » qui redisaient ce que la grille montrait déjà. Le tableau de dérivation y figurait **deux fois, à l'identique**, et rien ne disait laquelle des deux palettes affichées était la vraie.
+
+Il n'y en a qu'une, et elle obéit à une règle. La page suit donc l'ordre de la question : **la palette livrée**, puis **la règle et la preuve qu'elle la retrouve**, puis **de quoi la déplacer**, puis **de quoi mesurer une paire**.
+
+`src/lib/palette-proof.ts` porte la confrontation, sur deux axes qu'il ne faut pas mélanger :
+
+| Axe            | Ce qu'on compare                       | Ce qu'un écart veut dire                 |
+| -------------- | -------------------------------------- | ---------------------------------------- |
+| **fidélité**   | valeur résolue contre valeur livrée    | la règle ne décrit pas la palette        |
+| **régularité** | valeur livrée contre le barreau commun | la palette s'écarte de sa propre échelle |
+
+Mesuré sur le corpus réel : **57 nuances sur 66 retrouvées à l'octet près, 9 à une unité sRGB sur un seul canal, aucune au-delà**, et aucune nuance livrée que la règle ne produise. Les 3 nuances hors barreau ont un écart de fidélité **nul** — ce sont les ancres de marque, que la spec place elle-même hors échelle. Confondre les deux axes ferait passer une exception voulue pour une erreur de dérivation ; les tests l'interdisent explicitement.
+
+L'éditeur n'affiche sa dérivation recalculée **que si la spec a bougé** : à l'état initial elle redonnerait, chiffre pour chiffre, celle qu'énonce la section précédente.
 
 ### Trouver un token dans le sélecteur
 

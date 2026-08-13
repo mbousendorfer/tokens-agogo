@@ -168,7 +168,15 @@ export function PaletteEditor({ baseline }: { baseline: PaletteSpec }) {
         </div>
       )}
 
-      {steps.length > 0 && (
+      {/*
+        La dérivation n'apparaît que si la spec a bougé.
+
+        À l'état initial elle redonne, chiffre pour chiffre, celle qu'énonce la section
+        « La règle retrouve la palette » : l'afficher quand même mettait deux fois le
+        même tableau sur la page, et laissait croire à deux règles. Ici elle répond à
+        une question précise — qu'est-ce que **mon** geste a déplacé.
+      */}
+      {dirty && steps.length > 0 && (
         <div className="bg-muted/30 border-t px-4 py-3">
           <p className="text-muted-foreground mb-1.5 text-[11px] tracking-[0.04em] uppercase">
             Dérivation, recalculée

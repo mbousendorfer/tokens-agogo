@@ -4,6 +4,20 @@ Une entrée par étape livrée. Format inspiré de [Keep a Changelog](https://ke
 
 ## [Non publié]
 
+### La page Palette dit enfin quelque chose
+
+- La page empilait cinq sections sur le même sujet, dont **le même tableau de
+  dérivation deux fois** et un générateur entièrement contenu dans l'éditeur. Rien
+  ne disait laquelle des deux palettes affichées était la vraie.
+- Elle suit maintenant l'ordre de la question : la palette livrée, **la règle et la
+  preuve qu'elle la retrouve**, de quoi la déplacer, de quoi mesurer une paire.
+- **La preuve est le nouveau cœur de la page** : rejouer les cinq nombres de la spec
+  redonne **57 des 66 nuances à l'octet près, 9 à une unité sRGB, aucune au-delà**.
+  Les 3 nuances hors barreau sont retrouvées exactement — ce sont les ancres de
+  marque, hors échelle par décision. `src/lib/palette-proof.ts`, testé sur le corpus
+  réel.
+- Le tri du sélecteur remonte les tokens qui rendent exactement la valeur actuelle.
+
 ### Le panneau de comparaison
 
 - **La preview devient un panneau docké**, plein hauteur et collant, à droite du
