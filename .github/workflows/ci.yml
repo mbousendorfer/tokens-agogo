@@ -26,6 +26,8 @@ jobs:
       - name: Lint
         run: pnpm lint
 
+      # `next typegen` d'abord : `LayoutProps` & co. sont des types globaux générés
+      # par Next dans .next/types/, absents d'un checkout frais. C'est dans le script.
       - name: Typecheck
         run: pnpm typecheck
 
