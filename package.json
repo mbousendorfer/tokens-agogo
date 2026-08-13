@@ -11,7 +11,9 @@
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "ds:build": "node --env-file-if-exists=.env.local tools/build-chained-tokens.mjs",
+    "ds:verify": "node --env-file-if-exists=.env.local tools/verify-chained.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -31,14 +33,13 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@vitejs/plugin-react": "^6.0.5",
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
+    "style-dictionary": "3.9.2",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^4.1.10"
   },
   "packageManager": "pnpm@10.19.0"

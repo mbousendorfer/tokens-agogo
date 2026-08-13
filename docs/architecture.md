@@ -43,15 +43,57 @@ Le squelette Next.js, la chaîne d'outils et la documentation.
 
 `CLAUDE.md` pointe vers `AGENTS.md`, qui porte les règles projet — dont la plus importante : **ce repo n'applique pas le design system Agorapulse à sa propre interface, il l'inspecte.**
 
+## Étape 1 — le build chaîné
+
+`pnpm ds:build` regénère le CSS des tokens du design system en activant `outputReferences`, ce que le design system ne fait pas. `pnpm ds:verify` prouve que cette regénération est fidèle.
+
+### Comment on lit le design system
+
+La baseline est `master`, qui n'est pas forcément la branche sortie dans le repo local. `tools/ds-repo.mjs` lit donc par `git show <ref>:<path>`, jamais par le système de fichiers : les scripts sont indépendants de l'état du checkout, et changer de branche dans le design system ne change rien ici.
+
+Style Dictionary lit des globs sur disque, donc les tokens de la ref sont d'abord matérialisés dans `.cache/ds-tokens/` (ignoré par git).
+
+### Ce que produit `pnpm ds:build`
+
+| Fichier                         | Contenu                                                |
+| ------------------------------- | ------------------------------------------------------ |
+| `public/ds/desktop.chained.css` | les alias restent des `var()` — la feuille qu'on édite |
+| `public/ds/desktop.flat.css`    | l'aplati, pour le byte-match                           |
+| `public/ds/mobile.*.css`        | idem pour la plateforme mobile                         |
+| `public/ds/source.json`         | la ref et le sha lus, pour tracer l'origine            |
+
+Les transforms sont repris à l'identique de `libs/ui-theme/src/desktop_config.js` : `attribute/cti`, `name/cti/kebab`, `color/hex`, `size/px`. `style-dictionary` est épinglé en **3.9.2** — la v4 renomme `name/cti/kebab` et ferait dériver tous les noms.
+
+### Le garde-fou
+
+`pnpm ds:verify` fait deux assertions :
+
+1. **Byte-match** — notre build aplati doit être identique, octet pour octet, au CSS commité dans le design system. Si ça diverge, nos transforms ne reproduisent pas les siens et tout ce qu'on génère est suspect.
+2. **Équivalence après résolution** — la feuille chaînée, ses `var()` résolus, doit donner exactement les mêmes valeurs que l'aplatie.
+
+Ce script a besoin du repo design system : il tourne en local, pas en CI. La logique pure qu'il utilise (`tools/css-vars.mjs`) est, elle, couverte par des tests sur fixtures qui tournent partout.
+
+### Résultat mesuré (`master` @ `abd1c4df`, 2026-08-13)
+
+```
+✓ desktop  723 tokens, 527 chaînés en var()
+✓ mobile   723 tokens, 527 chaînés en var()
+```
+
+Byte-match exact sur les deux plateformes, et équivalence après résolution.
+
+**Vérifié aussi dans un vrai navigateur**, ce qui est la seule preuve qui compte : en chargeant les deux feuilles dans deux hôtes et en comparant `getComputedStyle` sur les 723 tokens, **aucun écart**. Un seul token demande une explication — `--comp-select-two-line-height` vaut `unset`, un mot-clé CSS qui fait calculer la propriété à vide ; le comportement est identique des deux côtés, donc ce n'est pas un écart.
+
+La conclusion pratique : `outputReferences: true` passe sur ce corpus. Modifier une primitive dans un bloc `:root` d'override propagera nativement à ses 527 descendants, sans rebuild et sans résolveur maison.
+
 ## Étapes suivantes
 
-| Étape | Contenu                                                    |
-| ----- | ---------------------------------------------------------- |
-| 1     | Build chaîné Style Dictionary + garde-fou `verify-chained` |
-| 2     | Preview surface A (iframe CSS-UI) + spécimens              |
-| 3     | Index de déclarations (sélecteur, état, propriété, token)  |
-| 4     | Import Figma : variables + bindings par variante           |
-| 5     | Alignement spec ↔ code, vue Composants                     |
-| 6     | Explorateur de tokens, éditeur de palettes                 |
-| 7     | Preview surface B (Storybook proxifié)                     |
-| 8     | Génération du changeset                                    |
+| Étape | Contenu                                                   |
+| ----- | --------------------------------------------------------- |
+| 2     | Preview surface A (iframe CSS-UI) + spécimens             |
+| 3     | Index de déclarations (sélecteur, état, propriété, token) |
+| 4     | Import Figma : variables + bindings par variante          |
+| 5     | Alignement spec ↔ code, vue Composants                    |
+| 6     | Explorateur de tokens, éditeur de palettes                |
+| 7     | Preview surface B (Storybook proxifié)                    |
+| 8     | Génération du changeset                                   |

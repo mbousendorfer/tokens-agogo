@@ -42,14 +42,18 @@ pnpm sync    # régénère data/ depuis le repo local, à commiter
 
 ## Scripts
 
-| Commande         | Effet                    |
-| ---------------- | ------------------------ |
-| `pnpm dev`       | serveur de développement |
-| `pnpm build`     | build de production      |
-| `pnpm test`      | tests Vitest             |
-| `pnpm typecheck` | `tsc --noEmit`           |
-| `pnpm lint`      | ESLint                   |
-| `pnpm format`    | Prettier en écriture     |
+| Commande         | Effet                                                    |
+| ---------------- | -------------------------------------------------------- |
+| `pnpm dev`       | serveur de développement                                 |
+| `pnpm build`     | build de production                                      |
+| `pnpm test`      | tests Vitest                                             |
+| `pnpm typecheck` | `tsc --noEmit`                                           |
+| `pnpm lint`      | ESLint                                                   |
+| `pnpm format`    | Prettier en écriture                                     |
+| `pnpm ds:build`  | regénère le CSS des tokens avec `outputReferences: true` |
+| `pnpm ds:verify` | prouve que ce build est fidèle au CSS du design system   |
+
+`ds:build` et `ds:verify` ont besoin du repo design system (`DS_REPO_PATH`, ou `--ds-root=`). Ils lisent `master` par défaut, quelle que soit la branche sortie localement — passer `--ds-ref=` pour en lire une autre.
 
 ## Documentation
 
