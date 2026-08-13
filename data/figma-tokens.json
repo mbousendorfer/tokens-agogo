@@ -21,6 +21,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / featurelock / border",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-purple-500",
       "aliasOf": "--ref-color-purple-500",
       "aliasOfFigma": "Colors/Purple/purple-500",
       "value": "#918BD3",
@@ -34,6 +38,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / featurelock / border",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-purple-300",
       "aliasOf": "--ref-color-purple-300",
       "aliasOfFigma": "Colors/Purple/purple-300",
       "value": "#CCCAFE",
@@ -47,6 +55,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / featurelock / border",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-purple-400",
       "aliasOf": "--ref-color-purple-400",
       "aliasOfFigma": "Colors/Purple/purple-400",
       "value": "#ADA8F2",
@@ -60,6 +72,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / featurelock",
+      "leaf": "content",
+      "unit": "",
+      "display": "--sys-color-text-featurelock",
       "aliasOf": "--sys-color-text-featurelock",
       "aliasOfFigma": "color/text/featurelock",
       "value": "#7A70CA",
@@ -73,6 +89,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / featurelock / surface",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-purple-400",
       "aliasOf": "--ref-color-purple-400",
       "aliasOfFigma": "Colors/Purple/purple-400",
       "value": "#ADA8F2",
@@ -86,6 +106,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / featurelock / surface",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-purple-200",
       "aliasOf": "--ref-color-purple-200",
       "aliasOfFigma": "Colors/Purple/purple-200",
       "value": "#EDEDFF",
@@ -99,6 +123,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / featurelock / surface",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-purple-300",
       "aliasOf": "--ref-color-purple-300",
       "aliasOfFigma": "Colors/Purple/purple-300",
       "value": "#CCCAFE",
@@ -112,6 +140,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / ghost / grey",
+      "leaf": "content",
+      "unit": "",
+      "display": "--ref-color-grey-800",
       "aliasOf": "--ref-color-grey-800",
       "aliasOfFigma": "Colors/Grey/grey-800",
       "value": "#5E6E86",
@@ -125,6 +157,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / ghost / grey",
+      "leaf": "content-disabled",
+      "unit": "",
+      "display": "--ref-color-grey-400",
       "aliasOf": "--ref-color-grey-400",
       "aliasOfFigma": "Colors/Grey/grey-400",
       "value": "#C0C8D1",
@@ -138,6 +174,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / ghost / grey / surface",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--sys-color-surface-interactive-clicked",
       "aliasOf": "--sys-color-surface-interactive-clicked",
       "aliasOfFigma": "color/surface/interactive/clicked",
       "value": "#DFE3E8",
@@ -151,6 +191,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / ghost / grey / surface",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--sys-color-surface-interactive-hovered",
       "aliasOf": "--sys-color-surface-interactive-hovered",
       "aliasOfFigma": "color/surface/interactive/hovered",
       "value": "#EDEFF2",
@@ -164,6 +208,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / primary / blue",
+      "leaf": "content",
+      "unit": "",
+      "display": "--sys-color-text-on-color",
       "aliasOf": "--sys-color-text-on-color",
       "aliasOfFigma": "color/text/on-color",
       "value": "#FFFFFF",
@@ -177,6 +225,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / primary / blue / surface",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-electric-blue-400",
       "aliasOf": "--ref-color-electric-blue-400",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
       "value": "#7AB6FE",
@@ -190,6 +242,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / primary / blue / surface",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-electric-blue-600",
       "aliasOf": "--ref-color-electric-blue-600",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
       "value": "#0B7EE7",
@@ -203,6 +259,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / primary / blue / surface",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-electric-blue-300",
       "aliasOf": "--ref-color-electric-blue-300",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
       "value": "#B1D4FE",
@@ -216,6 +276,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / primary / blue / surface",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-electric-blue-500",
       "aliasOf": "--ref-color-electric-blue-500",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-500",
       "value": "#178DFE",
@@ -229,6 +293,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / primary / orange",
+      "leaf": "content",
+      "unit": "",
+      "display": "--sys-color-text-on-color",
       "aliasOf": "--sys-color-text-on-color",
       "aliasOfFigma": "color/text/on-color",
       "value": "#FFFFFF",
@@ -242,6 +310,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / primary / orange / surface",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-orange-300",
       "aliasOf": "--ref-color-orange-300",
       "aliasOfFigma": "Colors/Orange/orange-300",
       "value": "#FEC0A9",
@@ -255,6 +327,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / primary / orange / surface",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-orange-500",
       "aliasOf": "--ref-color-orange-500",
       "aliasOfFigma": "Colors/Orange/orange-500",
       "value": "#FF6726",
@@ -268,6 +344,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / primary / orange / surface",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-orange-300",
       "aliasOf": "--ref-color-orange-300",
       "aliasOfFigma": "Colors/Orange/orange-300",
       "value": "#FEC0A9",
@@ -281,6 +361,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / primary / orange / surface",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-orange-400",
       "aliasOf": "--ref-color-orange-400",
       "aliasOfFigma": "Colors/Orange/orange-400",
       "value": "#FB936D",
@@ -294,6 +378,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button",
+      "leaf": "radius",
+      "unit": "",
+      "display": "--sys-radius-control",
       "aliasOf": "--sys-radius-control",
       "aliasOfFigma": "radius/control",
       "value": "6",
@@ -307,6 +395,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / secondary / blue",
+      "leaf": "content",
+      "unit": "",
+      "display": "--ref-color-electric-blue-600",
       "aliasOf": "--ref-color-electric-blue-600",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
       "value": "#0B7EE7",
@@ -320,6 +412,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / secondary / blue",
+      "leaf": "content-disabled",
+      "unit": "",
+      "display": "--ref-color-electric-blue-300",
       "aliasOf": "--ref-color-electric-blue-300",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
       "value": "#B1D4FE",
@@ -333,6 +429,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / secondary / blue / surface",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-electric-blue-400",
       "aliasOf": "--ref-color-electric-blue-400",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
       "value": "#7AB6FE",
@@ -346,6 +446,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / secondary / blue / surface",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-electric-blue-200",
       "aliasOf": "--ref-color-electric-blue-200",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-200",
       "value": "#E4F0FF",
@@ -359,6 +463,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / secondary / blue / surface",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-electric-blue-200",
       "aliasOf": "--ref-color-electric-blue-200",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-200",
       "value": "#E4F0FF",
@@ -372,6 +480,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / secondary / blue / surface",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-electric-blue-300",
       "aliasOf": "--ref-color-electric-blue-300",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
       "value": "#B1D4FE",
@@ -385,6 +497,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / secondary / orange",
+      "leaf": "content",
+      "unit": "",
+      "display": "--ref-color-orange-600",
       "aliasOf": "--ref-color-orange-600",
       "aliasOfFigma": "Colors/Orange/orange-600",
       "value": "#D34D09",
@@ -398,6 +514,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / secondary / orange",
+      "leaf": "content-disabled",
+      "unit": "",
+      "display": "--ref-color-orange-300",
       "aliasOf": "--ref-color-orange-300",
       "aliasOfFigma": "Colors/Orange/orange-300",
       "value": "#FEC0A9",
@@ -411,6 +531,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / secondary / orange / surface",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-orange-400",
       "aliasOf": "--ref-color-orange-400",
       "aliasOfFigma": "Colors/Orange/orange-400",
       "value": "#FB936D",
@@ -424,6 +548,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / secondary / orange / surface",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-orange-200",
       "aliasOf": "--ref-color-orange-200",
       "aliasOfFigma": "Colors/Orange/orange-200",
       "value": "#FFEAE2",
@@ -437,6 +565,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / secondary / orange / surface",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-orange-200",
       "aliasOf": "--ref-color-orange-200",
       "aliasOfFigma": "Colors/Orange/orange-200",
       "value": "#FFEAE2",
@@ -450,6 +582,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / secondary / orange / surface",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-orange-300",
       "aliasOf": "--ref-color-orange-300",
       "aliasOfFigma": "Colors/Orange/orange-300",
       "value": "#FEC0A9",
@@ -463,6 +599,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / blue / border",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-electric-blue-600",
       "aliasOf": "--ref-color-electric-blue-600",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
       "value": "#0B7EE7",
@@ -476,6 +616,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / blue / border",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-electric-blue-400",
       "aliasOf": "--ref-color-electric-blue-400",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
       "value": "#7AB6FE",
@@ -489,6 +633,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / blue / border",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-electric-blue-400",
       "aliasOf": "--ref-color-electric-blue-400",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
       "value": "#7AB6FE",
@@ -502,6 +650,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / blue / border",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-electric-blue-500",
       "aliasOf": "--ref-color-electric-blue-500",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-500",
       "value": "#178DFE",
@@ -515,6 +667,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / blue",
+      "leaf": "content",
+      "unit": "",
+      "display": "--ref-color-electric-blue-600",
       "aliasOf": "--ref-color-electric-blue-600",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
       "value": "#0B7EE7",
@@ -528,6 +684,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / blue",
+      "leaf": "content-disabled",
+      "unit": "",
+      "display": "--ref-color-electric-blue-300",
       "aliasOf": "--ref-color-electric-blue-300",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
       "value": "#B1D4FE",
@@ -541,6 +701,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary",
+      "leaf": "filled-surface",
+      "unit": "",
+      "display": "--ref-color-white",
       "aliasOf": "--ref-color-white",
       "aliasOfFigma": "Colors/white",
       "value": "#FFFFFF",
@@ -554,6 +718,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / grey / border",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--sys-color-border-interactive-clicked",
       "aliasOf": "--sys-color-border-interactive-clicked",
       "aliasOfFigma": "color/border/interactive/clicked",
       "value": "#8D9AAB",
@@ -567,6 +735,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / grey / border",
+      "leaf": "default",
+      "unit": "",
+      "display": "--sys-color-border-interactive-default",
       "aliasOf": "--sys-color-border-interactive-default",
       "aliasOfFigma": "color/border/interactive/default",
       "value": "#C0C8D1",
@@ -580,6 +752,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / grey / border",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--sys-color-border-interactive-disabled",
       "aliasOf": "--sys-color-border-interactive-disabled",
       "aliasOfFigma": "color/border/interactive/disabled",
       "value": "#DFE3E8",
@@ -593,6 +769,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / grey / border",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--sys-color-border-interactive-hovered",
       "aliasOf": "--sys-color-border-interactive-hovered",
       "aliasOfFigma": "color/border/interactive/hovered",
       "value": "#A6B1BE",
@@ -606,6 +786,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / grey",
+      "leaf": "content",
+      "unit": "",
+      "display": "--ref-color-grey-800",
       "aliasOf": "--ref-color-grey-800",
       "aliasOfFigma": "Colors/Grey/grey-800",
       "value": "#5E6E86",
@@ -619,6 +803,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / grey",
+      "leaf": "content-disabled",
+      "unit": "",
+      "display": "--ref-color-grey-400",
       "aliasOf": "--ref-color-grey-400",
       "aliasOfFigma": "Colors/Grey/grey-400",
       "value": "#C0C8D1",
@@ -632,6 +820,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / red / border",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-red-600",
       "aliasOf": "--ref-color-red-600",
       "aliasOfFigma": "Colors/Red/red-600",
       "value": "#EC1011",
@@ -645,6 +837,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / red / border",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-red-400",
       "aliasOf": "--ref-color-red-400",
       "aliasOfFigma": "Colors/Red/red-400",
       "value": "#FD8F80",
@@ -658,6 +854,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / red / border",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-red-400",
       "aliasOf": "--ref-color-red-400",
       "aliasOfFigma": "Colors/Red/red-400",
       "value": "#FD8F80",
@@ -671,6 +871,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / red / border",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-red-500",
       "aliasOf": "--ref-color-red-500",
       "aliasOfFigma": "Colors/Red/red-500",
       "value": "#FD4F42",
@@ -684,6 +888,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / red",
+      "leaf": "content",
+      "unit": "",
+      "display": "--ref-color-red-600",
       "aliasOf": "--ref-color-red-600",
       "aliasOfFigma": "Colors/Red/red-600",
       "value": "#EC1011",
@@ -697,6 +905,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "button / tertiary / red",
+      "leaf": "content-disabled",
+      "unit": "",
+      "display": "--ref-color-red-300",
       "aliasOf": "--ref-color-red-300",
       "aliasOfFigma": "Colors/Red/red-300",
       "value": "#FEBEB4",
@@ -710,6 +922,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "card / color",
+      "leaf": "background",
+      "unit": "",
+      "display": "--sys-color-surface-default",
       "aliasOf": "--sys-color-surface-default",
       "aliasOfFigma": "color/surface/default",
       "value": "#FFFFFF",
@@ -723,6 +939,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "card / color",
+      "leaf": "border",
+      "unit": "",
+      "display": "--sys-color-border-default",
       "aliasOf": "--sys-color-border-default",
       "aliasOfFigma": "color/border/default",
       "value": "#DFE3E8",
@@ -736,6 +956,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "card / color / featurelock",
+      "leaf": "background",
+      "unit": "",
+      "display": "--sys-color-surface-featurelock",
       "aliasOf": "--sys-color-surface-featurelock",
       "aliasOfFigma": "color/surface/featurelock",
       "value": "#EDEDFF",
@@ -749,6 +973,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "card / color / featurelock",
+      "leaf": "border",
+      "unit": "",
+      "display": "--sys-color-border-featurelock",
       "aliasOf": "--sys-color-border-featurelock",
       "aliasOfFigma": "color/border/featurelock",
       "value": "#7A70CA",
@@ -762,6 +990,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "card",
+      "leaf": "padding",
+      "unit": "",
+      "display": "--ref-spacings-spacing-sm",
       "aliasOf": "--ref-spacings-spacing-sm",
       "aliasOfFigma": "Spacings/spacing-sm",
       "value": "16",
@@ -775,6 +1007,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "card",
+      "leaf": "radius",
+      "unit": "",
+      "display": "--sys-radius-container",
       "aliasOf": "--sys-radius-container",
       "aliasOfFigma": "radius/container",
       "value": "8",
@@ -788,6 +1024,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "card",
+      "leaf": "spacing",
+      "unit": "",
+      "display": "--ref-spacings-spacing-sm",
       "aliasOf": "--ref-spacings-spacing-sm",
       "aliasOfFigma": "Spacings/spacing-sm",
       "value": "16",
@@ -801,6 +1041,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "input-field / border",
+      "leaf": "active",
+      "unit": "",
+      "display": "--sys-color-border-interactive-active-default",
       "aliasOf": "--sys-color-border-interactive-active-default",
       "aliasOfFigma": "color/border/interactive/active/default",
       "value": "#0B7EE7",
@@ -814,6 +1058,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "input-field / border",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--sys-color-border-interactive-clicked",
       "aliasOf": "--sys-color-border-interactive-clicked",
       "aliasOfFigma": "color/border/interactive/clicked",
       "value": "#8D9AAB",
@@ -827,6 +1075,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "input-field / border",
+      "leaf": "default",
+      "unit": "",
+      "display": "--sys-color-border-interactive-default",
       "aliasOf": "--sys-color-border-interactive-default",
       "aliasOfFigma": "color/border/interactive/default",
       "value": "#C0C8D1",
@@ -840,6 +1092,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "input-field / border",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--sys-color-border-interactive-disabled",
       "aliasOf": "--sys-color-border-interactive-disabled",
       "aliasOfFigma": "color/border/interactive/disabled",
       "value": "#DFE3E8",
@@ -853,6 +1109,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "input-field / border",
+      "leaf": "error",
+      "unit": "",
+      "display": "--sys-color-border-error",
       "aliasOf": "--sys-color-border-error",
       "aliasOfFigma": "color/border/error",
       "value": "#EC1011",
@@ -866,6 +1126,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "input-field / border",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--sys-color-border-interactive-hovered",
       "aliasOf": "--sys-color-border-interactive-hovered",
       "aliasOfFigma": "color/border/interactive/hovered",
       "value": "#A6B1BE",
@@ -879,6 +1143,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "input-field / border",
+      "leaf": "success",
+      "unit": "",
+      "display": "--sys-color-border-success",
       "aliasOf": "--sys-color-border-success",
       "aliasOfFigma": "color/border/success",
       "value": "#0D9930",
@@ -892,6 +1160,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "input-field",
+      "leaf": "height",
+      "unit": "",
+      "display": "--sys-height-control",
       "aliasOf": "--sys-height-control",
       "aliasOfFigma": "height/control",
       "value": "36",
@@ -905,6 +1177,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "input-field",
+      "leaf": "horizontal-padding",
+      "unit": "",
+      "display": "--ref-spacings-spacing-xs",
       "aliasOf": "--ref-spacings-spacing-xs",
       "aliasOfFigma": "Spacings/spacing-xs",
       "value": "12",
@@ -918,6 +1194,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "input-field",
+      "leaf": "radius",
+      "unit": "",
+      "display": "--sys-radius-control",
       "aliasOf": "--sys-radius-control",
       "aliasOfFigma": "radius/control",
       "value": "6",
@@ -931,6 +1211,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "input-field / surface",
+      "leaf": "default",
+      "unit": "",
+      "display": "--sys-color-surface-interactive-default",
       "aliasOf": "--sys-color-surface-interactive-default",
       "aliasOfFigma": "color/surface/interactive/default",
       "value": "#FFFFFF",
@@ -944,6 +1228,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "input-field / surface",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-grey-300",
       "aliasOf": "--ref-color-grey-300",
       "aliasOfFigma": "Colors/Grey/grey-300",
       "value": "#DFE3E8",
@@ -957,6 +1245,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "settings-content",
+      "leaf": "background-color",
+      "unit": "",
+      "display": "--sys-color-surface-secondary",
       "aliasOf": "--sys-color-surface-secondary",
       "aliasOfFigma": "color/surface/secondary",
       "value": "#F9F9FA",
@@ -970,6 +1262,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "settings-content",
+      "leaf": "internal-margin",
+      "unit": "",
+      "display": "--ref-spacings-spacing-md",
       "aliasOf": "--ref-spacings-spacing-md",
       "aliasOfFigma": "Spacings/spacing-md",
       "value": "24",
@@ -983,6 +1279,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "settings-content",
+      "leaf": "max-width-lg",
+      "unit": "",
+      "display": "1200",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "1200",
@@ -996,6 +1296,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "settings-content",
+      "leaf": "max-width-md",
+      "unit": "",
+      "display": "700",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "700",
@@ -1009,6 +1313,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "settings-content",
+      "leaf": "vertical-spacing",
+      "unit": "",
+      "display": "--ref-spacings-spacing-sm",
       "aliasOf": "--ref-spacings-spacing-sm",
       "aliasOfFigma": "Spacings/spacing-sm",
       "value": "16",
@@ -1022,6 +1330,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "topbar",
+      "leaf": "background",
+      "unit": "",
+      "display": "--sys-color-surface-default",
       "aliasOf": "--sys-color-surface-default",
       "aliasOfFigma": "color/surface/default",
       "value": "#FFFFFF",
@@ -1035,6 +1347,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "topbar",
+      "leaf": "bottom-border",
+      "unit": "",
+      "display": "--sys-color-border-default",
       "aliasOf": "--sys-color-border-default",
       "aliasOfFigma": "color/border/default",
       "value": "#DFE3E8",
@@ -1048,6 +1364,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "topbar",
+      "leaf": "height",
+      "unit": "",
+      "display": "64",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "64",
@@ -1061,6 +1381,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "topbar",
+      "leaf": "horizontal-padding",
+      "unit": "",
+      "display": "--ref-spacings-spacing-sm",
       "aliasOf": "--ref-spacings-spacing-sm",
       "aliasOfFigma": "Spacings/spacing-sm",
       "value": "16",
@@ -1074,6 +1398,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Border Radius",
+      "leaf": "border-radius-lg",
+      "unit": "",
+      "display": "8",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "8",
@@ -1087,6 +1415,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Border Radius",
+      "leaf": "border-radius-md",
+      "unit": "",
+      "display": "6",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "6",
@@ -1100,6 +1432,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Border Radius",
+      "leaf": "border-radius-sm",
+      "unit": "",
+      "display": "4",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "4",
@@ -1113,6 +1449,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Data",
+      "leaf": "data-cherry-100",
+      "unit": "",
+      "display": "#CC5040",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#CC5040",
@@ -1126,6 +1466,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Data",
+      "leaf": "data-cyan-100",
+      "unit": "",
+      "display": "#12AABA",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#12AABA",
@@ -1139,6 +1483,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Data",
+      "leaf": "data-emerald-100",
+      "unit": "",
+      "display": "#12A87A",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#12A87A",
@@ -1152,6 +1500,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Data",
+      "leaf": "data-iris-100",
+      "unit": "",
+      "display": "#8A62CC",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#8A62CC",
@@ -1165,6 +1517,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Data",
+      "leaf": "data-lime-100",
+      "unit": "",
+      "display": "#42B85A",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#42B85A",
@@ -1178,6 +1534,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Data",
+      "leaf": "data-navy-100",
+      "unit": "",
+      "display": "#4A6ACC",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#4A6ACC",
@@ -1191,6 +1551,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Data",
+      "leaf": "data-peony-100",
+      "unit": "",
+      "display": "#CC2878",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#CC2878",
@@ -1204,6 +1568,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Data",
+      "leaf": "data-sky-100",
+      "unit": "",
+      "display": "#3A92E8",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#3A92E8",
@@ -1217,6 +1585,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Data",
+      "leaf": "data-sun-100",
+      "unit": "",
+      "display": "#D98800",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#D98800",
@@ -1230,6 +1602,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Data",
+      "leaf": "data-tangerine-100",
+      "unit": "",
+      "display": "#DC6A30",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#DC6A30",
@@ -1243,6 +1619,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Electric Blue",
+      "leaf": "electric-blue-100",
+      "unit": "",
+      "display": "#F3F8FF",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#F3F8FF",
@@ -1256,6 +1636,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Electric Blue",
+      "leaf": "electric-blue-200",
+      "unit": "",
+      "display": "#E4F0FF",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#E4F0FF",
@@ -1269,6 +1653,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Electric Blue",
+      "leaf": "electric-blue-300",
+      "unit": "",
+      "display": "#B1D4FE",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#B1D4FE",
@@ -1282,6 +1670,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Electric Blue",
+      "leaf": "electric-blue-400",
+      "unit": "",
+      "display": "#7AB6FE",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#7AB6FE",
@@ -1295,6 +1687,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Electric Blue",
+      "leaf": "electric-blue-500",
+      "unit": "",
+      "display": "#178DFE",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#178DFE",
@@ -1308,6 +1704,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Electric Blue",
+      "leaf": "electric-blue-600",
+      "unit": "",
+      "display": "#0B7EE7",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#0B7EE7",
@@ -1321,6 +1721,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Electric Blue",
+      "leaf": "electric-blue-700",
+      "unit": "",
+      "display": "#086DC9",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#086DC9",
@@ -1334,6 +1738,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Electric Blue",
+      "leaf": "electric-blue-800",
+      "unit": "",
+      "display": "#04539C",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#04539C",
@@ -1347,6 +1755,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Green",
+      "leaf": "green-100",
+      "unit": "",
+      "display": "#F3FAF3",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#F3FAF3",
@@ -1360,6 +1772,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Green",
+      "leaf": "green-200",
+      "unit": "",
+      "display": "#E3F5E3",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#E3F5E3",
@@ -1373,6 +1789,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Green",
+      "leaf": "green-300",
+      "unit": "",
+      "display": "#B0DFB1",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#B0DFB1",
@@ -1386,6 +1806,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Green",
+      "leaf": "green-400",
+      "unit": "",
+      "display": "#76C97C",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#76C97C",
@@ -1399,6 +1823,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Green",
+      "leaf": "green-500",
+      "unit": "",
+      "display": "#11B43A",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#11B43A",
@@ -1412,6 +1840,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Green",
+      "leaf": "green-600",
+      "unit": "",
+      "display": "#0D9930",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#0D9930",
@@ -1425,6 +1857,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Green",
+      "leaf": "green-700",
+      "unit": "",
+      "display": "#097F26",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#097F26",
@@ -1438,6 +1874,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Green",
+      "leaf": "green-800",
+      "unit": "",
+      "display": "#05661D",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#05661D",
@@ -1451,6 +1891,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Grey",
+      "leaf": "grey-100",
+      "unit": "",
+      "display": "#F9F9FA",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#F9F9FA",
@@ -1464,6 +1908,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Grey",
+      "leaf": "grey-1000",
+      "unit": "",
+      "display": "#344563",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#344563",
@@ -1477,6 +1925,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Grey",
+      "leaf": "grey-200",
+      "unit": "",
+      "display": "#EDEFF2",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#EDEFF2",
@@ -1490,6 +1942,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Grey",
+      "leaf": "grey-300",
+      "unit": "",
+      "display": "#DFE3E8",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#DFE3E8",
@@ -1503,6 +1959,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Grey",
+      "leaf": "grey-400",
+      "unit": "",
+      "display": "#C0C8D1",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#C0C8D1",
@@ -1516,6 +1976,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Grey",
+      "leaf": "grey-500",
+      "unit": "",
+      "display": "#A6B1BE",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#A6B1BE",
@@ -1529,6 +1993,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Grey",
+      "leaf": "grey-600",
+      "unit": "",
+      "display": "#8D9AAB",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#8D9AAB",
@@ -1542,6 +2010,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Grey",
+      "leaf": "grey-700",
+      "unit": "",
+      "display": "#758498",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#758498",
@@ -1555,6 +2027,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Grey",
+      "leaf": "grey-800",
+      "unit": "",
+      "display": "#5E6E86",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#5E6E86",
@@ -1568,6 +2044,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Grey",
+      "leaf": "grey-900",
+      "unit": "",
+      "display": "#485974",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#485974",
@@ -1581,6 +2061,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Menthol",
+      "leaf": "menthol-100",
+      "unit": "",
+      "display": "#EFFBFA",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#EFFBFA",
@@ -1594,6 +2078,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Menthol",
+      "leaf": "menthol-200",
+      "unit": "",
+      "display": "#DAF6F3",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#DAF6F3",
@@ -1607,6 +2095,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Menthol",
+      "leaf": "menthol-300",
+      "unit": "",
+      "display": "#91E1DC",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#91E1DC",
@@ -1620,6 +2112,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Menthol",
+      "leaf": "menthol-400",
+      "unit": "",
+      "display": "#45C9C3",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#45C9C3",
@@ -1633,6 +2129,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Menthol",
+      "leaf": "menthol-500",
+      "unit": "",
+      "display": "#11ABA6",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#11ABA6",
@@ -1646,6 +2146,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Menthol",
+      "leaf": "menthol-600",
+      "unit": "",
+      "display": "#0D928D",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#0D928D",
@@ -1659,6 +2163,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Menthol",
+      "leaf": "menthol-700",
+      "unit": "",
+      "display": "#097975",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#097975",
@@ -1672,6 +2180,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Menthol",
+      "leaf": "menthol-800",
+      "unit": "",
+      "display": "#05615D",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#05615D",
@@ -1685,6 +2197,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / MermAId",
+      "leaf": "MermAId-100",
+      "unit": "",
+      "display": "#F5F1FF",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#F5F1FF",
@@ -1698,6 +2214,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / MermAId",
+      "leaf": "MermAId-200",
+      "unit": "",
+      "display": "#EBE3FF",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#EBE3FF",
@@ -1711,6 +2231,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / MermAId",
+      "leaf": "MermAId-Gradient-From",
+      "unit": "",
+      "display": "#578FFF",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#578FFF",
@@ -1724,6 +2248,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / MermAId",
+      "leaf": "MermAId-Gradient-To",
+      "unit": "",
+      "display": "#DF52FF",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#DF52FF",
@@ -1737,6 +2265,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Orange",
+      "leaf": "orange-100",
+      "unit": "",
+      "display": "#FFF5F2",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FFF5F2",
@@ -1750,6 +2282,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Orange",
+      "leaf": "orange-200",
+      "unit": "",
+      "display": "#FFEAE2",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FFEAE2",
@@ -1763,6 +2299,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Orange",
+      "leaf": "orange-300",
+      "unit": "",
+      "display": "#FEC0A9",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FEC0A9",
@@ -1776,6 +2316,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Orange",
+      "leaf": "orange-400",
+      "unit": "",
+      "display": "#FB936D",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FB936D",
@@ -1789,6 +2333,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Orange",
+      "leaf": "orange-500",
+      "unit": "",
+      "display": "#FF6726",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FF6726",
@@ -1802,6 +2350,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Orange",
+      "leaf": "orange-600",
+      "unit": "",
+      "display": "#D34D09",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#D34D09",
@@ -1815,6 +2367,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Orange",
+      "leaf": "orange-700",
+      "unit": "",
+      "display": "#B03F06",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#B03F06",
@@ -1828,6 +2384,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Orange",
+      "leaf": "orange-800",
+      "unit": "",
+      "display": "#8E3104",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#8E3104",
@@ -1841,6 +2401,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors",
+      "leaf": "overlay-background",
+      "unit": "",
+      "display": "#344563/0.700",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#344563/0.700",
@@ -1854,6 +2418,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Purple",
+      "leaf": "purple-100",
+      "unit": "",
+      "display": "#F7F7FF",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#F7F7FF",
@@ -1867,6 +2435,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Purple",
+      "leaf": "purple-200",
+      "unit": "",
+      "display": "#EDEDFF",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#EDEDFF",
@@ -1880,6 +2452,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Purple",
+      "leaf": "purple-300",
+      "unit": "",
+      "display": "#CCCAFE",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#CCCAFE",
@@ -1893,6 +2469,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Purple",
+      "leaf": "purple-400",
+      "unit": "",
+      "display": "#ADA8F2",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#ADA8F2",
@@ -1906,6 +2486,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Purple",
+      "leaf": "purple-500",
+      "unit": "",
+      "display": "#918BD3",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#918BD3",
@@ -1919,6 +2503,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Purple",
+      "leaf": "purple-600",
+      "unit": "",
+      "display": "#7A70CA",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#7A70CA",
@@ -1932,6 +2520,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Purple",
+      "leaf": "purple-700",
+      "unit": "",
+      "display": "#6554C0",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#6554C0",
@@ -1945,6 +2537,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Purple",
+      "leaf": "purple-800",
+      "unit": "",
+      "display": "#51419F",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#51419F",
@@ -1958,6 +2554,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Red",
+      "leaf": "red-100",
+      "unit": "",
+      "display": "#FFF5F4",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FFF5F4",
@@ -1971,6 +2571,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Red",
+      "leaf": "red-200",
+      "unit": "",
+      "display": "#FFE9E6",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FFE9E6",
@@ -1984,6 +2588,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Red",
+      "leaf": "red-300",
+      "unit": "",
+      "display": "#FEBEB4",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FEBEB4",
@@ -1997,6 +2605,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Red",
+      "leaf": "red-400",
+      "unit": "",
+      "display": "#FD8F80",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FD8F80",
@@ -2010,6 +2622,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Red",
+      "leaf": "red-500",
+      "unit": "",
+      "display": "#FD4F42",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FD4F42",
@@ -2023,6 +2639,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Red",
+      "leaf": "red-600",
+      "unit": "",
+      "display": "#EC1011",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#EC1011",
@@ -2036,6 +2656,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Red",
+      "leaf": "red-700",
+      "unit": "",
+      "display": "#C50B0C",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#C50B0C",
@@ -2049,6 +2673,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Red",
+      "leaf": "red-800",
+      "unit": "",
+      "display": "#9F0708",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#9F0708",
@@ -2062,6 +2690,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "Bluesky",
+      "unit": "",
+      "display": "#1185FE",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#1185FE",
@@ -2075,6 +2707,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "Facebook",
+      "unit": "",
+      "display": "#0866FF",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#0866FF",
@@ -2088,6 +2724,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "Instagram",
+      "unit": "",
+      "display": "#DD2A7B",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#DD2A7B",
@@ -2101,6 +2741,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "LinkedIn",
+      "unit": "",
+      "display": "#2668B2",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#2668B2",
@@ -2114,6 +2758,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "Pinterest",
+      "unit": "",
+      "display": "#E60023",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#E60023",
@@ -2127,6 +2775,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "Reddit",
+      "unit": "",
+      "display": "#FF4500",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FF4500",
@@ -2140,6 +2792,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "Threads",
+      "unit": "",
+      "display": "#000000",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#000000",
@@ -2153,6 +2809,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "Tiktok",
+      "unit": "",
+      "display": "#000000",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#000000",
@@ -2166,6 +2826,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "Tiktok Blue",
+      "unit": "",
+      "display": "#25F4EE",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#25F4EE",
@@ -2179,6 +2843,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "Tiktok Red",
+      "unit": "",
+      "display": "#FE2C55",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FE2C55",
@@ -2192,6 +2860,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "Web",
+      "unit": "",
+      "display": "#1F1F1F",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#1F1F1F",
@@ -2205,6 +2877,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "X (Twitter)",
+      "unit": "",
+      "display": "#000000",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#000000",
@@ -2218,6 +2894,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Social Media",
+      "leaf": "YouTube",
+      "unit": "",
+      "display": "#FE0101",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FE0101",
@@ -2231,6 +2911,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors",
+      "leaf": "white",
+      "unit": "",
+      "display": "#FFFFFF",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FFFFFF",
@@ -2244,6 +2928,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Yellow",
+      "leaf": "yellow-100",
+      "unit": "",
+      "display": "#FCF7EF",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#FCF7EF",
@@ -2257,6 +2945,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Yellow",
+      "leaf": "yellow-200",
+      "unit": "",
+      "display": "#F9EDD9",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#F9EDD9",
@@ -2270,6 +2962,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Yellow",
+      "leaf": "yellow-300",
+      "unit": "",
+      "display": "#ECCB95",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#ECCB95",
@@ -2283,6 +2979,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Yellow",
+      "leaf": "yellow-400",
+      "unit": "",
+      "display": "#DFA83D",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#DFA83D",
@@ -2296,6 +2996,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Yellow",
+      "leaf": "yellow-500",
+      "unit": "",
+      "display": "#C18A0E",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#C18A0E",
@@ -2309,6 +3013,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Yellow",
+      "leaf": "yellow-600",
+      "unit": "",
+      "display": "#A4750A",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#A4750A",
@@ -2322,6 +3030,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Yellow",
+      "leaf": "yellow-700",
+      "unit": "",
+      "display": "#886107",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#886107",
@@ -2335,6 +3047,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Colors / Yellow",
+      "leaf": "yellow-800",
+      "unit": "",
+      "display": "#6D4D04",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "#6D4D04",
@@ -2348,6 +3064,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts",
+      "leaf": "font-family",
+      "unit": "",
+      "display": "Averta Std",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "Averta Std",
@@ -2361,6 +3081,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Line-Height",
+      "leaf": "font-line-height-lg",
+      "unit": "",
+      "display": "24",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "24",
@@ -2374,6 +3098,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Line-Height",
+      "leaf": "font-line-height-md",
+      "unit": "",
+      "display": "20",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "20",
@@ -2387,6 +3115,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Line-Height",
+      "leaf": "font-line-height-sm",
+      "unit": "",
+      "display": "18",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "18",
@@ -2400,6 +3132,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Line-Height",
+      "leaf": "font-line-height-xl",
+      "unit": "",
+      "display": "32",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "32",
@@ -2413,6 +3149,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Line-Height",
+      "leaf": "font-line-height-xs",
+      "unit": "",
+      "display": "16",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "16",
@@ -2426,6 +3166,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Line-Height",
+      "leaf": "font-line-height-xxl",
+      "unit": "",
+      "display": "36",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "36",
@@ -2439,6 +3183,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Size",
+      "leaf": "font-size-lg",
+      "unit": "",
+      "display": "18",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "18",
@@ -2452,6 +3200,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Size",
+      "leaf": "font-size-md",
+      "unit": "",
+      "display": "16",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "16",
@@ -2465,6 +3217,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Size",
+      "leaf": "font-size-sm",
+      "unit": "",
+      "display": "14",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "14",
@@ -2478,6 +3234,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Size",
+      "leaf": "font-size-xl",
+      "unit": "",
+      "display": "20",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "20",
@@ -2491,6 +3251,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Size",
+      "leaf": "font-size-xs",
+      "unit": "",
+      "display": "12",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "12",
@@ -2504,6 +3268,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Size",
+      "leaf": "font-size-xxl",
+      "unit": "",
+      "display": "24",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "24",
@@ -2517,6 +3285,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Size",
+      "leaf": "font-size-xxxl",
+      "unit": "",
+      "display": "28",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "28",
@@ -2530,6 +3302,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Weight",
+      "leaf": "font-weight-black",
+      "unit": "",
+      "display": "900",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "900",
@@ -2543,6 +3319,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Weight",
+      "leaf": "font-weight-bold",
+      "unit": "",
+      "display": "700",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "700",
@@ -2556,6 +3336,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Weight",
+      "leaf": "font-weight-extra-bold",
+      "unit": "",
+      "display": "800",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "800",
@@ -2569,6 +3353,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Fonts / Weight",
+      "leaf": "font-weight-regular",
+      "unit": "",
+      "display": "400",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "400",
@@ -2582,6 +3370,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Icons",
+      "leaf": "icon-size-md",
+      "unit": "",
+      "display": "24",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "24",
@@ -2595,6 +3387,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Icons",
+      "leaf": "icon-size-sm",
+      "unit": "",
+      "display": "16",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "16",
@@ -2608,6 +3404,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Icons",
+      "leaf": "icon-size-xl",
+      "unit": "",
+      "display": "40",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "40",
@@ -2621,6 +3421,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Icons",
+      "leaf": "icon-size-xs",
+      "unit": "",
+      "display": "12",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "12",
@@ -2634,6 +3438,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Icons",
+      "leaf": "icon-size-xxl",
+      "unit": "",
+      "display": "48",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "48",
@@ -2647,6 +3455,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Spacings",
+      "leaf": "spacing-lg",
+      "unit": "",
+      "display": "32",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "32",
@@ -2660,6 +3472,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Spacings",
+      "leaf": "spacing-md",
+      "unit": "",
+      "display": "24",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "24",
@@ -2673,6 +3489,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Spacings",
+      "leaf": "spacing-sm",
+      "unit": "",
+      "display": "16",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "16",
@@ -2686,6 +3506,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Spacings",
+      "leaf": "spacing-xl",
+      "unit": "",
+      "display": "40",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "40",
@@ -2699,6 +3523,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Spacings",
+      "leaf": "spacing-xs",
+      "unit": "",
+      "display": "12",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "12",
@@ -2712,6 +3540,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Spacings",
+      "leaf": "spacing-xxl",
+      "unit": "",
+      "display": "48",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "48",
@@ -2725,6 +3557,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Spacings",
+      "leaf": "spacing-xxs",
+      "unit": "",
+      "display": "8",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "8",
@@ -2738,6 +3574,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Spacings",
+      "leaf": "spacing-xxxl",
+      "unit": "",
+      "display": "60",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "60",
@@ -2751,6 +3591,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "Spacings",
+      "leaf": "spacing-xxxs",
+      "unit": "",
+      "display": "4",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "4",
@@ -2764,6 +3608,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-grey-300",
       "aliasOf": "--ref-color-grey-300",
       "aliasOfFigma": "Colors/Grey/grey-300",
       "value": "#DFE3E8",
@@ -2777,6 +3625,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border",
+      "leaf": "error",
+      "unit": "",
+      "display": "--ref-color-red-600",
       "aliasOf": "--ref-color-red-600",
       "aliasOfFigma": "Colors/Red/red-600",
       "value": "#EC1011",
@@ -2790,6 +3642,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border",
+      "leaf": "featurelock",
+      "unit": "",
+      "display": "--ref-color-purple-600",
       "aliasOf": "--ref-color-purple-600",
       "aliasOfFigma": "Colors/Purple/purple-600",
       "value": "#7A70CA",
@@ -2803,6 +3659,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border",
+      "leaf": "information",
+      "unit": "",
+      "display": "--ref-color-electric-blue-600",
       "aliasOf": "--ref-color-electric-blue-600",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
       "value": "#0B7EE7",
@@ -2816,6 +3676,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border / input / active",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-electric-blue-400",
       "aliasOf": "--ref-color-electric-blue-400",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
       "value": "#7AB6FE",
@@ -2829,6 +3693,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border / input / active",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-electric-blue-600",
       "aliasOf": "--ref-color-electric-blue-600",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
       "value": "#0B7EE7",
@@ -2842,6 +3710,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border / input / active",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-electric-blue-300",
       "aliasOf": "--ref-color-electric-blue-300",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
       "value": "#B1D4FE",
@@ -2855,6 +3727,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border / input / active",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-electric-blue-500",
       "aliasOf": "--ref-color-electric-blue-500",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-500",
       "value": "#178DFE",
@@ -2868,6 +3744,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border / input",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-grey-700",
       "aliasOf": "--ref-color-grey-700",
       "aliasOfFigma": "Colors/Grey/grey-700",
       "value": "#758498",
@@ -2881,6 +3761,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border / input",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-grey-400",
       "aliasOf": "--ref-color-grey-400",
       "aliasOfFigma": "Colors/Grey/grey-400",
       "value": "#C0C8D1",
@@ -2894,6 +3778,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border / input",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-grey-300",
       "aliasOf": "--ref-color-grey-300",
       "aliasOfFigma": "Colors/Grey/grey-300",
       "value": "#DFE3E8",
@@ -2907,6 +3795,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border / input",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-grey-600",
       "aliasOf": "--ref-color-grey-600",
       "aliasOfFigma": "Colors/Grey/grey-600",
       "value": "#8D9AAB",
@@ -2920,6 +3812,10 @@
       "scopes": [
         "STROKE_COLOR"
       ],
+      "group": "color / border / interactive / active",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-electric-blue-400",
       "aliasOf": "--ref-color-electric-blue-400",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
       "value": "#7AB6FE",
@@ -2933,6 +3829,10 @@
       "scopes": [
         "STROKE_COLOR"
       ],
+      "group": "color / border / interactive / active",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-electric-blue-600",
       "aliasOf": "--ref-color-electric-blue-600",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
       "value": "#0B7EE7",
@@ -2946,6 +3846,10 @@
       "scopes": [
         "STROKE_COLOR"
       ],
+      "group": "color / border / interactive / active",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-electric-blue-300",
       "aliasOf": "--ref-color-electric-blue-300",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
       "value": "#B1D4FE",
@@ -2959,6 +3863,10 @@
       "scopes": [
         "STROKE_COLOR"
       ],
+      "group": "color / border / interactive / active",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-electric-blue-500",
       "aliasOf": "--ref-color-electric-blue-500",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-500",
       "value": "#178DFE",
@@ -2972,6 +3880,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border / interactive",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-grey-600",
       "aliasOf": "--ref-color-grey-600",
       "aliasOfFigma": "Colors/Grey/grey-600",
       "value": "#8D9AAB",
@@ -2985,6 +3897,10 @@
       "scopes": [
         "STROKE_COLOR"
       ],
+      "group": "color / border / interactive",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-grey-400",
       "aliasOf": "--ref-color-grey-400",
       "aliasOfFigma": "Colors/Grey/grey-400",
       "value": "#C0C8D1",
@@ -2998,6 +3914,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border / interactive",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-grey-300",
       "aliasOf": "--ref-color-grey-300",
       "aliasOfFigma": "Colors/Grey/grey-300",
       "value": "#DFE3E8",
@@ -3011,6 +3931,10 @@
       "scopes": [
         "STROKE_COLOR"
       ],
+      "group": "color / border / interactive",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-grey-500",
       "aliasOf": "--ref-color-grey-500",
       "aliasOfFigma": "Colors/Grey/grey-500",
       "value": "#A6B1BE",
@@ -3024,6 +3948,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border",
+      "leaf": "success",
+      "unit": "",
+      "display": "--ref-color-green-600",
       "aliasOf": "--ref-color-green-600",
       "aliasOfFigma": "Colors/Green/green-600",
       "value": "#0D9930",
@@ -3037,6 +3965,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / border",
+      "leaf": "warning",
+      "unit": "",
+      "display": "--ref-color-yellow-600",
       "aliasOf": "--ref-color-yellow-600",
       "aliasOfFigma": "Colors/Yellow/yellow-600",
       "value": "#A4750A",
@@ -3050,6 +3982,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "01",
+      "unit": "",
+      "display": "--ref-color-data-cyan-100",
       "aliasOf": "--ref-color-data-cyan-100",
       "aliasOfFigma": "Colors/Data/data-cyan-100",
       "value": "#12AABA",
@@ -3063,6 +3999,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "02",
+      "unit": "",
+      "display": "--ref-color-data-sun-100",
       "aliasOf": "--ref-color-data-sun-100",
       "aliasOfFigma": "Colors/Data/data-sun-100",
       "value": "#D98800",
@@ -3076,6 +4016,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "03",
+      "unit": "",
+      "display": "--ref-color-data-peony-100",
       "aliasOf": "--ref-color-data-peony-100",
       "aliasOfFigma": "Colors/Data/data-peony-100",
       "value": "#CC2878",
@@ -3089,6 +4033,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "04",
+      "unit": "",
+      "display": "--ref-color-data-lime-100",
       "aliasOf": "--ref-color-data-lime-100",
       "aliasOfFigma": "Colors/Data/data-lime-100",
       "value": "#42B85A",
@@ -3102,6 +4050,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "05",
+      "unit": "",
+      "display": "--ref-color-data-iris-100",
       "aliasOf": "--ref-color-data-iris-100",
       "aliasOfFigma": "Colors/Data/data-iris-100",
       "value": "#8A62CC",
@@ -3115,6 +4067,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "06",
+      "unit": "",
+      "display": "--ref-color-data-cherry-100",
       "aliasOf": "--ref-color-data-cherry-100",
       "aliasOfFigma": "Colors/Data/data-cherry-100",
       "value": "#CC5040",
@@ -3128,6 +4084,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "07",
+      "unit": "",
+      "display": "--ref-color-data-sky-100",
       "aliasOf": "--ref-color-data-sky-100",
       "aliasOfFigma": "Colors/Data/data-sky-100",
       "value": "#3A92E8",
@@ -3141,6 +4101,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "08",
+      "unit": "",
+      "display": "--ref-color-data-tangerine-100",
       "aliasOf": "--ref-color-data-tangerine-100",
       "aliasOfFigma": "Colors/Data/data-tangerine-100",
       "value": "#DC6A30",
@@ -3154,6 +4118,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "09",
+      "unit": "",
+      "display": "--ref-color-data-emerald-100",
       "aliasOf": "--ref-color-data-emerald-100",
       "aliasOfFigma": "Colors/Data/data-emerald-100",
       "value": "#12A87A",
@@ -3167,6 +4135,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "10",
+      "unit": "",
+      "display": "--ref-color-data-navy-100",
       "aliasOf": "--ref-color-data-navy-100",
       "aliasOfFigma": "Colors/Data/data-navy-100",
       "value": "#4A6ACC",
@@ -3180,6 +4152,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "negative",
+      "unit": "",
+      "display": "--ref-color-red-700",
       "aliasOf": "--ref-color-red-700",
       "aliasOfFigma": "Colors/Red/red-700",
       "value": "#C50B0C",
@@ -3193,6 +4169,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "neutral",
+      "unit": "",
+      "display": "--ref-color-grey-700",
       "aliasOf": "--ref-color-grey-700",
       "aliasOfFigma": "Colors/Grey/grey-700",
       "value": "#758498",
@@ -3206,6 +4186,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / data",
+      "leaf": "positive",
+      "unit": "",
+      "display": "--ref-color-green-700",
       "aliasOf": "--ref-color-green-700",
       "aliasOfFigma": "Colors/Green/green-700",
       "value": "#097F26",
@@ -3219,6 +4203,10 @@
       "scopes": [
         "SHAPE_FILL"
       ],
+      "group": "color / icon / category",
+      "leaf": "blue",
+      "unit": "",
+      "display": "--sys-color-text-category-blue",
       "aliasOf": "--sys-color-text-category-blue",
       "aliasOfFigma": "color/text/category/blue",
       "value": "#0B7EE7",
@@ -3232,6 +4220,10 @@
       "scopes": [
         "SHAPE_FILL"
       ],
+      "group": "color / icon / category",
+      "leaf": "green",
+      "unit": "",
+      "display": "--sys-color-text-category-green",
       "aliasOf": "--sys-color-text-category-green",
       "aliasOfFigma": "color/text/category/green",
       "value": "#0D9930",
@@ -3245,6 +4237,10 @@
       "scopes": [
         "SHAPE_FILL"
       ],
+      "group": "color / icon / category",
+      "leaf": "grey",
+      "unit": "",
+      "display": "--sys-color-text-category-grey",
       "aliasOf": "--sys-color-text-category-grey",
       "aliasOfFigma": "color/text/category/grey",
       "value": "#5E6E86",
@@ -3258,6 +4254,10 @@
       "scopes": [
         "SHAPE_FILL"
       ],
+      "group": "color / icon / category",
+      "leaf": "menthol",
+      "unit": "",
+      "display": "--sys-color-text-category-menthol",
       "aliasOf": "--sys-color-text-category-menthol",
       "aliasOfFigma": "color/text/category/menthol",
       "value": "#0D928D",
@@ -3271,6 +4271,10 @@
       "scopes": [
         "SHAPE_FILL"
       ],
+      "group": "color / icon / category",
+      "leaf": "red",
+      "unit": "",
+      "display": "--sys-color-text-category-red",
       "aliasOf": "--sys-color-text-category-red",
       "aliasOfFigma": "color/text/category/red",
       "value": "#EC1011",
@@ -3284,6 +4288,10 @@
       "scopes": [
         "SHAPE_FILL"
       ],
+      "group": "color / icon / category",
+      "leaf": "yellow",
+      "unit": "",
+      "display": "--sys-color-text-category-yellow",
       "aliasOf": "--sys-color-text-category-yellow",
       "aliasOfFigma": "color/text/category/yellow",
       "value": "#A4750A",
@@ -3297,6 +4305,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon",
+      "leaf": "default",
+      "unit": "",
+      "display": "--sys-color-text-default",
       "aliasOf": "--sys-color-text-default",
       "aliasOfFigma": "color/text/default",
       "value": "#344563",
@@ -3310,6 +4322,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon",
+      "leaf": "error",
+      "unit": "",
+      "display": "--sys-color-text-error",
       "aliasOf": "--sys-color-text-error",
       "aliasOfFigma": "color/text/error",
       "value": "#EC1011",
@@ -3323,6 +4339,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon",
+      "leaf": "featurelock",
+      "unit": "",
+      "display": "--sys-color-text-featurelock",
       "aliasOf": "--sys-color-text-featurelock",
       "aliasOfFigma": "color/text/featurelock",
       "value": "#7A70CA",
@@ -3336,6 +4356,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon",
+      "leaf": "information",
+      "unit": "",
+      "display": "--sys-color-text-information",
       "aliasOf": "--sys-color-text-information",
       "aliasOfFigma": "color/text/information",
       "value": "#0B7EE7",
@@ -3349,6 +4373,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon / interactive / active",
+      "leaf": "default",
+      "unit": "",
+      "display": "--sys-color-text-interactive-active-default",
       "aliasOf": "--sys-color-text-interactive-active-default",
       "aliasOfFigma": "color/text/interactive/active/default",
       "value": "#0B7EE7",
@@ -3362,6 +4390,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon / interactive / active",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--sys-color-text-interactive-active-disabled",
       "aliasOf": "--sys-color-text-interactive-active-disabled",
       "aliasOfFigma": "color/text/interactive/active/disabled",
       "value": "#B1D4FE",
@@ -3375,6 +4407,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon / interactive",
+      "leaf": "default",
+      "unit": "",
+      "display": "--sys-color-text-interactive-default",
       "aliasOf": "--sys-color-text-interactive-default",
       "aliasOfFigma": "color/text/interactive/default",
       "value": "#344563",
@@ -3388,6 +4424,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon / interactive",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--sys-color-text-interactive-disabled",
       "aliasOf": "--sys-color-text-interactive-disabled",
       "aliasOfFigma": "color/text/interactive/disabled",
       "value": "#C0C8D1",
@@ -3401,6 +4441,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon / interactive / error",
+      "leaf": "default",
+      "unit": "",
+      "display": "--sys-color-text-interactive-error-default",
       "aliasOf": "--sys-color-text-interactive-error-default",
       "aliasOfFigma": "color/text/interactive/error/default",
       "value": "#EC1011",
@@ -3414,6 +4458,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon / interactive / error",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--sys-color-text-interactive-error-disabled",
       "aliasOf": "--sys-color-text-interactive-error-disabled",
       "aliasOfFigma": "color/text/interactive/error/disabled",
       "value": "#FEBEB4",
@@ -3427,6 +4475,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon",
+      "leaf": "notification",
+      "unit": "",
+      "display": "--sys-color-text-notification",
       "aliasOf": "--sys-color-text-notification",
       "aliasOfFigma": "color/text/notification",
       "value": "#FF6726",
@@ -3440,6 +4492,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon",
+      "leaf": "on-color",
+      "unit": "",
+      "display": "--sys-color-text-on-color",
       "aliasOf": "--sys-color-text-on-color",
       "aliasOfFigma": "color/text/on-color",
       "value": "#FFFFFF",
@@ -3453,6 +4509,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon",
+      "leaf": "online",
+      "unit": "",
+      "display": "--ref-color-green-600",
       "aliasOf": "--ref-color-green-600",
       "aliasOfFigma": "Colors/Green/green-600",
       "value": "#0D9930",
@@ -3466,6 +4526,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon",
+      "leaf": "secondary",
+      "unit": "",
+      "display": "--sys-color-text-secondary",
       "aliasOf": "--sys-color-text-secondary",
       "aliasOfFigma": "color/text/secondary",
       "value": "#5E6E86",
@@ -3479,6 +4543,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon",
+      "leaf": "subtle",
+      "unit": "",
+      "display": "--sys-color-text-subtle",
       "aliasOf": "--sys-color-text-subtle",
       "aliasOfFigma": "color/text/subtle",
       "value": "#8D9AAB",
@@ -3492,6 +4560,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon",
+      "leaf": "success",
+      "unit": "",
+      "display": "--sys-color-text-success",
       "aliasOf": "--sys-color-text-success",
       "aliasOfFigma": "color/text/success",
       "value": "#0D9930",
@@ -3505,6 +4577,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / icon",
+      "leaf": "warning",
+      "unit": "",
+      "display": "--sys-color-text-warning",
       "aliasOf": "--sys-color-text-warning",
       "aliasOfFigma": "color/text/warning",
       "value": "#A4750A",
@@ -3518,6 +4594,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / link",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-electric-blue-400",
       "aliasOf": "--ref-color-electric-blue-400",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
       "value": "#7AB6FE",
@@ -3531,6 +4611,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / link",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-electric-blue-600",
       "aliasOf": "--ref-color-electric-blue-600",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
       "value": "#0B7EE7",
@@ -3544,6 +4628,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / link",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-electric-blue-300",
       "aliasOf": "--ref-color-electric-blue-300",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
       "value": "#B1D4FE",
@@ -3557,6 +4645,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / link",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-electric-blue-500",
       "aliasOf": "--ref-color-electric-blue-500",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-500",
       "value": "#178DFE",
@@ -3570,6 +4662,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / link",
+      "leaf": "visited",
+      "unit": "",
+      "display": "--ref-color-purple-800",
       "aliasOf": "--ref-color-purple-800",
       "aliasOfFigma": "Colors/Purple/purple-800",
       "value": "#51419F",
@@ -3583,6 +4679,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface",
+      "leaf": "bold",
+      "unit": "",
+      "display": "--ref-color-grey-500",
       "aliasOf": "--ref-color-grey-500",
       "aliasOfFigma": "Colors/Grey/grey-500",
       "value": "#A6B1BE",
@@ -3596,6 +4696,10 @@
       "scopes": [
         "ALL_FILLS"
       ],
+      "group": "color / surface / category",
+      "leaf": "blue",
+      "unit": "",
+      "display": "--ref-color-electric-blue-200",
       "aliasOf": "--ref-color-electric-blue-200",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-200",
       "value": "#E4F0FF",
@@ -3609,6 +4713,10 @@
       "scopes": [
         "ALL_FILLS"
       ],
+      "group": "color / surface / category",
+      "leaf": "green",
+      "unit": "",
+      "display": "--ref-color-green-200",
       "aliasOf": "--ref-color-green-200",
       "aliasOfFigma": "Colors/Green/green-200",
       "value": "#E3F5E3",
@@ -3622,6 +4730,10 @@
       "scopes": [
         "ALL_FILLS"
       ],
+      "group": "color / surface / category",
+      "leaf": "grey",
+      "unit": "",
+      "display": "--ref-color-grey-200",
       "aliasOf": "--ref-color-grey-200",
       "aliasOfFigma": "Colors/Grey/grey-200",
       "value": "#EDEFF2",
@@ -3635,6 +4747,10 @@
       "scopes": [
         "ALL_FILLS"
       ],
+      "group": "color / surface / category",
+      "leaf": "menthol",
+      "unit": "",
+      "display": "--ref-color-menthol-200",
       "aliasOf": "--ref-color-menthol-200",
       "aliasOfFigma": "Colors/Menthol/menthol-200",
       "value": "#DAF6F3",
@@ -3648,6 +4764,10 @@
       "scopes": [
         "ALL_FILLS"
       ],
+      "group": "color / surface / category",
+      "leaf": "red",
+      "unit": "",
+      "display": "--ref-color-red-200",
       "aliasOf": "--ref-color-red-200",
       "aliasOfFigma": "Colors/Red/red-200",
       "value": "#FFE9E6",
@@ -3661,6 +4781,10 @@
       "scopes": [
         "ALL_FILLS"
       ],
+      "group": "color / surface / category",
+      "leaf": "yellow",
+      "unit": "",
+      "display": "--ref-color-yellow-200",
       "aliasOf": "--ref-color-yellow-200",
       "aliasOfFigma": "Colors/Yellow/yellow-200",
       "value": "#F9EDD9",
@@ -3674,6 +4798,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-white",
       "aliasOf": "--ref-color-white",
       "aliasOfFigma": "Colors/white",
       "value": "#FFFFFF",
@@ -3687,6 +4815,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface",
+      "leaf": "error",
+      "unit": "",
+      "display": "--ref-color-red-200",
       "aliasOf": "--ref-color-red-200",
       "aliasOfFigma": "Colors/Red/red-200",
       "value": "#FFE9E6",
@@ -3700,6 +4832,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface",
+      "leaf": "featurelock",
+      "unit": "",
+      "display": "--ref-color-purple-200",
       "aliasOf": "--ref-color-purple-200",
       "aliasOfFigma": "Colors/Purple/purple-200",
       "value": "#EDEDFF",
@@ -3713,6 +4849,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface",
+      "leaf": "information",
+      "unit": "",
+      "display": "--ref-color-electric-blue-200",
       "aliasOf": "--ref-color-electric-blue-200",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-200",
       "value": "#E4F0FF",
@@ -3726,6 +4866,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / input / active",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-electric-blue-400",
       "aliasOf": "--ref-color-electric-blue-400",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
       "value": "#7AB6FE",
@@ -3739,6 +4883,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / input / active",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-electric-blue-600",
       "aliasOf": "--ref-color-electric-blue-600",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
       "value": "#0B7EE7",
@@ -3752,6 +4900,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / input / active",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-electric-blue-300",
       "aliasOf": "--ref-color-electric-blue-300",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
       "value": "#B1D4FE",
@@ -3765,6 +4917,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / input / active",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-electric-blue-500",
       "aliasOf": "--ref-color-electric-blue-500",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-500",
       "value": "#178DFE",
@@ -3778,6 +4934,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / input",
+      "leaf": "default",
+      "unit": "",
+      "display": "--sys-color-surface-default",
       "aliasOf": "--sys-color-surface-default",
       "aliasOfFigma": "color/surface/default",
       "value": "#FFFFFF",
@@ -3791,6 +4951,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / input",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-grey-200",
       "aliasOf": "--ref-color-grey-200",
       "aliasOfFigma": "Colors/Grey/grey-200",
       "value": "#EDEFF2",
@@ -3804,6 +4968,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive / active",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-electric-blue-400",
       "aliasOf": "--ref-color-electric-blue-400",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
       "value": "#7AB6FE",
@@ -3817,6 +4985,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive / active",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-electric-blue-200",
       "aliasOf": "--ref-color-electric-blue-200",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-200",
       "value": "#E4F0FF",
@@ -3830,6 +5002,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive / active",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-electric-blue-300",
       "aliasOf": "--ref-color-electric-blue-300",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
       "value": "#B1D4FE",
@@ -3843,6 +5019,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-grey-300",
       "aliasOf": "--ref-color-grey-300",
       "aliasOfFigma": "Colors/Grey/grey-300",
       "value": "#DFE3E8",
@@ -3856,6 +5036,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive",
+      "leaf": "default",
+      "unit": "",
+      "display": "--sys-color-surface-default",
       "aliasOf": "--sys-color-surface-default",
       "aliasOfFigma": "color/surface/default",
       "value": "#FFFFFF",
@@ -3869,6 +5053,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive / error",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-red-300",
       "aliasOf": "--ref-color-red-300",
       "aliasOfFigma": "Colors/Red/red-300",
       "value": "#FEBEB4",
@@ -3882,6 +5070,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive / error",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-red-200",
       "aliasOf": "--ref-color-red-200",
       "aliasOfFigma": "Colors/Red/red-200",
       "value": "#FFE9E6",
@@ -3895,6 +5087,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive / featurelock / active",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-purple-400",
       "aliasOf": "--ref-color-purple-400",
       "aliasOfFigma": "Colors/Purple/purple-400",
       "value": "#ADA8F2",
@@ -3908,6 +5104,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive / featurelock / active",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-purple-200",
       "aliasOf": "--ref-color-purple-200",
       "aliasOfFigma": "Colors/Purple/purple-200",
       "value": "#EDEDFF",
@@ -3921,6 +5121,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive / featurelock / active",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-purple-300",
       "aliasOf": "--ref-color-purple-300",
       "aliasOfFigma": "Colors/Purple/purple-300",
       "value": "#CCCAFE",
@@ -3934,6 +5138,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive / featurelock",
+      "leaf": "clicked",
+      "unit": "",
+      "display": "--ref-color-purple-300",
       "aliasOf": "--ref-color-purple-300",
       "aliasOfFigma": "Colors/Purple/purple-300",
       "value": "#CCCAFE",
@@ -3947,6 +5155,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive / featurelock",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-purple-200",
       "aliasOf": "--ref-color-purple-200",
       "aliasOfFigma": "Colors/Purple/purple-200",
       "value": "#EDEDFF",
@@ -3960,6 +5172,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface / interactive",
+      "leaf": "hovered",
+      "unit": "",
+      "display": "--ref-color-grey-200",
       "aliasOf": "--ref-color-grey-200",
       "aliasOfFigma": "Colors/Grey/grey-200",
       "value": "#EDEFF2",
@@ -3973,6 +5189,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface",
+      "leaf": "notification",
+      "unit": "",
+      "display": "--ref-color-orange-500",
       "aliasOf": "--ref-color-orange-500",
       "aliasOfFigma": "Colors/Orange/orange-500",
       "value": "#FF6726",
@@ -3986,6 +5206,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface",
+      "leaf": "secondary",
+      "unit": "",
+      "display": "--ref-color-grey-100",
       "aliasOf": "--ref-color-grey-100",
       "aliasOfFigma": "Colors/Grey/grey-100",
       "value": "#F9F9FA",
@@ -3999,6 +5223,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface",
+      "leaf": "success",
+      "unit": "",
+      "display": "--ref-color-green-200",
       "aliasOf": "--ref-color-green-200",
       "aliasOfFigma": "Colors/Green/green-200",
       "value": "#E3F5E3",
@@ -4012,6 +5240,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface",
+      "leaf": "tertiary",
+      "unit": "",
+      "display": "--ref-color-grey-200",
       "aliasOf": "--ref-color-grey-200",
       "aliasOfFigma": "Colors/Grey/grey-200",
       "value": "#EDEFF2",
@@ -4025,6 +5257,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / surface",
+      "leaf": "warning",
+      "unit": "",
+      "display": "--ref-color-yellow-200",
       "aliasOf": "--ref-color-yellow-200",
       "aliasOfFigma": "Colors/Yellow/yellow-200",
       "value": "#F9EDD9",
@@ -4038,6 +5274,10 @@
       "scopes": [
         "TEXT_FILL"
       ],
+      "group": "color / text / category",
+      "leaf": "blue",
+      "unit": "",
+      "display": "--ref-color-electric-blue-600",
       "aliasOf": "--ref-color-electric-blue-600",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
       "value": "#0B7EE7",
@@ -4051,6 +5291,10 @@
       "scopes": [
         "TEXT_FILL"
       ],
+      "group": "color / text / category",
+      "leaf": "green",
+      "unit": "",
+      "display": "--ref-color-green-600",
       "aliasOf": "--ref-color-green-600",
       "aliasOfFigma": "Colors/Green/green-600",
       "value": "#0D9930",
@@ -4064,6 +5308,10 @@
       "scopes": [
         "TEXT_FILL"
       ],
+      "group": "color / text / category",
+      "leaf": "grey",
+      "unit": "",
+      "display": "--ref-color-grey-800",
       "aliasOf": "--ref-color-grey-800",
       "aliasOfFigma": "Colors/Grey/grey-800",
       "value": "#5E6E86",
@@ -4077,6 +5325,10 @@
       "scopes": [
         "TEXT_FILL"
       ],
+      "group": "color / text / category",
+      "leaf": "menthol",
+      "unit": "",
+      "display": "--ref-color-menthol-600",
       "aliasOf": "--ref-color-menthol-600",
       "aliasOfFigma": "Colors/Menthol/menthol-600",
       "value": "#0D928D",
@@ -4090,6 +5342,10 @@
       "scopes": [
         "TEXT_FILL"
       ],
+      "group": "color / text / category",
+      "leaf": "red",
+      "unit": "",
+      "display": "--ref-color-red-600",
       "aliasOf": "--ref-color-red-600",
       "aliasOfFigma": "Colors/Red/red-600",
       "value": "#EC1011",
@@ -4103,6 +5359,10 @@
       "scopes": [
         "TEXT_FILL"
       ],
+      "group": "color / text / category",
+      "leaf": "yellow",
+      "unit": "",
+      "display": "--ref-color-yellow-600",
       "aliasOf": "--ref-color-yellow-600",
       "aliasOfFigma": "Colors/Yellow/yellow-600",
       "value": "#A4750A",
@@ -4116,6 +5376,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-grey-1000",
       "aliasOf": "--ref-color-grey-1000",
       "aliasOfFigma": "Colors/Grey/grey-1000",
       "value": "#344563",
@@ -4129,6 +5393,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text",
+      "leaf": "error",
+      "unit": "",
+      "display": "--ref-color-red-600",
       "aliasOf": "--ref-color-red-600",
       "aliasOfFigma": "Colors/Red/red-600",
       "value": "#EC1011",
@@ -4142,6 +5410,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text",
+      "leaf": "featurelock",
+      "unit": "",
+      "display": "--ref-color-purple-600",
       "aliasOf": "--ref-color-purple-600",
       "aliasOfFigma": "Colors/Purple/purple-600",
       "value": "#7A70CA",
@@ -4155,6 +5427,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text",
+      "leaf": "information",
+      "unit": "",
+      "display": "--ref-color-electric-blue-600",
       "aliasOf": "--ref-color-electric-blue-600",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
       "value": "#0B7EE7",
@@ -4168,6 +5444,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text / interactive / active",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-electric-blue-600",
       "aliasOf": "--ref-color-electric-blue-600",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
       "value": "#0B7EE7",
@@ -4181,6 +5461,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text / interactive / active",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-electric-blue-300",
       "aliasOf": "--ref-color-electric-blue-300",
       "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
       "value": "#B1D4FE",
@@ -4194,6 +5478,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text / interactive",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-grey-1000",
       "aliasOf": "--ref-color-grey-1000",
       "aliasOfFigma": "Colors/Grey/grey-1000",
       "value": "#344563",
@@ -4207,6 +5495,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text / interactive",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-grey-400",
       "aliasOf": "--ref-color-grey-400",
       "aliasOfFigma": "Colors/Grey/grey-400",
       "value": "#C0C8D1",
@@ -4220,6 +5512,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text / interactive / error",
+      "leaf": "default",
+      "unit": "",
+      "display": "--ref-color-red-600",
       "aliasOf": "--ref-color-red-600",
       "aliasOfFigma": "Colors/Red/red-600",
       "value": "#EC1011",
@@ -4233,6 +5529,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text / interactive / error",
+      "leaf": "disabled",
+      "unit": "",
+      "display": "--ref-color-red-300",
       "aliasOf": "--ref-color-red-300",
       "aliasOfFigma": "Colors/Red/red-300",
       "value": "#FEBEB4",
@@ -4246,6 +5546,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text / interactive",
+      "leaf": "secondary",
+      "unit": "",
+      "display": "--ref-color-grey-800",
       "aliasOf": "--ref-color-grey-800",
       "aliasOfFigma": "Colors/Grey/grey-800",
       "value": "#5E6E86",
@@ -4259,6 +5563,10 @@
       "scopes": [
         "TEXT_FILL"
       ],
+      "group": "color / text",
+      "leaf": "notification",
+      "unit": "",
+      "display": "--ref-color-orange-500",
       "aliasOf": "--ref-color-orange-500",
       "aliasOfFigma": "Colors/Orange/orange-500",
       "value": "#FF6726",
@@ -4272,6 +5580,10 @@
       "scopes": [
         "TEXT_FILL"
       ],
+      "group": "color / text",
+      "leaf": "on-color",
+      "unit": "",
+      "display": "--ref-color-white",
       "aliasOf": "--ref-color-white",
       "aliasOfFigma": "Colors/white",
       "value": "#FFFFFF",
@@ -4285,6 +5597,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text",
+      "leaf": "secondary",
+      "unit": "",
+      "display": "--ref-color-grey-800",
       "aliasOf": "--ref-color-grey-800",
       "aliasOfFigma": "Colors/Grey/grey-800",
       "value": "#5E6E86",
@@ -4298,6 +5614,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text",
+      "leaf": "subtle",
+      "unit": "",
+      "display": "--ref-color-grey-600",
       "aliasOf": "--ref-color-grey-600",
       "aliasOfFigma": "Colors/Grey/grey-600",
       "value": "#8D9AAB",
@@ -4311,6 +5631,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text",
+      "leaf": "success",
+      "unit": "",
+      "display": "--ref-color-green-600",
       "aliasOf": "--ref-color-green-600",
       "aliasOfFigma": "Colors/Green/green-600",
       "value": "#0D9930",
@@ -4324,6 +5648,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "color / text",
+      "leaf": "warning",
+      "unit": "",
+      "display": "--ref-color-yellow-600",
       "aliasOf": "--ref-color-yellow-600",
       "aliasOfFigma": "Colors/Yellow/yellow-600",
       "value": "#A4750A",
@@ -4337,6 +5665,10 @@
       "scopes": [
         "WIDTH_HEIGHT"
       ],
+      "group": "height",
+      "leaf": "chip",
+      "unit": "px",
+      "display": "24px",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "24",
@@ -4350,6 +5682,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "height",
+      "leaf": "control",
+      "unit": "",
+      "display": "36",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "36",
@@ -4363,6 +5699,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "height",
+      "leaf": "line",
+      "unit": "",
+      "display": "16",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "16",
@@ -4376,6 +5716,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "motion / easing",
+      "leaf": "accelerated",
+      "unit": "",
+      "display": "{\"type\":\"CUSTOM_CUBIC_BEZIER\",\"easingFunctionCubicBezier\":{\"x1\":0.4,\"y1\":0,\"x2\":1,\"y2\":1}}",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "{\"type\":\"CUSTOM_CUBIC_BEZIER\",\"easingFunctionCubicBezier\":{\"x1\":0.4,\"y1\":0,\"x2\":1,\"y2\":1}}",
@@ -4389,6 +5733,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "motion / easing",
+      "leaf": "decelerated",
+      "unit": "",
+      "display": "{\"type\":\"CUSTOM_CUBIC_BEZIER\",\"easingFunctionCubicBezier\":{\"x1\":0,\"y1\":0,\"x2\":0.2,\"y2\":1}}",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "{\"type\":\"CUSTOM_CUBIC_BEZIER\",\"easingFunctionCubicBezier\":{\"x1\":0,\"y1\":0,\"x2\":0.2,\"y2\":1}}",
@@ -4402,6 +5750,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "motion / easing",
+      "leaf": "standard",
+      "unit": "",
+      "display": "{\"type\":\"CUSTOM_CUBIC_BEZIER\",\"easingFunctionCubicBezier\":{\"x1\":0.4,\"y1\":0,\"x2\":0.3,\"y2\":1}}",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "{\"type\":\"CUSTOM_CUBIC_BEZIER\",\"easingFunctionCubicBezier\":{\"x1\":0.4,\"y1\":0,\"x2\":0.3,\"y2\":1}}",
@@ -4415,6 +5767,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "motion / timing",
+      "leaf": "long",
+      "unit": "ms",
+      "display": "400ms",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "0.4",
@@ -4428,6 +5784,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "motion / timing",
+      "leaf": "normal",
+      "unit": "ms",
+      "display": "250ms",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "0.25",
@@ -4441,6 +5801,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "motion / timing",
+      "leaf": "short",
+      "unit": "ms",
+      "display": "150ms",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "0.15",
@@ -4454,6 +5818,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "motion / timing",
+      "leaf": "xshort",
+      "unit": "ms",
+      "display": "75ms",
       "aliasOf": null,
       "aliasOfFigma": null,
       "value": "0.075",
@@ -4467,6 +5835,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "radius",
+      "leaf": "chip",
+      "unit": "",
+      "display": "--ref-border-radius-sm",
       "aliasOf": "--ref-border-radius-sm",
       "aliasOfFigma": "Border Radius/border-radius-sm",
       "value": "4",
@@ -4480,6 +5852,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "radius",
+      "leaf": "container",
+      "unit": "",
+      "display": "--ref-border-radius-lg",
       "aliasOf": "--ref-border-radius-lg",
       "aliasOfFigma": "Border Radius/border-radius-lg",
       "value": "8",
@@ -4493,6 +5869,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "radius",
+      "leaf": "control",
+      "unit": "",
+      "display": "--ref-border-radius-md",
       "aliasOf": "--ref-border-radius-md",
       "aliasOfFigma": "Border Radius/border-radius-md",
       "value": "6",
@@ -4506,6 +5886,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "radius",
+      "leaf": "inner",
+      "unit": "",
+      "display": "--ref-border-radius-md",
       "aliasOf": "--ref-border-radius-md",
       "aliasOfFigma": "Border Radius/border-radius-md",
       "value": "6",
@@ -4519,6 +5903,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "spacing / inline",
+      "leaf": "icon-default",
+      "unit": "",
+      "display": "--ref-spacings-spacing-xxs",
       "aliasOf": "--ref-spacings-spacing-xxs",
       "aliasOfFigma": "Spacings/spacing-xxs",
       "value": "8",
@@ -4532,6 +5920,10 @@
       "scopes": [
         "ALL_SCOPES"
       ],
+      "group": "spacing / inline",
+      "leaf": "icon-small",
+      "unit": "",
+      "display": "--ref-spacings-spacing-xxxs",
       "aliasOf": "--ref-spacings-spacing-xxxs",
       "aliasOfFigma": "Spacings/spacing-xxxs",
       "value": "4",

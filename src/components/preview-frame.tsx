@@ -16,24 +16,26 @@ import { useEffect, useRef } from 'react';
 export function PreviewFrame({
   specimenId,
   componentName,
+  state,
   overrides,
   className,
   title = 'Preview du design system',
 }: {
   specimenId?: string;
   componentName?: string;
+  /** Force un état sur le spécimen : `hover`, `focus`, `active`, `disabled`… */
+  state?: string | null;
   overrides: Record<string, string>;
   className?: string;
   title?: string;
 }) {
   const frameRef = useRef<HTMLIFrameElement>(null);
 
-  const query = specimenId
-    ? `?specimen=${encodeURIComponent(specimenId)}`
-    : componentName
-      ? `?component=${encodeURIComponent(componentName)}`
-      : '';
-  const src = `/preview${query}`;
+  const params = new URLSearchParams();
+  if (specimenId) params.set('specimen', specimenId);
+  else if (componentName) params.set('component', componentName);
+  if (state) params.set('state', state);
+  const src = `/preview${params.size ? `?${params}` : ''}`;
 
   useEffect(() => {
     const apply = () => {

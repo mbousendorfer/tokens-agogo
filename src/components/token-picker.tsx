@@ -1,7 +1,7 @@
 'use client';
 
 import { Check, ChevronsUpDown, X } from 'lucide-react';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -26,10 +26,14 @@ function Swatch({ value }: { value: string | null }) {
 /**
  * Le sélecteur de token — le cœur de l'app (ADR 011).
  *
- * Un combobox shadcn : `Command` gère la recherche, la navigation au clavier et
- * l'accessibilité. Les candidats arrivent déjà triés — sémantique d'abord, puis
- * pertinence pour la propriété CSS. Ce tri est une aide à la lecture, pas une
- * recommandation : c'est l'intention qui décide, pas la ressemblance (ADR 003).
+ * Il se lit comme le panneau Variables de Figma : les tokens rangés sous leur groupe
+ * (`color / text / interactive`), et en valeur **le token pointé**, pas la couleur
+ * résolue. Un token qui alias `Colors/Grey/grey-1000` s'affiche comme tel — c'est le
+ * vocabulaire dans lequel la décision se prend.
+ *
+ * L'ordre des groupes suit la pertinence pour la propriété CSS de la déclaration.
+ * C'est une aide à la lecture, pas une recommandation : c'est l'intention qui décide
+ * (ADR 003).
  */
 export function TokenPicker({
   current,
@@ -46,6 +50,18 @@ export function TokenPicker({
 }) {
   const [open, setOpen] = useState(false);
   const chosenCandidate = candidates.find((candidate) => candidate.name === chosen);
+
+  const groups = useMemo(() => {
+    const map = new Map<string, Candidate[]>();
+    for (const candidate of candidates) {
+      map.set(candidate.group, [...(map.get(candidate.group) ?? []), candidate]);
+    }
+    // Le groupe le plus pertinent en premier — sa meilleure ligne le classe.
+    return [...map.entries()].sort(
+      ([, a], [, b]) =>
+        Math.max(...b.map((c) => c.relevance)) - Math.max(...a.map((c) => c.relevance)),
+    );
+  }, [candidates]);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -68,8 +84,8 @@ export function TokenPicker({
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className="w-[480px] p-0" align="start">
-        {/* Le tri des candidats porte l'information : on ne laisse pas cmdk le refaire. */}
+      <PopoverContent className="w-[560px] p-0" align="start">
+        {/* L'ordre porte l'information : on n'autorise pas cmdk à le refaire. */}
         <Command
           filter={(value, search) => (value.toLowerCase().includes(search.toLowerCase()) ? 1 : 0)}
         >
@@ -78,40 +94,44 @@ export function TokenPicker({
             <CommandEmpty className="py-6 text-center text-xs">
               Aucun token ne correspond.
             </CommandEmpty>
-            <CommandGroup>
-              {candidates.map((candidate) => (
-                <CommandItem
-                  key={candidate.name}
-                  value={candidate.name}
-                  onSelect={() => {
-                    onChoose(candidate.name);
-                    setOpen(false);
-                  }}
-                  className="gap-2 font-mono text-xs"
-                >
-                  <Swatch value={candidate.value} />
-                  <span className="flex-1 truncate">{candidate.name}</span>
-                  {candidate.sameValue && (
-                    <Badge
-                      variant="outline"
-                      className="h-4 px-1 text-[10px]"
-                      title="Rend exactement la valeur actuelle"
-                    >
-                      =
-                    </Badge>
-                  )}
-                  <span className="text-muted-foreground shrink-0 tabular-nums">
-                    {candidate.value}
-                  </span>
-                  <Check
-                    className={cn(
-                      'size-3 shrink-0',
-                      candidate.name === chosen ? 'opacity-100' : 'opacity-0',
+
+            {groups.map(([group, items]) => (
+              <CommandGroup key={group} heading={group}>
+                {items.map((candidate) => (
+                  <CommandItem
+                    key={candidate.name}
+                    value={candidate.name}
+                    onSelect={() => {
+                      onChoose(candidate.name);
+                      setOpen(false);
+                    }}
+                    className="gap-2 font-mono text-xs"
+                  >
+                    <Swatch value={candidate.value} />
+                    <span className="flex-1 truncate">{candidate.name}</span>
+                    {candidate.sameValue && (
+                      <Badge
+                        variant="outline"
+                        className="h-4 shrink-0 px-1 text-[10px]"
+                        title="Rend exactement ce que rend la déclaration aujourd'hui"
+                      >
+                        =
+                      </Badge>
                     )}
-                  />
-                </CommandItem>
-              ))}
-            </CommandGroup>
+                    {/* Ce que Figma affiche : le token pointé, ou la valeur littérale. */}
+                    <span className="text-muted-foreground max-w-[46%] shrink-0 truncate">
+                      {candidate.display}
+                    </span>
+                    <Check
+                      className={cn(
+                        'size-3 shrink-0',
+                        candidate.name === chosen ? 'opacity-100' : 'opacity-0',
+                      )}
+                    />
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            ))}
           </CommandList>
 
           {chosen && (

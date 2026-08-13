@@ -1,4 +1,6 @@
 import { allSpecimens, findSpecimen, specimensByComponent } from '@/lib/specimens';
+import { ForceStates } from './force-states';
+import { FORCEABLE_STATES, type ForceableState } from './states';
 
 /**
  * Le contenu de l'iframe de preview.
@@ -14,6 +16,12 @@ export default async function PreviewPage({ searchParams }: PageProps<'/preview'
   const id = first(params.specimen);
   const componentName = first(params.component);
 
+  // `?state=hover` force l'état sur le spécimen, via les règles dérivées du CSS réel.
+  const requested = first(params.state);
+  const forced = FORCEABLE_STATES.includes(requested as ForceableState)
+    ? (requested as ForceableState)
+    : null;
+
   const only = id ? findSpecimen(id) : undefined;
   if (id && !only) {
     return <p style={{ font: '13px system-ui', padding: 24 }}>Spécimen inconnu : {id}</p>;
@@ -27,6 +35,7 @@ export default async function PreviewPage({ searchParams }: PageProps<'/preview'
 
   return (
     <div style={{ padding: only ? 24 : 32 }}>
+      <ForceStates />
       {showHeadings && (
         <p style={{ font: '13px system-ui', color: '#666', margin: '0 0 24px' }}>
           {allSpecimens().length} spécimens, extraits des stories CSS-UI du design system.
@@ -50,9 +59,13 @@ export default async function PreviewPage({ searchParams }: PageProps<'/preview'
           )}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, alignItems: 'flex-start' }}>
             {items.map((item) => (
-              <div key={item.id} data-specimen={item.id}>
-                <div dangerouslySetInnerHTML={{ __html: item.html }} />
-              </div>
+              // La classe vit sur l'enveloppe : les règles dérivées savent descendre.
+              <div
+                key={item.id}
+                data-specimen={item.id}
+                className={forced ? `force-${forced}` : undefined}
+                dangerouslySetInnerHTML={{ __html: item.html }}
+              />
             ))}
           </div>
         </section>

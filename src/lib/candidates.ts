@@ -4,6 +4,9 @@ import { scopeMatches, targetTokens, type FigmaToken } from './figma-tokens';
 export type Candidate = {
   name: string;
   tier: string;
+  group: string;
+  /** Ce que Figma affiche : le token pointé, ou la valeur littérale avec son unité. */
+  display: string | null;
   value: string | null;
   /** Valeur dans le mode `Accessible` de Figma, quand elle diffère. */
   accessibleValue: string | null;
@@ -86,6 +89,8 @@ export function candidatesFor({
       return {
         name: token.name,
         tier: token.tier,
+        group: token.group,
+        display: token.display,
         value: token.value,
         accessibleValue: token.accessibleValue,
         sameValue: Boolean(

@@ -12,7 +12,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import { CssPreview } from '@/components/css-preview';
 import { PreviewFrame } from '@/components/preview-frame';
 import { TokenPicker } from '@/components/token-picker';
 import type { Candidate } from '@/lib/candidates';
@@ -32,6 +34,9 @@ export type WorkbenchRow = {
   fallbackIsToken: boolean;
   candidates: Candidate[];
 };
+
+/** Les états que la preview sait forcer, plus le défaut. */
+const FORCED_STATES = ['défaut', 'hover', 'focus', 'active', 'disabled'];
 
 const TIER_STYLES: Record<string, string> = {
   ref: 'bg-destructive/10 text-destructive',
@@ -62,6 +67,7 @@ export function ComponentWorkbench({
   canWrite: boolean;
 }) {
   const [specimen, setSpecimen] = useState(specimens[0]?.id);
+  const [forcedState, setForcedState] = useState('défaut');
   const [state, setState] = useState<MigrationState>(EMPTY_STATE);
   const [stateFilter, setStateFilter] = useState('à traiter');
   const [saving, setSaving] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle');
@@ -217,17 +223,68 @@ export function ComponentWorkbench({
               </ToggleGroupItem>
             ))}
           </ToggleGroup>
-          <PreviewFrame
-            key={specimen}
-            specimenId={specimen}
-            overrides={overrides}
-            className="h-56 w-full rounded-lg border bg-white"
-          />
-          {Object.keys(overrides).length > 0 && (
-            <p className="text-muted-foreground mt-1.5 text-xs">
-              La preview applique les {Object.keys(overrides).length} décision(s) prises.
-            </p>
-          )}
+          <Tabs defaultValue="rendu">
+            <div className="mb-2 flex flex-wrap items-center gap-2">
+              <TabsList className="h-7">
+                <TabsTrigger value="rendu" className="text-xs">
+                  Rendu
+                </TabsTrigger>
+                <TabsTrigger value="css" className="text-xs">
+                  CSS
+                </TabsTrigger>
+              </TabsList>
+
+              {/*
+                Une pseudo-classe ne se déclenche pas de l'extérieur : la preview
+                applique des règles dérivées du CSS réel du design system, où
+                `:hover` devient une classe posée sur l'enveloppe.
+              */}
+              <ToggleGroup
+                type="single"
+                size="sm"
+                value={forcedState}
+                onValueChange={(value) => value && setForcedState(value)}
+                aria-label="État forcé"
+              >
+                {FORCED_STATES.map((state) => (
+                  <ToggleGroupItem key={state} value={state} className="px-2 text-xs">
+                    {state}
+                  </ToggleGroupItem>
+                ))}
+              </ToggleGroup>
+
+              {Object.keys(overrides).length > 0 && (
+                <span className="text-muted-foreground ml-auto text-xs">
+                  {Object.keys(overrides).length} décision(s) appliquée(s)
+                </span>
+              )}
+            </div>
+
+            <TabsContent value="rendu">
+              <PreviewFrame
+                key={`${specimen}-${forcedState}`}
+                specimenId={specimen}
+                state={forcedState === 'défaut' ? null : forcedState}
+                overrides={overrides}
+                className="h-56 w-full rounded-lg border bg-white"
+              />
+            </TabsContent>
+
+            <TabsContent value="css">
+              <CssPreview
+                lines={rows
+                  .filter((row) => row.tier !== 'local')
+                  .map((row) => ({
+                    file: row.file,
+                    line: row.line,
+                    selector: row.selector,
+                    property: row.property,
+                    token: row.token,
+                    to: decisions.get(decisionKey(row.file, row.line, row.token))?.to ?? null,
+                  }))}
+              />
+            </TabsContent>
+          </Tabs>
         </section>
       )}
 

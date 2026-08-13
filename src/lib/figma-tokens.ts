@@ -13,6 +13,13 @@ export type FigmaToken = {
   collection: string;
   aliasOf: string | null;
   aliasOfFigma: string | null;
+  /** Le chemin de groupe Figma, sans le dernier segment : `color / text / interactive`. */
+  group: string;
+  /** Le dernier segment, ce que Figma affiche dans sa colonne Name. */
+  leaf: string;
+  /** Ce que Figma affiche comme valeur : le token pointé, ou la valeur littérale avec son unité. */
+  display: string | null;
+  unit: string;
   value: string | null;
   /** Valeur dans le mode `Accessible` de Figma, quand elle diffère du mode par défaut. */
   accessibleValue: string | null;

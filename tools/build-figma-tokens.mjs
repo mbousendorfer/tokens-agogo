@@ -79,6 +79,45 @@ function parseTsv(path, tier, collection) {
     });
 }
 
+/**
+ * L'unité d'une valeur, déduite du scope Figma du token de référence.
+ *
+ * Les tokens `sys` et `comp` sont presque tous marqués `ALL_SCOPES` : c'est au bout
+ * de la chaîne d'alias, sur la primitive, que Figma dit vraiment de quoi il s'agit.
+ * Un `radius/control` qui alias `Border Radius/border-radius-md` hérite donc de
+ * `CORNER_RADIUS`, et s'affiche en pixels.
+ */
+const UNIT_BY_SCOPE = {
+  CORNER_RADIUS: 'px',
+  GAP: 'px',
+  WIDTH_HEIGHT: 'px',
+  FONT_SIZE: 'px',
+  LINE_HEIGHT: 'px',
+  PARAGRAPH_SPACING: 'px',
+  LETTER_SPACING: 'px',
+  STROKE_FLOAT: 'px',
+  FONT_WEIGHT: '',
+  FONT_FAMILY: '',
+  OPACITY: '',
+};
+
+/**
+ * Le groupe sous lequel ranger le token, exactement comme le panneau Variables de
+ * Figma : tout le chemin sauf le dernier segment.
+ *
+ * `color/text/interactive/active/default` -> `color / text / interactive / active`.
+ * C'est le vocabulaire des designers, pas une taxonomie réinventée ici.
+ */
+function groupOf(figmaName) {
+  const parts = figmaName.split('/');
+  return parts.length > 1 ? parts.slice(0, -1).join(' / ') : '—';
+}
+
+/** Le dernier segment : ce que Figma affiche dans la colonne Name. */
+function leafOf(figmaName) {
+  return figmaName.split('/').at(-1);
+}
+
 /** Résout les chaînes d'alias `@Autre/Nom` jusqu'à la valeur littérale. */
 function resolve(tokens) {
   const byFigmaName = new Map(tokens.map((token) => [token.figmaName, token]));
@@ -90,10 +129,43 @@ function resolve(tokens) {
     return valueOf(byFigmaName.get(token.raw.slice(1)), seen);
   };
 
+  /** Descend la chaîne d'alias jusqu'à la primitive, pour lire son scope. */
+  const rootOf = (token, seen = new Set()) => {
+    if (!token || seen.has(token.figmaName)) return null;
+    if (!token.raw.startsWith('@')) return token;
+    seen.add(token.figmaName);
+    return rootOf(byFigmaName.get(token.raw.slice(1)), seen);
+  };
+
   return tokens.map((token) => {
     const target = token.raw.startsWith('@') ? byFigmaName.get(token.raw.slice(1)) : null;
+    const root = rootOf(token);
+    const scope = (root?.scopes ?? []).find((s) => s in UNIT_BY_SCOPE);
+    const value = valueOf(token);
+
+    // Les durées de Figma sont en secondes ; en CSS on les lit en millisecondes.
+    const isTiming = token.figmaName.startsWith('motion/timing');
+    const unit = isTiming ? 'ms' : (UNIT_BY_SCOPE[scope] ?? '');
+
     return {
       ...token,
+      group: groupOf(token.figmaName),
+      leaf: leafOf(token.figmaName),
+      unit,
+      /*
+        Ce que Figma affiche dans la colonne de valeur : le token pointé quand il y
+        en a un, la valeur littérale sinon. Jamais la couleur résolue — un token qui
+        alias `Colors/Grey/grey-1000` se lit comme tel, pas comme `#344563`.
+      */
+      display: target
+        ? target.name
+        : value == null
+          ? null
+          : isTiming
+            ? `${Math.round(Number(value) * 1000)}ms`
+            : /^-?[\d.]+$/.test(String(value))
+              ? `${value}${unit}`
+              : String(value),
       aliasOf: target ? target.name : null,
       aliasOfFigma: token.raw.startsWith('@') ? token.raw.slice(1) : null,
       value: valueOf(token),
@@ -135,8 +207,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const { counts, tokens } = buildFigmaTokens();
   console.log(`${counts.total} tokens cibles :`, counts.byTier);
   console.log('\nExemples :');
-  for (const token of tokens.filter((t) => t.tier === 'sys').slice(0, 6)) {
-    console.log(`  ${token.name.padEnd(46)} ${token.aliasOf ?? ''} ${token.value ?? ''}`);
+  for (const token of tokens.filter((t) => t.tier === 'sys').slice(0, 8)) {
+    console.log(`  ${token.leaf.padEnd(22)} ${String(token.display).padEnd(30)} ${token.group}`);
   }
   const unresolved = tokens.filter((t) => !t.value);
   if (unresolved.length) {
