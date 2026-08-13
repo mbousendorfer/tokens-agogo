@@ -4,6 +4,24 @@ Une entrée par étape livrée. Format inspiré de [Keep a Changelog](https://ke
 
 ## [Non publié]
 
+### Étapes 4 à 8 — Figma, alignement, palettes, changeset
+
+- **Plugin Figma maison** (`figma-plugin/`) : exporte les variables *et* les
+  `boundVariables` par variante de composant, que produit aucun export tiers.
+  `networkAccess: none`. Sans snapshot, `pnpm ds:figma` écrit un fichier vide et dit
+  comment en produire un — l'app n'invente rien.
+- **Vue Composants** : 79 composants classés par dette, et pour chacun ses
+  déclarations groupées **par état** — la maille à laquelle Figma prescrit. Verdict
+  par déclaration ; « conforme » et « à migrer » restent muets tant que la spec Figma
+  n'est pas importée.
+- **Vue Palettes** : 36 ramps, 117 primitives, luminosité OKLCH, détection des marches
+  irrégulières, contraste WCAG 2.x bloquant et APCA (Lc) indicatif. Le module couleur
+  est validé contre les valeurs de référence publiées (APCA 106,04 / −107,88).
+- **Vue Changeset** : le plan d'opérations ordonné du moins risqué au plus risqué,
+  exportable en `changeset.md` lisible par un humain et applicable par un agent.
+- **Storybook proxifié** en same-origin sous `/storybook`, pour atteindre les
+  composants Angular sans modifier le repo du design system.
+
 ### Étape 3 — Index de déclarations
 
 - `pnpm ds:usage` relève chaque déclaration du design system avec son **sélecteur
