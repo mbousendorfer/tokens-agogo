@@ -1,6 +1,10 @@
 import data from '../../data/tokens.json';
 
-export type Tier = 'ref' | 'sys' | 'comp' | 'autre';
+/**
+ * `autre` vient de Style Dictionary (un token hors des trois préfixes), `local` du
+ * scanner (une custom property déclarée dans une feuille de style, hors système).
+ */
+export type Tier = 'ref' | 'sys' | 'comp' | 'local' | 'autre';
 
 export type Token = {
   name: string;
