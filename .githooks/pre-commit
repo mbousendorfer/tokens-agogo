@@ -1,0 +1,16 @@
+#!/bin/sh
+# Formate les fichiers indexés avant chaque commit.
+#
+# Trois fois de suite, un commit est parti sans passer par Prettier et a fait rouge en
+# CI. Le vert local ne se vérifie pas de mémoire : il s'automatise.
+#
+# Installé par le script `prepare` de package.json (core.hooksPath).
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+[ -z "$staged" ] && exit 0
+
+formattable=$(printf '%s\n' "$staged" | grep -E '\.(ts|tsx|mjs|js|json|md|css|html|yml)$' || true)
+[ -z "$formattable" ] && exit 0
+
+printf '%s\n' "$formattable" | xargs ./node_modules/.bin/prettier --ignore-unknown --write
+printf '%s\n' "$formattable" | xargs git add

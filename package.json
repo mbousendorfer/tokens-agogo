@@ -19,7 +19,8 @@
     "ds:specimens": "node --env-file-if-exists=.env.local tools/build-specimens.mjs",
     "ds:sync": "pnpm ds:build && pnpm ds:assets && pnpm ds:specimens && pnpm ds:usage && pnpm ds:figma",
     "ds:usage": "node --env-file-if-exists=.env.local tools/build-usage-index.mjs",
-    "ds:figma": "node --env-file-if-exists=.env.local tools/build-figma.mjs"
+    "ds:figma": "node --env-file-if-exists=.env.local tools/build-figma.mjs",
+    "prepare": "git config core.hooksPath .githooks || true"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
