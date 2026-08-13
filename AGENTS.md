@@ -23,7 +23,7 @@ Les tokens du design system sont ici des **données**, pas des styles.
 ## Méthode de travail
 
 - **Commits successifs, petits et atomiques.** Chaque commit laisse le repo cohérent. Conventional commits (`feat:`, `fix:`, `docs:`, `chore:`).
-- **`pnpm ci` avant de pousser, et vérifier le run après.** Le vert local ne prouve pas le vert en CI : `.next/` traîne en local et masque les types générés manquants. Un `rm -rf .next` avant `pnpm ci` reproduit un checkout frais.
+- **`rm -rf .next && pnpm check` avant de pousser, puis vérifier le run GitHub.** Le vert local ne prouve pas le vert en CI : `.next/` traîne en local et masque les types générés manquants. (Ne pas nommer ce script `ci` : pnpm réserve ce nom et le court-circuite.)
 - **La doc s'écrit avec le code, pas après.** Un commit qui introduit un comportement embarque sa doc.
 - **Une décision structurante = un ADR** dans `docs/decisions/`, écrit au moment où elle est prise. Un ADR ne se réécrit jamais : s'il devient faux, un nouvel ADR le supersede.
 - Une étape n'est finie que quand code, tests, doc et changelog sont à jour.
