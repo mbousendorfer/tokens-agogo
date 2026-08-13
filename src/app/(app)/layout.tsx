@@ -5,6 +5,7 @@ import { AppNav } from '@/components/app-nav';
 import { ModeBadge } from '@/components/mode-badge';
 import { cookies } from 'next/headers';
 import { ThemeToggle, type Theme } from '@/components/theme-toggle';
+import { cn } from '@/lib/utils';
 import '../globals.css';
 
 /** La voix : titres et chiffres-clés. Variable, avec un axe optique. */
@@ -64,7 +65,10 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html
       lang="fr"
-      className={`${display.variable} ${sans.variable} ${mono.variable} h-full${dark ? 'dark' : ''}`}
+      // Assemblé par `cn`, pas par un template : une espace perdue dans la concaténation
+      // a déjà produit `h-fulldark`, une classe qui n'existe pas — le thème sombre ne
+      // s'appliquait alors qu'au clic, jamais au chargement.
+      className={cn(display.variable, sans.variable, mono.variable, 'h-full', dark && 'dark')}
       style={{ colorScheme: dark ? 'dark' : 'light' }}
     >
       <body className="bg-background text-foreground flex min-h-full flex-col antialiased">
