@@ -13,7 +13,8 @@ const OPTIONS = [
 ];
 
 /**
- * Le thème est porté par un cookie, lu par le layout serveur.
+ * Le thème est porté par un cookie, lu par le layout serveur — qui est `force-dynamic`,
+ * sans quoi Next mettrait ce rendu en cache et rouvrirait l'app sur l'ancien thème.
  *
  * C'est ce qui évite les trois plaies habituelles d'un sélecteur de thème : le flash
  * clair au chargement, le script inline de rattrapage, et la divergence

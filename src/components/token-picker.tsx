@@ -76,7 +76,9 @@ export function TokenPicker({
           */
           <button
             type="button"
-            role="combobox"
+            // Un bouton qui ouvre une liste, pas un champ de saisie : `combobox`
+            // exigerait `aria-controls`, que le trigger ne peut pas connaître.
+            aria-haspopup="listbox"
             aria-expanded={open}
             className={cn(
               '-mx-0.5 inline-flex items-center gap-1 rounded-[4px] px-1 align-baseline transition-colors',

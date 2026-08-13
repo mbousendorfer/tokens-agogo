@@ -33,6 +33,13 @@ const mono = IBM_Plex_Mono({
   display: 'swap',
 });
 
+/*
+  Le layout lit un cookie : sans ça, Next le rend une fois et le met en cache, et
+  l'app rouvre avec l'ancien thème — le sélecteur affiche alors le mauvais segment
+  actif, et le premier clic dessus ne fait que le désélectionner.
+*/
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Tokens à gogo',
   description: 'Cockpit de migration des design tokens du Design System Agorapulse.',
