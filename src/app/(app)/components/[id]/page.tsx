@@ -1,38 +1,51 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Badge } from '@/components/ui/badge';
 import { PageHeader } from '@/components/page-header';
-import { ComponentWorkbench } from '@/components/component-workbench';
-import { alignComponent, VERDICT_LABELS, type Verdict } from '@/lib/alignment';
+import { ComponentWorkbench, type WorkbenchRow } from '@/components/component-workbench';
+import { candidatesFor } from '@/lib/candidates';
+import { declarationData } from '@/lib/declarations';
 import { specimensByComponent } from '@/lib/specimens';
-import { colorPrimitives } from '@/lib/tokens';
-
-const VERDICT_ORDER: Verdict[] = [
-  'dette',
-  'a-migrer',
-  'a-decider',
-  'semantique',
-  'conforme',
-  'interne',
-];
+import { allTokens } from '@/lib/tokens';
+import { getModeInfo } from '@/server/mode';
 
 export default async function ComponentDetailPage({ params }: PageProps<'/components/[id]'>) {
   const { id: raw } = await params;
   const id = decodeURIComponent(raw);
 
-  const alignment = alignComponent(id);
-  if (!alignment) notFound();
+  const entry = declarationData.entryPoints.find((point) => point.id === id);
+  if (!entry) notFound();
 
-  // Le nom d'entry point et le nom de spécimen ne coïncident pas toujours
+  const name = id.split('/').at(-1)!;
+  const valueOf = new Map(allTokens().map((token) => [token.name, token.value]));
+
+  const rows: WorkbenchRow[] = declarationData.declarations
+    .filter((declaration) => declaration.entryPoint === id && !declaration.isDefinition)
+    .map((declaration) => {
+      const value = valueOf.get(declaration.token) ?? null;
+      return {
+        token: declaration.token,
+        tier: declaration.tier,
+        property: declaration.property,
+        selector: declaration.selector,
+        states: declaration.states,
+        file: declaration.file,
+        line: declaration.line,
+        value,
+        fallback: declaration.fallback,
+        fallbackIsToken: declaration.fallbackIsToken ?? false,
+        candidates:
+          declaration.tier === 'local'
+            ? []
+            : candidatesFor({ property: declaration.property, currentValue: value }),
+      };
+    });
+
+  // Le nom d'entry point et celui des spécimens ne coïncident pas toujours
   // (`split-button` contre `SplitButton`) : on rapproche sur une forme normalisée.
   const normalize = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, '');
   const specimens =
-    specimensByComponent().find((group) => normalize(group.component) === normalize(alignment.name))
-      ?.items ?? [];
-
-  const primitives = colorPrimitives()
-    .filter((token) => alignment.declarations.some((d) => d.token === token.name))
-    .map((token) => ({ ...token, dependents: 0 }));
+    specimensByComponent().find((group) => normalize(group.component) === normalize(name))?.items ??
+    [];
 
   return (
     <>
@@ -44,39 +57,15 @@ export default async function ComponentDetailPage({ params }: PageProps<'/compon
       </Link>
 
       <PageHeader
-        title={alignment.name}
-        blurb={`${alignment.declarations.length} déclarations · ${Math.round(alignment.progress * 100)} % déjà sémantiques`}
+        title={name}
+        blurb="Choisissez le token cible de chaque déclaration. Rien n’est écrit dans le design system avant l’export."
       />
 
-      <section className="mb-6 flex flex-wrap gap-2">
-        {VERDICT_ORDER.filter((verdict) => alignment.byVerdict[verdict]).map((verdict) => (
-          <Badge key={verdict} variant={verdict === 'dette' ? 'destructive' : 'secondary'}>
-            {VERDICT_LABELS[verdict]} · {alignment.byVerdict[verdict]}
-          </Badge>
-        ))}
-        {!alignment.hasFigmaSpec && (
-          <Badge variant="outline" title={`Aucun binding Figma pour « ${alignment.figmaName} »`}>
-            spec Figma absente
-          </Badge>
-        )}
-      </section>
-
       <ComponentWorkbench
+        componentId={id}
         specimens={specimens.map(({ id: specimenId, story }) => ({ id: specimenId, story }))}
-        declarations={alignment.declarations.map((d) => ({
-          token: d.token,
-          tier: d.tier,
-          verdict: d.verdict,
-          property: d.property,
-          selector: d.selector,
-          states: d.states,
-          variants: d.variants,
-          file: d.file,
-          line: d.line,
-          fallback: d.fallback,
-          fallbackIsToken: d.fallbackIsToken ?? false,
-        }))}
-        primitives={primitives}
+        rows={rows}
+        canWrite={getModeInfo().mode === 'local'}
       />
     </>
   );

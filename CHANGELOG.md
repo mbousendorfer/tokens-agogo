@@ -4,6 +4,21 @@ Une entrée par étape livrée. Format inspiré de [Keep a Changelog](https://ke
 
 ## [Non publié]
 
+### Refonte — l'app devient un éditeur
+
+Les vues précédentes constataient la dette sans permettre d'en traiter une seule ligne.
+Ce n'était pas la demande. Voir [ADR 011](docs/decisions/011-editeur-plutot-que-tableau-de-bord.md).
+
+- **Sélecteur de token** sur chaque déclaration : recherche, tri par pertinence selon la
+  propriété CSS, valeur résolue et pastille pour chaque candidat, et repérage des tokens
+  qui rendent exactement la même valeur qu'aujourd'hui.
+- **Atelier par composant** : les déclarations groupées par état, filtrables sur
+  « à traiter » / « décidé », avec la preview qui applique les décisions en direct.
+- **Décisions persistées** dans `migration-state.json` (mode local), relues au chargement.
+- **Changeset** : la liste des remplacements réellement décidés, groupés par fichier et
+  par ligne, exportable en Markdown applicable. Signale les tokens cibles à créer.
+- **Plugin Figma supprimé.** Les variables cibles viendront du MCP Figma.
+
 ### Étapes 4 à 8 — Figma, alignement, palettes, changeset
 
 - **Plugin Figma maison** (`figma-plugin/`) : exporte les variables _et_ les

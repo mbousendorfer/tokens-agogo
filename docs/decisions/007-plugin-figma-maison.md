@@ -1,7 +1,7 @@
 # 007 — Plugin Figma maison pour extraire les `boundVariables` par variante
 
 - **Date** : 2026-08-13
-- **Statut** : accepté
+- **Statut** : **superseded par [011](011-editeur-plutot-que-tableau-de-bord.md)**
 
 ## Contexte
 

@@ -17,14 +17,14 @@
     "ds:verify": "node --env-file-if-exists=.env.local tools/verify-chained.mjs",
     "ds:assets": "node --env-file-if-exists=.env.local tools/copy-ds-assets.mjs",
     "ds:specimens": "node --env-file-if-exists=.env.local tools/build-specimens.mjs",
-    "ds:sync": "pnpm ds:build && pnpm ds:assets && pnpm ds:specimens && pnpm ds:usage && pnpm ds:figma",
+    "ds:sync": "pnpm ds:build && pnpm ds:assets && pnpm ds:specimens && pnpm ds:usage",
     "ds:usage": "node --env-file-if-exists=.env.local tools/build-usage-index.mjs",
-    "ds:figma": "node --env-file-if-exists=.env.local tools/build-figma.mjs",
     "prepare": "git config core.hooksPath .githooks || true"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
     "lucide-react": "^1.31.0",
     "next": "16.3.0",
     "radix-ui": "^1.6.7",
