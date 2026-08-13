@@ -19,3 +19,4 @@ Format : contexte, décision, conséquences, alternatives écartées.
 | [009](009-local-first-et-demo-publique.md)       | Local-first + démo publique en lecture seule                                | accepté    |
 | [010](010-etat-de-migration-versionne.md)        | État de migration dans `migration-state.json` versionné                     | accepté    |
 | [011](011-editeur-plutot-que-tableau-de-bord.md) | L'app est un éditeur, pas un tableau de bord                                | accepté    |
+| [012](012-panneau-de-comparaison.md)             | La preview est un panneau docké, en avant / après                           | accepté    |

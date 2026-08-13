@@ -21,7 +21,14 @@ export const metadata: Metadata = { title: 'Preview' };
  */
 export default function PreviewLayout({ children }: LayoutProps<'/preview'>) {
   return (
-    <html lang="fr">
+    /*
+      Deux nœuds de ce document sont écrits par le parent, pas par React : le bloc
+      d'overrides ci-dessous, et l'attribut `data-force` posé ici même pour forcer un
+      état. React les voit comme des divergences d'hydratation — l'un est signalé,
+      l'autre fait re-rendre tout l'arbre. `suppressHydrationWarning` dit ce qui est
+      vrai : ce contenu est piloté de l'extérieur, et l'écart est voulu.
+    */
+    <html lang="fr" suppressHydrationWarning>
       <head>
         {/*
           `no-css-tags` déconseille les feuilles manuelles pour que Next les optimise.
@@ -35,7 +42,7 @@ export default function PreviewLayout({ children }: LayoutProps<'/preview'>) {
         <link rel="stylesheet" href="/ds/style/css-ui/index.css" />
         <link rel="stylesheet" href="/ds/icons/ap-icons.css" />
         {/* eslint-enable @next/next/no-css-tags */}
-        <style id="ds-token-overrides" />
+        <style id="ds-token-overrides" suppressHydrationWarning />
       </head>
       {/*
         Le design system n'a pas de mode sombre : `color-scheme: light` empêche le

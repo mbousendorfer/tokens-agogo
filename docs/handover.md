@@ -53,18 +53,7 @@ Pour les rafraîchir, voir [`figma-bindings/README.md`](../figma-bindings/README
 
 ## Ce qui reste à faire
 
-### 1. Le panneau de preview — le plus urgent
-
-La preview est une iframe de 220 px sous le tableau. Les composants larges (`infobox`,
-`table`, `datepicker`) y sont illisibles, et on ne peut pas comparer.
-
-À faire : un **panneau latéral dépliable depuis la droite**, plein hauteur, avec
-**avant / après côte à côte** — le rendu avec les tokens actuels contre le rendu avec
-les décisions prises. Le sélecteur d'état et de spécimen vivent dans le panneau.
-
-Le modèle est dans `~/sources/agorapulse-color-lab`.
-
-### 2. Les bindings composants Figma
+### 1. Les bindings composants Figma
 
 L'extraction fonctionne (`figma-bindings/README.md`), mais **V2 Atoms n'est pas encore
 migré vers la nouvelle palette** : `Button` lie ses fonds à `Colors/Orange/orange-100`,
@@ -73,20 +62,20 @@ l'échelle V2. Les confronter au code dirait où le design en est, pas où aller
 À reprendre quand V2 Atoms et V2 Molecules auront adopté les nouvelles variables. La
 structure attendue (variante × partie × propriété) est déjà la bonne.
 
-### 3. Appliquer le changeset
+### 2. Appliquer le changeset
 
 Le changeset s'exporte en Markdown mais rien ne l'applique. Il manque le script qui
 réécrit les `.scss` du design system à partir de `migration-state.json`, avec un
 `--dry-run` et un diff.
 
-### 4. Le mode `Accessible`
+### 3. Le mode `Accessible`
 
 Les collections Figma `System` et `Component` portent un second mode, stocké dans
 `data/figma-tokens.json` (`accessibleValue`) et signalé dans l'app — mais rien ne
 l'exploite. C'est une seconde dimension de tokens, pas un détail : le design system
 l'avait explorée puis abandonnée sur sa branche V3.
 
-### 5. Points plus petits
+### 4. Points plus petits
 
 - Le générateur de palette s'édite mais ne se sauvegarde pas : l'export produit un
   `palette.baseline.json` à recopier à la main dans `spec/`.
@@ -106,3 +95,10 @@ l'avait explorée puis abandonnée sur sa branche V3.
 - Une déclaration est **une** ligne même avec plusieurs `var()` :
   `padding: 0 var(--a) 0 var(--b)`.
 - Le thème vient d'un cookie lu par le layout, qui doit rester `force-dynamic`.
+- **Les cadres de preview ne se remontent jamais.** Changer de spécimen passe par
+  `location.replace()` — l'attribut `src` empilerait l'historique du parent — et
+  changer d'état ne navigue pas du tout : c'est un `data-force` posé sur le `<html>`
+  du cadre. Voir [ADR 012](decisions/012-panneau-de-comparaison.md).
+- **Les états forçables ne se dérivent qu'au premier niveau du sélecteur.**
+  `:hover:not(:disabled)` porte **un** état, pas deux. Compter celui du `:not()`
+  produisait `:not()`, que le navigateur jette sans rien dire.

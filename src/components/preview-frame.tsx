@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * L'iframe de preview, et le canal qui y injecte les overrides de tokens.
@@ -12,6 +12,11 @@ import { useEffect, useRef } from 'react';
  *
  * Comme la feuille de tokens est chaînée (`--sys-x: var(--ref-y)`), modifier une seule
  * primitive suffit : la cascade re-résout nativement toute sa descendance (ADR 004).
+ *
+ * Le cadre ne se remonte jamais. Rebooter coûte le reparse de tout le CSS du design
+ * system et de ses masques d'icônes, perd la position de défilement, et le panneau en
+ * affiche deux côte à côte — donc le double (ADR 012). Changer de spécimen navigue le
+ * cadre en place, changer d'état ne le navigue même pas.
  */
 export function PreviewFrame({
   specimenId,
@@ -34,28 +39,51 @@ export function PreviewFrame({
   const params = new URLSearchParams();
   if (specimenId) params.set('specimen', specimenId);
   else if (componentName) params.set('component', componentName);
-  if (state) params.set('state', state);
   const src = `/preview${params.size ? `?${params}` : ''}`;
 
-  useEffect(() => {
-    const apply = () => {
-      const doc = frameRef.current?.contentDocument;
-      const target = doc?.getElementById('ds-token-overrides');
-      if (!target) return;
+  /*
+    `src` n'est posé qu'au montage, et React n'y retouche plus : affecter l'attribut
+    `src` d'une iframe déjà chargée empile une entrée dans l'historique du **parent**,
+    et le bouton Précédent du navigateur se met alors à rejouer les spécimens un par
+    un au lieu de quitter la page. `location.replace()` navigue sans rien empiler.
+  */
+  const [initialSrc] = useState(src);
+  const shown = useRef(src);
 
-      const entries = Object.entries(overrides);
-      target.textContent = entries.length
-        ? `:root {\n${entries.map(([name, value]) => `  ${name}: ${value};`).join('\n')}\n}`
-        : '';
+  useEffect(() => {
+    if (shown.current === src) return;
+    shown.current = src;
+    frameRef.current?.contentWindow?.location.replace(src);
+  }, [src]);
+
+  useEffect(() => {
+    const frame = frameRef.current;
+
+    const apply = () => {
+      const doc = frame?.contentDocument;
+      if (!doc) return;
+
+      const target = doc.getElementById('ds-token-overrides');
+      if (target) {
+        const entries = Object.entries(overrides);
+        target.textContent = entries.length
+          ? `:root {\n${entries.map(([name, value]) => `  ${name}: ${value};`).join('\n')}\n}`
+          : '';
+      }
+
+      // L'état forcé est un attribut posé sur `<html>`, que les règles dérivées
+      // reconnaissent comme ancêtre (voir `force-states.tsx`). Le passer par l'URL
+      // rechargerait le cadre à chaque bascule hover → focus.
+      if (state) doc.documentElement.setAttribute('data-force', state);
+      else doc.documentElement.removeAttribute('data-force');
     };
 
     apply();
 
-    // Le contenu de l'iframe se recharge quand `src` change : réappliquer au load.
-    const frame = frameRef.current;
+    // Après une navigation, le document est neuf : tout est à réappliquer.
     frame?.addEventListener('load', apply);
     return () => frame?.removeEventListener('load', apply);
-  }, [overrides, src]);
+  }, [overrides, state, src]);
 
-  return <iframe ref={frameRef} src={src} title={title} className={className} />;
+  return <iframe ref={frameRef} src={initialSrc} title={title} className={className} />;
 }

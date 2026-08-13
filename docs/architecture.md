@@ -126,6 +126,26 @@ Résultat sur `master` : **101 spécimens, 29 composants, 5 groupes**, extraits 
 
 **Vérifié dans le navigateur** : injecter `--ref-color-orange-100: #00A000` fait passer le fond du bouton primaire de `rgb(255,103,38)` à `rgb(0,160,0)`, et vider le bloc restaure la valeur d'origine. La chaîne primitive → token de composant → pixel fonctionne sans rebuild.
 
+### Le panneau de comparaison
+
+La preview est un **panneau docké** à droite du tableau de déclarations, plein hauteur et collant, qui montre le composant **avant et après** les décisions ([ADR 012](decisions/012-panneau-de-comparaison.md)). « Avant » ne reçoit aucun override ; « après » reçoit les décisions en cours.
+
+Trois règles y tiennent la fluidité, et chacune corrige une manière de se tromper :
+
+| Règle                                                     | Ce qu'elle évite                                              |
+| --------------------------------------------------------- | ------------------------------------------------------------- |
+| Les deux cadres restent montés, visibles ou non           | reparser tout le CSS du design system et perdre le défilement |
+| Changer de spécimen passe par `location.replace()`        | l'attribut `src` empile l'historique du **parent**            |
+| Changer d'état pose `data-force` sur le `<html>` du cadre | recharger le cadre à chaque bascule `hover` → `focus`         |
+
+L'attribut plutôt que la classe parce que ce `<html>` est rendu par React : l'hydratation réconcilie ce qu'elle rend — `lang`, `class` — et laisse intact un attribut qu'elle n'a jamais écrit. Le document de preview porte `suppressHydrationWarning` : le bloc d'overrides et cet attribut sont pilotés de l'extérieur, et l'écart est voulu.
+
+### Les états forçables
+
+Une pseudo-classe ne se déclenche pas de l'extérieur. `src/lib/forced-states.ts` dérive de chaque sélecteur réel ses jumeaux activables — `.ap-button.force-hover`, `.force-hover .ap-button`, `[data-force~="hover"] .ap-button` — à spécificité égale, et le composant client ne fait que parcourir `document.styleSheets` pour les appliquer.
+
+Le comptage se fait au **premier niveau du sélecteur seulement**. `:hover:not(:disabled)` porte un état, pas deux : compter celui du `:not()` produisait `:not()`, un sélecteur invalide que le navigateur jette en silence — et le survol des variantes ne peignait plus rien. Le cas est la norme dans ce corpus.
+
 ### Artefacts générés, et commités
 
 `public/ds/` et `data/` sont générés **et versionnés**. Le mode démo n'a pas accès au repo design system ([ADR 009](decisions/009-local-first-et-demo-publique.md)) : ces fichiers sont ses snapshots.
@@ -163,3 +183,21 @@ Sans snapshot, `pnpm ds:figma` écrit un fichier vide et explique comment en pro
 | Changeset  | le plan d'opérations ordonné par risque, exportable en Markdown              |
 
 Le module couleur (`src/lib/color.ts`) est validé contre les valeurs de référence publiées : 21:1 pour noir sur blanc, APCA 106,04 et −107,88 aux deux polarités, et le 4,54 connu de `#767676` sur blanc.
+
+### Trouver un token dans le sélecteur
+
+`src/lib/token-search.ts`. Le sélecteur propose 348 tokens : ce qui décide de son utilité, c'est ce qui se passe quand on tape trois lettres dedans. La recherche porte sur **quatre axes** — le nom, le token pointé, le groupe Figma, la couleur résolue — et chaque terme doit se retrouver dans l'un d'eux, dans n'importe quel ordre, ponctuation ignorée.
+
+| On tape      | On trouve                                 |
+| ------------ | ----------------------------------------- |
+| `orange 100` | dans les deux ordres                      |
+| `mermaid`    | `--ref-color-merm-aid-100`                |
+| `#FF6726`    | tous les tokens qui rendent cette couleur |
+| `brand`      | la famille `orange`                       |
+| `orange500`  | sans le tiret                             |
+
+Le vocabulaire du designer est ramené sur celui des tokens par une table de synonymes qui ne contient que les ponts qu'une sous-chaîne ne franchit pas seule : `brand` → `orange`, `danger` → `red`, `ai` → `mermaid`. `blue` trouve déjà `electric-blue` sans aide.
+
+C'est une **recherche**, jamais un classement : le mot tapé rétrécit la liste, il ne choisit pas à la place de l'intention ([ADR 003](decisions/003-migration-par-intention.md)). Le score rendu à `cmdk` est binaire, pour que l'ordre calculé — tier, puis pertinence pour la propriété CSS — reste celui qu'on lit.
+
+Les suggestions en tête de liste passent par le même vocabulaire : le recouvrement de mots entre le token courant et les candidats, synonymes compris, avec le rendu identique comme appoint. C'est une mise en avant, pas un choix.

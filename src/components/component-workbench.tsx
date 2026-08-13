@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { PanelRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -15,7 +16,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { CssPreview } from '@/components/css-preview';
-import { PreviewFrame } from '@/components/preview-frame';
+import { PreviewPanel } from '@/components/preview-panel';
 import { TokenPicker } from '@/components/token-picker';
 import type { Candidate } from '@/lib/candidates';
 import { decisionKey, EMPTY_STATE, type Decision, type MigrationState } from '@/lib/decisions';
@@ -74,6 +75,7 @@ export function ComponentWorkbench({
   const [state, setState] = useState<MigrationState>(EMPTY_STATE);
   const [stateFilter, setStateFilter] = useState('à traiter');
   const [saving, setSaving] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle');
+  const [previewOpen, setPreviewOpen] = useState(true);
 
   useEffect(() => {
     fetch('/api/decisions')
@@ -204,6 +206,18 @@ export function ComponentWorkbench({
           ))}
         </ToggleGroup>
         <div className="ml-auto flex items-center gap-3">
+          {specimens.length > 0 && (
+            <Button
+              variant="outline"
+              size="sm"
+              aria-pressed={previewOpen}
+              onClick={() => setPreviewOpen((open) => !open)}
+              className={cn(previewOpen && 'border-signal/40 text-signal')}
+            >
+              <PanelRight className="size-3.5" />
+              Preview
+            </Button>
+          )}
           {saving === 'saved' && (
             <span className="text-xs text-emerald-600 dark:text-emerald-400">
               enregistré dans migration-state.json
@@ -220,68 +234,22 @@ export function ComponentWorkbench({
         </div>
       </div>
 
-      {specimens.length > 0 && (
-        <section>
-          <ToggleGroup
-            type="single"
-            size="sm"
-            value={specimen}
-            onValueChange={(value) => value && setSpecimen(value)}
-            className="mb-2"
-            aria-label="Spécimen"
-          >
-            {specimens.map((item) => (
-              <ToggleGroupItem key={item.id} value={item.id} className="px-2.5 text-xs">
-                {item.story}
-              </ToggleGroupItem>
-            ))}
-          </ToggleGroup>
-          <Tabs defaultValue="rendu">
-            <div className="mb-2 flex flex-wrap items-center gap-2">
-              <TabsList className="h-7">
-                <TabsTrigger value="rendu" className="text-xs">
-                  Rendu
-                </TabsTrigger>
-                <TabsTrigger value="css" className="text-xs">
-                  CSS
-                </TabsTrigger>
-              </TabsList>
-
-              {/*
-                Une pseudo-classe ne se déclenche pas de l'extérieur : la preview
-                applique des règles dérivées du CSS réel du design system, où
-                `:hover` devient une classe posée sur l'enveloppe.
-              */}
-              <ToggleGroup
-                type="single"
-                size="sm"
-                value={forcedState}
-                onValueChange={(value) => value && setForcedState(value)}
-                aria-label="État forcé"
-              >
-                {FORCED_STATES.map((state) => (
-                  <ToggleGroupItem key={state} value={state} className="px-2 text-xs">
-                    {state}
-                  </ToggleGroupItem>
-                ))}
-              </ToggleGroup>
-
-              {Object.keys(overrides).length > 0 && (
-                <span className="text-muted-foreground ml-auto text-xs">
-                  {Object.keys(overrides).length} décision(s) appliquée(s)
-                </span>
-              )}
-            </div>
-
-            <TabsContent value="rendu">
-              <PreviewFrame
-                key={`${specimen}-${forcedState}`}
-                specimenId={specimen}
-                state={forcedState === 'défaut' || forcedState === 'tous' ? null : forcedState}
-                overrides={overrides}
-                className="h-56 w-full rounded-lg border bg-white"
-              />
-            </TabsContent>
+      {/*
+        Deux colonnes : on décide à gauche, on regarde à droite. Le panneau est collant
+        et plein hauteur, donc la ligne qu'on traite et le composant qu'elle peint
+        restent visibles ensemble, quel que soit le défilement (ADR 012).
+      */}
+      <div className="flex flex-col gap-5 lg:flex-row lg:items-start">
+        <div className="min-w-0 flex-1">
+          <Tabs defaultValue="declarations">
+            <TabsList className="mb-3 h-7">
+              <TabsTrigger value="declarations" className="text-xs">
+                Déclarations
+              </TabsTrigger>
+              <TabsTrigger value="css" className="text-xs">
+                CSS
+              </TabsTrigger>
+            </TabsList>
 
             <TabsContent value="css">
               {/* On édite là où on lit : chaque `var()` du code est un sélecteur. */}
@@ -309,92 +277,105 @@ export function ComponentWorkbench({
                 }}
               />
             </TabsContent>
+
+            <TabsContent value="declarations" className="space-y-6">
+              {grouped.length === 0 && (
+                <p className="text-muted-foreground rounded-lg border border-dashed px-6 py-10 text-center text-sm">
+                  Rien à traiter ici.
+                </p>
+              )}
+
+              {grouped.map(([stateName, stateRows]) => (
+                <section key={stateName}>
+                  <h3 className="mb-2 flex items-center gap-2 text-sm font-medium">
+                    {stateName}
+                    <Badge variant="outline" className="text-[10px]">
+                      {stateRows.length}
+                    </Badge>
+                  </h3>
+                  <div className="overflow-x-auto rounded-lg border">
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead>Propriété</TableHead>
+                          <TableHead>Token actuel</TableHead>
+                          <TableHead className="w-[320px]">Nouveau token</TableHead>
+                          <TableHead>Sélecteur</TableHead>
+                          <TableHead>Source</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {stateRows.map((row) => {
+                          const key = decisionKey(row.file, row.line, row.token);
+                          const decision = decisions.get(key);
+                          return (
+                            <TableRow key={key}>
+                              <TableCell className="px-3 py-1.5 font-mono">
+                                {row.property ?? <span className="opacity-40">—</span>}
+                              </TableCell>
+                              <TableCell className="px-3 py-1.5">
+                                <span className="flex items-center gap-1.5">
+                                  <span
+                                    className={cn(
+                                      'rounded px-1 py-0.5 text-[10px] font-medium',
+                                      TIER_STYLES[row.tier],
+                                    )}
+                                  >
+                                    {row.tier}
+                                  </span>
+                                  <Link
+                                    href={`/tokens/${encodeURIComponent(row.token)}`}
+                                    className="font-mono hover:underline"
+                                  >
+                                    {row.token}
+                                  </Link>
+                                </span>
+                              </TableCell>
+                              <TableCell className="px-3 py-1.5">
+                                {row.tier === 'local' ? (
+                                  <span className="text-muted-foreground text-[11px]">
+                                    custom property locale — hors système
+                                  </span>
+                                ) : (
+                                  <TokenPicker
+                                    current={row.token}
+                                    chosen={decision?.to ?? null}
+                                    candidates={row.candidates}
+                                    onChoose={(token) => decide(row, token)}
+                                    onClear={() => decide(row, null)}
+                                  />
+                                )}
+                              </TableCell>
+                              <TableCell className="max-w-[220px] px-3 py-1.5 font-mono break-all opacity-70">
+                                {row.selector || '—'}
+                              </TableCell>
+                              <TableCell className="text-muted-foreground px-3 py-1.5 font-mono whitespace-nowrap">
+                                {row.file.split('/').at(-1)}:{row.line}
+                              </TableCell>
+                            </TableRow>
+                          );
+                        })}
+                      </TableBody>
+                    </Table>
+                  </div>
+                </section>
+              ))}
+            </TabsContent>
           </Tabs>
-        </section>
-      )}
+        </div>
 
-      <div className="space-y-6">
-        {grouped.length === 0 && (
-          <p className="text-muted-foreground rounded-lg border border-dashed px-6 py-10 text-center text-sm">
-            Rien à traiter ici.
-          </p>
+        {previewOpen && specimens.length > 0 && (
+          <PreviewPanel
+            specimens={specimens}
+            specimen={specimen}
+            onSpecimen={setSpecimen}
+            states={FORCED_STATES}
+            state={forcedState}
+            onState={setForcedState}
+            overrides={overrides}
+            onClose={() => setPreviewOpen(false)}
+          />
         )}
-
-        {grouped.map(([stateName, stateRows]) => (
-          <section key={stateName}>
-            <h3 className="mb-2 flex items-center gap-2 text-sm font-medium">
-              {stateName}
-              <Badge variant="outline" className="text-[10px]">
-                {stateRows.length}
-              </Badge>
-            </h3>
-            <div className="overflow-x-auto rounded-lg border">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Propriété</TableHead>
-                    <TableHead>Token actuel</TableHead>
-                    <TableHead className="w-[320px]">Nouveau token</TableHead>
-                    <TableHead>Sélecteur</TableHead>
-                    <TableHead>Source</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {stateRows.map((row) => {
-                    const key = decisionKey(row.file, row.line, row.token);
-                    const decision = decisions.get(key);
-                    return (
-                      <TableRow key={key}>
-                        <TableCell className="px-3 py-1.5 font-mono">
-                          {row.property ?? <span className="opacity-40">—</span>}
-                        </TableCell>
-                        <TableCell className="px-3 py-1.5">
-                          <span className="flex items-center gap-1.5">
-                            <span
-                              className={cn(
-                                'rounded px-1 py-0.5 text-[10px] font-medium',
-                                TIER_STYLES[row.tier],
-                              )}
-                            >
-                              {row.tier}
-                            </span>
-                            <Link
-                              href={`/tokens/${encodeURIComponent(row.token)}`}
-                              className="font-mono hover:underline"
-                            >
-                              {row.token}
-                            </Link>
-                          </span>
-                        </TableCell>
-                        <TableCell className="px-3 py-1.5">
-                          {row.tier === 'local' ? (
-                            <span className="text-muted-foreground text-[11px]">
-                              custom property locale — hors système
-                            </span>
-                          ) : (
-                            <TokenPicker
-                              current={row.token}
-                              chosen={decision?.to ?? null}
-                              candidates={row.candidates}
-                              onChoose={(token) => decide(row, token)}
-                              onClear={() => decide(row, null)}
-                            />
-                          )}
-                        </TableCell>
-                        <TableCell className="max-w-[220px] px-3 py-1.5 font-mono break-all opacity-70">
-                          {row.selector || '—'}
-                        </TableCell>
-                        <TableCell className="text-muted-foreground px-3 py-1.5 font-mono whitespace-nowrap">
-                          {row.file.split('/').at(-1)}:{row.line}
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
-                </TableBody>
-              </Table>
-            </div>
-          </section>
-        ))}
       </div>
     </div>
   );
