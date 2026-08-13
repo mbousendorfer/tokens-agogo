@@ -4,6 +4,19 @@ Une entrée par étape livrée. Format inspiré de [Keep a Changelog](https://ke
 
 ## [Non publié]
 
+### Suivi de branche, générateur, suggestions
+
+- **Sélecteur de branche** dans l'en-tête : les scripts lisant par `git show <ref>:<path>`,
+  changer de branche ne touche pas au checkout du design system — on régénère les
+  snapshots pour cette ref. C'est ce qui permet de suivre une branche de migration.
+- **L'éditeur de palette passe par le solveur** : il édite la spec, le moteur re-résout.
+  Une couleur ajoutée tombe sur la même échelle et tient la même contrainte de contraste.
+- **Suggestions** en tête du sélecteur, sur le vocabulaire partagé avec le token courant.
+- **L'état filtre le tableau** autant que la preview.
+- `pnpm ds:emit` : les JSON Style Dictionary générés depuis les variables Figma.
+- Changeset unifié : tokens émis, redéfinitions `sys`, call sites réécrits.
+- [docs/handover.md](docs/handover.md) — l'état du travail et ce qui reste.
+
 ### Refonte — l'app devient un éditeur
 
 Les vues précédentes constataient la dette sans permettre d'en traiter une seule ligne.

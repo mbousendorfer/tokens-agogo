@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import { Bricolage_Grotesque, IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google';
 import Link from 'next/link';
 import { AppNav } from '@/components/app-nav';
+import { BranchPicker } from '@/components/branch-picker';
 import { ModeBadge } from '@/components/mode-badge';
+import { declarationData } from '@/lib/declarations';
 import { cookies } from 'next/headers';
 import { ThemeToggle, type Theme } from '@/components/theme-toggle';
 import { cn } from '@/lib/utils';
@@ -89,8 +91,12 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
             </div>
 
             <div className="flex shrink-0 items-center gap-2">
-              <span className="hidden md:block">
+              <span className="hidden md:flex md:items-center md:gap-2">
                 <ModeBadge />
+                <BranchPicker
+                  current={declarationData.source.ref}
+                  sha={declarationData.source.sha}
+                />
               </span>
               <ThemeToggle initial={theme} />
             </div>

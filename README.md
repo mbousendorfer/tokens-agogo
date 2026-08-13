@@ -63,6 +63,7 @@ Les scripts `ds:*` ont besoin du repo design system (`DS_REPO_PATH`, ou `--ds-ro
 
 | Fichier                                      | Contenu                                             |
 | -------------------------------------------- | --------------------------------------------------- |
+| [docs/handover.md](docs/handover.md)         | **où en est le travail, et ce qui reste**           |
 | [docs/decisions/](docs/decisions/)           | les ADR — pourquoi l'app est faite comme ça         |
 | [docs/architecture.md](docs/architecture.md) | comment elle est construite                         |
 | [docs/data-model.md](docs/data-model.md)     | forme des tokens, snapshots Figma, index, changeset |
