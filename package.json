@@ -17,7 +17,8 @@
     "ds:verify": "node --env-file-if-exists=.env.local tools/verify-chained.mjs",
     "ds:assets": "node --env-file-if-exists=.env.local tools/copy-ds-assets.mjs",
     "ds:specimens": "node --env-file-if-exists=.env.local tools/build-specimens.mjs",
-    "ds:sync": "pnpm ds:build && pnpm ds:assets && pnpm ds:specimens"
+    "ds:sync": "pnpm ds:build && pnpm ds:assets && pnpm ds:specimens && pnpm ds:usage",
+    "ds:usage": "node --env-file-if-exists=.env.local tools/build-usage-index.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
