@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/command';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import type { Candidate } from '@/lib/candidates';
+import { haystackOf, matchesQuery, normalize, suggestionsFor } from '@/lib/token-search';
 import { cn } from '@/lib/utils';
 
 const HEX = /^#[0-9a-f]{3,8}$/i;
@@ -54,36 +55,8 @@ export function TokenPicker({
   const [open, setOpen] = useState(false);
   const chosenCandidate = candidates.find((candidate) => candidate.name === chosen);
 
-  /**
-   * Les suggestions : les candidats que le token actuel désigne presque lui-même.
-   *
-   * `--comp-tag-green-text-color` partage `green` et `text` avec
-   * `--sys-color-text-category-green` — ce recouvrement de vocabulaire est le signal
-   * le plus fiable dont on dispose sans la spec Figma. Le rendu identique compte
-   * aussi, mais moins : deux tokens peuvent partager une couleur par accident.
-   *
-   * Ça reste une mise en avant, pas un choix. C'est l'intention qui tranche (ADR 003).
-   */
-  const suggestions = useMemo(() => {
-    const words = new Set(
-      current
-        .replace(/^--(ref|sys|comp)-/, '')
-        .split('-')
-        .filter((word) => word.length > 2 && !['color'].includes(word)),
-    );
-    if (!words.size) return [];
-
-    return candidates
-      .map((candidate) => {
-        const theirs = candidate.name.replace(/^--(ref|sys|comp)-/, '').split('-');
-        const shared = theirs.filter((word) => words.has(word)).length;
-        return { candidate, score: shared * 2 + (candidate.sameValue ? 1 : 0) };
-      })
-      .filter((entry) => entry.score >= 2)
-      .sort((a, b) => b.score - a.score || a.candidate.name.localeCompare(b.candidate.name))
-      .slice(0, 4)
-      .map((entry) => entry.candidate);
-  }, [candidates, current]);
+  /** Les candidats que le token actuel désigne presque lui-même (`@/lib/token-search`). */
+  const suggestions = useMemo(() => suggestionsFor(current, candidates), [candidates, current]);
 
   const suggested = useMemo(() => new Set(suggestions.map((c) => c.name)), [suggestions]);
 
@@ -146,9 +119,15 @@ export function TokenPicker({
       </PopoverTrigger>
 
       <PopoverContent className="w-[560px] p-0" align="start">
-        {/* L'ordre porte l'information : on n'autorise pas cmdk à le refaire. */}
+        {/*
+          Un score binaire, jamais gradué : la recherche rétrécit la liste, l'ordre
+          reste celui qu'on a calculé. `keywords` porte les autres axes de recherche —
+          le token pointé, le groupe Figma, la couleur résolue.
+        */}
         <Command
-          filter={(value, search) => (value.toLowerCase().includes(search.toLowerCase()) ? 1 : 0)}
+          filter={(value, search, keywords) =>
+            matchesQuery(normalize([value, ...(keywords ?? [])].join(' ')), search) ? 1 : 0
+          }
         >
           <CommandInput placeholder={`Remplacer ${current}…`} />
           <CommandList className="max-h-80">
@@ -162,6 +141,7 @@ export function TokenPicker({
                   <CommandItem
                     key={`suggestion-${candidate.name}`}
                     value={`${candidate.name} suggestion`}
+                    keywords={[haystackOf(candidate)]}
                     onSelect={() => {
                       onChoose(candidate.name);
                       setOpen(false);
@@ -195,6 +175,7 @@ export function TokenPicker({
                   <CommandItem
                     key={candidate.name}
                     value={candidate.name}
+                    keywords={[haystackOf(candidate)]}
                     onSelect={() => {
                       onChoose(candidate.name);
                       setOpen(false);

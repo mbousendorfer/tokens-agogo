@@ -4,6 +4,25 @@ Une entrée par étape livrée. Format inspiré de [Keep a Changelog](https://ke
 
 ## [Non publié]
 
+### Le panneau de comparaison
+
+- **La preview devient un panneau docké**, plein hauteur et collant, à droite du
+  tableau : on décide à gauche, on regarde à droite, sans que le composant sorte de
+  l'écran. Redimensionnable à la poignée, largeur retenue.
+  Voir [ADR 012](docs/decisions/012-panneau-de-comparaison.md).
+- **Avant / après côte à côte** : la baseline `master` contre les décisions en cours.
+  En dessous de 620 px de large, la comparaison passe en haut / bas.
+- Les cadres ne se remontent plus : changer de spécimen navigue par
+  `location.replace()`, changer d'état ne navigue pas du tout.
+- **Correction** : `:hover:not(:disabled)` était lu comme portant deux états et
+  produisait `:not()`, un sélecteur invalide — le survol des variantes ne peignait
+  rien. La dérivation est passée en logique pure et testée (`src/lib/forced-states.ts`).
+- **Le sélecteur de token trouve enfin ce qu'on tape** : plusieurs termes dans
+  n'importe quel ordre, ponctuation ignorée (`mermaid` trouve `merm-aid`), recherche
+  sur la couleur résolue (`#FF6726`) et sur le token pointé, et le vocabulaire du
+  designer traduit vers celui des tokens (`brand` → `orange`, `danger` → `red`).
+  Les suggestions passent par le même vocabulaire (`src/lib/token-search.ts`).
+
 ### Suivi de branche, générateur, suggestions
 
 - **Sélecteur de branche** dans l'en-tête : les scripts lisant par `git show <ref>:<path>`,
