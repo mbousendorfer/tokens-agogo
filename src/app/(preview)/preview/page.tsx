@@ -1,6 +1,6 @@
 import { allSpecimens, findSpecimen, specimensByComponent } from '@/lib/specimens';
 import { ForceStates } from './force-states';
-import { FORCEABLE_STATES, type ForceableState } from './states';
+import { FORCEABLE_STATES, type ForceableState } from '@/lib/forced-states';
 
 /**
  * Le contenu de l'iframe de preview.
