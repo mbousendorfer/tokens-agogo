@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tokens à gogo
 
-## Getting Started
+Cockpit de migration des design tokens du Design System Agorapulse.
 
-First, run the development server:
+Le design system passe d'une architecture `ref → comp` à `ref → sys → comp(exceptions)`. Les rôles sémantiques et la palette sont définis dans Figma ; le code, lui, utilise encore 1 884 fois une primitive brute. Cette app sert à faire le trajet proprement : générer le nouveau système depuis Figma, confronter chaque composant à sa spec, prévisualiser sur les vrais composants, et produire un changeset applicable sur le repo du design system.
+
+> **Ce n'est pas un renommage.** Chaque déclaration CSS doit utiliser le token qui décrit son **intention** — une surface interactive survolée, une bordure d'erreur — pas celui dont la couleur ressemble le plus à l'actuelle. Voir [ADR 003](docs/decisions/003-migration-par-intention.md).
+
+## Démarrer
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+L'app tourne dans deux modes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Mode local (mode de travail)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Lit le repo du design system sur disque, et peut y écrire.
 
-## Learn More
+```bash
+echo 'DS_REPO_PATH=/Users/<vous>/code/design-system' > .env.local
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Le repo doit être sur `master` — la baseline du projet ([ADR 001](docs/decisions/001-baseline-master.md)). L'app affiche la branche qu'elle lit.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Pour la preview des composants Angular, lancer aussi le Storybook du design system :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+cd ~/code/design-system && ng run web:storybook   # port 6006
+```
 
-## Deploy on Vercel
+### Mode démo (déployé)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Sans `DS_REPO_PATH`, l'app sert les snapshots commités dans `data/`, en lecture seule.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm sync    # régénère data/ depuis le repo local, à commiter
+```
+
+## Scripts
+
+| Commande         | Effet                    |
+| ---------------- | ------------------------ |
+| `pnpm dev`       | serveur de développement |
+| `pnpm build`     | build de production      |
+| `pnpm test`      | tests Vitest             |
+| `pnpm typecheck` | `tsc --noEmit`           |
+| `pnpm lint`      | ESLint                   |
+| `pnpm format`    | Prettier en écriture     |
+
+## Documentation
+
+| Fichier                                      | Contenu                                             |
+| -------------------------------------------- | --------------------------------------------------- |
+| [docs/decisions/](docs/decisions/)           | les ADR — pourquoi l'app est faite comme ça         |
+| [docs/architecture.md](docs/architecture.md) | comment elle est construite                         |
+| [docs/data-model.md](docs/data-model.md)     | forme des tokens, snapshots Figma, index, changeset |
+| [docs/migration.md](docs/migration.md)       | où en est la migration du design system             |
+| [CHANGELOG.md](CHANGELOG.md)                 | une entrée par étape livrée                         |
+
+## Périmètre
+
+Figma reste la source de vérité. Cette app ne remplace pas Figma : elle réalise la migration technique et garde le code aligné sur le design.
+
+## Liens
+
+- Design System — [github.com/agorapulse/design](https://github.com/agorapulse/design) · [Storybook](https://design.agorapulse.com)
+- Figma — [Tokens](https://www.figma.com/design/ZXNsdFTc17AM5qk6DZc07A/) · [V2 Atoms](https://www.figma.com/design/GfIlJ7SMEljrkIjyo94c0R/) · [V2 Molecules](https://www.figma.com/design/iu4GbBju893YBLchQBRIi8/)
