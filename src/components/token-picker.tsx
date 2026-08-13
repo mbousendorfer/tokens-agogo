@@ -54,6 +54,39 @@ export function TokenPicker({
   const [open, setOpen] = useState(false);
   const chosenCandidate = candidates.find((candidate) => candidate.name === chosen);
 
+  /**
+   * Les suggestions : les candidats que le token actuel désigne presque lui-même.
+   *
+   * `--comp-tag-green-text-color` partage `green` et `text` avec
+   * `--sys-color-text-category-green` — ce recouvrement de vocabulaire est le signal
+   * le plus fiable dont on dispose sans la spec Figma. Le rendu identique compte
+   * aussi, mais moins : deux tokens peuvent partager une couleur par accident.
+   *
+   * Ça reste une mise en avant, pas un choix. C'est l'intention qui tranche (ADR 003).
+   */
+  const suggestions = useMemo(() => {
+    const words = new Set(
+      current
+        .replace(/^--(ref|sys|comp)-/, '')
+        .split('-')
+        .filter((word) => word.length > 2 && !['color'].includes(word)),
+    );
+    if (!words.size) return [];
+
+    return candidates
+      .map((candidate) => {
+        const theirs = candidate.name.replace(/^--(ref|sys|comp)-/, '').split('-');
+        const shared = theirs.filter((word) => words.has(word)).length;
+        return { candidate, score: shared * 2 + (candidate.sameValue ? 1 : 0) };
+      })
+      .filter((entry) => entry.score >= 2)
+      .sort((a, b) => b.score - a.score || a.candidate.name.localeCompare(b.candidate.name))
+      .slice(0, 4)
+      .map((entry) => entry.candidate);
+  }, [candidates, current]);
+
+  const suggested = useMemo(() => new Set(suggestions.map((c) => c.name)), [suggestions]);
+
   const groups = useMemo(() => {
     const map = new Map<string, Candidate[]>();
     for (const candidate of candidates) {
@@ -123,6 +156,39 @@ export function TokenPicker({
               Aucun token ne correspond.
             </CommandEmpty>
 
+            {suggestions.length > 0 && (
+              <CommandGroup heading="Suggestions">
+                {suggestions.map((candidate) => (
+                  <CommandItem
+                    key={`suggestion-${candidate.name}`}
+                    value={`${candidate.name} suggestion`}
+                    onSelect={() => {
+                      onChoose(candidate.name);
+                      setOpen(false);
+                    }}
+                    className="gap-2 font-mono text-xs"
+                  >
+                    <Swatch value={candidate.value} />
+                    <span className="flex-1 truncate">{candidate.name}</span>
+                    {candidate.sameValue && (
+                      <Badge variant="outline" className="h-4 shrink-0 px-1 text-[10px]">
+                        =
+                      </Badge>
+                    )}
+                    <span className="text-muted-foreground max-w-[42%] shrink-0 truncate">
+                      {candidate.display}
+                    </span>
+                    <Check
+                      className={cn(
+                        'size-3 shrink-0',
+                        candidate.name === chosen ? 'opacity-100' : 'opacity-0',
+                      )}
+                    />
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            )}
+
             {groups.map(([group, items]) => (
               <CommandGroup key={group} heading={group}>
                 {items.map((candidate) => (
@@ -133,7 +199,10 @@ export function TokenPicker({
                       onChoose(candidate.name);
                       setOpen(false);
                     }}
-                    className="gap-2 font-mono text-xs"
+                    className={cn(
+                      'gap-2 font-mono text-xs',
+                      suggested.has(candidate.name) && 'text-signal',
+                    )}
                   >
                     <Swatch value={candidate.value} />
                     <span className="flex-1 truncate">{candidate.name}</span>

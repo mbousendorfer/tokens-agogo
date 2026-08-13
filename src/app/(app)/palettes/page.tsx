@@ -7,6 +7,7 @@ import { PaletteRules } from '@/components/palette-rules';
 import { Badge } from '@/components/ui/badge';
 import { figmaTokenData } from '@/lib/figma-tokens';
 import { paletteGrid } from '@/lib/palettes';
+import { BASELINE_SPEC } from '@/lib/generator';
 
 export default function PalettesPage() {
   const data = paletteGrid();
@@ -60,16 +61,7 @@ export default function PalettesPage() {
 
         <PaletteGenerator />
 
-        <PaletteEditor
-          initial={data.ramps.map((ramp) => ({
-            name: ramp.name,
-            shades: ramp.shades.map((shade) => ({ rung: shade.rung, hex: shade.hex })),
-          }))}
-          ladder={data.ladder}
-          usages={Object.fromEntries(
-            data.ramps.flatMap((ramp) => ramp.shades.map((shade) => [shade.token, shade.usages])),
-          )}
-        />
+        <PaletteEditor baseline={BASELINE_SPEC} />
         <ContrastChecker swatches={swatches} />
         <PaletteRules data={data} />
       </div>

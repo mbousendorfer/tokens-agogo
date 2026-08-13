@@ -39,7 +39,7 @@ export type WorkbenchRow = {
 };
 
 /** Les états que la preview sait forcer, plus le défaut. */
-const FORCED_STATES = ['défaut', 'hover', 'focus', 'active', 'disabled'];
+const FORCED_STATES = ['tous', 'défaut', 'hover', 'focus', 'active', 'disabled'];
 
 const TIER_STYLES: Record<string, string> = {
   ref: 'bg-destructive/10 text-destructive',
@@ -70,7 +70,7 @@ export function ComponentWorkbench({
   canWrite: boolean;
 }) {
   const [specimen, setSpecimen] = useState(specimens[0]?.id);
-  const [forcedState, setForcedState] = useState('défaut');
+  const [forcedState, setForcedState] = useState('tous');
   const [state, setState] = useState<MigrationState>(EMPTY_STATE);
   const [stateFilter, setStateFilter] = useState('à traiter');
   const [saving, setSaving] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle');
@@ -157,11 +157,20 @@ export function ComponentWorkbench({
 
   const filters = ['à traiter', 'tout', 'décidé'];
   const visible = useMemo(() => {
-    if (stateFilter === 'tout') return rows;
-    if (stateFilter === 'décidé')
-      return rows.filter((row) => decisions.has(decisionKey(row.file, row.line, row.token)));
-    return todo;
-  }, [rows, todo, decisions, stateFilter]);
+    const base =
+      stateFilter === 'tout'
+        ? rows
+        : stateFilter === 'décidé'
+          ? rows.filter((row) => decisions.has(decisionKey(row.file, row.line, row.token)))
+          : todo;
+
+    // L'état choisi pour la preview filtre aussi le tableau : on regarde le composant
+    // dans un état, on traite les déclarations de cet état. Les deux doivent parler
+    // de la même chose.
+    if (forcedState === 'tous') return base;
+    if (forcedState === 'défaut') return base.filter((row) => row.states.length === 0);
+    return base.filter((row) => row.states.includes(forcedState));
+  }, [rows, todo, decisions, stateFilter, forcedState]);
 
   const grouped = useMemo(() => {
     const map = new Map<string, WorkbenchRow[]>();
@@ -179,6 +188,7 @@ export function ComponentWorkbench({
       <div className="flex flex-wrap items-center gap-3">
         <Badge variant={todo.length ? 'secondary' : 'default'}>
           {decidedCount} décidé{decidedCount > 1 ? 'es' : 'e'} · {todo.length} à traiter
+          {forcedState !== 'tous' && ` · ${visible.length} en « ${forcedState} »`}
         </Badge>
         <ToggleGroup
           type="single"
@@ -267,7 +277,7 @@ export function ComponentWorkbench({
               <PreviewFrame
                 key={`${specimen}-${forcedState}`}
                 specimenId={specimen}
-                state={forcedState === 'défaut' ? null : forcedState}
+                state={forcedState === 'défaut' || forcedState === 'tous' ? null : forcedState}
                 overrides={overrides}
                 className="h-56 w-full rounded-lg border bg-white"
               />
