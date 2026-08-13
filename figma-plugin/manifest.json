@@ -1,0 +1,13 @@
+{
+  "name": "Agorapulse Token Export",
+  "id": "agorapulse-token-export",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["none"],
+    "reasoning": "Le plugin n'envoie rien : l'export est un téléchargement déclenché par l'utilisateur."
+  }
+}

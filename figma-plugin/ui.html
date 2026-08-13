@@ -1,0 +1,104 @@
+<style>
+  body {
+    font:
+      12px/1.5 Inter,
+      system-ui,
+      sans-serif;
+    margin: 0;
+    padding: 16px;
+    color: #1e1e1e;
+  }
+  h1 {
+    font-size: 13px;
+    margin: 0 0 4px;
+  }
+  p {
+    color: #666;
+    margin: 0 0 16px;
+  }
+  button {
+    font: inherit;
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    text-align: left;
+  }
+  button:hover {
+    background: #f5f5f5;
+  }
+  button strong {
+    display: block;
+  }
+  button span {
+    color: #666;
+  }
+  #status {
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    background: #f5f5f5;
+    display: none;
+  }
+  #status.error {
+    background: #fdecea;
+    color: #8e1f11;
+  }
+</style>
+
+<h1>Agorapulse Token Export</h1>
+<p>Exporte les variables et les bindings composants pour tokens-agogo.</p>
+
+<button id="variables">
+  <strong>Exporter les variables</strong>
+  <span>Collections, modes, alias, scopes — pour générer les tokens</span>
+</button>
+
+<button id="components">
+  <strong>Exporter les bindings composants</strong>
+  <span>Quelle variable sur quelle propriété, par variante — la spec</span>
+</button>
+
+<div id="status"></div>
+
+<script>
+  const status = document.getElementById('status');
+
+  function show(text, isError) {
+    status.textContent = text;
+    status.className = isError ? 'error' : '';
+    status.style.display = 'block';
+  }
+
+  function send(type) {
+    show('Extraction en cours…');
+    parent.postMessage({ pluginMessage: { type } }, '*');
+  }
+
+  document.getElementById('variables').onclick = () => send('export-variables');
+  document.getElementById('components').onclick = () => send('export-components');
+
+  onmessage = (event) => {
+    const message = event.data.pluginMessage;
+    if (!message) return;
+
+    if (message.type === 'error') {
+      show(message.message, true);
+      return;
+    }
+
+    // Téléchargement local : le plugin n'a aucun accès réseau.
+    const blob = new Blob([message.json], { type: 'application/json' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `figma-${message.name}.json`;
+    link.click();
+    URL.revokeObjectURL(link.href);
+
+    show(`${message.summary} — fichier téléchargé.`);
+  };
+</script>
