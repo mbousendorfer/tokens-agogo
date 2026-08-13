@@ -7,18 +7,31 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Separator } from '@/components/ui/separator';
-import { contrastRatio, parseHex, wcagLevel } from '@/lib/color';
-import type { PaletteSpec } from '@/lib/color-lab/engine/types';
+import { contrastRatio, parseHex, toOklch, wcagLevel } from '@/lib/color';
+import type { PaletteSolution, PaletteSpec } from '@/lib/color-lab/engine/types';
 import { derivation, generatedRamps, solve } from '@/lib/generator';
 import {
   addFamily,
+  normalizeId,
   removeFamily,
   renameFamily,
   setAnchor,
   setExtraDarkRungs,
 } from '@/lib/spec-edit';
+import { cn } from '@/lib/utils';
 
 const WHITE = { r: 255, g: 255, b: 255 };
+const BLACK = { r: 0, g: 0, b: 0 };
+
+/** Au-delà, l'œil voit que la nuance ne tient pas son barreau — le seuil de la grille. */
+const OFF_LADDER = 0.008;
+
+/** La couleur de texte qui se lit le mieux sur une pastille. */
+function inkOn(hex: string): string {
+  const rgb = parseHex(hex);
+  if (!rgb) return '#000000';
+  return contrastRatio(rgb, WHITE) > contrastRatio(rgb, BLACK) ? '#FFFFFF' : '#000000';
+}
 
 /**
  * L'éditeur de palette, branché sur le solveur.
@@ -33,14 +46,19 @@ const WHITE = { r: 255, g: 255, b: 255 };
 export function PaletteEditor({ baseline }: { baseline: PaletteSpec }) {
   const [spec, setSpec] = useState<PaletteSpec>(baseline);
 
-  const { ramps, steps, error } = useMemo(() => {
+  const { solution, ramps, steps, error } = useMemo(() => {
     try {
-      const solution = solve(spec);
-      return { ramps: generatedRamps(solution), steps: derivation(solution), error: null };
+      const solved = solve(spec);
+      return {
+        solution: solved,
+        ramps: generatedRamps(solved),
+        steps: derivation(solved),
+        error: null,
+      };
     } catch (cause) {
       // Une spec peut devenir insoluble — retirer la famille qui ancre le 700, par
       // exemple. On le dit au lieu d'afficher une palette fausse.
-      return { ramps: [], steps: [], error: (cause as Error).message };
+      return { solution: null, ramps: [], steps: [], error: (cause as Error).message };
     }
   }, [spec]);
 
@@ -61,8 +79,6 @@ export function PaletteEditor({ baseline }: { baseline: PaletteSpec }) {
       <div className="flex flex-wrap items-center gap-2 border-b px-4 py-2.5">
         <h2 className="font-display text-[15px] font-semibold">Éditer la palette</h2>
         <p className="text-muted-foreground text-xs">Chaque geste relance le solveur.</p>
-
-        <AddColour rungs={rungs} onAdd={(input) => setSpec((s) => addFamily(s, input))} />
 
         <DarkRungs
           count={spec.chromatic.extraDarkRungs ?? 0}
@@ -165,6 +181,13 @@ export function PaletteEditor({ baseline }: { baseline: PaletteSpec }) {
               </div>
             );
           })}
+
+          {/* Sous les ramps : là où on tend la main quand on veut en ajouter une. */}
+          <AddColour
+            spec={spec}
+            current={solution}
+            onAdd={(input) => setSpec((s) => addFamily(s, input))}
+          />
         </div>
       )}
 
@@ -278,87 +301,281 @@ function Shade({
 }
 
 function AddColour({
-  rungs,
+  spec,
+  current,
   onAdd,
 }: {
-  rungs: number[];
+  spec: PaletteSpec;
+  current: PaletteSolution | null;
   onAdd: (input: { name: string; hex: string; anchorRung: number }) => void;
 }) {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');
-  const [hex, setHex] = useState('#11ABA6');
+  const [hex, setHex] = useState('#C2185B');
   const [anchor, setAnchor] = useState(500);
 
-  return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button size="sm" variant="outline" className="gap-1.5">
+  const id = normalizeId(name);
+  const taken = spec.chromatic.families.some((family) => family.id === id);
+  const validHex = /^#[0-9a-f]{6}$/i.test(hex);
+
+  /**
+   * L'aperçu passe par le **vrai** solveur, spec candidate comprise.
+   *
+   * Ce n'est pas un raffinement : une famille ajoutée participe à la recherche du
+   * barreau 200 comme les autres, donc une teinte claire peut déplacer l'échelle de
+   * **toutes** les familles. Un aperçu approché tairait précisément le seul effet
+   * qu'on a besoin de connaître avant de valider.
+   */
+  const preview = useMemo(() => {
+    if (!id || taken || !validHex || !current) return null;
+    try {
+      const solution = solve(addFamily(spec, { name, hex, anchorRung: anchor }));
+      const shades = solution.chromaticRungs
+        .map((rung) => solution.rungs.get(`${id}.${rung}`))
+        .filter((shade): shade is NonNullable<typeof shade> => Boolean(shade));
+
+      const dark = solution.rungs.get(`${id}.700`);
+      const light = solution.rungs.get(`${id}.200`);
+      const contrast =
+        dark && light ? contrastRatio(parseHex(dark.hex)!, parseHex(light.hex)!) : null;
+
+      // La clarté de la couleur donnée, contre celle du barreau où on l'épingle.
+      const anchorIndex = solution.chromaticRungs.indexOf(anchor);
+      const ladderL = anchorIndex >= 0 ? solution.chromaticLadder[anchorIndex] : null;
+      const ownL = toOklch(parseHex(hex)!).l;
+      const nearest = solution.chromaticRungs.reduce((best, rung, index) =>
+        Math.abs(solution.chromaticLadder[index] - ownL) <
+        Math.abs(solution.chromaticLadder[solution.chromaticRungs.indexOf(best)] - ownL)
+          ? rung
+          : best,
+      );
+
+      return {
+        shades,
+        contrast,
+        target: spec.chromatic.contrast700on200,
+        witness: solution.derived.rung200Witness,
+        witnessBefore: current.derived.rung200Witness,
+        // Cinq décimales : en deçà, deux solutions différentes se ressemblent.
+        ladderMoved: solution.derived.L200.toFixed(5) !== current.derived.L200.toFixed(5),
+        oldL200: current.derived.L200,
+        newL200: solution.derived.L200,
+        shift: Math.abs(solution.derived.L200 - current.derived.L200),
+        offLadder: ladderL === null ? null : ownL - ladderL,
+        nearest,
+      };
+    } catch (cause) {
+      return { error: (cause as Error).message };
+    }
+  }, [spec, current, id, name, hex, anchor, taken, validHex]);
+
+  if (!open) {
+    return (
+      <div className="pt-2">
+        <Button variant="outline" size="sm" className="gap-1.5" onClick={() => setOpen(true)}>
           <Plus className="size-3.5" />
           Ajouter une couleur
         </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-80" align="start">
-        <p className="text-muted-foreground mb-3 text-xs leading-relaxed">
-          Donnez une teinte et le barreau qu’elle occupe. Le moteur en déduit les autres sous les
-          mêmes contraintes que les familles existantes — même échelle, même contraste minimal.
-        </p>
-        <div className="space-y-2">
-          <Input
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-            placeholder="Nom — ex. Teal"
-            className="h-8 text-xs"
-          />
+      </div>
+    );
+  }
+
+  const solved = preview && !('error' in preview) ? preview : null;
+  const failed = preview && 'error' in preview ? preview.error : null;
+
+  return (
+    <div className="bg-muted/20 mt-3 rounded-lg border p-4">
+      <h3 className="font-display text-sm font-semibold">Ajouter une couleur</h3>
+      <p className="text-muted-foreground mt-0.5 mb-4 text-xs">
+        Donnez-lui une couleur et le barreau qu’elle occupe : les autres nuances se déduisent, sur
+        la même échelle que les familles existantes.
+      </p>
+
+      <div className="flex flex-wrap items-start gap-x-6 gap-y-3">
+        <Field label="Nom">
+          <div className="flex items-center gap-2">
+            <Input
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              placeholder="ex. Magenta"
+              className="h-8 w-44 text-xs"
+            />
+            {id && !taken && (
+              <span className="text-muted-foreground font-mono text-[11px]">
+                --ref-color-{id.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()}-500
+              </span>
+            )}
+            {taken && (
+              <Badge variant="destructive" className="text-[10px]">
+                cette famille existe déjà
+              </Badge>
+            )}
+          </div>
+        </Field>
+
+        <Field label="Couleur">
           <div className="flex items-center gap-2">
             <label
-              className="relative size-8 shrink-0 rounded-md ring-1 ring-black/10 dark:ring-white/12"
-              style={{ backgroundColor: hex }}
+              className="ring-hairline relative size-8 shrink-0 rounded-md ring-1"
+              style={{ backgroundColor: validHex ? hex : 'transparent' }}
             >
               <input
                 type="color"
-                value={hex}
+                value={validHex ? hex : '#000000'}
                 onChange={(event) => setHex(event.target.value.toUpperCase())}
                 className="absolute inset-0 cursor-pointer opacity-0"
+                aria-label="Choisir la couleur"
               />
             </label>
             <Input
               value={hex}
               onChange={(event) => setHex(event.target.value.toUpperCase())}
-              className="h-8 font-mono text-xs"
+              className="h-8 w-28 font-mono text-xs"
+              aria-invalid={!validHex}
             />
           </div>
+        </Field>
+
+        <Field label="Barreau épinglé">
           <div className="flex flex-wrap gap-1">
-            {rungs.map((rung) => (
+            {(current?.chromaticRungs ?? []).map((rung) => (
               <button
                 key={rung}
                 type="button"
                 onClick={() => setAnchor(rung)}
-                className={
-                  'rounded px-1.5 py-0.5 font-mono text-[11px] tabular-nums ' +
-                  (rung === anchor
+                className={cn(
+                  'rounded px-1.5 py-1 font-mono text-[11px] tabular-nums',
+                  rung === anchor
                     ? 'bg-secondary text-secondary-foreground font-medium'
-                    : 'text-muted-foreground hover:bg-secondary/50')
-                }
+                    : 'text-muted-foreground hover:bg-secondary/50',
+                )}
               >
                 {rung}
               </button>
             ))}
           </div>
+        </Field>
+      </div>
+
+      {failed && (
+        <p className="text-destructive mt-4 text-xs">
+          Spec insoluble avec cette couleur : {failed}
+        </p>
+      )}
+
+      {solved && (
+        <div className="mt-4 space-y-3">
+          <div className="flex gap-1">
+            {solved.shades.map((shade) => (
+              <div
+                key={shade.rung}
+                className="ring-hairline flex h-14 flex-1 flex-col justify-between rounded-[4px] p-1.5 font-mono text-[10px] ring-1"
+                style={{ backgroundColor: shade.hex, color: inkOn(shade.hex) }}
+                title={`${id}-${shade.rung} · ${shade.hex}`}
+              >
+                <span>{shade.rung}</span>
+                <span>{shade.hex.replace('#', '').toLowerCase()}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs">
+            <span className="text-muted-foreground">700 sur 200</span>
+            {solved.contrast !== null && (
+              <Badge
+                variant="outline"
+                className={cn(
+                  'font-mono text-[11px]',
+                  solved.contrast >= solved.target
+                    ? 'border-positive/40 text-positive'
+                    : 'border-destructive/50 text-destructive',
+                )}
+              >
+                {solved.contrast.toFixed(2)}:1{' '}
+                {solved.contrast >= solved.target ? 'passe le minimum' : 'SOUS le minimum'}
+              </Badge>
+            )}
+          </div>
+
+          {/*
+            La conséquence qu'on ne peut pas deviner : ajouter une famille n'est pas
+            gratuit. Si sa teinte devient celle qui contraint le barreau 200, toute la
+            palette se re-dérive.
+
+            Le ton suit la mesure. Une teinte proche du vert reprend la contrainte en
+            ne déplaçant L200 que de 8·10⁻⁵ : l'annoncer sur le même ton qu'un vrai
+            décalage apprendrait à ignorer l'avertissement.
+          */}
+          <p className="text-muted-foreground max-w-3xl text-xs leading-relaxed">
+            {!solved.ladderMoved ? (
+              <>
+                L’échelle commune ne bouge pas : {solved.witness} contraint toujours le barreau 200.
+              </>
+            ) : solved.shift > OFF_LADDER ? (
+              <>
+                <span className="text-caution font-medium">
+                  Cette teinte devient la famille contraignante.
+                </span>{' '}
+                Le barreau 200 est résolu pour tout le monde à la fois : L200 passerait de{' '}
+                <span className="font-mono tabular-nums">{solved.oldL200.toFixed(4)}</span> à{' '}
+                <span className="font-mono tabular-nums">{solved.newL200.toFixed(4)}</span>, et{' '}
+                <strong>toutes</strong> les familles se décaleraient avec lui.
+              </>
+            ) : (
+              <>
+                Cette teinte <span className="text-foreground font-medium">reprend</span> la
+                contrainte du barreau 200 à {solved.witnessBefore} — mais le déplacement reste
+                invisible ({solved.shift.toExponential(1)} L, sous le seuil de{' '}
+                <span className="font-mono tabular-nums">{OFF_LADDER}</span>). Rien ne bouge à
+                l’écran aujourd’hui ; c’est elle qui plafonnera la clarté du 200 demain.
+              </>
+            )}
+          </p>
+
+          {solved.offLadder !== null && Math.abs(solved.offLadder) > OFF_LADDER && (
+            <p className="text-muted-foreground max-w-3xl text-xs leading-relaxed">
+              Épinglée sur {anchor}, votre couleur se posera{' '}
+              <span className="text-caution font-mono tabular-nums">
+                {solved.offLadder > 0 ? '+' : '−'}
+                {Math.abs(solved.offLadder).toFixed(3)} L
+              </span>{' '}
+              hors du barreau — comme les ancres de marque. Le barreau le plus proche de sa clarté
+              est <span className="font-mono">{solved.nearest}</span>.
+            </p>
+          )}
         </div>
-        <Button
-          size="sm"
-          className="mt-3 w-full"
-          disabled={!name.trim() || !/^#[0-9a-f]{6}$/i.test(hex)}
-          onClick={() => {
-            onAdd({ name, hex, anchorRung: anchor });
-            setName('');
-            setOpen(false);
-          }}
-        >
-          Résoudre {rungs.length} nuances
+      )}
+
+      <div className="mt-4 flex items-center gap-2">
+        <Button size="sm" disabled={!solved} onClick={commit}>
+          Ajouter cette couleur
         </Button>
-      </PopoverContent>
-    </Popover>
+        <Button variant="ghost" size="sm" onClick={close}>
+          Annuler
+        </Button>
+      </div>
+    </div>
+  );
+
+  function commit() {
+    if (!solved) return;
+    onAdd({ name, hex, anchorRung: anchor });
+    close();
+  }
+
+  function close() {
+    setName('');
+    setOpen(false);
+  }
+}
+
+/** Un champ, avec son étiquette au-dessus. Un placeholder n'est pas une étiquette. */
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div className="space-y-1.5">
+      <span className="text-muted-foreground block text-[11px]">{label}</span>
+      {children}
+    </div>
   );
 }
 

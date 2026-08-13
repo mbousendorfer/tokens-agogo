@@ -4,6 +4,24 @@ Une entrée par étape livrée. Format inspiré de [Keep a Changelog](https://ke
 
 ## [Non publié]
 
+### Ajouter une couleur : résoudre avant de valider
+
+- Le formulaire **résout la spec candidate avec le vrai moteur** et montre les huit
+  nuances, le contraste 700/200 et son verdict, **avant** de valider. Il commettait
+  à l'aveugle : on découvrait le résultat après coup.
+- Il annonce la conséquence qu'on ne peut pas deviner : une famille ajoutée entre
+  dans la recherche du barreau 200, donc elle peut **déplacer l'échelle de toutes les
+  autres**. Le ton suit la mesure — une teinte proche du vert reprend la contrainte
+  en ne bougeant L200 que de 8·10⁻⁵, et l'app le dit ainsi.
+- Il dit aussi où la couleur donnée se posera : `−0.140 L hors du barreau, le plus
+proche de sa clarté est 700`.
+- Étiquettes au-dessus des champs, nom du token en direct, `Annuler` explicite, et le
+  formulaire vit **sous les ramps** — là où on tend la main — au lieu d'un popover.
+- **L'anneau de focus redevient achromatique.** Il était saturé et large de 3 px :
+  posé à vingt pixels d'une pastille qu'on essaie de juger, un halo teinté contamine
+  la perception de cette pastille. Un outil qui juge la couleur n'a pas le droit
+  d'en ajouter une au bord d'un champ.
+
 ### La page Palette dit enfin quelque chose
 
 - La page empilait cinq sections sur le même sujet, dont **le même tableau de

@@ -102,7 +102,15 @@
 
   --border: oklch(0.895 0.003 262);
   --input: oklch(0.885 0.004 262);
-  --ring: oklch(0.53 0.115 232);
+
+  /*
+    L'anneau de focus est achromatique, comme le reste de la chrome.
+
+    Il était saturé, et large de 3 px : posé à vingt pixels d'une pastille qu'on
+    essaie de juger, un halo teinté contamine la perception de cette pastille. Un
+    outil qui juge la couleur n'a pas le droit d'en ajouter une au bord d'un champ.
+  */
+  --ring: oklch(0.45 0.008 262);
 
   --chart-1: oklch(0.53 0.115 232);
   --chart-2: oklch(0.62 0.09 232);
@@ -150,7 +158,8 @@
 
   --border: oklch(1 0 0 / 9%);
   --input: oklch(1 0 0 / 13%);
-  --ring: oklch(0.76 0.13 218);
+  /* Achromatique aussi ici — voir le commentaire du mode clair. */
+  --ring: oklch(0.72 0.006 262);
 
   --chart-1: oklch(0.76 0.13 218);
   --chart-2: oklch(0.68 0.1 218);
