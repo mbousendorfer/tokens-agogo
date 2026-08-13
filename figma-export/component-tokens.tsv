@@ -1,0 +1,81 @@
+button/radius	@radius/control
+button/primary/orange/surface/default	@Colors/Orange/orange-500	@Colors/Orange/orange-700
+button/primary/orange/surface/hovered	@Colors/Orange/orange-400	@Colors/Orange/orange-600
+button/primary/orange/surface/clicked	@Colors/Orange/orange-300	@Colors/Orange/orange-500
+button/primary/orange/surface/disabled	@Colors/Orange/orange-300
+button/primary/orange/content	@color/text/on-color
+button/primary/blue/surface/default	@Colors/Electric Blue/electric-blue-600	@Colors/Electric Blue/electric-blue-700
+button/primary/blue/surface/hovered	@Colors/Electric Blue/electric-blue-500	@Colors/Electric Blue/electric-blue-600
+button/primary/blue/surface/clicked	@Colors/Electric Blue/electric-blue-400	@Colors/Electric Blue/electric-blue-500
+button/primary/blue/surface/disabled	@Colors/Electric Blue/electric-blue-300
+button/primary/blue/content	@color/text/on-color
+button/secondary/orange/surface/default	@Colors/Orange/orange-200
+button/secondary/orange/surface/hovered	@Colors/Orange/orange-300
+button/secondary/orange/surface/clicked	@Colors/Orange/orange-400
+button/secondary/orange/surface/disabled	@Colors/Orange/orange-200
+button/secondary/orange/content	@Colors/Orange/orange-600	@Colors/Orange/orange-700
+button/secondary/orange/content-disabled	@Colors/Orange/orange-300
+button/secondary/blue/surface/default	@Colors/Electric Blue/electric-blue-200
+button/secondary/blue/surface/hovered	@Colors/Electric Blue/electric-blue-300
+button/secondary/blue/surface/clicked	@Colors/Electric Blue/electric-blue-400
+button/secondary/blue/surface/disabled	@Colors/Electric Blue/electric-blue-200
+button/secondary/blue/content	@Colors/Electric Blue/electric-blue-600	@Colors/Electric Blue/electric-blue-700
+button/secondary/blue/content-disabled	@Colors/Electric Blue/electric-blue-300
+button/tertiary/filled-surface	@Colors/white
+button/tertiary/grey/border/default	@color/border/interactive/default
+button/tertiary/grey/border/hovered	@color/border/interactive/hovered
+button/tertiary/grey/border/clicked	@color/border/interactive/clicked
+button/tertiary/grey/border/disabled	@color/border/interactive/disabled
+button/tertiary/grey/content	@Colors/Grey/grey-800
+button/tertiary/grey/content-disabled	@Colors/Grey/grey-400
+button/tertiary/blue/border/default	@Colors/Electric Blue/electric-blue-400
+button/tertiary/blue/border/hovered	@Colors/Electric Blue/electric-blue-500
+button/tertiary/blue/border/clicked	@Colors/Electric Blue/electric-blue-600
+button/tertiary/blue/border/disabled	@Colors/Electric Blue/electric-blue-400
+button/tertiary/blue/content	@Colors/Electric Blue/electric-blue-600	@Colors/Electric Blue/electric-blue-700
+button/tertiary/blue/content-disabled	@Colors/Electric Blue/electric-blue-300
+button/tertiary/red/border/default	@Colors/Red/red-400
+button/tertiary/red/border/hovered	@Colors/Red/red-500
+button/tertiary/red/border/clicked	@Colors/Red/red-600
+button/tertiary/red/border/disabled	@Colors/Red/red-400
+button/tertiary/red/content	@Colors/Red/red-600	@Colors/Red/red-700
+button/tertiary/red/content-disabled	@Colors/Red/red-300
+button/ghost/grey/surface/hovered	@color/surface/interactive/hovered
+button/ghost/grey/surface/clicked	@color/surface/interactive/clicked
+button/ghost/grey/content	@Colors/Grey/grey-800
+button/ghost/grey/content-disabled	@Colors/Grey/grey-400
+button/featurelock/content	@color/text/featurelock
+button/featurelock/surface/default	@Colors/Purple/purple-200
+button/featurelock/surface/hovered	@Colors/Purple/purple-300
+button/featurelock/surface/clicked	@Colors/Purple/purple-400
+button/featurelock/border/default	@Colors/Purple/purple-300
+button/featurelock/border/hovered	@Colors/Purple/purple-400
+button/featurelock/border/clicked	@Colors/Purple/purple-500
+card/padding	@Spacings/spacing-sm
+card/radius	@radius/container
+card/spacing	@Spacings/spacing-sm
+card/color/background	@color/surface/default
+card/color/border	@color/border/default
+card/color/featurelock/background	@color/surface/featurelock
+card/color/featurelock/border	@color/border/featurelock
+input-field/radius	@radius/control
+input-field/height	@height/control
+input-field/horizontal-padding	@Spacings/spacing-xs
+input-field/surface/default	@color/surface/interactive/default
+input-field/surface/disabled	@Colors/Grey/grey-300
+input-field/border/default	@color/border/interactive/default	@color/border/input/default
+input-field/border/hovered	@color/border/interactive/hovered	@color/border/input/hovered
+input-field/border/clicked	@color/border/interactive/clicked	@color/border/input/clicked
+input-field/border/disabled	@color/border/interactive/disabled	@color/border/input/disabled
+input-field/border/active	@color/border/interactive/active/default	@color/border/input/active/default
+input-field/border/error	@color/border/error
+input-field/border/success	@color/border/success
+settings-content/max-width-md	700
+settings-content/max-width-lg	1200
+settings-content/internal-margin	@Spacings/spacing-md
+settings-content/vertical-spacing	@Spacings/spacing-sm
+settings-content/background-color	@color/surface/secondary
+topbar/height	64
+topbar/background	@color/surface/default
+topbar/bottom-border	@color/border/default
+topbar/horizontal-padding	@Spacings/spacing-sm

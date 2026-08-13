@@ -1,0 +1,137 @@
+color/text/default	@Colors/Grey/grey-1000
+color/text/secondary	@Colors/Grey/grey-800
+color/text/subtle	@Colors/Grey/grey-600
+color/text/on-color	@Colors/white		TEXT_FILL
+color/text/interactive/default	@Colors/Grey/grey-1000
+color/text/interactive/secondary	@Colors/Grey/grey-800
+color/text/interactive/disabled	@Colors/Grey/grey-400
+color/text/interactive/active/default	@Colors/Electric Blue/electric-blue-600	@Colors/Electric Blue/electric-blue-700
+color/text/interactive/active/disabled	@Colors/Electric Blue/electric-blue-300
+color/text/interactive/error/default	@Colors/Red/red-600	@Colors/Red/red-700
+color/text/interactive/error/disabled	@Colors/Red/red-300
+color/text/error	@Colors/Red/red-600	@Colors/Red/red-700
+color/text/warning	@Colors/Yellow/yellow-600	@Colors/Yellow/yellow-700
+color/text/success	@Colors/Green/green-600	@Colors/Green/green-700
+color/text/information	@Colors/Electric Blue/electric-blue-600	@Colors/Electric Blue/electric-blue-700
+color/text/featurelock	@Colors/Purple/purple-600	@Colors/Purple/purple-700
+color/text/notification	@Colors/Orange/orange-500	@Colors/Orange/orange-700	TEXT_FILL
+color/text/category/green	@Colors/Green/green-600	@Colors/Green/green-700	TEXT_FILL
+color/text/category/blue	@Colors/Electric Blue/electric-blue-600	@Colors/Electric Blue/electric-blue-700	TEXT_FILL
+color/text/category/grey	@Colors/Grey/grey-800		TEXT_FILL
+color/text/category/red	@Colors/Red/red-600	@Colors/Red/red-700	TEXT_FILL
+color/text/category/yellow	@Colors/Yellow/yellow-600	@Colors/Yellow/yellow-700	TEXT_FILL
+color/text/category/menthol	@Colors/Menthol/menthol-600	@Colors/Menthol/menthol-700	TEXT_FILL
+color/icon/default	@color/text/default
+color/icon/secondary	@color/text/secondary
+color/icon/subtle	@color/text/subtle
+color/icon/error	@color/text/error
+color/icon/warning	@color/text/warning
+color/icon/success	@color/text/success
+color/icon/information	@color/text/information
+color/icon/featurelock	@color/text/featurelock
+color/icon/notification	@color/text/notification
+color/icon/on-color	@color/text/on-color
+color/icon/online	@Colors/Green/green-600
+color/icon/interactive/default	@color/text/interactive/default
+color/icon/interactive/disabled	@color/text/interactive/disabled
+color/icon/interactive/active/default	@color/text/interactive/active/default
+color/icon/interactive/active/disabled	@color/text/interactive/active/disabled
+color/icon/interactive/error/default	@color/text/interactive/error/default
+color/icon/interactive/error/disabled	@color/text/interactive/error/disabled
+color/icon/category/green	@color/text/category/green		SHAPE_FILL
+color/icon/category/blue	@color/text/category/blue		SHAPE_FILL
+color/icon/category/grey	@color/text/category/grey		SHAPE_FILL
+color/icon/category/red	@color/text/category/red		SHAPE_FILL
+color/icon/category/yellow	@color/text/category/yellow		SHAPE_FILL
+color/icon/category/menthol	@color/text/category/menthol		SHAPE_FILL
+color/link/default	@Colors/Electric Blue/electric-blue-600	@Colors/Electric Blue/electric-blue-700
+color/link/hovered	@Colors/Electric Blue/electric-blue-500	@Colors/Electric Blue/electric-blue-600
+color/link/clicked	@Colors/Electric Blue/electric-blue-400	@Colors/Electric Blue/electric-blue-500
+color/link/disabled	@Colors/Electric Blue/electric-blue-300
+color/link/visited	@Colors/Purple/purple-800
+color/border/default	@Colors/Grey/grey-300
+color/border/interactive/default	@Colors/Grey/grey-400		STROKE_COLOR
+color/border/interactive/hovered	@Colors/Grey/grey-500		STROKE_COLOR
+color/border/interactive/clicked	@Colors/Grey/grey-600
+color/border/interactive/disabled	@Colors/Grey/grey-300
+color/border/interactive/active/default	@Colors/Electric Blue/electric-blue-600	@Colors/Electric Blue/electric-blue-700	STROKE_COLOR
+color/border/interactive/active/hovered	@Colors/Electric Blue/electric-blue-500	@Colors/Electric Blue/electric-blue-600	STROKE_COLOR
+color/border/interactive/active/clicked	@Colors/Electric Blue/electric-blue-400	@Colors/Electric Blue/electric-blue-500	STROKE_COLOR
+color/border/interactive/active/disabled	@Colors/Electric Blue/electric-blue-300		STROKE_COLOR
+color/border/input/default	@Colors/Grey/grey-400	@Colors/Grey/grey-700
+color/border/input/hovered	@Colors/Grey/grey-600	@Colors/Grey/grey-800
+color/border/input/clicked	@Colors/Grey/grey-700	@Colors/Grey/grey-900
+color/border/input/disabled	@Colors/Grey/grey-300
+color/border/input/active/default	@Colors/Electric Blue/electric-blue-600	@Colors/Electric Blue/electric-blue-700
+color/border/input/active/hovered	@Colors/Electric Blue/electric-blue-500	@Colors/Electric Blue/electric-blue-600
+color/border/input/active/clicked	@Colors/Electric Blue/electric-blue-400	@Colors/Electric Blue/electric-blue-500
+color/border/input/active/disabled	@Colors/Electric Blue/electric-blue-300
+color/border/error	@Colors/Red/red-600	@Colors/Red/red-700
+color/border/warning	@Colors/Yellow/yellow-600	@Colors/Yellow/yellow-700
+color/border/success	@Colors/Green/green-600	@Colors/Green/green-700
+color/border/information	@Colors/Electric Blue/electric-blue-600	@Colors/Electric Blue/electric-blue-700
+color/border/featurelock	@Colors/Purple/purple-600	@Colors/Purple/purple-700
+color/surface/default	@Colors/white
+color/surface/secondary	@Colors/Grey/grey-100
+color/surface/tertiary	@Colors/Grey/grey-200
+color/surface/bold	@Colors/Grey/grey-500
+color/surface/interactive/default	@color/surface/default
+color/surface/interactive/hovered	@Colors/Grey/grey-200
+color/surface/interactive/clicked	@Colors/Grey/grey-300
+color/surface/interactive/active/default	@Colors/Electric Blue/electric-blue-200
+color/surface/interactive/active/hovered	@Colors/Electric Blue/electric-blue-300
+color/surface/interactive/active/clicked	@Colors/Electric Blue/electric-blue-400
+color/surface/interactive/error/hovered	@Colors/Red/red-200
+color/surface/interactive/error/clicked	@Colors/Red/red-300
+color/surface/interactive/featurelock/hovered	@Colors/Purple/purple-200
+color/surface/interactive/featurelock/clicked	@Colors/Purple/purple-300
+color/surface/interactive/featurelock/active/default	@Colors/Purple/purple-200
+color/surface/interactive/featurelock/active/hovered	@Colors/Purple/purple-300
+color/surface/interactive/featurelock/active/clicked	@Colors/Purple/purple-400
+color/surface/input/default	@color/surface/default
+color/surface/input/disabled	@Colors/Grey/grey-200
+color/surface/input/active/default	@Colors/Electric Blue/electric-blue-600	@Colors/Electric Blue/electric-blue-700
+color/surface/input/active/hovered	@Colors/Electric Blue/electric-blue-500
+color/surface/input/active/clicked	@Colors/Electric Blue/electric-blue-400
+color/surface/input/active/disabled	@Colors/Electric Blue/electric-blue-300
+color/surface/information	@Colors/Electric Blue/electric-blue-200
+color/surface/success	@Colors/Green/green-200
+color/surface/warning	@Colors/Yellow/yellow-200
+color/surface/error	@Colors/Red/red-200
+color/surface/featurelock	@Colors/Purple/purple-200
+color/surface/notification	@Colors/Orange/orange-500	@Colors/Orange/orange-700
+color/surface/category/blue	@Colors/Electric Blue/electric-blue-200		ALL_FILLS
+color/surface/category/green	@Colors/Green/green-200		ALL_FILLS
+color/surface/category/red	@Colors/Red/red-200		ALL_FILLS
+color/surface/category/yellow	@Colors/Yellow/yellow-200		ALL_FILLS
+color/surface/category/menthol	@Colors/Menthol/menthol-200		ALL_FILLS
+color/surface/category/grey	@Colors/Grey/grey-200		ALL_FILLS
+color/data/01	@Colors/Data/data-cyan-100
+color/data/02	@Colors/Data/data-sun-100
+color/data/03	@Colors/Data/data-peony-100
+color/data/04	@Colors/Data/data-lime-100
+color/data/05	@Colors/Data/data-iris-100
+color/data/06	@Colors/Data/data-cherry-100
+color/data/07	@Colors/Data/data-sky-100
+color/data/08	@Colors/Data/data-tangerine-100
+color/data/09	@Colors/Data/data-emerald-100
+color/data/10	@Colors/Data/data-navy-100
+color/data/positive	@Colors/Green/green-700
+color/data/negative	@Colors/Red/red-700
+color/data/neutral	@Colors/Grey/grey-700
+height/control	36
+height/chip	24		WIDTH_HEIGHT
+height/line	16
+radius/container	@Border Radius/border-radius-lg
+radius/inner	@Border Radius/border-radius-md
+radius/chip	@Border Radius/border-radius-sm
+radius/control	@Border Radius/border-radius-md
+spacing/inline/icon-default	@Spacings/spacing-xxs
+spacing/inline/icon-small	@Spacings/spacing-xxxs
+motion/easing/standard	{"type":"CUSTOM_CUBIC_BEZIER","easingFunctionCubicBezier":{"x1":0.4,"y1":0,"x2":0.3,"y2":1}}
+motion/easing/decelerated	{"type":"CUSTOM_CUBIC_BEZIER","easingFunctionCubicBezier":{"x1":0,"y1":0,"x2":0.2,"y2":1}}
+motion/easing/accelerated	{"type":"CUSTOM_CUBIC_BEZIER","easingFunctionCubicBezier":{"x1":0.4,"y1":0,"x2":1,"y2":1}}
+motion/timing/long	0.4
+motion/timing/normal	0.25
+motion/timing/short	0.15
+motion/timing/xshort	0.075

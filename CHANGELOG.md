@@ -17,7 +17,11 @@ Ce n'était pas la demande. Voir [ADR 011](docs/decisions/011-editeur-plutot-que
 - **Décisions persistées** dans `migration-state.json` (mode local), relues au chargement.
 - **Changeset** : la liste des remplacements réellement décidés, groupés par fichier et
   par ligne, exportable en Markdown applicable. Signale les tokens cibles à créer.
-- **Plugin Figma supprimé.** Les variables cibles viendront du MCP Figma.
+- **Plugin Figma supprimé.** Les 348 variables cibles sont extraites via le MCP Figma
+  (`use_figma`) et commitées dans `figma-export/` : `Reference` (130), `System` (137),
+  `Component` (81), avec leur mode `Accessible`.
+- Le sélecteur propose désormais **les vrais tokens Figma**, filtrés par leurs `scopes` —
+  un token scopé `TEXT_FILL` ne sera pas proposé sur un `background-color`.
 
 ### Étapes 4 à 8 — Figma, alignement, palettes, changeset
 

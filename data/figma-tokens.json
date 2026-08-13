@@ -1,0 +1,4541 @@
+{
+  "source": {
+    "file": "V2 Style Guide 2.0 - Tokens",
+    "fileKey": "ZXNsdFTc17AM5qk6DZc07A",
+    "via": "MCP use_figma"
+  },
+  "counts": {
+    "total": 348,
+    "byTier": {
+      "comp": 81,
+      "ref": 130,
+      "sys": 137
+    }
+  },
+  "tokens": [
+    {
+      "figmaName": "button/featurelock/border/clicked",
+      "name": "--comp-button-featurelock-border-clicked",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-500",
+      "aliasOfFigma": "Colors/Purple/purple-500",
+      "value": "#918BD3",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/featurelock/border/default",
+      "name": "--comp-button-featurelock-border-default",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-300",
+      "aliasOfFigma": "Colors/Purple/purple-300",
+      "value": "#CCCAFE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/featurelock/border/hovered",
+      "name": "--comp-button-featurelock-border-hovered",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-400",
+      "aliasOfFigma": "Colors/Purple/purple-400",
+      "value": "#ADA8F2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/featurelock/content",
+      "name": "--comp-button-featurelock-content",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-featurelock",
+      "aliasOfFigma": "color/text/featurelock",
+      "value": "#7A70CA",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/featurelock/surface/clicked",
+      "name": "--comp-button-featurelock-surface-clicked",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-400",
+      "aliasOfFigma": "Colors/Purple/purple-400",
+      "value": "#ADA8F2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/featurelock/surface/default",
+      "name": "--comp-button-featurelock-surface-default",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-200",
+      "aliasOfFigma": "Colors/Purple/purple-200",
+      "value": "#EDEDFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/featurelock/surface/hovered",
+      "name": "--comp-button-featurelock-surface-hovered",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-300",
+      "aliasOfFigma": "Colors/Purple/purple-300",
+      "value": "#CCCAFE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/ghost/grey/content",
+      "name": "--comp-button-ghost-grey-content",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-800",
+      "aliasOfFigma": "Colors/Grey/grey-800",
+      "value": "#5E6E86",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/ghost/grey/content-disabled",
+      "name": "--comp-button-ghost-grey-content-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-400",
+      "aliasOfFigma": "Colors/Grey/grey-400",
+      "value": "#C0C8D1",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/ghost/grey/surface/clicked",
+      "name": "--comp-button-ghost-grey-surface-clicked",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-surface-interactive-clicked",
+      "aliasOfFigma": "color/surface/interactive/clicked",
+      "value": "#DFE3E8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/ghost/grey/surface/hovered",
+      "name": "--comp-button-ghost-grey-surface-hovered",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-surface-interactive-hovered",
+      "aliasOfFigma": "color/surface/interactive/hovered",
+      "value": "#EDEFF2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/primary/blue/content",
+      "name": "--comp-button-primary-blue-content",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-on-color",
+      "aliasOfFigma": "color/text/on-color",
+      "value": "#FFFFFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/primary/blue/surface/clicked",
+      "name": "--comp-button-primary-blue-surface-clicked",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-400",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
+      "value": "#7AB6FE",
+      "accessibleValue": "#178DFE"
+    },
+    {
+      "figmaName": "button/primary/blue/surface/default",
+      "name": "--comp-button-primary-blue-surface-default",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-600",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
+      "value": "#0B7EE7",
+      "accessibleValue": "#086DC9"
+    },
+    {
+      "figmaName": "button/primary/blue/surface/disabled",
+      "name": "--comp-button-primary-blue-surface-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-300",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
+      "value": "#B1D4FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/primary/blue/surface/hovered",
+      "name": "--comp-button-primary-blue-surface-hovered",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-500",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-500",
+      "value": "#178DFE",
+      "accessibleValue": "#0B7EE7"
+    },
+    {
+      "figmaName": "button/primary/orange/content",
+      "name": "--comp-button-primary-orange-content",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-on-color",
+      "aliasOfFigma": "color/text/on-color",
+      "value": "#FFFFFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/primary/orange/surface/clicked",
+      "name": "--comp-button-primary-orange-surface-clicked",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-orange-300",
+      "aliasOfFigma": "Colors/Orange/orange-300",
+      "value": "#FEC0A9",
+      "accessibleValue": "#FF6726"
+    },
+    {
+      "figmaName": "button/primary/orange/surface/default",
+      "name": "--comp-button-primary-orange-surface-default",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-orange-500",
+      "aliasOfFigma": "Colors/Orange/orange-500",
+      "value": "#FF6726",
+      "accessibleValue": "#B03F06"
+    },
+    {
+      "figmaName": "button/primary/orange/surface/disabled",
+      "name": "--comp-button-primary-orange-surface-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-orange-300",
+      "aliasOfFigma": "Colors/Orange/orange-300",
+      "value": "#FEC0A9",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/primary/orange/surface/hovered",
+      "name": "--comp-button-primary-orange-surface-hovered",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-orange-400",
+      "aliasOfFigma": "Colors/Orange/orange-400",
+      "value": "#FB936D",
+      "accessibleValue": "#D34D09"
+    },
+    {
+      "figmaName": "button/radius",
+      "name": "--comp-button-radius",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-radius-control",
+      "aliasOfFigma": "radius/control",
+      "value": "6",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/secondary/blue/content",
+      "name": "--comp-button-secondary-blue-content",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-600",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
+      "value": "#0B7EE7",
+      "accessibleValue": "#086DC9"
+    },
+    {
+      "figmaName": "button/secondary/blue/content-disabled",
+      "name": "--comp-button-secondary-blue-content-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-300",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
+      "value": "#B1D4FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/secondary/blue/surface/clicked",
+      "name": "--comp-button-secondary-blue-surface-clicked",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-400",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
+      "value": "#7AB6FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/secondary/blue/surface/default",
+      "name": "--comp-button-secondary-blue-surface-default",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-200",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-200",
+      "value": "#E4F0FF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/secondary/blue/surface/disabled",
+      "name": "--comp-button-secondary-blue-surface-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-200",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-200",
+      "value": "#E4F0FF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/secondary/blue/surface/hovered",
+      "name": "--comp-button-secondary-blue-surface-hovered",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-300",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
+      "value": "#B1D4FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/secondary/orange/content",
+      "name": "--comp-button-secondary-orange-content",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-orange-600",
+      "aliasOfFigma": "Colors/Orange/orange-600",
+      "value": "#D34D09",
+      "accessibleValue": "#B03F06"
+    },
+    {
+      "figmaName": "button/secondary/orange/content-disabled",
+      "name": "--comp-button-secondary-orange-content-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-orange-300",
+      "aliasOfFigma": "Colors/Orange/orange-300",
+      "value": "#FEC0A9",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/secondary/orange/surface/clicked",
+      "name": "--comp-button-secondary-orange-surface-clicked",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-orange-400",
+      "aliasOfFigma": "Colors/Orange/orange-400",
+      "value": "#FB936D",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/secondary/orange/surface/default",
+      "name": "--comp-button-secondary-orange-surface-default",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-orange-200",
+      "aliasOfFigma": "Colors/Orange/orange-200",
+      "value": "#FFEAE2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/secondary/orange/surface/disabled",
+      "name": "--comp-button-secondary-orange-surface-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-orange-200",
+      "aliasOfFigma": "Colors/Orange/orange-200",
+      "value": "#FFEAE2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/secondary/orange/surface/hovered",
+      "name": "--comp-button-secondary-orange-surface-hovered",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-orange-300",
+      "aliasOfFigma": "Colors/Orange/orange-300",
+      "value": "#FEC0A9",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/blue/border/clicked",
+      "name": "--comp-button-tertiary-blue-border-clicked",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-600",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
+      "value": "#0B7EE7",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/blue/border/default",
+      "name": "--comp-button-tertiary-blue-border-default",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-400",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
+      "value": "#7AB6FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/blue/border/disabled",
+      "name": "--comp-button-tertiary-blue-border-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-400",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
+      "value": "#7AB6FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/blue/border/hovered",
+      "name": "--comp-button-tertiary-blue-border-hovered",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-500",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-500",
+      "value": "#178DFE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/blue/content",
+      "name": "--comp-button-tertiary-blue-content",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-600",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
+      "value": "#0B7EE7",
+      "accessibleValue": "#086DC9"
+    },
+    {
+      "figmaName": "button/tertiary/blue/content-disabled",
+      "name": "--comp-button-tertiary-blue-content-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-300",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
+      "value": "#B1D4FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/filled-surface",
+      "name": "--comp-button-tertiary-filled-surface",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-white",
+      "aliasOfFigma": "Colors/white",
+      "value": "#FFFFFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/grey/border/clicked",
+      "name": "--comp-button-tertiary-grey-border-clicked",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-interactive-clicked",
+      "aliasOfFigma": "color/border/interactive/clicked",
+      "value": "#8D9AAB",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/grey/border/default",
+      "name": "--comp-button-tertiary-grey-border-default",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-interactive-default",
+      "aliasOfFigma": "color/border/interactive/default",
+      "value": "#C0C8D1",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/grey/border/disabled",
+      "name": "--comp-button-tertiary-grey-border-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-interactive-disabled",
+      "aliasOfFigma": "color/border/interactive/disabled",
+      "value": "#DFE3E8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/grey/border/hovered",
+      "name": "--comp-button-tertiary-grey-border-hovered",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-interactive-hovered",
+      "aliasOfFigma": "color/border/interactive/hovered",
+      "value": "#A6B1BE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/grey/content",
+      "name": "--comp-button-tertiary-grey-content",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-800",
+      "aliasOfFigma": "Colors/Grey/grey-800",
+      "value": "#5E6E86",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/grey/content-disabled",
+      "name": "--comp-button-tertiary-grey-content-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-400",
+      "aliasOfFigma": "Colors/Grey/grey-400",
+      "value": "#C0C8D1",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/red/border/clicked",
+      "name": "--comp-button-tertiary-red-border-clicked",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-600",
+      "aliasOfFigma": "Colors/Red/red-600",
+      "value": "#EC1011",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/red/border/default",
+      "name": "--comp-button-tertiary-red-border-default",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-400",
+      "aliasOfFigma": "Colors/Red/red-400",
+      "value": "#FD8F80",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/red/border/disabled",
+      "name": "--comp-button-tertiary-red-border-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-400",
+      "aliasOfFigma": "Colors/Red/red-400",
+      "value": "#FD8F80",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/red/border/hovered",
+      "name": "--comp-button-tertiary-red-border-hovered",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-500",
+      "aliasOfFigma": "Colors/Red/red-500",
+      "value": "#FD4F42",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "button/tertiary/red/content",
+      "name": "--comp-button-tertiary-red-content",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-600",
+      "aliasOfFigma": "Colors/Red/red-600",
+      "value": "#EC1011",
+      "accessibleValue": "#C50B0C"
+    },
+    {
+      "figmaName": "button/tertiary/red/content-disabled",
+      "name": "--comp-button-tertiary-red-content-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-300",
+      "aliasOfFigma": "Colors/Red/red-300",
+      "value": "#FEBEB4",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "card/color/background",
+      "name": "--comp-card-color-background",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-surface-default",
+      "aliasOfFigma": "color/surface/default",
+      "value": "#FFFFFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "card/color/border",
+      "name": "--comp-card-color-border",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-default",
+      "aliasOfFigma": "color/border/default",
+      "value": "#DFE3E8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "card/color/featurelock/background",
+      "name": "--comp-card-color-featurelock-background",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-surface-featurelock",
+      "aliasOfFigma": "color/surface/featurelock",
+      "value": "#EDEDFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "card/color/featurelock/border",
+      "name": "--comp-card-color-featurelock-border",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-featurelock",
+      "aliasOfFigma": "color/border/featurelock",
+      "value": "#7A70CA",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "card/padding",
+      "name": "--comp-card-padding",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-spacings-spacing-sm",
+      "aliasOfFigma": "Spacings/spacing-sm",
+      "value": "16",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "card/radius",
+      "name": "--comp-card-radius",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-radius-container",
+      "aliasOfFigma": "radius/container",
+      "value": "8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "card/spacing",
+      "name": "--comp-card-spacing",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-spacings-spacing-sm",
+      "aliasOfFigma": "Spacings/spacing-sm",
+      "value": "16",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "input-field/border/active",
+      "name": "--comp-input-field-border-active",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-interactive-active-default",
+      "aliasOfFigma": "color/border/interactive/active/default",
+      "value": "#0B7EE7",
+      "accessibleValue": "#0B7EE7"
+    },
+    {
+      "figmaName": "input-field/border/clicked",
+      "name": "--comp-input-field-border-clicked",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-interactive-clicked",
+      "aliasOfFigma": "color/border/interactive/clicked",
+      "value": "#8D9AAB",
+      "accessibleValue": "#758498"
+    },
+    {
+      "figmaName": "input-field/border/default",
+      "name": "--comp-input-field-border-default",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-interactive-default",
+      "aliasOfFigma": "color/border/interactive/default",
+      "value": "#C0C8D1",
+      "accessibleValue": "#C0C8D1"
+    },
+    {
+      "figmaName": "input-field/border/disabled",
+      "name": "--comp-input-field-border-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-interactive-disabled",
+      "aliasOfFigma": "color/border/interactive/disabled",
+      "value": "#DFE3E8",
+      "accessibleValue": "#DFE3E8"
+    },
+    {
+      "figmaName": "input-field/border/error",
+      "name": "--comp-input-field-border-error",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-error",
+      "aliasOfFigma": "color/border/error",
+      "value": "#EC1011",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "input-field/border/hovered",
+      "name": "--comp-input-field-border-hovered",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-interactive-hovered",
+      "aliasOfFigma": "color/border/interactive/hovered",
+      "value": "#A6B1BE",
+      "accessibleValue": "#8D9AAB"
+    },
+    {
+      "figmaName": "input-field/border/success",
+      "name": "--comp-input-field-border-success",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-success",
+      "aliasOfFigma": "color/border/success",
+      "value": "#0D9930",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "input-field/height",
+      "name": "--comp-input-field-height",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-height-control",
+      "aliasOfFigma": "height/control",
+      "value": "36",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "input-field/horizontal-padding",
+      "name": "--comp-input-field-horizontal-padding",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-spacings-spacing-xs",
+      "aliasOfFigma": "Spacings/spacing-xs",
+      "value": "12",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "input-field/radius",
+      "name": "--comp-input-field-radius",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-radius-control",
+      "aliasOfFigma": "radius/control",
+      "value": "6",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "input-field/surface/default",
+      "name": "--comp-input-field-surface-default",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-surface-interactive-default",
+      "aliasOfFigma": "color/surface/interactive/default",
+      "value": "#FFFFFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "input-field/surface/disabled",
+      "name": "--comp-input-field-surface-disabled",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-300",
+      "aliasOfFigma": "Colors/Grey/grey-300",
+      "value": "#DFE3E8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "settings-content/background-color",
+      "name": "--comp-settings-content-background-color",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-surface-secondary",
+      "aliasOfFigma": "color/surface/secondary",
+      "value": "#F9F9FA",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "settings-content/internal-margin",
+      "name": "--comp-settings-content-internal-margin",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-spacings-spacing-md",
+      "aliasOfFigma": "Spacings/spacing-md",
+      "value": "24",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "settings-content/max-width-lg",
+      "name": "--comp-settings-content-max-width-lg",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "1200",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "settings-content/max-width-md",
+      "name": "--comp-settings-content-max-width-md",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "700",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "settings-content/vertical-spacing",
+      "name": "--comp-settings-content-vertical-spacing",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-spacings-spacing-sm",
+      "aliasOfFigma": "Spacings/spacing-sm",
+      "value": "16",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "topbar/background",
+      "name": "--comp-topbar-background",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-surface-default",
+      "aliasOfFigma": "color/surface/default",
+      "value": "#FFFFFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "topbar/bottom-border",
+      "name": "--comp-topbar-bottom-border",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-border-default",
+      "aliasOfFigma": "color/border/default",
+      "value": "#DFE3E8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "topbar/height",
+      "name": "--comp-topbar-height",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "64",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "topbar/horizontal-padding",
+      "name": "--comp-topbar-horizontal-padding",
+      "tier": "comp",
+      "collection": "Component tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-spacings-spacing-sm",
+      "aliasOfFigma": "Spacings/spacing-sm",
+      "value": "16",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Border Radius/border-radius-lg",
+      "name": "--ref-border-radius-lg",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "8",
+      "accessibleValue": "CORNER_RADIUS"
+    },
+    {
+      "figmaName": "Border Radius/border-radius-md",
+      "name": "--ref-border-radius-md",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "6",
+      "accessibleValue": "CORNER_RADIUS"
+    },
+    {
+      "figmaName": "Border Radius/border-radius-sm",
+      "name": "--ref-border-radius-sm",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "4",
+      "accessibleValue": "CORNER_RADIUS"
+    },
+    {
+      "figmaName": "Colors/Data/data-cherry-100",
+      "name": "--ref-color-data-cherry-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#CC5040",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Data/data-cyan-100",
+      "name": "--ref-color-data-cyan-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#12AABA",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Data/data-emerald-100",
+      "name": "--ref-color-data-emerald-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#12A87A",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Data/data-iris-100",
+      "name": "--ref-color-data-iris-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#8A62CC",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Data/data-lime-100",
+      "name": "--ref-color-data-lime-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#42B85A",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Data/data-navy-100",
+      "name": "--ref-color-data-navy-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#4A6ACC",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Data/data-peony-100",
+      "name": "--ref-color-data-peony-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#CC2878",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Data/data-sky-100",
+      "name": "--ref-color-data-sky-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#3A92E8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Data/data-sun-100",
+      "name": "--ref-color-data-sun-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#D98800",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Data/data-tangerine-100",
+      "name": "--ref-color-data-tangerine-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#DC6A30",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Electric Blue/electric-blue-100",
+      "name": "--ref-color-electric-blue-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#F3F8FF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Electric Blue/electric-blue-200",
+      "name": "--ref-color-electric-blue-200",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#E4F0FF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Electric Blue/electric-blue-300",
+      "name": "--ref-color-electric-blue-300",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#B1D4FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Electric Blue/electric-blue-400",
+      "name": "--ref-color-electric-blue-400",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#7AB6FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Electric Blue/electric-blue-500",
+      "name": "--ref-color-electric-blue-500",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#178DFE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Electric Blue/electric-blue-600",
+      "name": "--ref-color-electric-blue-600",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#0B7EE7",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Electric Blue/electric-blue-700",
+      "name": "--ref-color-electric-blue-700",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#086DC9",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Electric Blue/electric-blue-800",
+      "name": "--ref-color-electric-blue-800",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#04539C",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Green/green-100",
+      "name": "--ref-color-green-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#F3FAF3",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Green/green-200",
+      "name": "--ref-color-green-200",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#E3F5E3",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Green/green-300",
+      "name": "--ref-color-green-300",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#B0DFB1",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Green/green-400",
+      "name": "--ref-color-green-400",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#76C97C",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Green/green-500",
+      "name": "--ref-color-green-500",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#11B43A",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Green/green-600",
+      "name": "--ref-color-green-600",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#0D9930",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Green/green-700",
+      "name": "--ref-color-green-700",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#097F26",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Green/green-800",
+      "name": "--ref-color-green-800",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#05661D",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Grey/grey-100",
+      "name": "--ref-color-grey-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#F9F9FA",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Grey/grey-1000",
+      "name": "--ref-color-grey-1000",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#344563",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Grey/grey-200",
+      "name": "--ref-color-grey-200",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#EDEFF2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Grey/grey-300",
+      "name": "--ref-color-grey-300",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#DFE3E8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Grey/grey-400",
+      "name": "--ref-color-grey-400",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#C0C8D1",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Grey/grey-500",
+      "name": "--ref-color-grey-500",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#A6B1BE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Grey/grey-600",
+      "name": "--ref-color-grey-600",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#8D9AAB",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Grey/grey-700",
+      "name": "--ref-color-grey-700",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#758498",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Grey/grey-800",
+      "name": "--ref-color-grey-800",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#5E6E86",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Grey/grey-900",
+      "name": "--ref-color-grey-900",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#485974",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Menthol/menthol-100",
+      "name": "--ref-color-menthol-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#EFFBFA",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Menthol/menthol-200",
+      "name": "--ref-color-menthol-200",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#DAF6F3",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Menthol/menthol-300",
+      "name": "--ref-color-menthol-300",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#91E1DC",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Menthol/menthol-400",
+      "name": "--ref-color-menthol-400",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#45C9C3",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Menthol/menthol-500",
+      "name": "--ref-color-menthol-500",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#11ABA6",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Menthol/menthol-600",
+      "name": "--ref-color-menthol-600",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#0D928D",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Menthol/menthol-700",
+      "name": "--ref-color-menthol-700",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#097975",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Menthol/menthol-800",
+      "name": "--ref-color-menthol-800",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#05615D",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/MermAId/MermAId-100",
+      "name": "--ref-color-merm-aid-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#F5F1FF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/MermAId/MermAId-200",
+      "name": "--ref-color-merm-aid-200",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#EBE3FF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/MermAId/MermAId-Gradient-From",
+      "name": "--ref-color-merm-aid-gradient-from",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#578FFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/MermAId/MermAId-Gradient-To",
+      "name": "--ref-color-merm-aid-gradient-to",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#DF52FF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Orange/orange-100",
+      "name": "--ref-color-orange-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FFF5F2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Orange/orange-200",
+      "name": "--ref-color-orange-200",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FFEAE2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Orange/orange-300",
+      "name": "--ref-color-orange-300",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FEC0A9",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Orange/orange-400",
+      "name": "--ref-color-orange-400",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FB936D",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Orange/orange-500",
+      "name": "--ref-color-orange-500",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FF6726",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Orange/orange-600",
+      "name": "--ref-color-orange-600",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#D34D09",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Orange/orange-700",
+      "name": "--ref-color-orange-700",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#B03F06",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Orange/orange-800",
+      "name": "--ref-color-orange-800",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#8E3104",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/overlay-background",
+      "name": "--ref-color-overlay-background",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#344563/0.700",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Purple/purple-100",
+      "name": "--ref-color-purple-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#F7F7FF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Purple/purple-200",
+      "name": "--ref-color-purple-200",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#EDEDFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Purple/purple-300",
+      "name": "--ref-color-purple-300",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#CCCAFE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Purple/purple-400",
+      "name": "--ref-color-purple-400",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#ADA8F2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Purple/purple-500",
+      "name": "--ref-color-purple-500",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#918BD3",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Purple/purple-600",
+      "name": "--ref-color-purple-600",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#7A70CA",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Purple/purple-700",
+      "name": "--ref-color-purple-700",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#6554C0",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Purple/purple-800",
+      "name": "--ref-color-purple-800",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#51419F",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Red/red-100",
+      "name": "--ref-color-red-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FFF5F4",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Red/red-200",
+      "name": "--ref-color-red-200",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FFE9E6",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Red/red-300",
+      "name": "--ref-color-red-300",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FEBEB4",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Red/red-400",
+      "name": "--ref-color-red-400",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FD8F80",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Red/red-500",
+      "name": "--ref-color-red-500",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FD4F42",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Red/red-600",
+      "name": "--ref-color-red-600",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#EC1011",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Red/red-700",
+      "name": "--ref-color-red-700",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#C50B0C",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Red/red-800",
+      "name": "--ref-color-red-800",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#9F0708",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/Bluesky",
+      "name": "--ref-color-social-media-bluesky",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#1185FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/Facebook",
+      "name": "--ref-color-social-media-facebook",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#0866FF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/Instagram",
+      "name": "--ref-color-social-media-instagram",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#DD2A7B",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/LinkedIn",
+      "name": "--ref-color-social-media-linked-in",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#2668B2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/Pinterest",
+      "name": "--ref-color-social-media-pinterest",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#E60023",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/Reddit",
+      "name": "--ref-color-social-media-reddit",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FF4500",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/Threads",
+      "name": "--ref-color-social-media-threads",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#000000",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/Tiktok",
+      "name": "--ref-color-social-media-tiktok",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#000000",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/Tiktok Blue",
+      "name": "--ref-color-social-media-tiktok-blue",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#25F4EE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/Tiktok Red",
+      "name": "--ref-color-social-media-tiktok-red",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FE2C55",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/Web",
+      "name": "--ref-color-social-media-web",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#1F1F1F",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/X (Twitter)",
+      "name": "--ref-color-social-media-x-twitter",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#000000",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Social Media/YouTube",
+      "name": "--ref-color-social-media-you-tube",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FE0101",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/white",
+      "name": "--ref-color-white",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FFFFFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Yellow/yellow-100",
+      "name": "--ref-color-yellow-100",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#FCF7EF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Yellow/yellow-200",
+      "name": "--ref-color-yellow-200",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#F9EDD9",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Yellow/yellow-300",
+      "name": "--ref-color-yellow-300",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#ECCB95",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Yellow/yellow-400",
+      "name": "--ref-color-yellow-400",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#DFA83D",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Yellow/yellow-500",
+      "name": "--ref-color-yellow-500",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#C18A0E",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Yellow/yellow-600",
+      "name": "--ref-color-yellow-600",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#A4750A",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Yellow/yellow-700",
+      "name": "--ref-color-yellow-700",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#886107",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Colors/Yellow/yellow-800",
+      "name": "--ref-color-yellow-800",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "#6D4D04",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "Fonts/font-family",
+      "name": "--ref-fonts-font-family",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "Averta Std",
+      "accessibleValue": "FONT_FAMILY"
+    },
+    {
+      "figmaName": "Fonts/Line-Height/font-line-height-lg",
+      "name": "--ref-fonts-line-height-font-line-height-lg",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "24",
+      "accessibleValue": "LINE_HEIGHT"
+    },
+    {
+      "figmaName": "Fonts/Line-Height/font-line-height-md",
+      "name": "--ref-fonts-line-height-font-line-height-md",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "20",
+      "accessibleValue": "LINE_HEIGHT"
+    },
+    {
+      "figmaName": "Fonts/Line-Height/font-line-height-sm",
+      "name": "--ref-fonts-line-height-font-line-height-sm",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "18",
+      "accessibleValue": "LINE_HEIGHT"
+    },
+    {
+      "figmaName": "Fonts/Line-Height/font-line-height-xl",
+      "name": "--ref-fonts-line-height-font-line-height-xl",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "32",
+      "accessibleValue": "LINE_HEIGHT"
+    },
+    {
+      "figmaName": "Fonts/Line-Height/font-line-height-xs",
+      "name": "--ref-fonts-line-height-font-line-height-xs",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "16",
+      "accessibleValue": "LINE_HEIGHT"
+    },
+    {
+      "figmaName": "Fonts/Line-Height/font-line-height-xxl",
+      "name": "--ref-fonts-line-height-font-line-height-xxl",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "36",
+      "accessibleValue": "LINE_HEIGHT"
+    },
+    {
+      "figmaName": "Fonts/Size/font-size-lg",
+      "name": "--ref-fonts-size-font-size-lg",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "18",
+      "accessibleValue": "FONT_SIZE"
+    },
+    {
+      "figmaName": "Fonts/Size/font-size-md",
+      "name": "--ref-fonts-size-font-size-md",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "16",
+      "accessibleValue": "FONT_SIZE"
+    },
+    {
+      "figmaName": "Fonts/Size/font-size-sm",
+      "name": "--ref-fonts-size-font-size-sm",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "14",
+      "accessibleValue": "FONT_SIZE"
+    },
+    {
+      "figmaName": "Fonts/Size/font-size-xl",
+      "name": "--ref-fonts-size-font-size-xl",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "20",
+      "accessibleValue": "FONT_SIZE"
+    },
+    {
+      "figmaName": "Fonts/Size/font-size-xs",
+      "name": "--ref-fonts-size-font-size-xs",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "12",
+      "accessibleValue": "FONT_SIZE"
+    },
+    {
+      "figmaName": "Fonts/Size/font-size-xxl",
+      "name": "--ref-fonts-size-font-size-xxl",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "24",
+      "accessibleValue": "FONT_SIZE"
+    },
+    {
+      "figmaName": "Fonts/Size/font-size-xxxl",
+      "name": "--ref-fonts-size-font-size-xxxl",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "28",
+      "accessibleValue": "FONT_SIZE"
+    },
+    {
+      "figmaName": "Fonts/Weight/font-weight-black",
+      "name": "--ref-fonts-weight-font-weight-black",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "900",
+      "accessibleValue": "FONT_WEIGHT"
+    },
+    {
+      "figmaName": "Fonts/Weight/font-weight-bold",
+      "name": "--ref-fonts-weight-font-weight-bold",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "700",
+      "accessibleValue": "FONT_WEIGHT"
+    },
+    {
+      "figmaName": "Fonts/Weight/font-weight-extra-bold",
+      "name": "--ref-fonts-weight-font-weight-extra-bold",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "800",
+      "accessibleValue": "FONT_WEIGHT"
+    },
+    {
+      "figmaName": "Fonts/Weight/font-weight-regular",
+      "name": "--ref-fonts-weight-font-weight-regular",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "400",
+      "accessibleValue": "FONT_WEIGHT"
+    },
+    {
+      "figmaName": "Icons/icon-size-md",
+      "name": "--ref-icons-icon-size-md",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "24",
+      "accessibleValue": "WIDTH_HEIGHT"
+    },
+    {
+      "figmaName": "Icons/icon-size-sm",
+      "name": "--ref-icons-icon-size-sm",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "16",
+      "accessibleValue": "WIDTH_HEIGHT"
+    },
+    {
+      "figmaName": "Icons/icon-size-xl",
+      "name": "--ref-icons-icon-size-xl",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "40",
+      "accessibleValue": "WIDTH_HEIGHT"
+    },
+    {
+      "figmaName": "Icons/icon-size-xs",
+      "name": "--ref-icons-icon-size-xs",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "12",
+      "accessibleValue": "WIDTH_HEIGHT"
+    },
+    {
+      "figmaName": "Icons/icon-size-xxl",
+      "name": "--ref-icons-icon-size-xxl",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "48",
+      "accessibleValue": "WIDTH_HEIGHT"
+    },
+    {
+      "figmaName": "Spacings/spacing-lg",
+      "name": "--ref-spacings-spacing-lg",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "32",
+      "accessibleValue": "GAP"
+    },
+    {
+      "figmaName": "Spacings/spacing-md",
+      "name": "--ref-spacings-spacing-md",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "24",
+      "accessibleValue": "GAP"
+    },
+    {
+      "figmaName": "Spacings/spacing-sm",
+      "name": "--ref-spacings-spacing-sm",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "16",
+      "accessibleValue": "GAP"
+    },
+    {
+      "figmaName": "Spacings/spacing-xl",
+      "name": "--ref-spacings-spacing-xl",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "40",
+      "accessibleValue": "GAP"
+    },
+    {
+      "figmaName": "Spacings/spacing-xs",
+      "name": "--ref-spacings-spacing-xs",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "12",
+      "accessibleValue": "GAP"
+    },
+    {
+      "figmaName": "Spacings/spacing-xxl",
+      "name": "--ref-spacings-spacing-xxl",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "48",
+      "accessibleValue": "GAP"
+    },
+    {
+      "figmaName": "Spacings/spacing-xxs",
+      "name": "--ref-spacings-spacing-xxs",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "8",
+      "accessibleValue": "GAP"
+    },
+    {
+      "figmaName": "Spacings/spacing-xxxl",
+      "name": "--ref-spacings-spacing-xxxl",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "60",
+      "accessibleValue": "GAP"
+    },
+    {
+      "figmaName": "Spacings/spacing-xxxs",
+      "name": "--ref-spacings-spacing-xxxs",
+      "tier": "ref",
+      "collection": "Reference tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "4",
+      "accessibleValue": "GAP"
+    },
+    {
+      "figmaName": "color/border/default",
+      "name": "--sys-color-border-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-300",
+      "aliasOfFigma": "Colors/Grey/grey-300",
+      "value": "#DFE3E8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/border/error",
+      "name": "--sys-color-border-error",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-600",
+      "aliasOfFigma": "Colors/Red/red-600",
+      "value": "#EC1011",
+      "accessibleValue": "#C50B0C"
+    },
+    {
+      "figmaName": "color/border/featurelock",
+      "name": "--sys-color-border-featurelock",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-600",
+      "aliasOfFigma": "Colors/Purple/purple-600",
+      "value": "#7A70CA",
+      "accessibleValue": "#6554C0"
+    },
+    {
+      "figmaName": "color/border/information",
+      "name": "--sys-color-border-information",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-600",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
+      "value": "#0B7EE7",
+      "accessibleValue": "#086DC9"
+    },
+    {
+      "figmaName": "color/border/input/active/clicked",
+      "name": "--sys-color-border-input-active-clicked",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-400",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
+      "value": "#7AB6FE",
+      "accessibleValue": "#178DFE"
+    },
+    {
+      "figmaName": "color/border/input/active/default",
+      "name": "--sys-color-border-input-active-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-600",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
+      "value": "#0B7EE7",
+      "accessibleValue": "#086DC9"
+    },
+    {
+      "figmaName": "color/border/input/active/disabled",
+      "name": "--sys-color-border-input-active-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-300",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
+      "value": "#B1D4FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/border/input/active/hovered",
+      "name": "--sys-color-border-input-active-hovered",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-500",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-500",
+      "value": "#178DFE",
+      "accessibleValue": "#0B7EE7"
+    },
+    {
+      "figmaName": "color/border/input/clicked",
+      "name": "--sys-color-border-input-clicked",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-700",
+      "aliasOfFigma": "Colors/Grey/grey-700",
+      "value": "#758498",
+      "accessibleValue": "#485974"
+    },
+    {
+      "figmaName": "color/border/input/default",
+      "name": "--sys-color-border-input-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-400",
+      "aliasOfFigma": "Colors/Grey/grey-400",
+      "value": "#C0C8D1",
+      "accessibleValue": "#758498"
+    },
+    {
+      "figmaName": "color/border/input/disabled",
+      "name": "--sys-color-border-input-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-300",
+      "aliasOfFigma": "Colors/Grey/grey-300",
+      "value": "#DFE3E8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/border/input/hovered",
+      "name": "--sys-color-border-input-hovered",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-600",
+      "aliasOfFigma": "Colors/Grey/grey-600",
+      "value": "#8D9AAB",
+      "accessibleValue": "#5E6E86"
+    },
+    {
+      "figmaName": "color/border/interactive/active/clicked",
+      "name": "--sys-color-border-interactive-active-clicked",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "aliasOf": "--ref-color-electric-blue-400",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
+      "value": "#7AB6FE",
+      "accessibleValue": "#178DFE"
+    },
+    {
+      "figmaName": "color/border/interactive/active/default",
+      "name": "--sys-color-border-interactive-active-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "aliasOf": "--ref-color-electric-blue-600",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
+      "value": "#0B7EE7",
+      "accessibleValue": "#086DC9"
+    },
+    {
+      "figmaName": "color/border/interactive/active/disabled",
+      "name": "--sys-color-border-interactive-active-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "aliasOf": "--ref-color-electric-blue-300",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
+      "value": "#B1D4FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/border/interactive/active/hovered",
+      "name": "--sys-color-border-interactive-active-hovered",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "aliasOf": "--ref-color-electric-blue-500",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-500",
+      "value": "#178DFE",
+      "accessibleValue": "#0B7EE7"
+    },
+    {
+      "figmaName": "color/border/interactive/clicked",
+      "name": "--sys-color-border-interactive-clicked",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-600",
+      "aliasOfFigma": "Colors/Grey/grey-600",
+      "value": "#8D9AAB",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/border/interactive/default",
+      "name": "--sys-color-border-interactive-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "aliasOf": "--ref-color-grey-400",
+      "aliasOfFigma": "Colors/Grey/grey-400",
+      "value": "#C0C8D1",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/border/interactive/disabled",
+      "name": "--sys-color-border-interactive-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-300",
+      "aliasOfFigma": "Colors/Grey/grey-300",
+      "value": "#DFE3E8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/border/interactive/hovered",
+      "name": "--sys-color-border-interactive-hovered",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "aliasOf": "--ref-color-grey-500",
+      "aliasOfFigma": "Colors/Grey/grey-500",
+      "value": "#A6B1BE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/border/success",
+      "name": "--sys-color-border-success",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-green-600",
+      "aliasOfFigma": "Colors/Green/green-600",
+      "value": "#0D9930",
+      "accessibleValue": "#097F26"
+    },
+    {
+      "figmaName": "color/border/warning",
+      "name": "--sys-color-border-warning",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-yellow-600",
+      "aliasOfFigma": "Colors/Yellow/yellow-600",
+      "value": "#A4750A",
+      "accessibleValue": "#886107"
+    },
+    {
+      "figmaName": "color/data/01",
+      "name": "--sys-color-data-01",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-data-cyan-100",
+      "aliasOfFigma": "Colors/Data/data-cyan-100",
+      "value": "#12AABA",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/data/02",
+      "name": "--sys-color-data-02",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-data-sun-100",
+      "aliasOfFigma": "Colors/Data/data-sun-100",
+      "value": "#D98800",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/data/03",
+      "name": "--sys-color-data-03",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-data-peony-100",
+      "aliasOfFigma": "Colors/Data/data-peony-100",
+      "value": "#CC2878",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/data/04",
+      "name": "--sys-color-data-04",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-data-lime-100",
+      "aliasOfFigma": "Colors/Data/data-lime-100",
+      "value": "#42B85A",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/data/05",
+      "name": "--sys-color-data-05",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-data-iris-100",
+      "aliasOfFigma": "Colors/Data/data-iris-100",
+      "value": "#8A62CC",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/data/06",
+      "name": "--sys-color-data-06",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-data-cherry-100",
+      "aliasOfFigma": "Colors/Data/data-cherry-100",
+      "value": "#CC5040",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/data/07",
+      "name": "--sys-color-data-07",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-data-sky-100",
+      "aliasOfFigma": "Colors/Data/data-sky-100",
+      "value": "#3A92E8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/data/08",
+      "name": "--sys-color-data-08",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-data-tangerine-100",
+      "aliasOfFigma": "Colors/Data/data-tangerine-100",
+      "value": "#DC6A30",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/data/09",
+      "name": "--sys-color-data-09",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-data-emerald-100",
+      "aliasOfFigma": "Colors/Data/data-emerald-100",
+      "value": "#12A87A",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/data/10",
+      "name": "--sys-color-data-10",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-data-navy-100",
+      "aliasOfFigma": "Colors/Data/data-navy-100",
+      "value": "#4A6ACC",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/data/negative",
+      "name": "--sys-color-data-negative",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-700",
+      "aliasOfFigma": "Colors/Red/red-700",
+      "value": "#C50B0C",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/data/neutral",
+      "name": "--sys-color-data-neutral",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-700",
+      "aliasOfFigma": "Colors/Grey/grey-700",
+      "value": "#758498",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/data/positive",
+      "name": "--sys-color-data-positive",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-green-700",
+      "aliasOfFigma": "Colors/Green/green-700",
+      "value": "#097F26",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/category/blue",
+      "name": "--sys-color-icon-category-blue",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "aliasOf": "--sys-color-text-category-blue",
+      "aliasOfFigma": "color/text/category/blue",
+      "value": "#0B7EE7",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/category/green",
+      "name": "--sys-color-icon-category-green",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "aliasOf": "--sys-color-text-category-green",
+      "aliasOfFigma": "color/text/category/green",
+      "value": "#0D9930",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/category/grey",
+      "name": "--sys-color-icon-category-grey",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "aliasOf": "--sys-color-text-category-grey",
+      "aliasOfFigma": "color/text/category/grey",
+      "value": "#5E6E86",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/category/menthol",
+      "name": "--sys-color-icon-category-menthol",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "aliasOf": "--sys-color-text-category-menthol",
+      "aliasOfFigma": "color/text/category/menthol",
+      "value": "#0D928D",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/category/red",
+      "name": "--sys-color-icon-category-red",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "aliasOf": "--sys-color-text-category-red",
+      "aliasOfFigma": "color/text/category/red",
+      "value": "#EC1011",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/category/yellow",
+      "name": "--sys-color-icon-category-yellow",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "SHAPE_FILL"
+      ],
+      "aliasOf": "--sys-color-text-category-yellow",
+      "aliasOfFigma": "color/text/category/yellow",
+      "value": "#A4750A",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/default",
+      "name": "--sys-color-icon-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-default",
+      "aliasOfFigma": "color/text/default",
+      "value": "#344563",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/error",
+      "name": "--sys-color-icon-error",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-error",
+      "aliasOfFigma": "color/text/error",
+      "value": "#EC1011",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/featurelock",
+      "name": "--sys-color-icon-featurelock",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-featurelock",
+      "aliasOfFigma": "color/text/featurelock",
+      "value": "#7A70CA",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/information",
+      "name": "--sys-color-icon-information",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-information",
+      "aliasOfFigma": "color/text/information",
+      "value": "#0B7EE7",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/interactive/active/default",
+      "name": "--sys-color-icon-interactive-active-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-interactive-active-default",
+      "aliasOfFigma": "color/text/interactive/active/default",
+      "value": "#0B7EE7",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/interactive/active/disabled",
+      "name": "--sys-color-icon-interactive-active-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-interactive-active-disabled",
+      "aliasOfFigma": "color/text/interactive/active/disabled",
+      "value": "#B1D4FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/interactive/default",
+      "name": "--sys-color-icon-interactive-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-interactive-default",
+      "aliasOfFigma": "color/text/interactive/default",
+      "value": "#344563",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/interactive/disabled",
+      "name": "--sys-color-icon-interactive-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-interactive-disabled",
+      "aliasOfFigma": "color/text/interactive/disabled",
+      "value": "#C0C8D1",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/interactive/error/default",
+      "name": "--sys-color-icon-interactive-error-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-interactive-error-default",
+      "aliasOfFigma": "color/text/interactive/error/default",
+      "value": "#EC1011",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/interactive/error/disabled",
+      "name": "--sys-color-icon-interactive-error-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-interactive-error-disabled",
+      "aliasOfFigma": "color/text/interactive/error/disabled",
+      "value": "#FEBEB4",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/notification",
+      "name": "--sys-color-icon-notification",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-notification",
+      "aliasOfFigma": "color/text/notification",
+      "value": "#FF6726",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/on-color",
+      "name": "--sys-color-icon-on-color",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-on-color",
+      "aliasOfFigma": "color/text/on-color",
+      "value": "#FFFFFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/online",
+      "name": "--sys-color-icon-online",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-green-600",
+      "aliasOfFigma": "Colors/Green/green-600",
+      "value": "#0D9930",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/secondary",
+      "name": "--sys-color-icon-secondary",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-secondary",
+      "aliasOfFigma": "color/text/secondary",
+      "value": "#5E6E86",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/subtle",
+      "name": "--sys-color-icon-subtle",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-subtle",
+      "aliasOfFigma": "color/text/subtle",
+      "value": "#8D9AAB",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/success",
+      "name": "--sys-color-icon-success",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-success",
+      "aliasOfFigma": "color/text/success",
+      "value": "#0D9930",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/icon/warning",
+      "name": "--sys-color-icon-warning",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-text-warning",
+      "aliasOfFigma": "color/text/warning",
+      "value": "#A4750A",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/link/clicked",
+      "name": "--sys-color-link-clicked",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-400",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
+      "value": "#7AB6FE",
+      "accessibleValue": "#178DFE"
+    },
+    {
+      "figmaName": "color/link/default",
+      "name": "--sys-color-link-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-600",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
+      "value": "#0B7EE7",
+      "accessibleValue": "#086DC9"
+    },
+    {
+      "figmaName": "color/link/disabled",
+      "name": "--sys-color-link-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-300",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
+      "value": "#B1D4FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/link/hovered",
+      "name": "--sys-color-link-hovered",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-500",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-500",
+      "value": "#178DFE",
+      "accessibleValue": "#0B7EE7"
+    },
+    {
+      "figmaName": "color/link/visited",
+      "name": "--sys-color-link-visited",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-800",
+      "aliasOfFigma": "Colors/Purple/purple-800",
+      "value": "#51419F",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/bold",
+      "name": "--sys-color-surface-bold",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-500",
+      "aliasOfFigma": "Colors/Grey/grey-500",
+      "value": "#A6B1BE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/category/blue",
+      "name": "--sys-color-surface-category-blue",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_FILLS"
+      ],
+      "aliasOf": "--ref-color-electric-blue-200",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-200",
+      "value": "#E4F0FF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/category/green",
+      "name": "--sys-color-surface-category-green",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_FILLS"
+      ],
+      "aliasOf": "--ref-color-green-200",
+      "aliasOfFigma": "Colors/Green/green-200",
+      "value": "#E3F5E3",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/category/grey",
+      "name": "--sys-color-surface-category-grey",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_FILLS"
+      ],
+      "aliasOf": "--ref-color-grey-200",
+      "aliasOfFigma": "Colors/Grey/grey-200",
+      "value": "#EDEFF2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/category/menthol",
+      "name": "--sys-color-surface-category-menthol",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_FILLS"
+      ],
+      "aliasOf": "--ref-color-menthol-200",
+      "aliasOfFigma": "Colors/Menthol/menthol-200",
+      "value": "#DAF6F3",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/category/red",
+      "name": "--sys-color-surface-category-red",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_FILLS"
+      ],
+      "aliasOf": "--ref-color-red-200",
+      "aliasOfFigma": "Colors/Red/red-200",
+      "value": "#FFE9E6",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/category/yellow",
+      "name": "--sys-color-surface-category-yellow",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_FILLS"
+      ],
+      "aliasOf": "--ref-color-yellow-200",
+      "aliasOfFigma": "Colors/Yellow/yellow-200",
+      "value": "#F9EDD9",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/default",
+      "name": "--sys-color-surface-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-white",
+      "aliasOfFigma": "Colors/white",
+      "value": "#FFFFFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/error",
+      "name": "--sys-color-surface-error",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-200",
+      "aliasOfFigma": "Colors/Red/red-200",
+      "value": "#FFE9E6",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/featurelock",
+      "name": "--sys-color-surface-featurelock",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-200",
+      "aliasOfFigma": "Colors/Purple/purple-200",
+      "value": "#EDEDFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/information",
+      "name": "--sys-color-surface-information",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-200",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-200",
+      "value": "#E4F0FF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/input/active/clicked",
+      "name": "--sys-color-surface-input-active-clicked",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-400",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
+      "value": "#7AB6FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/input/active/default",
+      "name": "--sys-color-surface-input-active-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-600",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
+      "value": "#0B7EE7",
+      "accessibleValue": "#086DC9"
+    },
+    {
+      "figmaName": "color/surface/input/active/disabled",
+      "name": "--sys-color-surface-input-active-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-300",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
+      "value": "#B1D4FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/input/active/hovered",
+      "name": "--sys-color-surface-input-active-hovered",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-500",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-500",
+      "value": "#178DFE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/input/default",
+      "name": "--sys-color-surface-input-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-surface-default",
+      "aliasOfFigma": "color/surface/default",
+      "value": "#FFFFFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/input/disabled",
+      "name": "--sys-color-surface-input-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-200",
+      "aliasOfFigma": "Colors/Grey/grey-200",
+      "value": "#EDEFF2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/active/clicked",
+      "name": "--sys-color-surface-interactive-active-clicked",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-400",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-400",
+      "value": "#7AB6FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/active/default",
+      "name": "--sys-color-surface-interactive-active-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-200",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-200",
+      "value": "#E4F0FF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/active/hovered",
+      "name": "--sys-color-surface-interactive-active-hovered",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-300",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
+      "value": "#B1D4FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/clicked",
+      "name": "--sys-color-surface-interactive-clicked",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-300",
+      "aliasOfFigma": "Colors/Grey/grey-300",
+      "value": "#DFE3E8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/default",
+      "name": "--sys-color-surface-interactive-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--sys-color-surface-default",
+      "aliasOfFigma": "color/surface/default",
+      "value": "#FFFFFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/error/clicked",
+      "name": "--sys-color-surface-interactive-error-clicked",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-300",
+      "aliasOfFigma": "Colors/Red/red-300",
+      "value": "#FEBEB4",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/error/hovered",
+      "name": "--sys-color-surface-interactive-error-hovered",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-200",
+      "aliasOfFigma": "Colors/Red/red-200",
+      "value": "#FFE9E6",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/featurelock/active/clicked",
+      "name": "--sys-color-surface-interactive-featurelock-active-clicked",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-400",
+      "aliasOfFigma": "Colors/Purple/purple-400",
+      "value": "#ADA8F2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/featurelock/active/default",
+      "name": "--sys-color-surface-interactive-featurelock-active-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-200",
+      "aliasOfFigma": "Colors/Purple/purple-200",
+      "value": "#EDEDFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/featurelock/active/hovered",
+      "name": "--sys-color-surface-interactive-featurelock-active-hovered",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-300",
+      "aliasOfFigma": "Colors/Purple/purple-300",
+      "value": "#CCCAFE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/featurelock/clicked",
+      "name": "--sys-color-surface-interactive-featurelock-clicked",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-300",
+      "aliasOfFigma": "Colors/Purple/purple-300",
+      "value": "#CCCAFE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/featurelock/hovered",
+      "name": "--sys-color-surface-interactive-featurelock-hovered",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-200",
+      "aliasOfFigma": "Colors/Purple/purple-200",
+      "value": "#EDEDFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/interactive/hovered",
+      "name": "--sys-color-surface-interactive-hovered",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-200",
+      "aliasOfFigma": "Colors/Grey/grey-200",
+      "value": "#EDEFF2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/notification",
+      "name": "--sys-color-surface-notification",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-orange-500",
+      "aliasOfFigma": "Colors/Orange/orange-500",
+      "value": "#FF6726",
+      "accessibleValue": "#B03F06"
+    },
+    {
+      "figmaName": "color/surface/secondary",
+      "name": "--sys-color-surface-secondary",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-100",
+      "aliasOfFigma": "Colors/Grey/grey-100",
+      "value": "#F9F9FA",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/success",
+      "name": "--sys-color-surface-success",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-green-200",
+      "aliasOfFigma": "Colors/Green/green-200",
+      "value": "#E3F5E3",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/tertiary",
+      "name": "--sys-color-surface-tertiary",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-200",
+      "aliasOfFigma": "Colors/Grey/grey-200",
+      "value": "#EDEFF2",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/surface/warning",
+      "name": "--sys-color-surface-warning",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-yellow-200",
+      "aliasOfFigma": "Colors/Yellow/yellow-200",
+      "value": "#F9EDD9",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/text/category/blue",
+      "name": "--sys-color-text-category-blue",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "aliasOf": "--ref-color-electric-blue-600",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
+      "value": "#0B7EE7",
+      "accessibleValue": "#086DC9"
+    },
+    {
+      "figmaName": "color/text/category/green",
+      "name": "--sys-color-text-category-green",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "aliasOf": "--ref-color-green-600",
+      "aliasOfFigma": "Colors/Green/green-600",
+      "value": "#0D9930",
+      "accessibleValue": "#097F26"
+    },
+    {
+      "figmaName": "color/text/category/grey",
+      "name": "--sys-color-text-category-grey",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "aliasOf": "--ref-color-grey-800",
+      "aliasOfFigma": "Colors/Grey/grey-800",
+      "value": "#5E6E86",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/text/category/menthol",
+      "name": "--sys-color-text-category-menthol",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "aliasOf": "--ref-color-menthol-600",
+      "aliasOfFigma": "Colors/Menthol/menthol-600",
+      "value": "#0D928D",
+      "accessibleValue": "#097975"
+    },
+    {
+      "figmaName": "color/text/category/red",
+      "name": "--sys-color-text-category-red",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "aliasOf": "--ref-color-red-600",
+      "aliasOfFigma": "Colors/Red/red-600",
+      "value": "#EC1011",
+      "accessibleValue": "#C50B0C"
+    },
+    {
+      "figmaName": "color/text/category/yellow",
+      "name": "--sys-color-text-category-yellow",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "aliasOf": "--ref-color-yellow-600",
+      "aliasOfFigma": "Colors/Yellow/yellow-600",
+      "value": "#A4750A",
+      "accessibleValue": "#886107"
+    },
+    {
+      "figmaName": "color/text/default",
+      "name": "--sys-color-text-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-1000",
+      "aliasOfFigma": "Colors/Grey/grey-1000",
+      "value": "#344563",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/text/error",
+      "name": "--sys-color-text-error",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-600",
+      "aliasOfFigma": "Colors/Red/red-600",
+      "value": "#EC1011",
+      "accessibleValue": "#C50B0C"
+    },
+    {
+      "figmaName": "color/text/featurelock",
+      "name": "--sys-color-text-featurelock",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-purple-600",
+      "aliasOfFigma": "Colors/Purple/purple-600",
+      "value": "#7A70CA",
+      "accessibleValue": "#6554C0"
+    },
+    {
+      "figmaName": "color/text/information",
+      "name": "--sys-color-text-information",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-600",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
+      "value": "#0B7EE7",
+      "accessibleValue": "#086DC9"
+    },
+    {
+      "figmaName": "color/text/interactive/active/default",
+      "name": "--sys-color-text-interactive-active-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-600",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-600",
+      "value": "#0B7EE7",
+      "accessibleValue": "#086DC9"
+    },
+    {
+      "figmaName": "color/text/interactive/active/disabled",
+      "name": "--sys-color-text-interactive-active-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-electric-blue-300",
+      "aliasOfFigma": "Colors/Electric Blue/electric-blue-300",
+      "value": "#B1D4FE",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/text/interactive/default",
+      "name": "--sys-color-text-interactive-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-1000",
+      "aliasOfFigma": "Colors/Grey/grey-1000",
+      "value": "#344563",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/text/interactive/disabled",
+      "name": "--sys-color-text-interactive-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-400",
+      "aliasOfFigma": "Colors/Grey/grey-400",
+      "value": "#C0C8D1",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/text/interactive/error/default",
+      "name": "--sys-color-text-interactive-error-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-600",
+      "aliasOfFigma": "Colors/Red/red-600",
+      "value": "#EC1011",
+      "accessibleValue": "#C50B0C"
+    },
+    {
+      "figmaName": "color/text/interactive/error/disabled",
+      "name": "--sys-color-text-interactive-error-disabled",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-red-300",
+      "aliasOfFigma": "Colors/Red/red-300",
+      "value": "#FEBEB4",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/text/interactive/secondary",
+      "name": "--sys-color-text-interactive-secondary",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-800",
+      "aliasOfFigma": "Colors/Grey/grey-800",
+      "value": "#5E6E86",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/text/notification",
+      "name": "--sys-color-text-notification",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "aliasOf": "--ref-color-orange-500",
+      "aliasOfFigma": "Colors/Orange/orange-500",
+      "value": "#FF6726",
+      "accessibleValue": "#B03F06"
+    },
+    {
+      "figmaName": "color/text/on-color",
+      "name": "--sys-color-text-on-color",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "aliasOf": "--ref-color-white",
+      "aliasOfFigma": "Colors/white",
+      "value": "#FFFFFF",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/text/secondary",
+      "name": "--sys-color-text-secondary",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-800",
+      "aliasOfFigma": "Colors/Grey/grey-800",
+      "value": "#5E6E86",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/text/subtle",
+      "name": "--sys-color-text-subtle",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-grey-600",
+      "aliasOfFigma": "Colors/Grey/grey-600",
+      "value": "#8D9AAB",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "color/text/success",
+      "name": "--sys-color-text-success",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-green-600",
+      "aliasOfFigma": "Colors/Green/green-600",
+      "value": "#0D9930",
+      "accessibleValue": "#097F26"
+    },
+    {
+      "figmaName": "color/text/warning",
+      "name": "--sys-color-text-warning",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-color-yellow-600",
+      "aliasOfFigma": "Colors/Yellow/yellow-600",
+      "value": "#A4750A",
+      "accessibleValue": "#886107"
+    },
+    {
+      "figmaName": "height/chip",
+      "name": "--sys-height-chip",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "24",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "height/control",
+      "name": "--sys-height-control",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "36",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "height/line",
+      "name": "--sys-height-line",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "16",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "motion/easing/accelerated",
+      "name": "--sys-motion-easing-accelerated",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "{\"type\":\"CUSTOM_CUBIC_BEZIER\",\"easingFunctionCubicBezier\":{\"x1\":0.4,\"y1\":0,\"x2\":1,\"y2\":1}}",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "motion/easing/decelerated",
+      "name": "--sys-motion-easing-decelerated",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "{\"type\":\"CUSTOM_CUBIC_BEZIER\",\"easingFunctionCubicBezier\":{\"x1\":0,\"y1\":0,\"x2\":0.2,\"y2\":1}}",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "motion/easing/standard",
+      "name": "--sys-motion-easing-standard",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "{\"type\":\"CUSTOM_CUBIC_BEZIER\",\"easingFunctionCubicBezier\":{\"x1\":0.4,\"y1\":0,\"x2\":0.3,\"y2\":1}}",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "motion/timing/long",
+      "name": "--sys-motion-timing-long",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "0.4",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "motion/timing/normal",
+      "name": "--sys-motion-timing-normal",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "0.25",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "motion/timing/short",
+      "name": "--sys-motion-timing-short",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "0.15",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "motion/timing/xshort",
+      "name": "--sys-motion-timing-xshort",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": null,
+      "aliasOfFigma": null,
+      "value": "0.075",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "radius/chip",
+      "name": "--sys-radius-chip",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-border-radius-sm",
+      "aliasOfFigma": "Border Radius/border-radius-sm",
+      "value": "4",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "radius/container",
+      "name": "--sys-radius-container",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-border-radius-lg",
+      "aliasOfFigma": "Border Radius/border-radius-lg",
+      "value": "8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "radius/control",
+      "name": "--sys-radius-control",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-border-radius-md",
+      "aliasOfFigma": "Border Radius/border-radius-md",
+      "value": "6",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "radius/inner",
+      "name": "--sys-radius-inner",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-border-radius-md",
+      "aliasOfFigma": "Border Radius/border-radius-md",
+      "value": "6",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "spacing/inline/icon-default",
+      "name": "--sys-spacing-inline-icon-default",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-spacings-spacing-xxs",
+      "aliasOfFigma": "Spacings/spacing-xxs",
+      "value": "8",
+      "accessibleValue": null
+    },
+    {
+      "figmaName": "spacing/inline/icon-small",
+      "name": "--sys-spacing-inline-icon-small",
+      "tier": "sys",
+      "collection": "System tokens",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "aliasOf": "--ref-spacings-spacing-xxxs",
+      "aliasOfFigma": "Spacings/spacing-xxxs",
+      "value": "4",
+      "accessibleValue": null
+    }
+  ]
+}

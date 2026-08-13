@@ -1,0 +1,130 @@
+Border Radius/border-radius-sm	4	CORNER_RADIUS
+Border Radius/border-radius-md	6	CORNER_RADIUS
+Border Radius/border-radius-lg	8	CORNER_RADIUS
+Spacings/spacing-xxxs	4	GAP
+Spacings/spacing-xxs	8	GAP
+Spacings/spacing-xs	12	GAP
+Spacings/spacing-sm	16	GAP
+Spacings/spacing-md	24	GAP
+Spacings/spacing-lg	32	GAP
+Spacings/spacing-xl	40	GAP
+Spacings/spacing-xxl	48	GAP
+Spacings/spacing-xxxl	60	GAP
+Fonts/Size/font-size-xs	12	FONT_SIZE
+Fonts/Size/font-size-sm	14	FONT_SIZE
+Fonts/Size/font-size-md	16	FONT_SIZE
+Fonts/Size/font-size-lg	18	FONT_SIZE
+Fonts/Size/font-size-xl	20	FONT_SIZE
+Fonts/Size/font-size-xxl	24	FONT_SIZE
+Fonts/Size/font-size-xxxl	28	FONT_SIZE
+Fonts/Line-Height/font-line-height-xs	16	LINE_HEIGHT
+Fonts/Weight/font-weight-regular	400	FONT_WEIGHT
+Fonts/Weight/font-weight-bold	700	FONT_WEIGHT
+Fonts/Weight/font-weight-extra-bold	800	FONT_WEIGHT
+Fonts/Weight/font-weight-black	900	FONT_WEIGHT
+Fonts/Line-Height/font-line-height-sm	18	LINE_HEIGHT
+Fonts/Line-Height/font-line-height-md	20	LINE_HEIGHT
+Fonts/Line-Height/font-line-height-lg	24	LINE_HEIGHT
+Fonts/Line-Height/font-line-height-xl	32	LINE_HEIGHT
+Fonts/Line-Height/font-line-height-xxl	36	LINE_HEIGHT
+Fonts/font-family	Averta Std	FONT_FAMILY
+Colors/white	#FFFFFF
+Colors/overlay-background	#344563/0.700
+Icons/icon-size-xs	12	WIDTH_HEIGHT
+Icons/icon-size-sm	16	WIDTH_HEIGHT
+Icons/icon-size-md	24	WIDTH_HEIGHT
+Icons/icon-size-xl	40	WIDTH_HEIGHT
+Icons/icon-size-xxl	48	WIDTH_HEIGHT
+Colors/Grey/grey-100	#F9F9FA
+Colors/Grey/grey-200	#EDEFF2
+Colors/Grey/grey-300	#DFE3E8
+Colors/Grey/grey-400	#C0C8D1
+Colors/Grey/grey-500	#A6B1BE
+Colors/Grey/grey-600	#8D9AAB
+Colors/Grey/grey-700	#758498
+Colors/Grey/grey-800	#5E6E86
+Colors/Grey/grey-900	#485974
+Colors/Grey/grey-1000	#344563
+Colors/Electric Blue/electric-blue-100	#F3F8FF
+Colors/Electric Blue/electric-blue-200	#E4F0FF
+Colors/Electric Blue/electric-blue-300	#B1D4FE
+Colors/Electric Blue/electric-blue-400	#7AB6FE
+Colors/Electric Blue/electric-blue-500	#178DFE
+Colors/Electric Blue/electric-blue-600	#0B7EE7
+Colors/Electric Blue/electric-blue-700	#086DC9
+Colors/Electric Blue/electric-blue-800	#04539C
+Colors/Orange/orange-100	#FFF5F2
+Colors/Orange/orange-200	#FFEAE2
+Colors/Orange/orange-300	#FEC0A9
+Colors/Orange/orange-400	#FB936D
+Colors/Orange/orange-500	#FF6726
+Colors/Orange/orange-600	#D34D09
+Colors/Orange/orange-700	#B03F06
+Colors/Orange/orange-800	#8E3104
+Colors/Green/green-100	#F3FAF3
+Colors/Green/green-200	#E3F5E3
+Colors/Green/green-300	#B0DFB1
+Colors/Green/green-400	#76C97C
+Colors/Green/green-500	#11B43A
+Colors/Green/green-600	#0D9930
+Colors/Green/green-700	#097F26
+Colors/Green/green-800	#05661D
+Colors/Red/red-100	#FFF5F4
+Colors/Red/red-200	#FFE9E6
+Colors/Red/red-300	#FEBEB4
+Colors/Red/red-400	#FD8F80
+Colors/Red/red-500	#FD4F42
+Colors/Red/red-600	#EC1011
+Colors/Red/red-700	#C50B0C
+Colors/Red/red-800	#9F0708
+Colors/Menthol/menthol-100	#EFFBFA
+Colors/Menthol/menthol-200	#DAF6F3
+Colors/Menthol/menthol-300	#91E1DC
+Colors/Menthol/menthol-400	#45C9C3
+Colors/Menthol/menthol-500	#11ABA6
+Colors/Menthol/menthol-600	#0D928D
+Colors/Menthol/menthol-700	#097975
+Colors/Menthol/menthol-800	#05615D
+Colors/Purple/purple-100	#F7F7FF
+Colors/Purple/purple-200	#EDEDFF
+Colors/Purple/purple-300	#CCCAFE
+Colors/Purple/purple-400	#ADA8F2
+Colors/Purple/purple-500	#918BD3
+Colors/Purple/purple-600	#7A70CA
+Colors/Purple/purple-700	#6554C0
+Colors/Purple/purple-800	#51419F
+Colors/Yellow/yellow-100	#FCF7EF
+Colors/MermAId/MermAId-Gradient-From	#578FFF
+Colors/MermAId/MermAId-Gradient-To	#DF52FF
+Colors/MermAId/MermAId-100	#F5F1FF
+Colors/MermAId/MermAId-200	#EBE3FF
+Colors/Social Media/Tiktok	#000000
+Colors/Social Media/Tiktok Blue	#25F4EE
+Colors/Social Media/Tiktok Red	#FE2C55
+Colors/Social Media/Instagram	#DD2A7B
+Colors/Social Media/Facebook	#0866FF
+Colors/Social Media/LinkedIn	#2668B2
+Colors/Social Media/YouTube	#FE0101
+Colors/Social Media/Pinterest	#E60023
+Colors/Social Media/X (Twitter)	#000000
+Colors/Social Media/Web	#1F1F1F
+Colors/Social Media/Threads	#000000
+Colors/Social Media/Bluesky	#1185FE
+Colors/Social Media/Reddit	#FF4500
+Colors/Yellow/yellow-200	#F9EDD9
+Colors/Yellow/yellow-300	#ECCB95
+Colors/Yellow/yellow-400	#DFA83D
+Colors/Yellow/yellow-500	#C18A0E
+Colors/Yellow/yellow-600	#A4750A
+Colors/Yellow/yellow-700	#886107
+Colors/Yellow/yellow-800	#6D4D04
+Colors/Data/data-cyan-100	#12AABA
+Colors/Data/data-sun-100	#D98800
+Colors/Data/data-peony-100	#CC2878
+Colors/Data/data-lime-100	#42B85A
+Colors/Data/data-iris-100	#8A62CC
+Colors/Data/data-cherry-100	#CC5040
+Colors/Data/data-sky-100	#3A92E8
+Colors/Data/data-tangerine-100	#DC6A30
+Colors/Data/data-emerald-100	#12A87A
+Colors/Data/data-navy-100	#4A6ACC

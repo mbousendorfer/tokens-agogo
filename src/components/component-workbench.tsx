@@ -111,12 +111,20 @@ export function ComponentWorkbench({
     setSaving(response.ok ? 'saved' : 'error');
   };
 
-  /** Les décisions prises se traduisent en overrides : la preview montre le résultat. */
+  /**
+   * Les décisions prises se traduisent en overrides pour la preview.
+   *
+   * Les tokens cibles viennent de Figma et n'existent pas encore dans le CSS du design
+   * system : on injecte leur **valeur résolue**, pas un `var()` qui pointerait vers un
+   * token absent et laisserait la déclaration vide.
+   */
   const overrides = useMemo(() => {
     const map: Record<string, string> = {};
     for (const row of rows) {
       const decision = decisions.get(decisionKey(row.file, row.line, row.token));
-      if (decision?.to) map[row.token] = `var(${decision.to})`;
+      if (!decision?.to) continue;
+      const candidate = row.candidates.find((c) => c.name === decision.to);
+      if (candidate?.value) map[row.token] = candidate.value;
     }
     return map;
   }, [rows, decisions]);

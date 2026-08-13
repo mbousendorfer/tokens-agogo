@@ -18,7 +18,9 @@ Le plugin Figma allait dans le même sens — de l'outillage autour d'un atelier
 
 - Les décisions s'accumulent, rien n'est écrit dans le design system tant qu'on n'a pas exporté.
 - Le changeset devient la liste des décisions prises, pas une analyse générée.
-- **Plus de plugin Figma.** Les variables cibles sont récupérées via le MCP Figma et commitées comme données ; l'app propose cette liste.
+- **Plus de plugin Figma.** Les variables cibles sont récupérées via le MCP Figma (`use_figma`) et commitées comme données ; l'app propose cette liste.
+
+Extraction faite le 2026-08-13 : **348 variables** sur trois collections — `Reference tokens` (130), `System tokens` (137), `Component tokens` (81) — avec un mode `Accessible` en plus du mode par défaut sur les deux dernières. Les TSV bruts vivent dans `figma-export/`, et `pnpm ds:figma` les convertit en tokens cibles.
 
 ## Conséquences
 
