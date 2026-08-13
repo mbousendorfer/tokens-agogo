@@ -1,0 +1,26 @@
+{
+  "ref": {
+    "icons": {
+      "iconSizeMd": {
+        "value": "24",
+        "comment": "scopes: WIDTH_HEIGHT"
+      },
+      "iconSizeSm": {
+        "value": "16",
+        "comment": "scopes: WIDTH_HEIGHT"
+      },
+      "iconSizeXl": {
+        "value": "40",
+        "comment": "scopes: WIDTH_HEIGHT"
+      },
+      "iconSizeXs": {
+        "value": "12",
+        "comment": "scopes: WIDTH_HEIGHT"
+      },
+      "iconSizeXxl": {
+        "value": "48",
+        "comment": "scopes: WIDTH_HEIGHT"
+      }
+    }
+  }
+}

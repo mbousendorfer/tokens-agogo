@@ -1,0 +1,46 @@
+{
+  "comp": {
+    "inputField": {
+      "border": {
+        "active": {
+          "value": "{sys.color.border.interactive.active.default}"
+        },
+        "clicked": {
+          "value": "{sys.color.border.interactive.clicked}"
+        },
+        "default": {
+          "value": "{sys.color.border.interactive.default}"
+        },
+        "disabled": {
+          "value": "{sys.color.border.interactive.disabled}"
+        },
+        "error": {
+          "value": "{sys.color.border.error}"
+        },
+        "hovered": {
+          "value": "{sys.color.border.interactive.hovered}"
+        },
+        "success": {
+          "value": "{sys.color.border.success}"
+        }
+      },
+      "height": {
+        "value": "{sys.height.control}"
+      },
+      "horizontalPadding": {
+        "value": "{ref.spacings.spacingXs}"
+      },
+      "radius": {
+        "value": "{sys.radius.control}"
+      },
+      "surface": {
+        "default": {
+          "value": "{sys.color.surface.interactive.default}"
+        },
+        "disabled": {
+          "value": "{ref.color.grey.300}"
+        }
+      }
+    }
+  }
+}

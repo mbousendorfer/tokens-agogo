@@ -1,0 +1,313 @@
+{
+  "ref": {
+    "color": {
+      "data": {
+        "cherry100": {
+          "value": "#CC5040"
+        },
+        "cyan100": {
+          "value": "#12AABA"
+        },
+        "emerald100": {
+          "value": "#12A87A"
+        },
+        "iris100": {
+          "value": "#8A62CC"
+        },
+        "lime100": {
+          "value": "#42B85A"
+        },
+        "navy100": {
+          "value": "#4A6ACC"
+        },
+        "peony100": {
+          "value": "#CC2878"
+        },
+        "sky100": {
+          "value": "#3A92E8"
+        },
+        "sun100": {
+          "value": "#D98800"
+        },
+        "tangerine100": {
+          "value": "#DC6A30"
+        }
+      },
+      "electricBlue": {
+        "100": {
+          "value": "#F3F8FF"
+        },
+        "200": {
+          "value": "#E4F0FF"
+        },
+        "300": {
+          "value": "#B1D4FE"
+        },
+        "400": {
+          "value": "#7AB6FE"
+        },
+        "500": {
+          "value": "#178DFE"
+        },
+        "600": {
+          "value": "#0B7EE7"
+        },
+        "700": {
+          "value": "#086DC9"
+        },
+        "800": {
+          "value": "#04539C"
+        }
+      },
+      "green": {
+        "100": {
+          "value": "#F3FAF3"
+        },
+        "200": {
+          "value": "#E3F5E3"
+        },
+        "300": {
+          "value": "#B0DFB1"
+        },
+        "400": {
+          "value": "#76C97C"
+        },
+        "500": {
+          "value": "#11B43A"
+        },
+        "600": {
+          "value": "#0D9930"
+        },
+        "700": {
+          "value": "#097F26"
+        },
+        "800": {
+          "value": "#05661D"
+        }
+      },
+      "grey": {
+        "100": {
+          "value": "#F9F9FA"
+        },
+        "200": {
+          "value": "#EDEFF2"
+        },
+        "300": {
+          "value": "#DFE3E8"
+        },
+        "400": {
+          "value": "#C0C8D1"
+        },
+        "500": {
+          "value": "#A6B1BE"
+        },
+        "600": {
+          "value": "#8D9AAB"
+        },
+        "700": {
+          "value": "#758498"
+        },
+        "800": {
+          "value": "#5E6E86"
+        },
+        "900": {
+          "value": "#485974"
+        },
+        "1000": {
+          "value": "#344563"
+        }
+      },
+      "menthol": {
+        "100": {
+          "value": "#EFFBFA"
+        },
+        "200": {
+          "value": "#DAF6F3"
+        },
+        "300": {
+          "value": "#91E1DC"
+        },
+        "400": {
+          "value": "#45C9C3"
+        },
+        "500": {
+          "value": "#11ABA6"
+        },
+        "600": {
+          "value": "#0D928D"
+        },
+        "700": {
+          "value": "#097975"
+        },
+        "800": {
+          "value": "#05615D"
+        }
+      },
+      "mermaid": {
+        "100": {
+          "value": "#F5F1FF"
+        },
+        "200": {
+          "value": "#EBE3FF"
+        },
+        "gradientFrom": {
+          "value": "#578FFF"
+        },
+        "gradientTo": {
+          "value": "#DF52FF"
+        }
+      },
+      "orange": {
+        "100": {
+          "value": "#FFF5F2"
+        },
+        "200": {
+          "value": "#FFEAE2"
+        },
+        "300": {
+          "value": "#FEC0A9"
+        },
+        "400": {
+          "value": "#FB936D"
+        },
+        "500": {
+          "value": "#FF6726"
+        },
+        "600": {
+          "value": "#D34D09"
+        },
+        "700": {
+          "value": "#B03F06"
+        },
+        "800": {
+          "value": "#8E3104"
+        }
+      },
+      "overlayBackground": {
+        "value": "#344563/0.700"
+      },
+      "purple": {
+        "100": {
+          "value": "#F7F7FF"
+        },
+        "200": {
+          "value": "#EDEDFF"
+        },
+        "300": {
+          "value": "#CCCAFE"
+        },
+        "400": {
+          "value": "#ADA8F2"
+        },
+        "500": {
+          "value": "#918BD3"
+        },
+        "600": {
+          "value": "#7A70CA"
+        },
+        "700": {
+          "value": "#6554C0"
+        },
+        "800": {
+          "value": "#51419F"
+        }
+      },
+      "red": {
+        "100": {
+          "value": "#FFF5F4"
+        },
+        "200": {
+          "value": "#FFE9E6"
+        },
+        "300": {
+          "value": "#FEBEB4"
+        },
+        "400": {
+          "value": "#FD8F80"
+        },
+        "500": {
+          "value": "#FD4F42"
+        },
+        "600": {
+          "value": "#EC1011"
+        },
+        "700": {
+          "value": "#C50B0C"
+        },
+        "800": {
+          "value": "#9F0708"
+        }
+      },
+      "socialMedia": {
+        "bluesky": {
+          "value": "#1185FE"
+        },
+        "facebook": {
+          "value": "#0866FF"
+        },
+        "instagram": {
+          "value": "#DD2A7B"
+        },
+        "linkedin": {
+          "value": "#2668B2"
+        },
+        "pinterest": {
+          "value": "#E60023"
+        },
+        "reddit": {
+          "value": "#FF4500"
+        },
+        "threads": {
+          "value": "#000000"
+        },
+        "tiktok": {
+          "value": "#000000"
+        },
+        "tiktokBlue": {
+          "value": "#25F4EE"
+        },
+        "tiktokRed": {
+          "value": "#FE2C55"
+        },
+        "web": {
+          "value": "#1F1F1F"
+        },
+        "x-(twitter)": {
+          "value": "#000000"
+        },
+        "youtube": {
+          "value": "#FE0101"
+        }
+      },
+      "white": {
+        "value": "#FFFFFF"
+      },
+      "yellow": {
+        "100": {
+          "value": "#FCF7EF"
+        },
+        "200": {
+          "value": "#F9EDD9"
+        },
+        "300": {
+          "value": "#ECCB95"
+        },
+        "400": {
+          "value": "#DFA83D"
+        },
+        "500": {
+          "value": "#C18A0E"
+        },
+        "600": {
+          "value": "#A4750A"
+        },
+        "700": {
+          "value": "#886107"
+        },
+        "800": {
+          "value": "#6D4D04"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "comp": {
+    "card": {
+      "color": {
+        "background": {
+          "value": "{sys.color.surface.default}"
+        },
+        "border": {
+          "value": "{sys.color.border.default}"
+        },
+        "featurelock": {
+          "background": {
+            "value": "{sys.color.surface.featurelock}"
+          },
+          "border": {
+            "value": "{sys.color.border.featurelock}"
+          }
+        }
+      },
+      "padding": {
+        "value": "{ref.spacings.spacingSm}"
+      },
+      "radius": {
+        "value": "{sys.radius.container}"
+      },
+      "spacing": {
+        "value": "{ref.spacings.spacingSm}"
+      }
+    }
+  }
+}

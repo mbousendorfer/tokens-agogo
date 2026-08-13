@@ -1,0 +1,21 @@
+{
+  "comp": {
+    "settingsContent": {
+      "backgroundColor": {
+        "value": "{sys.color.surface.secondary}"
+      },
+      "internalMargin": {
+        "value": "{ref.spacings.spacingMd}"
+      },
+      "maxWidthLg": {
+        "value": "1200"
+      },
+      "maxWidthMd": {
+        "value": "700"
+      },
+      "verticalSpacing": {
+        "value": "{ref.spacings.spacingSm}"
+      }
+    }
+  }
+}

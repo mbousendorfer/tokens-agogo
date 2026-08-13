@@ -1,0 +1,16 @@
+{
+  "sys": {
+    "height": {
+      "chip": {
+        "value": "24",
+        "comment": "scopes: WIDTH_HEIGHT"
+      },
+      "control": {
+        "value": "36"
+      },
+      "line": {
+        "value": "16"
+      }
+    }
+  }
+}

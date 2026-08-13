@@ -1,0 +1,18 @@
+{
+  "comp": {
+    "topbar": {
+      "background": {
+        "value": "{sys.color.surface.default}"
+      },
+      "bottomBorder": {
+        "value": "{sys.color.border.default}"
+      },
+      "height": {
+        "value": "64"
+      },
+      "horizontalPadding": {
+        "value": "{ref.spacings.spacingSm}"
+      }
+    }
+  }
+}

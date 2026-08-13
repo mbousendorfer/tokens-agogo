@@ -1,0 +1,14 @@
+{
+  "sys": {
+    "spacing": {
+      "inline": {
+        "iconDefault": {
+          "value": "{ref.spacings.spacingXxs}"
+        },
+        "iconSmall": {
+          "value": "{ref.spacings.spacingXxxs}"
+        }
+      }
+    }
+  }
+}

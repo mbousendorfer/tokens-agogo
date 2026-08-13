@@ -4,7 +4,9 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { PageHeader } from '@/components/page-header';
 import { DownloadChangeset } from '@/components/download-changeset';
-import { changesetMarkdown, groupByFile, missingTargets, replacementTally } from '@/lib/changeset';
+import { groupByFile, missingTargets, replacementTally } from '@/lib/changeset';
+import { unifiedChangeset, unifiedMarkdown } from '@/lib/unified-changeset';
+import { EMPTY_OVERRIDES, type OverrideState } from '@/lib/token-overrides';
 import { declarationData } from '@/lib/declarations';
 import { EMPTY_STATE, type MigrationState } from '@/lib/decisions';
 import { allTokens } from '@/lib/tokens';
@@ -25,17 +27,52 @@ async function readState(): Promise<MigrationState> {
   }
 }
 
+async function readOverrides(): Promise<OverrideState> {
+  try {
+    return JSON.parse(await readFile(join(process.cwd(), 'token-overrides.json'), 'utf8'));
+  } catch {
+    return EMPTY_OVERRIDES;
+  }
+}
+
+/** Les fichiers de tokens émis depuis Figma, s'ils ont été générés. */
+async function emittedFiles(): Promise<string[]> {
+  const { readdir } = await import('node:fs/promises');
+  const walk = async (dir: string): Promise<string[]> => {
+    const entries = await readdir(dir, { withFileTypes: true });
+    return (
+      await Promise.all(
+        entries.map((entry) =>
+          entry.isDirectory()
+            ? walk(join(dir, entry.name))
+            : Promise.resolve([join(dir, entry.name)]),
+        ),
+      )
+    ).flat();
+  };
+  try {
+    return (await walk('dist/tokens')).sort();
+  } catch {
+    return [];
+  }
+}
+
 export const dynamic = 'force-dynamic';
 
 export default async function ChangesetPage() {
-  const state = await readState();
+  const [state, overrides, emitted] = await Promise.all([
+    readState(),
+    readOverrides(),
+    emittedFiles(),
+  ]);
+  const unified = unifiedChangeset({ decisions: state, overrides, emittedFiles: emitted });
   const files = groupByFile(state);
   const tally = replacementTally(state);
   const known = new Set(allTokens().map((token) => token.name));
   const missing = missingTargets(state, known);
 
-  const total = files.reduce((sum, file) => sum + file.edits.length, 0);
-  const markdown = changesetMarkdown(state, declarationData.source);
+  const total = unified.totals.overrides + unified.totals.decisions + unified.totals.files;
+  const markdown = unifiedMarkdown(unified, declarationData.source);
 
   return (
     <>
@@ -82,6 +119,42 @@ export default async function ChangesetPage() {
               </ul>
             </section>
           )}
+
+          <section className="mb-8 space-y-3">
+            {unified.steps.map((step) => (
+              <div key={step.order} className="rounded-lg border p-4">
+                <div className="mb-1.5 flex flex-wrap items-center gap-2">
+                  <h2 className="text-sm font-medium">
+                    {step.order}. {step.title}
+                  </h2>
+                  <Badge variant={step.risk === 'moyen' ? 'secondary' : 'outline'}>
+                    risque {step.risk}
+                  </Badge>
+                  <span className="text-muted-foreground text-xs">touche {step.touches}</span>
+                  <span className="text-muted-foreground ml-auto text-xs tabular-nums">
+                    {step.operations.length}
+                  </span>
+                </div>
+                <p className="text-muted-foreground max-w-3xl text-xs leading-relaxed">
+                  {step.rationale}
+                </p>
+                {step.operations.length > 0 && (
+                  <ul className="mt-2 space-y-0.5 font-mono text-xs">
+                    {step.operations.slice(0, 6).map((operation) => (
+                      <li key={operation} className="text-muted-foreground truncate">
+                        {operation}
+                      </li>
+                    ))}
+                    {step.operations.length > 6 && (
+                      <li className="text-muted-foreground opacity-60">
+                        … et {step.operations.length - 6} autres, dans le fichier exporté
+                      </li>
+                    )}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </section>
 
           <section className="mb-8">
             <h2 className="mb-2 text-sm font-medium">Remplacements décidés</h2>

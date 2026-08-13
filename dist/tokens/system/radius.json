@@ -1,0 +1,18 @@
+{
+  "sys": {
+    "radius": {
+      "chip": {
+        "value": "{ref.borderRadius.sm}"
+      },
+      "container": {
+        "value": "{ref.borderRadius.lg}"
+      },
+      "control": {
+        "value": "{ref.borderRadius.md}"
+      },
+      "inner": {
+        "value": "{ref.borderRadius.md}"
+      }
+    }
+  }
+}

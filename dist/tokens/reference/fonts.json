@@ -1,0 +1,84 @@
+{
+  "ref": {
+    "fonts": {
+      "fontFamily": {
+        "value": "Averta Std",
+        "comment": "scopes: FONT_FAMILY"
+      },
+      "lineHeight": {
+        "fontLineHeightLg": {
+          "value": "24",
+          "comment": "scopes: LINE_HEIGHT"
+        },
+        "fontLineHeightMd": {
+          "value": "20",
+          "comment": "scopes: LINE_HEIGHT"
+        },
+        "fontLineHeightSm": {
+          "value": "18",
+          "comment": "scopes: LINE_HEIGHT"
+        },
+        "fontLineHeightXl": {
+          "value": "32",
+          "comment": "scopes: LINE_HEIGHT"
+        },
+        "fontLineHeightXs": {
+          "value": "16",
+          "comment": "scopes: LINE_HEIGHT"
+        },
+        "fontLineHeightXxl": {
+          "value": "36",
+          "comment": "scopes: LINE_HEIGHT"
+        }
+      },
+      "size": {
+        "fontSizeLg": {
+          "value": "18",
+          "comment": "scopes: FONT_SIZE"
+        },
+        "fontSizeMd": {
+          "value": "16",
+          "comment": "scopes: FONT_SIZE"
+        },
+        "fontSizeSm": {
+          "value": "14",
+          "comment": "scopes: FONT_SIZE"
+        },
+        "fontSizeXl": {
+          "value": "20",
+          "comment": "scopes: FONT_SIZE"
+        },
+        "fontSizeXs": {
+          "value": "12",
+          "comment": "scopes: FONT_SIZE"
+        },
+        "fontSizeXxl": {
+          "value": "24",
+          "comment": "scopes: FONT_SIZE"
+        },
+        "fontSizeXxxl": {
+          "value": "28",
+          "comment": "scopes: FONT_SIZE"
+        }
+      },
+      "weight": {
+        "fontWeightBlack": {
+          "value": "900",
+          "comment": "scopes: FONT_WEIGHT"
+        },
+        "fontWeightBold": {
+          "value": "700",
+          "comment": "scopes: FONT_WEIGHT"
+        },
+        "fontWeightExtraBold": {
+          "value": "800",
+          "comment": "scopes: FONT_WEIGHT"
+        },
+        "fontWeightRegular": {
+          "value": "400",
+          "comment": "scopes: FONT_WEIGHT"
+        }
+      }
+    }
+  }
+}

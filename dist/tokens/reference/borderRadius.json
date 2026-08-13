@@ -1,0 +1,18 @@
+{
+  "ref": {
+    "borderRadius": {
+      "lg": {
+        "value": "8",
+        "comment": "scopes: CORNER_RADIUS"
+      },
+      "md": {
+        "value": "6",
+        "comment": "scopes: CORNER_RADIUS"
+      },
+      "sm": {
+        "value": "4",
+        "comment": "scopes: CORNER_RADIUS"
+      }
+    }
+  }
+}

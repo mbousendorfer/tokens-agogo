@@ -1,0 +1,42 @@
+{
+  "ref": {
+    "spacings": {
+      "spacingLg": {
+        "value": "32",
+        "comment": "scopes: GAP"
+      },
+      "spacingMd": {
+        "value": "24",
+        "comment": "scopes: GAP"
+      },
+      "spacingSm": {
+        "value": "16",
+        "comment": "scopes: GAP"
+      },
+      "spacingXl": {
+        "value": "40",
+        "comment": "scopes: GAP"
+      },
+      "spacingXs": {
+        "value": "12",
+        "comment": "scopes: GAP"
+      },
+      "spacingXxl": {
+        "value": "48",
+        "comment": "scopes: GAP"
+      },
+      "spacingXxs": {
+        "value": "8",
+        "comment": "scopes: GAP"
+      },
+      "spacingXxxl": {
+        "value": "60",
+        "comment": "scopes: GAP"
+      },
+      "spacingXxxs": {
+        "value": "4",
+        "comment": "scopes: GAP"
+      }
+    }
+  }
+}
