@@ -53,6 +53,14 @@ export function readFileAtRef(dsRoot, ref, path) {
   return git(dsRoot, ['show', `${ref}:${path}`]);
 }
 
+/** Lit un fichier binaire à cette ref — les fontes, notamment. */
+export function readBinaryAtRef(dsRoot, ref, path) {
+  return execFileSync('git', ['-C', dsRoot, 'show', `${ref}:${path}`], {
+    encoding: 'buffer',
+    maxBuffer: 256 * 1024 * 1024,
+  });
+}
+
 /**
  * Matérialise une arborescence du repo dans un dossier local.
  *

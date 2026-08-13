@@ -40,8 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# generated DS assets (rebuilt by `pnpm sync:ds`)
-/public/ds/
+# Note : `public/ds/` et `data/` sont générés mais COMMITÉS. Le mode démo n'a pas
+# accès au repo design system (ADR 009) : ces artefacts sont ses snapshots.
+# Les régénérer avec `pnpm ds:sync`.
 
 # local env
 .env.local

@@ -4,6 +4,24 @@ Une entrée par étape livrée. Format inspiré de [Keep a Changelog](https://ke
 
 ## [Non publié]
 
+### Étape 2 — Preview et spécimens
+
+- Route `/preview` dans son propre route group, avec son `<html>` : le CSS du design
+  system ne touche jamais le document de l'app.
+- `pnpm ds:assets` copie le vrai CSS-UI, les fontes Averta et le CSS d'icônes sous
+  `public/ds/`, en gardant l'arborescence mirroir pour que les fontes se résolvent.
+- `pnpm ds:specimens` extrait **101 spécimens sur 29 composants** depuis les stories
+  CSS-UI du design system, en important les fichiers TypeScript directement — Node 22
+  efface les annotations, donc aucun parseur maison. `Tabs.stories.ts` est sauté
+  (composant Angular) et listé, dans le JSON comme dans l'app.
+- `PreviewFrame` injecte les overrides de tokens dans l'iframe same-origin. Vérifié :
+  changer `--ref-color-orange-100` fait passer le bouton primaire de `rgb(255,103,38)`
+  à `rgb(0,160,0)`, sans rebuild.
+- La vue Composants devient utilisable : 29 composants, preview des vrais spécimens,
+  et édition des primitives de couleur avec le nombre de dépendants.
+- `data/tokens.json` décrit chaque token — tier, valeur brute, alias, valeur finale.
+- `public/ds/` et `data/` sont commités : ce sont les snapshots du mode démo.
+
 ### Étape 1 — Build chaîné et garde-fou
 
 - `pnpm ds:build` regénère le CSS des tokens avec `outputReferences: true` : les alias

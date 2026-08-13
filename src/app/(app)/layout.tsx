@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import Link from 'next/link';
 import { AppNav } from '@/components/app-nav';
 import { ModeBadge } from '@/components/mode-badge';
-import './globals.css';
+import '../globals.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -21,11 +21,14 @@ export const metadata: Metadata = {
 };
 
 /**
- * Layout de l'app, stylé par Tailwind et shadcn.
+ * Layout racine de l'app, stylé par Tailwind et shadcn.
  *
  * Le CSS du design system n'entre JAMAIS ici : il émet des sélecteurs de balises
  * globaux qui entrent en collision avec le preflight Tailwind. Il vit uniquement
- * dans l'iframe de `/preview`, qui a son propre layout nu (ADR 005).
+ * dans l'iframe de `/preview`, qui a son propre layout racine nu (ADR 005).
+ *
+ * D'où les deux route groups `(app)` et `(preview)` : chacun porte son propre
+ * `<html>`, sans quoi le layout de preview serait imbriqué dans celui-ci.
  */
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (

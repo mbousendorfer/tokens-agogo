@@ -13,8 +13,9 @@
  *   node tools/build-chained-tokens.mjs [--ds-root=...] [--ds-ref=master]
  */
 import { createRequire } from 'node:module';
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { parseDeclarations } from './css-vars.mjs';
 import { materialize, refSha, resolveDsRef, resolveDsRoot } from './ds-repo.mjs';
 
 const require = createRequire(import.meta.url);
@@ -23,6 +24,7 @@ const StyleDictionary = require('style-dictionary');
 const TOKENS_PATH = 'libs/ui-theme/src/tokens';
 const CACHE_DIR = '.cache/ds-tokens';
 const OUT_DIR = 'public/ds';
+const TOKENS_FILE = 'data/tokens.json';
 
 /**
  * Transforms repris à l'identique de `libs/ui-theme/src/desktop_config.js`.
@@ -100,15 +102,56 @@ export function buildChainedTokens({ dsRoot, dsRef, outDir = OUT_DIR }) {
     JSON.stringify({ ref: dsRef, sha, tokenFiles: files.length }, null, 2) + '\n',
   );
 
-  return { sha, tokenFileCount: files.length, written };
+  const tokens = describeTokens(outDir, { ref: dsRef, sha });
+  mkdirSync('data', { recursive: true });
+  writeFileSync(TOKENS_FILE, JSON.stringify(tokens, null, 2) + '\n');
+  written.push(TOKENS_FILE);
+
+  return { sha, tokenFileCount: files.length, tokenCount: tokens.tokens.length, written };
+}
+
+/**
+ * Décrit chaque token pour l'app : son tier, sa valeur brute, l'alias qu'il vise, et
+ * sa valeur finale. C'est la seule forme dont l'app a besoin — elle ne relit jamais
+ * le CSS elle-même.
+ */
+function describeTokens(outDir, source) {
+  const chained = parseDeclarations(readFileSync(join(outDir, 'desktop.chained.css'), 'utf8'));
+  const flat = parseDeclarations(readFileSync(join(outDir, 'desktop.flat.css'), 'utf8'));
+
+  const tierOf = (name) =>
+    name.startsWith('--ref-')
+      ? 'ref'
+      : name.startsWith('--sys-')
+        ? 'sys'
+        : name.startsWith('--comp-')
+          ? 'comp'
+          : 'autre';
+
+  const tokens = [...chained.keys()].sort().map((name) => {
+    const raw = chained.get(name);
+    const aliases = [...raw.matchAll(/var\(\s*(--[a-zA-Z0-9-]+)/g)].map((m) => m[1]);
+    return {
+      name,
+      tier: tierOf(name),
+      raw,
+      aliasOf: aliases.length === 1 && raw === `var(${aliases[0]})` ? aliases[0] : null,
+      references: aliases,
+      value: flat.get(name) ?? null,
+    };
+  });
+
+  const byTier = tokens.reduce((acc, t) => ({ ...acc, [t.tier]: (acc[t.tier] ?? 0) + 1 }), {});
+
+  return { source, counts: { total: tokens.length, byTier }, tokens };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const dsRoot = resolveDsRoot();
   const dsRef = resolveDsRef();
-  const { sha, tokenFileCount, written } = buildChainedTokens({ dsRoot, dsRef });
+  const { sha, tokenFileCount, tokenCount, written } = buildChainedTokens({ dsRoot, dsRef });
 
   console.log(`design system : ${dsRoot} @ ${dsRef} (${sha})`);
-  console.log(`sources       : ${tokenFileCount} fichiers de tokens`);
+  console.log(`sources       : ${tokenFileCount} fichiers, ${tokenCount} tokens`);
   for (const file of written) console.log(`écrit         : ${file}`);
 }

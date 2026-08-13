@@ -50,10 +50,12 @@ pnpm sync    # régénère data/ depuis le repo local, à commiter
 | `pnpm typecheck` | `tsc --noEmit`                                           |
 | `pnpm lint`      | ESLint                                                   |
 | `pnpm format`    | Prettier en écriture                                     |
+| `pnpm ds:sync`   | regénère tout : tokens, assets, spécimens                |
 | `pnpm ds:build`  | regénère le CSS des tokens avec `outputReferences: true` |
 | `pnpm ds:verify` | prouve que ce build est fidèle au CSS du design system   |
+| `pnpm check`     | la chaîne CI complète, à lancer avant de pousser         |
 
-`ds:build` et `ds:verify` ont besoin du repo design system (`DS_REPO_PATH`, ou `--ds-root=`). Ils lisent `master` par défaut, quelle que soit la branche sortie localement — passer `--ds-ref=` pour en lire une autre.
+Les scripts `ds:*` ont besoin du repo design system (`DS_REPO_PATH`, ou `--ds-root=`). Ils lisent `master` par défaut, quelle que soit la branche sortie localement — passer `--ds-ref=` pour en lire une autre.
 
 ## Documentation
 

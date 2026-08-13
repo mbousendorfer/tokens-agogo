@@ -86,11 +86,56 @@ Byte-match exact sur les deux plateformes, et équivalence après résolution.
 
 La conclusion pratique : `outputReferences: true` passe sur ce corpus. Modifier une primitive dans un bloc `:root` d'override propagera nativement à ses 527 descendants, sans rebuild et sans résolveur maison.
 
+## Étape 2 — la preview
+
+`pnpm ds:sync` enchaîne les trois générateurs : tokens chaînés, assets, spécimens.
+
+### Deux documents racines
+
+`src/app/` porte deux route groups, chacun avec son propre `<html>` :
+
+| Groupe      | Contenu                          | Style                         |
+| ----------- | -------------------------------- | ----------------------------- |
+| `(app)`     | les cinq vues                    | Tailwind + shadcn             |
+| `(preview)` | `/preview`, la cible de l'iframe | le CSS du design system, seul |
+
+Sans les groups, le layout de preview serait **imbriqué** dans celui de l'app — deux `<html>` l'un dans l'autre, et le CSS du design system chargé dans le document principal. C'est exactement ce que l'ADR 005 interdit.
+
+Le layout de preview force `color-scheme: light` : le design system n'a pas de mode sombre, et laisser le navigateur inverser fausserait toute lecture de contraste.
+
+### Les spécimens ne sont pas écrits à la main
+
+`apps/web/src/stories/css-ui/` contient déjà le vrai markup `.ap-*`, maintenu, avec ses variantes. `tools/build-specimens.mjs` l'extrait.
+
+Les fichiers de stories sont du TypeScript dont les types sont purement statiques : **Node 22 les importe nativement**, annotations effacées. Pas de parseur, pas de scanner de template literal — on importe le module, on appelle `meta.render(args)`, on récupère le HTML.
+
+Résultat sur `master` : **101 spécimens, 29 composants, 5 groupes**, extraits de 29 fichiers sur 30. `Tabs.stories.ts` est sauté parce qu'il déclare un vrai composant Angular (`@Component`) et n'est donc pas importable ici. Le fichier sauté est listé dans `data/specimens.json` et affiché dans l'app : un périmètre tronqué en silence se lit comme une couverture complète.
+
+### Le canal d'override
+
+`PreviewFrame` écrit directement dans `iframe.contentDocument` — same-origin, donc ni `postMessage`, ni sérialisation, ni aller-retour. La cible est le `<style id="ds-token-overrides">` vide, déjà en dernier dans le `<head>` du layout de preview : à spécificité égale, il gagne.
+
+**Vérifié dans le navigateur** : injecter `--ref-color-orange-100: #00A000` fait passer le fond du bouton primaire de `rgb(255,103,38)` à `rgb(0,160,0)`, et vider le bloc restaure la valeur d'origine. La chaîne primitive → token de composant → pixel fonctionne sans rebuild.
+
+### Artefacts générés, et commités
+
+`public/ds/` et `data/` sont générés **et versionnés**. Le mode démo n'a pas accès au repo design system ([ADR 009](decisions/009-local-first-et-demo-publique.md)) : ces fichiers sont ses snapshots.
+
+| Fichier                   | Contenu                                                        |
+| ------------------------- | -------------------------------------------------------------- |
+| `public/ds/*.css`         | tokens chaînés et aplatis, desktop et mobile                   |
+| `public/ds/style/css-ui/` | le vrai CSS du design system, arborescence mirroir             |
+| `public/ds/fonts/averta/` | les fontes, référencées en relatif par `font-face.css`         |
+| `public/ds/icons/`        | le CSS d'icônes, depuis `@agorapulse/ui-symbol` (tag `latest`) |
+| `data/tokens.json`        | chaque token : tier, valeur brute, alias, valeur finale        |
+| `data/specimens.json`     | les spécimens, plus la liste de ce qui a été sauté             |
+
+L'arborescence des assets est mirroir et non aplatie : `font-face.css` référence `../../fonts/averta/…` relativement à lui-même.
+
 ## Étapes suivantes
 
 | Étape | Contenu                                                   |
 | ----- | --------------------------------------------------------- |
-| 2     | Preview surface A (iframe CSS-UI) + spécimens             |
 | 3     | Index de déclarations (sélecteur, état, propriété, token) |
 | 4     | Import Figma : variables + bindings par variante          |
 | 5     | Alignement spec ↔ code, vue Composants                    |

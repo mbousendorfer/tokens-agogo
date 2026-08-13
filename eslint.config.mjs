@@ -12,6 +12,12 @@ const eslintConfig = defineConfig([
     'out/**',
     'build/**',
     'next-env.d.ts',
+    // Sources du design system matérialisées par les scripts `ds:*`. Ce n'est pas
+    // notre code : le linter n'a rien à en dire, et certaines stories sont Angular.
+    '.cache/**',
+    // Artefacts générés, commités pour le mode démo (ADR 009).
+    'public/ds/**',
+    'data/**',
   ]),
 ]);
 
