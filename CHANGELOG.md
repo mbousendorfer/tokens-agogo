@@ -6,7 +6,7 @@ Une entrée par étape livrée. Format inspiré de [Keep a Changelog](https://ke
 
 ### Étapes 4 à 8 — Figma, alignement, palettes, changeset
 
-- **Plugin Figma maison** (`figma-plugin/`) : exporte les variables *et* les
+- **Plugin Figma maison** (`figma-plugin/`) : exporte les variables _et_ les
   `boundVariables` par variante de composant, que produit aucun export tiers.
   `networkAccess: none`. Sans snapshot, `pnpm ds:figma` écrit un fichier vide et dit
   comment en produire un — l'app n'invente rien.

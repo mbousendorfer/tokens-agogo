@@ -6,15 +6,24 @@ Mis à jour à chaque étape. Ce qui n'existe pas encore est marqué _(à venir)
 
 ```
 tokens-agogo/
-├── tools/                 scripts Node, sans dépendance à React      (à venir)
-├── src/app/               Next.js App Router
-├── src/lib/               logique pure, testée                        (à venir)
-├── src/server/            accès disque au repo design system          (à venir)
-├── figma-plugin/          export variables + bindings                 (à venir)
-├── figma-snapshots/       exports Figma commités                      (à venir)
-├── data/                  snapshots servis en mode démo               (à venir)
-├── docs/
-└── migration-state.json   décisions de migration                      (à venir)
+├── tools/                 scripts Node, sans dépendance à React
+│   ├── ds-repo.mjs            lecture du design system par `git show`
+│   ├── build-chained-tokens   Style Dictionary + outputReferences
+│   ├── verify-chained         le garde-fou
+│   ├── copy-ds-assets         CSS-UI, fontes, icônes -> public/ds/
+│   ├── build-specimens        stories CSS-UI -> spécimens
+│   ├── scss-scan              scanner de déclarations (testé)
+│   ├── build-usage-index      l'index des déclarations
+│   ├── figma-import           variables et bindings -> tokens (testé)
+│   └── build-figma            consomme les snapshots
+├── src/app/(app)/         les cinq vues, Tailwind + shadcn
+├── src/app/(preview)/     l'iframe, CSS du design system seul
+├── src/lib/               logique pure, testée
+├── src/server/            accès disque au repo design system
+├── figma-plugin/          export variables + bindings
+├── figma-snapshots/       exports Figma commités
+├── data/                  snapshots servis en mode démo
+└── docs/
 ```
 
 ## Principes
@@ -132,13 +141,25 @@ Résultat sur `master` : **101 spécimens, 29 composants, 5 groupes**, extraits 
 
 L'arborescence des assets est mirroir et non aplatie : `font-face.css` référence `../../fonts/averta/…` relativement à lui-même.
 
-## Étapes suivantes
+## Étape 3 — l'index de déclarations
 
-| Étape | Contenu                                                   |
-| ----- | --------------------------------------------------------- |
-| 3     | Index de déclarations (sélecteur, état, propriété, token) |
-| 4     | Import Figma : variables + bindings par variante          |
-| 5     | Alignement spec ↔ code, vue Composants                    |
-| 6     | Explorateur de tokens, éditeur de palettes                |
-| 7     | Preview surface B (Storybook proxifié)                    |
-| 8     | Génération du changeset                                   |
+`pnpm ds:usage` relève **une déclaration**, pas un `var()` : sélecteur résolu, état, propriété CSS, token, fallback. C'est la forme dont l'alignement a besoin, parce que Figma prescrit à la maille « cette partie, dans cet état ».
+
+Couverture vérifiée fichier par fichier contre un grep brut : **zéro écart** sur 119 fichiers. Y arriver a demandé de traiter quatre cas que le design system contient réellement, chacun couvert par un test — l'interpolation SCSS qui construit des noms de tokens, les `_` dans les custom properties, les maps Sass et les arguments de mixin, et les fallbacks qui sont eux-mêmes des tokens.
+
+## Étape 4 — l'import Figma
+
+`figma-plugin/` exporte les variables **et** les `boundVariables` par variante. `tools/figma-import.mjs` les transforme en noms de tokens (même transform `name/cti/kebab`) et les confronte au code, en joignant **par les noms** ([ADR 008](decisions/008-reconciliation-par-les-noms.md)).
+
+Sans snapshot, `pnpm ds:figma` écrit un fichier vide et explique comment en produire un. L'app affiche alors ce qu'elle ne peut pas savoir plutôt que de le deviner.
+
+## Étapes 5 à 8 — les vues
+
+| Vue        | Ce qu'elle montre                                                            |
+| ---------- | ---------------------------------------------------------------------------- |
+| Composants | déclarations groupées par état, verdict par déclaration, preview du spécimen |
+| Tokens     | chaîne de résolution, call sites réels, les deux dettes, les orphelins       |
+| Palettes   | ramps en OKLCH, marches irrégulières, WCAG bloquant + APCA indicatif         |
+| Changeset  | le plan d'opérations ordonné par risque, exportable en Markdown              |
+
+Le module couleur (`src/lib/color.ts`) est validé contre les valeurs de référence publiées : 21:1 pour noir sur blanc, APCA 106,04 et −107,88 aux deux polarités, et le 4,54 connu de `#767676` sur blanc.

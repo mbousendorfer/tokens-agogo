@@ -50,9 +50,11 @@ pnpm sync    # régénère data/ depuis le repo local, à commiter
 | `pnpm typecheck` | `tsc --noEmit`                                           |
 | `pnpm lint`      | ESLint                                                   |
 | `pnpm format`    | Prettier en écriture                                     |
-| `pnpm ds:sync`   | regénère tout : tokens, assets, spécimens                |
+| `pnpm ds:sync`   | regénère tout : tokens, assets, spécimens, index, Figma  |
 | `pnpm ds:build`  | regénère le CSS des tokens avec `outputReferences: true` |
 | `pnpm ds:verify` | prouve que ce build est fidèle au CSS du design system   |
+| `pnpm ds:usage`  | relève chaque déclaration du design system               |
+| `pnpm ds:figma`  | consomme les snapshots du plugin Figma                   |
 | `pnpm check`     | la chaîne CI complète, à lancer avant de pousser         |
 
 Les scripts `ds:*` ont besoin du repo design system (`DS_REPO_PATH`, ou `--ds-root=`). Ils lisent `master` par défaut, quelle que soit la branche sortie localement — passer `--ds-ref=` pour en lire une autre.
@@ -66,6 +68,20 @@ Les scripts `ds:*` ont besoin du repo design system (`DS_REPO_PATH`, ou `--ds-ro
 | [docs/data-model.md](docs/data-model.md)     | forme des tokens, snapshots Figma, index, changeset |
 | [docs/migration.md](docs/migration.md)       | où en est la migration du design system             |
 | [CHANGELOG.md](CHANGELOG.md)                 | une entrée par étape livrée                         |
+
+## Les cinq vues
+
+| Vue            | Ce qu'elle sert à faire                                                   |
+| -------------- | ------------------------------------------------------------------------- |
+| Vue d'ensemble | où en est la migration                                                    |
+| Composants     | ce que Figma prescrit face à ce que le code fait, **état par état**       |
+| Tokens         | chaîne de résolution, call sites réels, les deux dettes, les tokens morts |
+| Palettes       | ramps en OKLCH, régularité des marches, contraste WCAG et APCA            |
+| Changeset      | le plan d'opérations, ordonné du moins risqué au plus risqué, exportable  |
+
+## Importer les specs Figma
+
+Le plugin `figma-plugin/` extrait les variables **et** les bindings par variante de composant — voir son [README](figma-plugin/README.md). Sans snapshot, l'app le dit et n'invente rien.
 
 ## Périmètre
 
